@@ -1,5 +1,5 @@
-@import "promotional-banner.scss";
-@import "header.scss";
+@import "./promotional-banner.css";
+@import "./header.css";
 
 body {
   margin: 0;
