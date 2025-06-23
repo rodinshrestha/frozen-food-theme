@@ -1,5 +1,6 @@
 @import "./promotional-banner.css";
 @import "./header.css";
+@import "./feature-banner.css";
 
 body {
   margin: 0;
@@ -15,6 +16,7 @@ body {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  height: 100%;
 }
 
 /* Row - to clear floats or use flexbox */
@@ -23,6 +25,7 @@ body {
   flex-wrap: wrap;
   margin-left: -15px; /* negative padding to offset col padding */
   margin-right: -15px;
+  height: 100%;
 }
 
 /* Column */
@@ -32,4 +35,29 @@ body {
   box-sizing: border-box;
   flex: 1; /* will grow and fill */
   min-width: 0; /* prevent overflow */
+  height: 100%;
+}
+
+.link-button {
+  color: #fff;
+  background-color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 2px;
+  width: 130px;
+  display: inline;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.link-button:hover {
+  opacity: 0.8;
+}
+
+h1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }

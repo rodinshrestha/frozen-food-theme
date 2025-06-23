@@ -1,9 +1,76 @@
-.icon-account {
-  color: #be2026;
-  font-size: 20px;
+.header-wrapper {
+  height: 55px;
+  position: fixed;
+  top: 89px;
+  width: 100vw;
+  background-color: #fff;
 }
-
-.icon-search {
-  color: #333;
-  font-size: 18px;
+.header-wrapper .menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-wrapper .menu-wrapper .menu-left-wrapper {
+  padding: 10px 0;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper a {
+  color: unset;
+  text-decoration: none;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list:hover {
+  color: #7f8c8d;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper {
+  position: relative;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper a {
+  color: unset;
+  text-decoration: none;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper:hover .sub-menu-wrapper {
+  display: flex;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  width: 120px;
+  padding-inline-start: 10px;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 5px 5px 5px;
+  background-color: #fff;
+  color: #000;
+  display: none;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:hover {
+  color: #7f8c8d;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper {
+  display: flex;
+  gap: 15px;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper a {
+  color: unset;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .fa-solid {
+  cursor: pointer;
 }

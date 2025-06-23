@@ -1,0 +1,34 @@
+.feature-banner-wrapper {
+  height: 90vh; /* adjust as needed */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+  }
+
+  .feature-banner-information-wrapper {
+    color: #000;
+    text-align: right;
+    margin-bottom: 80px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 15px;
+
+    .feature-banner-title {
+      font-size: 46px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .feature-subtitle {
+      font-size: 18px;
+    }
+  }
+}
