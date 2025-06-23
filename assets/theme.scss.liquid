@@ -1,0 +1,35 @@
+@import "promotional-banner.scss";
+@import "header.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Instrument Sans", sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Row - to clear floats or use flexbox */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px; /* negative padding to offset col padding */
+  margin-right: -15px;
+}
+
+/* Column */
+.col {
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  flex: 1; /* will grow and fill */
+  min-width: 0; /* prevent overflow */
+}

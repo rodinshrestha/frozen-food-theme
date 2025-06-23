@@ -1,0 +1,79 @@
+{% if section.settings['show-promotional-banner'] %}
+  <section class="promotional-banner-wrapper">
+    {% if settings['promotional-text-1'] != '' %}
+      <div class="promotional-primary-text">{{ section.settings['promotional-text-1'] }}</div>
+    {% endif %}
+
+    {% if settings['promotional-text-2'] != '' %}
+      <div class="promotional-secondary-text">{{ section.settings['promotional-text-2'] }}</div>
+    {% endif %}
+  </section>
+{% endif %}
+
+<style>
+  .promotional-banner-wrapper {
+    background-color: {{ section.settings.background-color }};
+    color: {{ section.settings.text-color }};
+    text-align: {{ section.settings.text-position }};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Promotional Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-promotional-banner",
+      "label": "Show Promotional Banner",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background-color",
+      "label": "Background Color",
+      "default": "#1B1F23"
+    },
+    {
+      "type": "color",
+      "id": "text-color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+
+    {
+      "type": "textarea",
+      "id": "promotional-text-1",
+      "label": "Promotional Text 1",
+      "default": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **"
+    },
+    {
+      "type": "textarea",
+      "id": "promotional-text-2",
+      "label": "Promotional Text 2",
+      "default": "Limited Time Offer: Free Shipping on orders of $99.99 or more"
+    },
+    {
+      "type": "select",
+      "id": "text-position",
+      "label": "Text Position",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": []
+}
+{% endschema %}

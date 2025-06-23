@@ -1,0 +1,27 @@
+<html>
+  <head>
+    {{ content_for_header }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    >
+
+    {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
+      crossorigin="anonymous"
+    >
+  </head>
+
+  <body>
+    {% section 'promotional-banner' %}
+    {% section 'header' %}
+    <main id="main" role="main">
+      {{ content_for_layout }}
+    </main>
+  </body>
+</html>
