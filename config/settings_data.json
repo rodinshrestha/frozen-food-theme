@@ -46,15 +46,10 @@
           "slogan-3-description": "It is a long established fact that a reader will be distracted by the"
         }
       },
-      "feature-products": {
-        "type": "feature-products",
+      "featured-products": {
+        "type": "featured-products",
         "settings": {
-          "products": [
-            "product-test-1",
-            "product-test-2",
-            "product-test-3",
-            "product-test-4"
-          ]
+          "collection": "frontpage"
         }
       }
     },

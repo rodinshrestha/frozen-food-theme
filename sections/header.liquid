@@ -9,6 +9,8 @@
                 src="{{ section.settings.logo | image_url: width: 180 }}"
                 alt="Logo"
                 loading="lazy"
+                width="180"
+                height="40"
               >
             {% else %}
               <img
@@ -16,6 +18,7 @@
                 alt="Logo"
                 loading="lazy"
                 width="180"
+                height="40"
               >
             {% endif %}
           </div>
@@ -39,7 +42,7 @@
             </ul>
             <div class="menu-icon-wrapper">
               <!-- Account -->
-              <a href="/account/login">
+              <a href="{{ routes.account_login_url }}">
                 <i class="fa-solid fa-user"></i>
               </a>
               <!-- Search -->
