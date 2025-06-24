@@ -84,6 +84,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-qty-wrapper .qty-btn,
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-qty-wrapper .quantity-input {
