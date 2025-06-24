@@ -92,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const qty =
         parseInt(modal.querySelector(".quantity-input").textContent) || 1;
 
+      button.innerHTML = "loading...";
+
       fetch("/cart/add.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -103,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((res) => res.json())
         .then((data) => {
           alert(`${data.title} added to cart!`);
+          button.innerHTML = "Add to cart";
           modal.style.display = "none";
           // Optional: update cart UI
         })
