@@ -19,11 +19,11 @@
                 <i class="fa-solid fa-plus"></i>
               </div>
 
-              {% render 'add-to-cart-modal', product: product %}
+              {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
             </div>
 
             <div class="featured-product-information">
-              <a href="{{product.url  }}">
+              <a href="{{product.url }}">
                 <p class="product-title">{{ product.title }}</p>
               </a>
               <p class="product-price">{{ product.price | money }}</p>

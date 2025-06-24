@@ -5,6 +5,7 @@
   .featured-product-image-wrapper {
     position: relative;
     cursor: pointer;
+    z-index: 1;
 
     .open-modal-btn {
       position: absolute;

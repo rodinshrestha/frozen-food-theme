@@ -5,6 +5,7 @@
 @import "./featured-products.css";
 @import "./cart-drawer.css";
 @import "./add-to-cart-modal.css";
+@import "./product-quantity.css";
 
 body {
   margin: 0;
@@ -12,6 +13,7 @@ body {
   font-family: "Instrument Sans", sans-serif;
   font-style: normal;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 .container {
@@ -72,6 +74,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
+  box-sizing: border-box;
 }
 
 .outline-btn {

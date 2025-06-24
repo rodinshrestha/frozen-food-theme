@@ -2,24 +2,36 @@
 <div id="cart-drawer" class="cart-drawer hidden">
   <div class="cart-header">
     <h2>Your Cart</h2>
-    <button id="close-cart" aria-label="Close cart">×</button>
+    <button id="close-cart" aria-label="Close cart" class="cart-close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
   <div class="cart-content">
     {% if cart.item_count > 0 %}
-      <ul>
+      <div class="cart-content-wrapper">
         {% for item in cart.items %}
-          <li>
-            <strong>{{ item.product.title }}</strong><br>
-            Qty: {{ item.quantity -}}
-            <br>
-            Price: {{ item.line_price | money }}
-          </li>
+          <div class="cart-items-wrapper">
+            <img
+              src="{{ item.product.images |  img_url: '150x'}}"
+              width="150"
+              height="150"
+              alt="{{ item.product.title }}"
+            >
+            <div class="cart-product-information">
+              <div>{{ item.product.title }}</div>
+              {% render 'product-quantity', product: item, appliedQty: item.quantity %}
+              <div>{{ item.line_price | money }}</div>
+            </div>
+          </div>
         {% endfor %}
-      </ul>
-      <p>
-        <strong>Total: {{ cart.total_price | money }}</strong>
-      </p>
-      <a href="/checkout" class="checkout-button">Checkout</a>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total-price">
+          <span class="cart-total-text">Total:</span>
+          <span class="cart-total-amount"> {{ cart.total_price | money }}</span>
+        </div>
+        <a href="/checkout" class="checkout-button link-button">Proceed To Checkout</a>
+      </div>
     {% else %}
       <p>Your cart is empty</p>
     {% endif %}

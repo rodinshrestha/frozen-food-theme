@@ -1,0 +1,28 @@
+.add-to-cart-qty-wrapper {
+  background-color: #f8f4ef;
+  border-radius: 20px;
+  display: inline-flex;
+  width: 80px;
+  padding: 5px 8px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  .qty-btn,
+  .quantity-input {
+    background-color: transparent;
+    outline: transparent;
+    border: none;
+    font-size: 20px;
+  }
+
+  .qty-btn {
+    font-size: 28px;
+    cursor: pointer;
+    &.disable {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
