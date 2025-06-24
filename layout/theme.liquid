@@ -23,10 +23,12 @@
     <main id="main" role="main">
       {% section 'feature-banner' %}
       {% section 'slogan' %}
-
+      {% section 'feature-products' %}
       {% section 'feature-banner' %}
-
+      {% section 'feature-products' %}
       {{ content_for_layout }}
     </main>
+
+    <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
   </body>
 </html>

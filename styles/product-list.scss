@@ -1,0 +1,13 @@
+.product-list-wrapper {
+  height: 420px;
+  padding: 50px 0;
+  .product-list-details {
+    text-align: center;
+    .product-title {
+      font-weight: 400;
+    }
+    .product-price {
+      font-weight: 600;
+    }
+  }
+}

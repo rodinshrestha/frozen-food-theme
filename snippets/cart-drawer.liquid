@@ -1,0 +1,27 @@
+<!-- snippets/cart-drawer.liquid -->
+<div id="cart-drawer" class="cart-drawer hidden">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button id="close-cart" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-content">
+    {% if cart.item_count > 0 %}
+      <ul>
+        {% for item in cart.items %}
+          <li>
+            <strong>{{ item.product.title }}</strong><br>
+            Qty: {{ item.quantity -}}
+            <br>
+            Price: {{ item.line_price | money }}
+          </li>
+        {% endfor %}
+      </ul>
+      <p>
+        <strong>Total: {{ cart.total_price | money }}</strong>
+      </p>
+      <a href="/checkout" class="checkout-button">Checkout</a>
+    {% else %}
+      <p>Your cart is empty</p>
+    {% endif %}
+  </div>
+</div>

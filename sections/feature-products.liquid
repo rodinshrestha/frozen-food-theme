@@ -1,0 +1,65 @@
+{% if section.settings.products.size > 0 %}
+  <section class="product-list-wrapper">
+    <div class="container">
+      <div class="row">
+        {% for product in section.settings.products %}
+          <div class="col-3">
+            <img
+              src="{{ product.featured_image | asset_url }}"
+              width="280"
+              height="280"
+              alt="{{ product.title }}"
+            >
+
+            <div class="product-list-details">
+              <p class="product-title">{{ product.title }}</p>
+              <p class="product-price">{{ product.price | money }}</p>
+            </div>
+          </div>
+        {% endfor %}
+        {% comment %}
+          <div class="col-3">
+            <img src="https://placehold.co/280x280" width="280" alt="product">
+
+            <div class="product-list-details">
+              <p class="product-title">Product Name</p>
+              <p class="product-price">$100.00</p>
+            </div>
+          </div>
+          <div class="col-3">
+            <img src="https://placehold.co/280x280" width="280" alt="product">
+
+            <div class="product-list-details">
+              <p class="product-title">Product Name</p>
+              <p class="product-price">$100.00</p>
+            </div>
+          </div>
+          <div class="col-3">
+            <img src="https://placehold.co/280x280" width="280" alt="product">
+
+            <div class="product-list-details">
+              <p class="product-title">Product Name</p>
+              <p class="product-price">$100.00</p>
+            </div>
+          </div>
+        {% endcomment %}
+      </div>
+    </div>
+  </section>
+
+{% else %}
+  <p>No product found</p>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Select products"
+    }
+  ]
+}
+{% endschema %}

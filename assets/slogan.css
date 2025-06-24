@@ -1,0 +1,24 @@
+.slogan-wrapper {
+  height: 643px;
+  padding: 50px 0;
+}
+.slogan-wrapper .solgan-content-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.slogan-wrapper .solgan-content-wrapper .slogan-title {
+  font-size: 22px;
+  font-weight: 500;
+}
+.slogan-wrapper .solgan-content-wrapper .slogan-divider {
+  width: 80px;
+  height: 2px;
+  background-color: #b8c6c6;
+}
+.slogan-wrapper .solgan-content-wrapper .slogan-information {
+  font-size: 16px;
+}

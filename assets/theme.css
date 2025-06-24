@@ -1,6 +1,9 @@
 @import "./promotional-banner.css";
 @import "./header.css";
 @import "./feature-banner.css";
+@import "./slogan.css";
+@import "./product-list.css";
+@import "./cart-drawer.css";
 
 body {
   margin: 0;
@@ -36,6 +39,22 @@ body {
   flex: 1; /* will grow and fill */
   min-width: 0; /* prevent overflow */
   height: 100%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
 }
 
 .link-button {

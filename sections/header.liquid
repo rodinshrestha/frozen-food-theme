@@ -47,7 +47,8 @@
               <!-- wishlist -->
               <i class="fa-solid fa-heart"></i>
               <!-- Cart -->
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-solid fa-cart-shopping" id="cart-icon" aria-label="Open Cart"></i>
+              {% render 'cart-drawer' %}
             </div>
           </div>
         </div>
@@ -64,6 +65,16 @@
       "type": "image_picker",
       "id": "logo",
       "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "sub_menu",
+      "label": "Sub Navigation"
     }
   ]
 }
