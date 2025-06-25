@@ -27,14 +27,7 @@
 
         <hr>
         <div class="add-to-cart-cta-wrapper">
-          {% comment %}
-            <div class="add-to-cart-qty-wrapper" data-min="1" data-max="{{ product.variants.first.inventory_quantity }}">
-              <button type="button" class="qty-btn minus">-</button>
-              <div class="quantity-input">1</div>
-              <button type="button" class="qty-btn plus">+</button>
-            </div>
-          {% endcomment %}
-          {% render 'product-quantity', product: product %}
+          {% render 'product-quantity', product: product, appliedQty: appliedQty %}
           <div class="add-to-cart-btn-group">
             <button class="add-to-cart outline-btn add-to-cart-btn" data-variant-id="{{ product.variants.first.id }}">
               Add to cart

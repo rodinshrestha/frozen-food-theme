@@ -1,9 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // === Move all modals to body tag ===
+  document.querySelectorAll(".add-to-cart-modal-wrapper").forEach((modal) => {
+    window.portal(modal); // Moves modal directly under <body>
+  });
+
   document.querySelectorAll(".open-modal-btn").forEach((button) => {
     button.addEventListener("click", () => {
       const id = button.dataset.productId;
       const modal = document.getElementById(`modal-${id}`);
-      if (modal) modal.style.display = "flex";
+      if (modal) {
+        modal.style.display = "flex";
+        window.whenDrawerOpen();
+      }
     });
   });
 
@@ -11,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".close-modal-btn").forEach((button) => {
     button.addEventListener("click", () => {
       button.closest(".add-to-cart-modal-wrapper").style.display = "none";
+      window.whenDrawerClose();
     });
   });
 
@@ -18,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.addEventListener("click", function (e) {
       if (e.target === modal) {
         modal.style.display = "none";
+        window.whenDrawerClose();
       }
     });
   });

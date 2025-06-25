@@ -17,7 +17,8 @@
     >
   </head>
 
-  <body>
+  <body id="body">
+    <div class="main-overlay disable-overlay"></div>
     {% section 'promotional-banner' %}
     {% section 'header' %}
     <main id="main" role="main">
@@ -30,5 +31,6 @@
 
     <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
     <script src="{{ 'add-to-cart-modal.js' | asset_url }}" defer></script>
+    <script src="{{ 'utils.js' | asset_url }}" defer></script>
   </body>
 </html>
