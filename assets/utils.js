@@ -33,3 +33,18 @@ window.getCookie = (name) => {
   }
   return null; // Cookie not found
 };
+
+window.updateCartCount = async () => {
+  return fetch("/cart.js")
+    .then((res) => res.json())
+    .then((cart) => {
+      const itemCount = document.getElementById("cart-item-count");
+      if (itemCount) {
+        itemCount.textContent = cart.item_count;
+      }
+    })
+    .catch((err) => {
+      alert("Error, view console for logs");
+      console.error(err);
+    });
+};

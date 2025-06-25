@@ -114,10 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then((res) => res.json())
         .then(() => {
-          button.innerHTML = "Add to cart";
-          modal.style.display = "none";
-          window.whenDrawerClose();
-          // Optional: update cart UI
+          window.updateCartCount().finally(() => {
+            button.innerHTML = "Add to cart";
+            modal.style.display = "none";
+            window.whenDrawerClose();
+          });
         })
         .catch((err) => {
           alert("Error adding to cart.");

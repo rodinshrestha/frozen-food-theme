@@ -128,3 +128,9 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+.cart-drawer .cart-content-wrapper .cart-empty-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

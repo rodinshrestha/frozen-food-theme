@@ -76,3 +76,11 @@
 .header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .fa-solid {
   cursor: pointer;
 }
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .add-to-cart-icon {
+  display: flex;
+  align-items: center;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .add-to-cart-icon .cart-count-number {
+  margin-left: 10px;
+  font-size: 14px;
+}

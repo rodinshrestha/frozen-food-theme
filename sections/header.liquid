@@ -50,7 +50,11 @@
               <!-- wishlist -->
               <i class="fa-solid fa-heart"></i>
               <!-- Cart -->
-              <i class="fa-solid fa-cart-shopping" id="cart-icon" aria-label="Open Cart"></i>
+              <i class="fa-solid fa-cart-shopping add-to-cart-icon" id="cart-icon" aria-label="Open Cart">
+                {% if cart.item_count > 0 %}
+                  <span class="cart-count-number" id="cart-item-count">{{ cart.item_count }}</span>
+                {% endif %}
+              </i>
             </div>
           </div>
         </div>
