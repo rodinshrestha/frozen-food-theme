@@ -63,6 +63,7 @@ document.addEventListener("click", (e) => {
     .then((res) => res.json())
     .then(() => {
       fetchAndRenderCartDrawer().finally(() => {
+        window.updateCartCount();
         deleteItemLoader(false);
       });
     })
