@@ -27,9 +27,17 @@ const toggleCartLoading = (isLoading) => {
   contentWrapper.style.display = isLoading ? "none" : "flex";
 };
 
+const deleteItemLoader = (isLoading) => {
+  const deleteLoader = document.getElementById("cart-item-delete-overlay");
+  const loader = document.getElementById("cart-loader");
+
+  loader.classList.toggle("active", isLoading);
+  deleteLoader.classList.toggle("active", isLoading);
+};
+
 // Fetch updated cart section and re-render
 const fetchAndRenderCartDrawer = () => {
-  fetch("/?sections=cart-drawer")
+  return fetch("/?sections=cart-drawer")
     .then((res) => res.json())
     .then((data) => {
       reBuildCartDrawer(data["cart-drawer"]);
@@ -46,14 +54,23 @@ document.addEventListener("click", (e) => {
 
   const itemIndex = removeButton.getAttribute("data-line");
   if (!itemIndex) return;
-
+  deleteItemLoader(true);
   fetch("/cart/change.js", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ line: parseInt(itemIndex), quantity: 0 }),
   })
     .then((res) => res.json())
-    .then(() => fetchAndRenderCartDrawer());
+    .then(() => {
+      fetchAndRenderCartDrawer().finally(() => {
+        deleteItemLoader(false);
+      });
+    })
+    .catch((err) => {
+      alert("Error, view console for more information");
+      console.log(err);
+      deleteItemLoader(false);
+    });
 });
 
 // Handle checkbox logic when cart drawer is loaded

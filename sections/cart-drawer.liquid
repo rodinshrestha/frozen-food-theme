@@ -8,6 +8,7 @@
   </div>
   <div class="loader hidden" id="cart-loader"></div>
   <div class="cart-content-wrapper" id="cart-content-wrapper">
+    <div class="delete-overlay hidden" id="cart-item-delete-overlay"></div>
     {% if cart.item_count > 0 %}
       <div class="cart-items-wrapper">
         {% for item in cart.items %}

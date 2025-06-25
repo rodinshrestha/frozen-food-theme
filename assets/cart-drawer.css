@@ -28,6 +28,8 @@
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 .cart-drawer .cart-content-wrapper {
   overflow-y: auto;
@@ -36,6 +38,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+}
+.cart-drawer .cart-content-wrapper .delete-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+  z-index: 20;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper {
   display: flex;
