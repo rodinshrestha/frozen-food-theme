@@ -113,10 +113,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }),
       })
         .then((res) => res.json())
-        .then((data) => {
-          alert(`${data.title} added to cart!`);
+        .then(() => {
           button.innerHTML = "Add to cart";
           modal.style.display = "none";
+          window.whenDrawerClose();
           // Optional: update cart UI
         })
         .catch((err) => {

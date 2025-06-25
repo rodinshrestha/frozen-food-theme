@@ -21,3 +21,15 @@ window.portal = (element) => {
     document.body.append(element);
   }
 };
+
+// get cookie
+window.getCookie = (name) => {
+  const cookies = document.cookie.split(";");
+  for (let cookie of cookies) {
+    const [key, value] = cookie.trim().split("=");
+    if (key === name) {
+      return decodeURIComponent(value);
+    }
+  }
+  return null; // Cookie not found
+};

@@ -1,25 +1,131 @@
-document.addEventListener("DOMContentLoaded", function () {
+// === UTILITY ===
+
+// Rebuild the DOM after fetching updated cart HTML
+const reBuildCartDrawer = (newCartElement) => {
   const cartDrawer = document.querySelector(".cart-drawer");
+  if (!cartDrawer) return;
+
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = newCartElement;
+
+  const newCartDrawer = tempDiv.querySelector("#cart-drawer");
+  if (newCartDrawer) {
+    cartDrawer.innerHTML = newCartDrawer.innerHTML;
+    cartDrawer.classList.add("active");
+    document.dispatchEvent(new Event("cartDrawerLoaded"));
+  }
+};
+
+// Show/hide cart loading state
+const toggleCartLoading = (isLoading) => {
+  const loader = document.getElementById("cart-loader");
+  const contentWrapper = document.getElementById("cart-content-wrapper");
+
+  if (!loader || !contentWrapper) return;
+
+  loader.classList.toggle("hidden", !isLoading);
+  contentWrapper.style.display = isLoading ? "none" : "flex";
+};
+
+// Fetch updated cart section and re-render
+const fetchAndRenderCartDrawer = () => {
+  fetch("/?sections=cart-drawer")
+    .then((res) => res.json())
+    .then((data) => {
+      reBuildCartDrawer(data["cart-drawer"]);
+    })
+    .catch((err) => console.error("Failed to update cart drawer:", err));
+};
+
+// === GLOBAL EVENT BINDINGS ===
+
+// Remove cart item via event delegation
+document.addEventListener("click", (e) => {
+  const removeButton = e.target.closest(".remove-cart-item");
+  if (!removeButton) return;
+
+  const itemIndex = removeButton.getAttribute("data-line");
+  if (!itemIndex) return;
+
+  fetch("/cart/change.js", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ line: parseInt(itemIndex), quantity: 0 }),
+  })
+    .then((res) => res.json())
+    .then(() => fetchAndRenderCartDrawer());
+});
+
+// Handle checkbox logic when cart drawer is loaded
+document.addEventListener("cartDrawerLoaded", () => {
+  const checkbox = document.getElementById("agreement-checkbox");
+  const checkoutButton = document.querySelector(".checkout-button");
+  const closeCart = document.getElementById("close-cart");
+
+  if (closeCart) {
+    closeCart.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      document.getElementById("cart-drawer").classList.remove("active");
+      window.whenDrawerClose();
+    });
+  }
+
+  if (!checkbox || !checkoutButton) return;
+
+  // Only bind once
+  if (!checkbox.dataset.bound) {
+    checkbox.addEventListener("change", (e) => {
+      checkoutButton.classList.toggle("disable", !e.target.checked);
+    });
+    checkbox.dataset.bound = "true";
+  }
+
+  if (!checkoutButton.dataset.bound) {
+    checkoutButton.addEventListener("click", (e) => {
+      if (!checkbox.checked) {
+        e.preventDefault();
+      }
+    });
+    checkoutButton.dataset.bound = "true";
+  }
+});
+
+// Initial load bindings
+document.addEventListener("DOMContentLoaded", () => {
+  const cartDrawer = document.querySelector(".cart-drawer");
+  const cartIcon = document.getElementById("cart-icon");
+
+  if (!cartDrawer || !cartIcon) return;
+
   window.portal(cartDrawer);
 
-  document.getElementById("cart-icon").addEventListener("click", function () {
-    document.getElementById("cart-drawer").classList.add("active");
+  cartIcon.addEventListener("click", () => {
+    const cartCookie = window.getCookie("cart");
+    cartDrawer.classList.add("active");
+
+    if (!cartCookie) return;
+
+    toggleCartLoading(true);
     window.whenDrawerOpen();
+
+    fetch(window.location.pathname + "?sections=cart-drawer")
+      .then((res) => res.json())
+      .then((data) => {
+        reBuildCartDrawer(data["cart-drawer"]);
+      })
+      .catch((err) => console.error("Failed to load cart:", err))
+      .finally(() => toggleCartLoading(false));
   });
 
-  document.getElementById("close-cart").addEventListener("click", function () {
-    document.getElementById("cart-drawer").classList.remove("active");
-    window.whenDrawerClose();
-  });
-
-  document.addEventListener("click", function (e) {
-    const drawer = document.getElementById("cart-drawer");
+  // 4. Close cart drawer on outside click
+  document.addEventListener("click", (e) => {
     if (
-      !drawer.contains(e.target) &&
-      !e.target.closest("#cart-icon") &&
-      drawer.classList.contains("active")
+      cartDrawer.classList.contains("active") &&
+      !cartDrawer.contains(e.target) &&
+      !e.target.closest("#cart-icon")
     ) {
-      drawer.classList.remove("active");
+      cartDrawer.classList.remove("active");
       window.whenDrawerClose();
     }
   });
