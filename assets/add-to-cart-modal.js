@@ -112,16 +112,16 @@ document.addEventListener("DOMContentLoaded", function () {
           quantity: qty,
         }),
       })
-        .then((res) => res.json())
+        .then(async (res) => await window.handleFetchResponse(res))
+        .then(() => window.updateCartCount())
         .then(() => {
-          window.updateCartCount().finally(() => {
-            button.innerHTML = "Add to cart";
-            modal.style.display = "none";
-            window.whenDrawerClose();
-          });
+          button.innerHTML = "Add to cart";
+          modal.style.display = "none";
+          window.whenDrawerClose();
+          window.showToast("Item added in your cart");
         })
         .catch((err) => {
-          alert("Error adding to cart.");
+          window.showToast(err, "error");
           console.error(err);
         });
     });

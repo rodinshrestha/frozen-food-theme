@@ -24,7 +24,7 @@
             <div class="cart-product-information">
               <div class="cart-item-title">{{ item.product.title }}</div>
               <div class="cart-item-price">{{ item.line_price | money }}</div>
-              {% render 'product-quantity', product: item, appliedQty: item.quantity %}
+              {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}
             </div>
 
             <button

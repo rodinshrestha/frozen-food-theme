@@ -48,3 +48,32 @@ window.updateCartCount = async () => {
       console.error(err);
     });
 };
+
+window.showToast = (message, status = "success") => {
+  const colors = {
+    success: "#4CAF50", // green
+    error: "#f44336", // red
+    info: "#2196F3", // blue
+  };
+
+  Toastify({
+    text: message,
+    duration: 3000,
+    close: true,
+    gravity: "top", // 'top' or 'bottom'
+    position: "right", // 'left', 'center' or 'right'
+    backgroundColor: colors[status] || "#333",
+    stopOnFocus: true,
+  }).showToast();
+};
+
+window.handleFetchResponse = async (res) => {
+  const data = await res.json();
+
+  if (!res.ok) {
+    const msg = data?.description || data?.message || "Something went wrong";
+    throw new Error(msg);
+  }
+
+  return data;
+};

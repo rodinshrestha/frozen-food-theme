@@ -1,4 +1,5 @@
-// === UTILITY ===
+// Debounce map per line item
+const quantityUpdateTimers = {};
 
 // Rebuild the DOM after fetching updated cart HTML
 const reBuildCartDrawer = (newCartElement) => {
@@ -68,16 +69,84 @@ const itemLoader = (index, isLoading) => {
 };
 
 // Fetch updated cart section and re-render
-const fetchAndRenderCartDrawer = () => {
+const fetchAndRenderCartDrawer = async () => {
   return fetch("/?sections=cart-drawer")
-    .then((res) => res.json())
+    .then(async (res) => await window.handleFetchResponse(res))
     .then((data) => {
       reBuildCartDrawer(data["cart-drawer"]);
     })
-    .catch((err) => console.error("Failed to update cart drawer:", err));
+    .catch((err) => {
+      alert("failed");
+      console.error("Failed to update cart drawer:", err);
+    });
 };
 
-// Remove cart item via event delegation
+// Quantity handler
+document.addEventListener("click", (e) => {
+  const decreaseQty = e.target.closest(".qty-btn.minus");
+  const increaseQty = e.target.closest(".qty-btn.plus");
+
+  if (!decreaseQty && !increaseQty) return;
+
+  const btn = increaseQty || decreaseQty;
+
+  const itemIndex = btn.getAttribute("data-line");
+
+  const wrapper = btn.closest(".cart-item-details");
+  const qtyWrapper = btn.closest(".add-to-cart-qty-wrapper");
+  const line = parseInt(wrapper.dataset.line);
+  const quantityDisplay = qtyWrapper.querySelector(".quantity-input");
+  const min = parseInt(qtyWrapper.dataset.min || "1");
+  const max = parseInt(qtyWrapper.dataset.max || "99");
+
+  let currentQty = parseInt(quantityDisplay.textContent || "1");
+
+  // Determine new quantity
+  const newQty = decreaseQty
+    ? Math.max(min, currentQty - 1)
+    : Math.min(max, currentQty + 1);
+
+  // If no change, do nothing
+  if (newQty === currentQty) return;
+
+  // Show the new quantity immediately (optional for UX)
+  quantityDisplay.textContent = newQty;
+
+  // Clear any existing debounce timer for this line
+  if (quantityUpdateTimers[line]) {
+    clearTimeout(quantityUpdateTimers[line]);
+  }
+
+  // Start a new debounce timer
+  quantityUpdateTimers[line] = setTimeout(() => {
+    itemLoader(line, true);
+    disableCheckoutBtn(true);
+
+    fetch("/cart/change.js", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ line: line, quantity: newQty }),
+    })
+      .then(async (res) => await window.handleFetchResponse(res))
+      .then(() => fetchAndRenderCartDrawer())
+      .then(() => {
+        window.updateCartCount();
+        itemLoader(itemIndex, false);
+      })
+      .catch((err) => {
+        // reseeting the quantity, If it cause any error
+        fetchAndRenderCartDrawer().finally(() => {
+          window.showToast(err, "error");
+          itemLoader(itemIndex, false);
+        });
+      })
+      .finally(() => {
+        delete quantityUpdateTimers[line]; // Clean up
+      });
+  }, 400); // Adjust delay as needed (400ms is smooth)
+});
+
+// Delete cart item
 document.addEventListener("click", (e) => {
   const removeButton = e.target.closest(".remove-cart-item");
   if (!removeButton || removeButton.classList.contains("disabled")) {
@@ -103,38 +172,37 @@ document.addEventListener("click", (e) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ line: parseInt(itemIndex), quantity: 0 }),
   })
-    .then((res) => res.json())
+    .then(async (res) => await window.handleFetchResponse(res))
+    .then(() => fetchAndRenderCartDrawer())
     .then(() => {
-      fetchAndRenderCartDrawer().finally(() => {
-        window.updateCartCount();
-        itemLoader(itemIndex, false);
+      window.updateCartCount();
+      itemLoader(itemIndex, false);
 
-        // Animate items from old position to new
-        requestAnimationFrame(() => {
-          const cartItemList = document.querySelectorAll(".cart-item-details");
+      // Animate items from old position to new
+      requestAnimationFrame(() => {
+        const cartItemList = document.querySelectorAll(".cart-item-details");
 
-          cartItemList.forEach((item) => {
-            const key = item.dataset.key;
-            const oldPos = positions.get(key);
-            const newPos = item.getBoundingClientRect();
+        cartItemList.forEach((item) => {
+          const key = item.dataset.key;
+          const oldPos = positions.get(key);
+          const newPos = item.getBoundingClientRect();
 
-            if (oldPos) {
-              const dy = oldPos.top - newPos.top;
-              item.style.transform = `translateY(${dy}px)`;
-              item.offsetHeight; // force reflow
-              item.style.transition = "transform 0.3s ease";
-              item.style.transform = "translateY(0)";
-            }
-          });
-
-          // Clean up after animation
-          setTimeout(() => {
-            document.querySelectorAll(".cart-item-details").forEach((item) => {
-              item.style.transition = "";
-              item.style.transform = "";
-            });
-          }, 300);
+          if (oldPos) {
+            const dy = oldPos.top - newPos.top;
+            item.style.transform = `translateY(${dy}px)`;
+            item.offsetHeight; // force reflow
+            item.style.transition = "transform 0.3s ease";
+            item.style.transform = "translateY(0)";
+          }
         });
+
+        // Clean up after animation
+        setTimeout(() => {
+          document.querySelectorAll(".cart-item-details").forEach((item) => {
+            item.style.transition = "";
+            item.style.transform = "";
+          });
+        }, 300);
       });
     })
     .catch((err) => {
@@ -145,10 +213,32 @@ document.addEventListener("click", (e) => {
 });
 
 // Handle checkbox logic when cart drawer is loaded
-document.addEventListener("cartDrawerLoaded", () => {
+document.addEventListener("cartDrawerLoaded", (e) => {
   const checkbox = document.getElementById("agreement-checkbox");
-  // const checkoutButton = document.querySelector(".checkout-button");
   const closeCart = document.getElementById("close-cart");
+  const cartItemList = document.querySelectorAll(".cart-item-details");
+
+  cartItemList.forEach((item) => {
+    const qtyWrapper = item.querySelector(".add-to-cart-qty-wrapper");
+    const qtyDisplay = qtyWrapper.querySelector(".quantity-input");
+    const minus = qtyWrapper.querySelector(".qty-btn.minus");
+    const plus = qtyWrapper.querySelector(".qty-btn.plus");
+
+    const maxQty = parseInt(qtyWrapper.dataset.max) || 9999;
+
+    // Set initial value
+    let currentQty = parseInt(qtyDisplay.textContent) || 1;
+
+    if (currentQty <= 1) {
+      minus.classList.add("disable");
+    }
+
+    if (currentQty >= maxQty) {
+      plus.classList.add("disable");
+    }
+  });
+
+  if (!checkbox) return;
 
   if (closeCart) {
     closeCart.addEventListener("click", (e) => {
@@ -159,25 +249,13 @@ document.addEventListener("cartDrawerLoaded", () => {
     });
   }
 
-  if (!checkbox) return;
-
   // Only bind once
   if (!checkbox.dataset.bound) {
     checkbox.addEventListener("change", (e) => {
-      // checkoutButton.classList.toggle("disable", !e.target.checked);
       disableCheckoutBtn(!e.target.checked);
     });
     checkbox.dataset.bound = "true";
   }
-
-  // if (!checkoutButton.dataset.bound) {
-  //   checkoutButton.addEventListener("click", (e) => {
-  //     if (!checkbox.checked) {
-  //       e.preventDefault();
-  //     }
-  //   });
-  //   checkoutButton.dataset.bound = "true";
-  // }
 });
 
 // Initial load bindings
