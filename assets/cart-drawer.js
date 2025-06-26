@@ -27,12 +27,44 @@ const toggleCartLoading = (isLoading) => {
   contentWrapper.style.display = isLoading ? "none" : "flex";
 };
 
-const deleteItemLoader = (isLoading) => {
-  const deleteLoader = document.getElementById("cart-item-delete-overlay");
-  const loader = document.getElementById("cart-loader");
+//disable checkout button
+const disableCheckoutBtn = (disable) => {
+  const checkoutButton = document.getElementById("proceed-to-checkout");
 
+  if (!checkoutButton) return;
+
+  checkoutButton.classList.toggle("disable", disable);
+  checkoutButton.addEventListener("click", (e) => {
+    if (disable) {
+      e.preventDefault();
+    }
+  });
+};
+
+// Disable all CTA buttons
+const ShouldDisableAllCta = (isLoading) => {
+  const itemRemoveBtn = document.querySelectorAll("#remove-cart-item");
+  itemRemoveBtn.forEach((item) => {
+    item.classList.toggle("disabled", isLoading);
+  });
+};
+
+// Loader of each item in a cart
+const itemLoader = (index, isLoading) => {
+  const cartItem = document.querySelector(
+    `.cart-item-details[data-line="${index}"]`,
+  );
+
+  if (!cartItem) return;
+
+  const loader = cartItem.querySelector("#item-individual-loader");
+
+  if (!loader) return;
+
+  cartItem.style.opacity = isLoading ? "0.3" : "1";
+  ShouldDisableAllCta(isLoading);
+  disableCheckoutBtn(isLoading);
   loader.classList.toggle("active", isLoading);
-  deleteLoader.classList.toggle("active", isLoading);
 };
 
 // Fetch updated cart section and re-render
@@ -45,16 +77,27 @@ const fetchAndRenderCartDrawer = () => {
     .catch((err) => console.error("Failed to update cart drawer:", err));
 };
 
-// === GLOBAL EVENT BINDINGS ===
-
 // Remove cart item via event delegation
 document.addEventListener("click", (e) => {
   const removeButton = e.target.closest(".remove-cart-item");
-  if (!removeButton) return;
+  if (!removeButton || removeButton.classList.contains("disabled")) {
+    return;
+  }
 
   const itemIndex = removeButton.getAttribute("data-line");
   if (!itemIndex) return;
-  deleteItemLoader(true);
+
+  // Capture "before" positions of all items in a cart
+  const cartItemListBefore = document.querySelectorAll(".cart-item-details");
+  const positions = new Map();
+
+  cartItemListBefore.forEach((item) => {
+    const key = item.dataset.key;
+    const rect = item.getBoundingClientRect();
+    positions.set(key, rect);
+  });
+
+  itemLoader(itemIndex, true);
   fetch("/cart/change.js", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -64,20 +107,47 @@ document.addEventListener("click", (e) => {
     .then(() => {
       fetchAndRenderCartDrawer().finally(() => {
         window.updateCartCount();
-        deleteItemLoader(false);
+        itemLoader(itemIndex, false);
+
+        // Animate items from old position to new
+        requestAnimationFrame(() => {
+          const cartItemList = document.querySelectorAll(".cart-item-details");
+
+          cartItemList.forEach((item) => {
+            const key = item.dataset.key;
+            const oldPos = positions.get(key);
+            const newPos = item.getBoundingClientRect();
+
+            if (oldPos) {
+              const dy = oldPos.top - newPos.top;
+              item.style.transform = `translateY(${dy}px)`;
+              item.offsetHeight; // force reflow
+              item.style.transition = "transform 0.3s ease";
+              item.style.transform = "translateY(0)";
+            }
+          });
+
+          // Clean up after animation
+          setTimeout(() => {
+            document.querySelectorAll(".cart-item-details").forEach((item) => {
+              item.style.transition = "";
+              item.style.transform = "";
+            });
+          }, 300);
+        });
       });
     })
     .catch((err) => {
       alert("Error, view console for more information");
       console.log(err);
-      deleteItemLoader(false);
+      itemLoader(itemIndex, false);
     });
 });
 
 // Handle checkbox logic when cart drawer is loaded
 document.addEventListener("cartDrawerLoaded", () => {
   const checkbox = document.getElementById("agreement-checkbox");
-  const checkoutButton = document.querySelector(".checkout-button");
+  // const checkoutButton = document.querySelector(".checkout-button");
   const closeCart = document.getElementById("close-cart");
 
   if (closeCart) {
@@ -89,24 +159,25 @@ document.addEventListener("cartDrawerLoaded", () => {
     });
   }
 
-  if (!checkbox || !checkoutButton) return;
+  if (!checkbox) return;
 
   // Only bind once
   if (!checkbox.dataset.bound) {
     checkbox.addEventListener("change", (e) => {
-      checkoutButton.classList.toggle("disable", !e.target.checked);
+      // checkoutButton.classList.toggle("disable", !e.target.checked);
+      disableCheckoutBtn(!e.target.checked);
     });
     checkbox.dataset.bound = "true";
   }
 
-  if (!checkoutButton.dataset.bound) {
-    checkoutButton.addEventListener("click", (e) => {
-      if (!checkbox.checked) {
-        e.preventDefault();
-      }
-    });
-    checkoutButton.dataset.bound = "true";
-  }
+  // if (!checkoutButton.dataset.bound) {
+  //   checkoutButton.addEventListener("click", (e) => {
+  //     if (!checkbox.checked) {
+  //       e.preventDefault();
+  //     }
+  //   });
+  //   checkoutButton.dataset.bound = "true";
+  // }
 });
 
 // Initial load bindings

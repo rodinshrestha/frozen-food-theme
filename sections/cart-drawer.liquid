@@ -8,11 +8,13 @@
   </div>
   <div class="loader hidden" id="cart-loader"></div>
   <div class="cart-content-wrapper" id="cart-content-wrapper">
-    <div class="delete-overlay hidden" id="cart-item-delete-overlay"></div>
     {% if cart.item_count > 0 %}
       <div class="cart-items-wrapper">
         {% for item in cart.items %}
-          <div class="cart-item-details">
+          <div class="cart-item-details" data-key="{{ item.key }}" data-line="{{ forloop.index }}">
+            <div class="item-loader hidden" id="item-individual-loader">
+              <div class="loader"></div>
+            </div>
             <img
               src="{{ item.product.images[0] |  img_url: '150x'}}"
               width="150"
@@ -31,7 +33,7 @@
               class="remove-cart-item"
               data-line="{{ forloop.index }}"
             >
-              <i class="fa-solid fa-xmark"></i>
+              <i class="fa-solid fa-xmark remove-cart-icon"></i>
             </button>
           </div>
         {% endfor %}
