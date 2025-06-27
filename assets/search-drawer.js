@@ -44,11 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
       let top = 0;
       window.whenDrawerOpen(false);
       const promotionalBanner = document.getElementById("promotional-banner");
-      if (promotionalBanner) {
+      const header = document.getElementById("header");
+
+      const isStickyInHeader = header.classList.contains("sticky");
+
+      if (promotionalBanner && !isStickyInHeader) {
         top += promotionalBanner.offsetHeight;
       }
 
-      const header = document.getElementById("header");
       if (header) {
         top += header.offsetHeight;
       }

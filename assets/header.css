@@ -1,10 +1,13 @@
 .header-wrapper {
   height: 55px;
-  position: fixed;
-  top: 89px;
   width: 100vw;
   background-color: #fff;
   z-index: 25;
+}
+.header-wrapper.sticky {
+  top: 0;
+  position: fixed;
+  box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
 }
 .header-wrapper .menu-wrapper {
   display: flex;
@@ -43,28 +46,31 @@
   color: unset;
   text-decoration: none;
 }
-.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper:hover .sub-menu-wrapper {
-  display: flex;
-}
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper {
+  overflow: hidden;
   list-style: none;
   position: absolute;
   left: 0;
   width: 200px;
   padding-inline-start: 10px;
   flex-direction: column;
-  gap: 15px;
-  padding: 20px 15px 10px 15px;
   background-color: #fff;
   color: #000;
-  display: none;
+  display: flex;
+  height: 0;
+  transition: height 0.3s ease;
+  visibility: hidden;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list {
   cursor: pointer;
   transition: all 0.2s ease-in;
+  padding: 10px;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:hover {
   color: #7f8c8d;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:first-child {
+  padding-top: 20px;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper {
   display: flex;

@@ -2,7 +2,6 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  position: fixed;
   width: 100vw;
   gap: 10px;
 }
