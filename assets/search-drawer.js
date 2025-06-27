@@ -9,6 +9,13 @@ async function renderProductCard(handle) {
     });
 }
 
+// Function to trigger modal initialization for newly added elements
+function initializeModalsForSearchResults() {
+  // Trigger a custom event that the add-to-cart-modal.js can listen for
+  const event = new CustomEvent("newProductCardsAdded");
+  document.dispatchEvent(event);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const searchDrawer = document.getElementById("search-drawer");
   const searchDrawerIcon = document.getElementById("search-drawer-icon");
@@ -22,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     searchDrawerIcon.src = searchIconUrl;
 
     searchDrawer.style.height = 0;
+
+    // Clear search results and remove dynamically added modals
+    searchResults.innerHTML = "";
+    clearDynamicModals();
   };
 
   const toggleLoading = (isLoading) => {
@@ -110,6 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
               divElement.classList.add("col-3");
               divElement.appendChild(card.firstElementChild);
               searchResults.appendChild(divElement);
+
+              // Initialize modal functionality for the newly added product card
+              initializeModalsForSearchResults();
             });
           });
           toggleLoading(false);
@@ -122,4 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 300); // debounce delay in ms
   });
+
+  // Function to clear dynamically added modals
+  const clearDynamicModals = () => {
+    // Remove only modals that were added during this search session
+    document.querySelectorAll(".add-to-cart-modal-wrapper").forEach((modal) => {
+      if (modal.dataset.searchDrawerModal) {
+        modal.remove();
+      }
+    });
+  };
 });
