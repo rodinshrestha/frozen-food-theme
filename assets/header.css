@@ -23,7 +23,7 @@
   display: flex;
   list-style: none;
   gap: 15px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper a {
   color: unset;
@@ -68,19 +68,26 @@
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  align-items: center;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper img {
+  cursor: pointer;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper a {
   color: unset;
-}
-.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .fa-solid {
-  cursor: pointer;
-}
-.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .add-to-cart-icon {
   display: flex;
   align-items: center;
 }
-.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .add-to-cart-icon .cart-count-number {
-  margin-left: 10px;
-  font-size: 14px;
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .add-to-cart-icon-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header-wrapper .menu-wrapper .menu-right-wrapper .menu-icon-wrapper .add-to-cart-icon-group .cart-count-number {
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }

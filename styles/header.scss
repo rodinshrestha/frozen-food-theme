@@ -21,7 +21,7 @@
         display: flex;
         list-style: none;
         gap: 15px;
-        font-weight: 500;
+        font-weight: 400;
         a {
           color: unset;
           text-decoration: none;
@@ -71,21 +71,29 @@
 
       .menu-icon-wrapper {
         display: flex;
-        gap: 15px;
+        gap: 20px;
+        align-items: center;
 
-        a {
-          color: unset;
-        }
-        .fa-solid {
+        img {
           cursor: pointer;
         }
 
-        .add-to-cart-icon {
+        a {
+          color: unset;
           display: flex;
           align-items: center;
+        }
+
+        .add-to-cart-icon-group {
+          display: flex;
+          align-items: center;
+          position: relative;
           .cart-count-number {
-            margin-left: 10px;
-            font-size: 14px;
+            font-size: 12px;
+            font-weight: 500;
+            position: absolute;
+            top: -10px;
+            right: -10px;
           }
         }
       }

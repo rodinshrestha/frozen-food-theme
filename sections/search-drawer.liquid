@@ -1,12 +1,23 @@
-<div class="search-drawer-wrapper hidden" id="search-drawer">
-  <button id="close-search-drawer" aria-label="Close search drawer" class="search-drawer-close-icon">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-
+<div class="search-drawer-wrapper" id="search-drawer">
   <div class="search-drawer-content">
-    <div class="search-drawer-input-field">
-      <i class="fa-solid fa-xmark"></i>
-      <input type="text">
+    <div class="search-drawer-input-field-wrapper">
+      <div class="search-drawer-input-field-group">
+        <img src="{{ 'search-icon.png' | asset_url }}" alt="Search Icon" height="32" width="32">
+        <input
+          type="text"
+          class="search-field-input"
+          id="search-field-input"
+          placeholder="Search your products.."
+          autocomplete="off"
+        >
+      </div>
+    </div>
+    <div class="search-product-result-list">
+      <div class="container">
+        <div class="row" id="search-product-list">
+          <div class="col-3"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

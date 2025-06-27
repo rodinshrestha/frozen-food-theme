@@ -8,6 +8,7 @@
 @import "./product-quantity.css";
 @import "./wishlist-drawer.css";
 @import "./search-drawer.css";
+@import "./product-card.css";
 
 body {
   margin: 0;

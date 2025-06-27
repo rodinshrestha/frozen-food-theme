@@ -1,15 +1,15 @@
 const mainOverlay = document.querySelector(".main-overlay");
 const body = document.getElementById("body");
 
-window.whenDrawerOpen = () => {
-  if (mainOverlay) {
+window.whenDrawerOpen = (showOverlay = true) => {
+  if (mainOverlay & showOverlay) {
     mainOverlay.classList.remove("disable-overlay");
   }
   body.style.overflow = "hidden";
 };
 
-window.whenDrawerClose = () => {
-  if (mainOverlay) {
+window.whenDrawerClose = (showOverlay = true) => {
+  if (mainOverlay & showOverlay) {
     mainOverlay.classList.add("disable-overlay");
   }
   body.style.overflow = "scroll";

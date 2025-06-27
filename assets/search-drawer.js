@@ -1,23 +1,113 @@
+async function renderProductCard(handle) {
+  return fetch(`/products/${handle}?view=card`)
+    .then((res) => res.text())
+    .then((html) => {
+      console.log(html);
+      const container = document.createElement("div");
+      container.innerHTML = html;
+      return container;
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const searchDrawer = document.getElementById("search-drawer");
   const searchDrawerIcon = document.getElementById("search-drawer-icon");
+  const searchInputField = document.getElementById("search-field-input");
+  const searchResults = document.getElementById("search-product-list");
+
+  const whenSearchDrawerClose = () => {
+    searchDrawer.classList.remove("active");
+    window.whenDrawerClose(false);
+    searchDrawerIcon.src = searchIconUrl;
+    searchResults.innerHTML = "";
+    searchInputField.value = "";
+    searchDrawer.style.height = 0;
+  };
+
+  let debounceTimeout;
 
   if (!searchDrawer || !searchDrawerIcon) return;
   window.portal(searchDrawer);
 
+  const searchIconUrl = searchDrawerIcon.dataset.searchIcon; // Add this to HTML too
+  const closeIconUrl = searchDrawerIcon.dataset.closeIcon;
+
+  //Open the search drawer
   searchDrawerIcon.addEventListener("click", () => {
-    window.whenDrawerOpen();
-    searchDrawer.classList.add("active");
+    const isActive = searchDrawer.classList.contains("active");
+
+    if (!isActive) {
+      let top = 0;
+      window.whenDrawerOpen(false);
+      const promotionalBanner = document.getElementById("promotional-banner");
+      if (promotionalBanner) {
+        top += promotionalBanner.offsetHeight;
+      }
+
+      const header = document.getElementById("header");
+      if (header) {
+        top += header.offsetHeight;
+      }
+
+      searchDrawer.style.top = `${top}px`;
+      searchDrawer.style.height = `calc(100% - ${top}px)`;
+
+      searchDrawerIcon.src = closeIconUrl;
+      searchDrawerIcon.width = "26";
+      searchDrawerIcon.height = "26";
+      searchInputField.focus();
+      searchDrawer.classList.add("active");
+    } else {
+      //close
+      whenSearchDrawerClose();
+    }
   });
 
-  document.addEventListener("click", (e) => {
-    if (
-      searchDrawer.classList.contains("active") &&
-      !searchDrawer.contains(e.target) &&
-      !e.target.closest("#search-drawer-icon")
-    ) {
-      searchDrawer.classList.remove("active");
-      window.whenDrawerClose();
+  // Close drawer on Esc key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && searchDrawer.classList.contains("active")) {
+      whenSearchDrawerClose();
     }
+  });
+
+  searchInputField.addEventListener("input", () => {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      const query = searchInputField.value.trim();
+
+      if (query.length < 2) {
+        searchInputField.innerHTML = "";
+        return;
+      }
+
+      searchResults.innerHTML = "";
+
+      fetch(
+        `/search/suggest.json?q=${encodeURIComponent(query)}&resources[type]=product`,
+      )
+        .then(async (res) => await window.handleFetchResponse(res))
+        .then((data) => {
+          const products = data.resources.results.products;
+
+          if (products.length === 0) {
+            searchResults.innerHTML = "<p>No results found.</p>";
+            return;
+          }
+
+          products.forEach((product) => {
+            renderProductCard(product.handle).then((card) => {
+              const divElement = document.createElement("div");
+              divElement.classList.add("col-3");
+              divElement.appendChild(card.firstElementChild);
+              searchResults.appendChild(divElement);
+            });
+          });
+        })
+        .catch((err) => {
+          console.error("Search failed:", err);
+          window.showToast(err, "error");
+          searchResults.innerHTML = "<p>Error loading search results.</p>";
+        });
+    }, 300); // debounce delay in ms
   });
 });

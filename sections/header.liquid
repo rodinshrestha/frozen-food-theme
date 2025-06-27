@@ -1,4 +1,4 @@
-<section class="header-wrapper">
+<section class="header-wrapper" id="header">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -43,18 +43,48 @@
             <div class="menu-icon-wrapper">
               <!-- Account -->
               <a href="{{ routes.account_login_url }}">
-                <i class="fa-solid fa-user"></i>
+                <img
+                  src="{{ 'user.png' | asset_url }}"
+                  height="22"
+                  width="22"
+                  id="user-icon"
+                  aria-label="Account login"
+                >
               </a>
               <!-- Search -->
-              <i class="fa-solid fa-search" id="search-drawer-icon" aria-label="Open search drawer"></i>
+              <img
+                src="{{ 'search-icon.png' | asset_url }}"
+                data-close-icon="{{ 'close.png' | asset_url }}"
+                data-search-icon="{{ 'search-icon.png' | asset_url }}"
+                alt="Search Icon"
+                id="search-drawer-icon"
+                height="24"
+                width="24"
+              >
               <!-- wishlist -->
-              <i class="fa-solid fa-heart" id="wishlist-icon" aria-label="Open Wishlist"></i>
+              {% comment %}
+                <img
+                  src="{{ 'wishlist.png' | asset_url }}"
+                  alt="Wishlist Icon"
+                  id="wishlist-icon"
+                  height="24"
+                  width="24"
+                >
+              {% endcomment %}
               <!-- Cart -->
-              <i class="fa-solid fa-cart-shopping add-to-cart-icon" id="cart-icon" aria-label="Open Cart">
+              <div class="add-to-cart-icon-group">
+                <img
+                  src="{{ 'shopping-bag.png' | asset_url }}"
+                  height="22"
+                  width="22"
+                  id="cart-icon"
+                  aria-label="Open Cart"
+                  class="add-to-cart-icon"
+                >
                 {% if cart.item_count > 0 %}
                   <span class="cart-count-number" id="cart-item-count">{{ cart.item_count }}</span>
                 {% endif %}
-              </i>
+              </div>
             </div>
           </div>
         </div>
