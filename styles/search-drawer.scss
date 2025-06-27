@@ -62,6 +62,13 @@
     margin-top: 40px;
     height: 100%;
     overflow: auto;
+
+    .search-list-loader {
+      top: 30%;
+      &.active {
+        display: block;
+      }
+    }
   }
 }
 

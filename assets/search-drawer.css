@@ -58,6 +58,12 @@
   height: 100%;
   overflow: auto;
 }
+.search-drawer-wrapper .search-product-result-list .search-list-loader {
+  top: 30%;
+}
+.search-drawer-wrapper .search-product-result-list .search-list-loader.active {
+  display: block;
+}
 
 @keyframes glassyZoomFadeIn {
   0% {

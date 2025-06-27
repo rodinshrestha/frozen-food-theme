@@ -14,14 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchDrawerIcon = document.getElementById("search-drawer-icon");
   const searchInputField = document.getElementById("search-field-input");
   const searchResults = document.getElementById("search-product-list");
+  const searchLoader = document.getElementById("search-loader");
 
   const whenSearchDrawerClose = () => {
     searchDrawer.classList.remove("active");
     window.whenDrawerClose(false);
     searchDrawerIcon.src = searchIconUrl;
-    searchResults.innerHTML = "";
-    searchInputField.value = "";
+
     searchDrawer.style.height = 0;
+  };
+
+  const toggleLoading = (isLoading) => {
+    searchLoader.classList.toggle("active", isLoading);
   };
 
   let debounceTimeout;
@@ -55,6 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
       searchDrawerIcon.src = closeIconUrl;
       searchDrawerIcon.width = "26";
       searchDrawerIcon.height = "26";
+      searchResults.innerHTML = "";
+      searchInputField.value = "";
       searchInputField.focus();
       searchDrawer.classList.add("active");
     } else {
@@ -71,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   searchInputField.addEventListener("input", () => {
+    toggleLoading(true);
     clearTimeout(debounceTimeout);
     debounceTimeout = setTimeout(() => {
       const query = searchInputField.value.trim();
@@ -102,11 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
               searchResults.appendChild(divElement);
             });
           });
+          toggleLoading(false);
         })
         .catch((err) => {
           console.error("Search failed:", err);
           window.showToast(err, "error");
           searchResults.innerHTML = "<p>Error loading search results.</p>";
+          toggleLoading(false);
         });
     }, 300); // debounce delay in ms
   });
