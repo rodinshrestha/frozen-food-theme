@@ -118,7 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
           button.innerHTML = "Add to cart";
           modal.style.display = "none";
           window.whenDrawerClose();
-          window.showToast("Item added in your cart");
+          const productTitle = modal.querySelector("#add-cart-product-title");
+          window.showToast(`${productTitle.innerHTML} added in your cart`);
         })
         .catch((err) => {
           window.showToast(err, "error");

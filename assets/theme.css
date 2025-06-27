@@ -7,6 +7,8 @@
 @import "./add-to-cart-modal.css";
 @import "./product-quantity.css";
 @import "./wishlist-drawer.css";
+@import "./search-drawer.css";
+
 body {
   margin: 0;
   padding: 0;

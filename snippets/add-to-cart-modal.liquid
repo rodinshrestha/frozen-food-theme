@@ -16,7 +16,7 @@
       >
 
       <div class="add-to-cart-product-information">
-        <h3 class="add-to-cart-product-title">{{ product.title }}</h3>
+        <h3 class="add-to-cart-product-title" id="add-cart-product-title">{{ product.title }}</h3>
         <h5 class="add-to-cart-product-price">{{ product.price | money }}</h5>
         <p id="add-to-cart-product-description">{{ product.description | strip_html | escape }}</p>
 
