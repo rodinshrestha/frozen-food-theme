@@ -1,9 +1,10 @@
 <section class="featured-product-wrapper">
   <div class="container">
-    <div class="row">
+    {% assign product_count = section.settings.collection.products.size %}
+    <div class="row product-slider-wrapper" data-product-count="{{ product_count }}">
       {% if section.settings.collection and section.settings.collection.products.size > 0 %}
         {% for product in section.settings.collection.products limit: section.settings.limit %}
-          <div class="col-3">
+          <div class="col-3 product-slide">
             {% render 'product-card', product: product %}
           </div>
         {% endfor %}
@@ -28,9 +29,9 @@
       "id": "limit",
       "label": "Number of products to show",
       "min": 1,
-      "max": 8,
+      "max": 12,
       "step": 1,
-      "default": 4
+      "default": 8
     }
   ],
   "presets": [

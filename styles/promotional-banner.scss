@@ -4,5 +4,7 @@
   flex-direction: column;
   // position: fixed;
   width: 100vw;
+  overflow: hidden;
   gap: 10px;
+  box-sizing: border-box;
 }

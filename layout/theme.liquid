@@ -16,10 +16,15 @@
       href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
       crossorigin="anonymous"
     >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    >
   </head>
 
   <body id="body">
     <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <div class="main-overlay disable-overlay"></div>
     {% section 'promotional-banner' %}
@@ -42,5 +47,6 @@
     <script src="{{ 'add-to-cart-modal.js' | asset_url }}" defer></script>
     <script src="{{ 'utils.js' | asset_url }}" defer></script>
     <script src="{{ 'header.js' | asset_url }}" defer></script>
+    <script src="{{ "featured-products.js" | asset_url }}" defer></script>
   </body>
 </html>

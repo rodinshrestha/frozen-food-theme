@@ -40,7 +40,6 @@ body {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  height: 100%;
 }
 
 /* Row - to clear floats or use flexbox */
@@ -49,7 +48,7 @@ body {
   flex-wrap: wrap;
   margin-left: -15px; /* negative padding to offset col padding */
   margin-right: -15px;
-  height: 100%;
+  row-gap: 10px;
 }
 
 /* Column */
@@ -59,7 +58,7 @@ body {
   box-sizing: border-box;
   flex: 1; /* will grow and fill */
   min-width: 0; /* prevent overflow */
-  height: 100%;
+  /* height: 100%; */
 }
 
 .col-3 {
@@ -70,12 +69,27 @@ body {
   box-sizing: border-box;
 }
 
+@media (max-width: 1024px) {
+  .col-3 {
+    width: 50%;
+    flex: 50%;
+  }
+}
+
 .col-4 {
   flex: 0 0 33.3333%;
   max-width: 33.3333%;
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .col-4 {
+    width: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 .link-button {

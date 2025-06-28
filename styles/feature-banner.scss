@@ -5,6 +5,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media (max-width: 1024px) {
+    height: 50vh;
+  }
+
   .col {
     display: flex;
     justify-content: flex-end;

@@ -1,8 +1,23 @@
 .slogan-wrapper {
-  height: 643px;
   padding: 50px 0;
+  box-sizing: border-box;
+  display: flex;
 }
-.slogan-wrapper .solgan-content-wrapper {
+@media (max-width: 1024px) {
+  .slogan-wrapper {
+    padding-bottom: 0;
+  }
+}
+.slogan-wrapper .slogan-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+.slogan-wrapper .slogan-content-wrapper .slogan-image {
+  width: 100% !important;
+}
+.slogan-wrapper .slogan-content-wrapper .solgan-content {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -10,15 +25,15 @@
   align-items: center;
   gap: 10px;
 }
-.slogan-wrapper .solgan-content-wrapper .slogan-title {
+.slogan-wrapper .slogan-content-wrapper .solgan-content .slogan-title {
   font-size: 22px;
   font-weight: 500;
 }
-.slogan-wrapper .solgan-content-wrapper .slogan-divider {
+.slogan-wrapper .slogan-content-wrapper .solgan-content .slogan-divider {
   width: 80px;
   height: 2px;
   background-color: #b8c6c6;
 }
-.slogan-wrapper .solgan-content-wrapper .slogan-information {
+.slogan-wrapper .slogan-content-wrapper .solgan-content .slogan-information {
   font-size: 16px;
 }

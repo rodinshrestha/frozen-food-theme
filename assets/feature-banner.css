@@ -5,6 +5,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (max-width: 1024px) {
+  .feature-banner-wrapper {
+    height: 50vh;
+  }
+}
 .feature-banner-wrapper .col {
   display: flex;
   justify-content: flex-end;
