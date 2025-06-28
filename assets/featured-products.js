@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Featured products script loaded");
-
   const wrapper = document.querySelector(".product-slider-wrapper");
   if (!wrapper) {
     console.log("No product slider wrapper found");
@@ -8,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const productCount = parseInt(wrapper.dataset.productCount, 10);
-  console.log("Product count:", productCount);
 
   // Check if we have enough products to make a slider worthwhile
   const shouldBeSlider = productCount > 4;
@@ -20,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(initSwiper, 100);
         return;
       }
-
-      console.log("Initializing Swiper...");
 
       // Add Swiper slide classes
       wrapper.classList.add("swiper-wrapper");
@@ -49,22 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
       swiperContainer.appendChild(nextBtn);
       swiperContainer.appendChild(prevBtn);
 
-      console.log("Navigation buttons created:", {
-        next: nextBtn,
-        prev: prevBtn,
-      });
-
       // Determine if we should use loop based on slide count
       const shouldLoop = slides.length > 4;
-      console.log(
-        "Should use loop:",
-        shouldLoop,
-        "Slide count:",
-        slides.length,
-      );
 
       // Initialize Swiper
-      const swiper = new Swiper(".featured-products-swiper", {
+      new Swiper(".featured-products-swiper", {
         slidesPerView: 4,
         spaceBetween: 20,
         loop: true,
@@ -94,76 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         },
       });
-
-      // Add click event listeners as backup
-      nextBtn.addEventListener("click", function () {
-        console.log("Next button clicked");
-        console.log("Before slideNext - Active index:", swiper.activeIndex);
-        console.log("Before slideNext - Real index:", swiper.realIndex);
-        console.log("Before slideNext - Navigation state:", {
-          isBeginning: swiper.isBeginning,
-          isEnd: swiper.isEnd,
-          allowSlideNext: swiper.allowSlideNext,
-          allowSlidePrev: swiper.allowSlidePrev,
-        });
-
-        // Force enable next navigation and reset end state
-        if (!swiper.allowSlideNext || swiper.isEnd) {
-          console.log(
-            "Next navigation was disabled or at end, forcing enable...",
-          );
-          swiper.allowSlideNext = true;
-          swiper.isEnd = false;
-        }
-
-        // Try alternative method if slideNext doesn't work
-        try {
-          swiper.slideNext();
-          console.log("slideNext() called successfully");
-        } catch (error) {
-          console.error("Error with slideNext:", error);
-          // Try alternative approach
-          console.log("Trying alternative slide method...");
-          swiper.slideTo(swiper.activeIndex + 1);
-        }
-
-        console.log("After slideNext - Active index:", swiper.activeIndex);
-        console.log("After slideNext - Real index:", swiper.realIndex);
-        console.log("After slideNext - Navigation state:", {
-          isBeginning: swiper.isBeginning,
-          isEnd: swiper.isEnd,
-          allowSlideNext: swiper.allowSlideNext,
-          allowSlidePrev: swiper.allowSlidePrev,
-        });
-      });
-
-      prevBtn.addEventListener("click", function () {
-        console.log("Prev button clicked");
-        console.log("Before slidePrev - Active index:", swiper.activeIndex);
-        console.log("Before slidePrev - Real index:", swiper.realIndex);
-        swiper.slidePrev();
-        console.log("After slidePrev - Active index:", swiper.activeIndex);
-        console.log("After slidePrev - Real index:", swiper.realIndex);
-      });
-
-      // Monitor navigation state changes and force loop
-      setInterval(() => {
-        const nextBtn = document.querySelector("#featured-products-next");
-        if (nextBtn) {
-          const isDisabled = nextBtn.classList.contains(
-            "swiper-button-disabled",
-          );
-          if (isDisabled) {
-            console.log("Next button is disabled, trying to re-enable...");
-            nextBtn.classList.remove("swiper-button-disabled");
-            // Force reset swiper state
-            swiper.allowSlideNext = true;
-            swiper.isEnd = false;
-          }
-        }
-      }, 1000);
-
-      console.log("Swiper initialized successfully");
     };
 
     initSwiper();
