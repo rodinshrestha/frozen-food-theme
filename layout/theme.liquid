@@ -30,14 +30,16 @@
     <div class="main-overlay disable-overlay"></div>
     {% section 'promotional-banner' %}
     {% section 'header' %}
-    {% section 'cart-drawer' %}
-    {% section 'wishlist-drawer' %}
-    {% section 'search-drawer' %}
+    {% render 'cart-drawer' %}
+    {% render 'wishlist-drawer' %}
+    {% render 'search-drawer' %}
 
     <main id="main" role="main">
-      {% section 'feature-banner' %}
-      {% section 'slogan' %}
-      {% section 'featured-products' %}
+      {% comment %}
+        {% section 'feature-banner' %}
+        {% section 'slogan' %}
+        {% section 'featured-products' %}
+      {% endcomment %}
       {{ content_for_layout }}
     </main>
     <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
