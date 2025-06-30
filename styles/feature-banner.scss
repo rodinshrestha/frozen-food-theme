@@ -1,39 +1,50 @@
 .feature-banner-wrapper {
-  height: 90vh;
-  background-attachment: fixed;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-attachment: scroll;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 
-  @media (max-width: 1200px) {
-    height: 80vh;
-  }
-
-  @media (max-width: 1024px) {
+  &.feature-banner-large {
     height: 70vh;
-    background-attachment: scroll; /* Better performance on mobile */
+    padding: 80px 0;
   }
 
-  @media (max-width: 768px) {
-    height: 60vh;
-  }
-
-  @media (max-width: 480px) {
+  &.feature-banner-medium {
     height: 50vh;
+    padding: 60px 0;
+  }
+
+  &.feature-banner-small {
+    height: 30vh;
+    padding: 40px 0;
+
+    .feature-banner-title {
+      font-size: 36px !important;
+      font-weight: 600;
+      color: #000;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .feature-subtitle {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .link-button {
+      padding: 15px !important;
+    }
   }
 
   .container {
     height: 100%;
     padding: 0 15px;
-
-    @media (max-width: 768px) {
-      padding: 0 10px;
-    }
-
-    @media (max-width: 480px) {
-      padding: 0 5px;
-    }
   }
 
   .row {
@@ -41,115 +52,70 @@
   }
 
   .col {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
     height: 100%;
-
-    @media (max-width: 768px) {
-      justify-content: center;
-      align-items: center;
-    }
+    display: flex;
   }
 
-  .feature-banner-information-wrapper {
-    color: #000;
-    text-align: right;
-    margin-bottom: 80px;
-    margin-right: 0;
-    width: 500px;
+  .feature-banner-content-inner-wrapper {
+    width: 100vw;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
-
-    @media (max-width: 1200px) {
-      width: 450px;
-      margin-bottom: 70px;
-    }
-
-    @media (max-width: 1024px) {
-      width: 400px;
-      margin-bottom: 60px;
-      gap: 12px;
-    }
-
-    @media (max-width: 768px) {
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: 0;
-      margin-right: 0;
-      gap: 20px;
-      text-align: center;
+    text-align: center;
+    &.vertical-content-middle {
       align-items: center;
     }
-
-    @media (max-width: 480px) {
-      max-width: 100%;
-      margin-bottom: 0;
-      gap: 15px;
+    &.vertical-content-top {
+      align-items: top;
+    }
+    &.vertical-content-bottom {
+      align-items: end;
+    }
+    &.horizontal-content-left {
+      justify-content: flex-start;
+    }
+    &.horizontal-content-center {
+      justify-content: center;
+    }
+    &.horizontal-content-right {
+      justify-content: flex-end;
+    }
+    &.text-alignment-left {
+      text-align: left;
+    }
+    &.text-alignment-center {
+      text-align: center;
+    }
+    &.text-alignment-right {
+      text-align: right;
     }
 
-    .feature-banner-title {
-      font-size: 46px;
-      font-weight: 600;
+    .feature-banner-information-wrapper {
       color: #000;
-      line-height: 1.2;
-      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
 
-      @media (max-width: 1200px) {
-        font-size: 40px;
+      &.content-width-small {
+        width: 50%;
+      }
+      &.content-width-medium {
+        width: 80%;
+      }
+      &.content-width-large {
+        width: 100%;
+      }
+      .feature-banner-title {
+        font-size: 46px;
+        font-weight: 600;
+        color: #000;
+        line-height: 1.2;
+        margin: 0;
       }
 
-      @media (max-width: 1024px) {
-        font-size: 36px;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 32px;
-        text-align: center;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 28px;
-      }
-    }
-
-    .feature-subtitle {
-      font-size: 18px;
-      line-height: 1.5;
-      margin: 0;
-
-      @media (max-width: 1200px) {
-        font-size: 17px;
-      }
-
-      @media (max-width: 1024px) {
-        font-size: 16px;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 16px;
-        text-align: center;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 15px;
-      }
-    }
-
-    .link-button {
-      @media (max-width: 768px) {
-        padding: 15px 25px;
-        font-size: 14px;
-        width: auto;
-        min-width: 120px;
-      }
-
-      @media (max-width: 480px) {
-        padding: 12px 20px;
-        font-size: 13px;
-        min-width: 100px;
+      .feature-subtitle {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0;
       }
     }
   }

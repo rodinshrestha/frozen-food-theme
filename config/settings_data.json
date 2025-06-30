@@ -47,8 +47,17 @@
       "feature-banner": {
         "type": "feature-banner",
         "settings": {
-          "feature-banner-title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "feature-banner-subtitle": "It is a long established fact that a reader will be distracted by the readable content"
+          "banner-image": "shopify://shop_images/annie-spratt-fFxUOS69bho-unsplash.jpg",
+          "feature-banner-title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
+          "feature-banner-subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
+          "button-text": "Shop Now",
+          "button-link": "",
+          "title-color": "",
+          "subtitle-color": "",
+          "button-bg-color": "",
+          "button-text-color": "",
+          "background-overlay": "",
+          "overlay-opacity": 0
         }
       },
       "slogan": {
