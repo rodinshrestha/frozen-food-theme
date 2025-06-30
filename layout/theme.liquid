@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-    {{ 'footer.css' | asset_url | stylesheet_tag }}
+    {{ 'footer-backupo.css' | asset_url | stylesheet_tag }}
 
     <link
       rel="stylesheet"
@@ -38,8 +38,12 @@
     <main id="main" role="main">
       {{ content_for_layout }}
     </main>
-    {% section 'testimonials' %}
+    {% section 'customer-testimonials' %}
+
     {% section 'footer' %}
+
+    {% comment %}
+    {% endcomment %}
 
     <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
     <script src="{{ 'wishlist-drawer.js' | asset_url }}" defer></script>

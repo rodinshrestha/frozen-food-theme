@@ -10,8 +10,10 @@
 @import "./search-drawer.css";
 @import "./product-card.css";
 @import "./single-product-show-case.css";
+@import "./customer-testimonials.css";
 @import "./footer.css";
-@import "./testimonials.css";
+/* @import "./footer.css"; */
+/* @import "./testimonials.css"; */
 
 html,
 body {
@@ -87,6 +89,12 @@ main {
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+  max-width: 50%;
 }
 
 @media (max-width: 1024px) {
