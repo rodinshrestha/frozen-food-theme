@@ -9,6 +9,7 @@
 @import "./wishlist-drawer.css";
 @import "./search-drawer.css";
 @import "./product-card.css";
+@import "./single-product-show-case.css";
 
 body {
   margin: 0;

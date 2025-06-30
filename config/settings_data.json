@@ -44,51 +44,11 @@
           "sub_menu": ""
         }
       },
-      "feature-banner": {
-        "type": "feature-banner",
-        "settings": {
-          "banner-image": "shopify://shop_images/annie-spratt-fFxUOS69bho-unsplash.jpg",
-          "feature-banner-title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
-          "feature-banner-subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
-          "button-text": "Shop Now",
-          "button-link": "",
-          "title-color": "",
-          "subtitle-color": "",
-          "button-bg-color": "",
-          "button-text-color": "",
-          "background-overlay": "",
-          "overlay-opacity": 0
-        }
-      },
-      "slogan": {
-        "type": "slogan",
-        "settings": {
-          "slogan-1-title": "Lorem Ipsum",
-          "slogan-1-description": "It is a long established fact that a reader will be distracted by the",
-          "slogan-2-title": "Lorem Ipsum",
-          "slogan-2-description": "It is a long established fact that a reader will be distracted by the",
-          "slogan-3-title": "Lorem Ipsum",
-          "slogan-3-description": "It is a long established fact that a reader will be distracted by the"
-        }
-      },
       "featured-products": {
         "type": "featured-products",
         "settings": {
-          "collection": "frontpage",
-          "limit": 8
+          "collection": "frontpage"
         }
-      },
-      "cart-drawer": {
-        "type": "cart-drawer",
-        "settings": {}
-      },
-      "wishlist-drawer": {
-        "type": "wishlist-drawer",
-        "settings": {}
-      },
-      "search-drawer": {
-        "type": "search-drawer",
-        "settings": {}
       }
     },
     "content_for_index": []

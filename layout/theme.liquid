@@ -30,16 +30,11 @@
     <div class="main-overlay disable-overlay"></div>
     {% section 'promotional-banner' %}
     {% section 'header' %}
-    {% render 'cart-drawer' %}
+    {% section 'cart-drawer' %}
     {% render 'wishlist-drawer' %}
     {% render 'search-drawer' %}
 
     <main id="main" role="main">
-      {% comment %}
-        {% section 'feature-banner' %}
-        {% section 'slogan' %}
-        {% section 'featured-products' %}
-      {% endcomment %}
       {{ content_for_layout }}
     </main>
     <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
@@ -49,5 +44,6 @@
     <script src="{{ 'utils.js' | asset_url }}" defer></script>
     <script src="{{ "featured-products.js" | asset_url }}" defer></script>
     <script src="{{ 'promotional-banner.js' | asset_url }}" defer></script>
+    <script src="{{ 'single-product-show-case.js' | asset_url }}" defer></script>
   </body>
 </html>

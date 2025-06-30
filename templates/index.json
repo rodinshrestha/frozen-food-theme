@@ -1,14 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "featured-banner": {
-      "type": "featured-banner"
-    },
-    "featured-products": {
-      "type": "featured-products"
+      "type": "featured-banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/annie-spratt-fFxUOS69bho-unsplash.jpg",
+        "banner-height": "large",
+        "feature-banner-title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "feature-banner-subtitle": "It is a long established fact that a reader will be distracted by the readable content",
+        "button-text": "Shop Now",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
     },
     "our-slogan": {
-      "type": "our-slogan"
+      "type": "our-slogan",
+      "settings": {
+        "slogan-1-title": "You Choose",
+        "slogan-1-description": "Whether its pantry essentials or healthy prepared meals, we've got you covered!",
+        "slogan-2-title": "We Deliver",
+        "slogan-2-description": "We'll bring fresh ingredients and/or packaged meals, straight to your door.",
+        "slogan-3-title": "You Cook... or Just Eat!",
+        "slogan-3-description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
+      }
+    },
+    "featured_products_pwNGhn": {
+      "type": "featured-products",
+      "name": "Featured products",
+      "settings": {
+        "collection": "frontpage",
+        "product_slider": true
+      }
+    },
+    "single_product_show_case_9phqPX": {
+      "type": "single-product-show-case",
+      "name": "Single Product Showcase",
+      "settings": {
+        "product_to_show": "product-6"
+      }
     }
   },
-  "order": ["featured-banner", "our-slogan", "featured-products"]
+  "order": [
+    "featured-banner",
+    "our-slogan",
+    "featured_products_pwNGhn",
+    "single_product_show_case_9phqPX"
+  ]
 }

@@ -1,0 +1,67 @@
+<div class="product-show-case-wrapper" id="product-show-case">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% assign product = all_products[section.settings.product_to_show] %}
+
+        {% if product %}
+          <div class="show-case-product-content-wrapper">
+            <img
+              src="{{ product.featured_image | img_url: '495x' }}"
+              alt="{{ product.title }}"
+              width="495px"
+              height="495px"
+              class="show-case-product-image"
+            >
+
+            <div class="show-case-product-information">
+              <h3 class="show-case-product-title">{{ product.title }}</h3>
+              <h5 class="show-case-product-title">{{ product.price | money }}</h5>
+              <p class="show-case-product-description">{{ product.description | strip_html | escape }}</p>
+
+              <a href="{{ product.url }}" class="show-case-product-details-link"
+                >View full product details
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+
+              <hr>
+              <div class="show-case-product-cta-wrapper" id="show-case-product-cta">
+                {% render 'product-quantity', product: product, appliedQty: 1 %}
+                <div class="show-case-btn-group ">
+                  <button
+                    class="add-to-cart outline-btn single-product-add-to-cart-btn"
+                    data-variant-id="{{ product.variants.first.id }}"
+                  >
+                    Add to cart
+                  </button>
+                  <a href="/checkout" class="link-button single-product-buy-now-btn">Buy it now </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <p>Please select a product in the section settings.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Single Product Showcase",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_to_show",
+      "label": "Select product to showcase"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Single Product Showcase"
+    }
+  ]
+}
+{% endschema %}
