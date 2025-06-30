@@ -6,10 +6,16 @@
         <div class="js-social-icons">
           <div class="social-icons">
             <a href="{{ section.settings.facebook_url }}" title="Facebook" target="_blank">
-              <img src="{{ 'facebook.png' | asset_url }}" alt="Facebook" class="social-icon-img">
+              <img src="{{ 'facebook.png' | asset_url }}" alt="Facebook" class="social-icon-img" width="24" height="24">
             </a>
             <a href="{{ section.settings.instagram_url }}" title="Instagram" target="_blank">
-              <img src="{{ 'instagram.png' | asset_url }}" alt="Instagram" class="social-icon-img">
+              <img
+                src="{{ 'instagram.png' | asset_url }}"
+                alt="Instagram"
+                class="social-icon-img"
+                width="24"
+                height="24"
+              >
             </a>
           </div>
         </div>
@@ -21,7 +27,9 @@
         <ul class="footer_menu">
           {% if section.settings.footer_menu != blank and linklists[section.settings.footer_menu] %}
             {% for link in linklists[section.settings.footer_menu].links %}
-              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
             {% endfor %}
           {% else %}
             <li><a href="/pages/get-in-touch">Contact</a></li>
@@ -31,7 +39,13 @@
         </ul>
         <p>{{ section.settings.newsletter_text }}</p>
         <div class="newsletter display-first-name--true display-last-name--false">
-          <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
+          <form
+            method="post"
+            action="/contact#contact_form"
+            id="contact_form"
+            accept-charset="UTF-8"
+            class="contact-form"
+          >
             <input type="hidden" name="form_type" value="customer">
             <input type="hidden" name="utf8" value="✓">
             <input type="hidden" name="contact[tags]" value="newsletter">
@@ -45,7 +59,8 @@
         <div class="footer__info">
           <p class="credits">
             {% if section.settings.copyright_year_position == 'before' %}
-              © {{ 'now' | date: '%Y' }} {{ section.settings.copyright_text }}
+              © {{ 'now' | date: '%Y' }}
+              {{ section.settings.copyright_text }}
             {% else %}
               {{ section.settings.copyright_text }} © {{ 'now' | date: '%Y' }}
             {% endif %}
@@ -53,10 +68,10 @@
         </div>
         <div class="payment_methods">
           {% if section.settings.show_visa %}
-            <img src="{{ 'visa.png' | asset_url }}" alt="Visa" class="payment-icon">
+            <img src="{{ 'visa.png' | asset_url }}" alt="Visa" class="payment-icon" width="48" height="48">
           {% endif %}
           {% if section.settings.show_paypal %}
-            <img src="{{ 'paypal.png' | asset_url }}" alt="PayPal" class="payment-icon">
+            <img src="{{ 'paypal.png' | asset_url }}" alt="PayPal" class="payment-icon" width="48" height="48">
           {% endif %}
           <!-- Add more as needed -->
         </div>
