@@ -81,7 +81,8 @@
     &.text-alignment-left {
       text-align: left;
 
-      .link-button {
+      .link-button,
+      .feature-subtitle {
         display: flex;
         align-self: baseline;
       }
@@ -91,7 +92,8 @@
     }
     &.text-alignment-right {
       text-align: right;
-      .link-button {
+      .link-button,
+      .feature-subtitle {
         display: flex;
         align-self: end;
       }

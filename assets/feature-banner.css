@@ -73,7 +73,8 @@
 .feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-left {
   text-align: left;
 }
-.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-left .link-button {
+.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-left .link-button,
+.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-left .feature-subtitle {
   display: flex;
   align-self: baseline;
 }
@@ -83,7 +84,8 @@
 .feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-right {
   text-align: right;
 }
-.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-right .link-button {
+.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-right .link-button,
+.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-right .feature-subtitle {
   display: flex;
   align-self: end;
 }
