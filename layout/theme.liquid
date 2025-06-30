@@ -9,6 +9,8 @@
     >
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'footer.css' | asset_url | stylesheet_tag }}
+
 
     <link
       rel="stylesheet"
@@ -27,6 +29,9 @@
       {% section 'featured-products' %}
       {{ content_for_layout }}
     </main>
+    {% section 'testimonials' %}
+    {% section 'footer' %}
+
 
     <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
     <script src="{{ 'add-to-cart-modal.js' | asset_url }}" defer></script>

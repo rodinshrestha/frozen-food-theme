@@ -1,0 +1,138 @@
+<div class="footer">
+  <section class="section">
+    <div class="container">
+      <div class="three-sevenths columns medium-down--one-whole">
+        <h6 class="footer__title">Follow</h6>
+        <div class="js-social-icons">
+          <div class="social-icons">
+            <a href="{{ section.settings.facebook_url }}" title="Facebook" target="_blank">
+              <img src="{{ 'facebook.png' | asset_url }}" alt="Facebook" class="social-icon-img">
+            </a>
+            <a href="{{ section.settings.instagram_url }}" title="Instagram" target="_blank">
+              <img src="{{ 'instagram.png' | asset_url }}" alt="Instagram" class="social-icon-img">
+            </a>
+          </div>
+        </div>
+        <p>
+          {{ section.settings.demo_text }}
+        </p>
+      </div>
+      <div class="four-sevenths columns medium-down--one-whole">
+        <ul class="footer_menu">
+          {% if section.settings.footer_menu != blank and linklists[section.settings.footer_menu] %}
+            {% for link in linklists[section.settings.footer_menu].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          {% else %}
+            <li><a href="/pages/get-in-touch">Contact</a></li>
+            <li><a href="/products/gift-card">Gift cards</a></li>
+            <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+          {% endif %}
+        </ul>
+        <p>{{ section.settings.newsletter_text }}</p>
+        <div class="newsletter display-first-name--true display-last-name--false">
+          <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
+            <input type="hidden" name="form_type" value="customer">
+            <input type="hidden" name="utf8" value="✓">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="input-row">
+              <input type="hidden" name="challenge" value="false">
+              <input type="email" class="contact_email" name="contact[email]" required placeholder="Email address">
+              <input type="submit" class="action_button sign_up" value="Sign Up">
+            </div>
+          </form>
+        </div>
+        <div class="footer__info">
+          <p class="credits">
+            {% if section.settings.copyright_year_position == 'before' %}
+              © {{ 'now' | date: '%Y' }} {{ section.settings.copyright_text }}
+            {% else %}
+              {{ section.settings.copyright_text }} © {{ 'now' | date: '%Y' }}
+            {% endif %}
+          </p>
+        </div>
+        <div class="payment_methods">
+          {% if section.settings.show_visa %}
+            <img src="{{ 'visa.png' | asset_url }}" alt="Visa" class="payment-icon">
+          {% endif %}
+          {% if section.settings.show_paypal %}
+            <img src="{{ 'paypal.png' | asset_url }}" alt="PayPal" class="payment-icon">
+          {% endif %}
+          <!-- Add more as needed -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "demo_text",
+      "label": "Demo text (about shop)",
+      "default": "This is a demo shop for the Parallax Shopify theme. Products in this shop are courtesy of <a href='https://garypoppins.com/' title='https://garypoppins.com/'><strong>Gary Poppins</strong></a>, <a href='https://onehoney.ca/' title='https://onehoney.ca/'><strong>Oneroot Honey</strong></a> or created by our Design team for demonstration purposes."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter text",
+      "default": "Sign up for our mailing list to receive recipes and special savings"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "Your shop name. Powered by Shopify.",
+      "placeholder": "Enter your custom footer text here"
+    },
+    {
+      "type": "select",
+      "id": "copyright_year_position",
+      "label": "Year Position",
+      "options": [
+        { "value": "before", "label": "Show year before text" },
+        { "value": "after", "label": "Show year after text" }
+      ],
+      "default": "before"
+    },
+    {
+      "type": "header",
+      "content": "Social Media Links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "header",
+      "content": "Footer Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_visa",
+      "label": "Show Visa",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_paypal",
+      "label": "Show PayPal",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,146 @@
+/* Vienna-style Footer for Shopify */
+
+.footer {
+  background: #6b6b6b;
+  color: #fff;
+  padding: 40px 0 0 0;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+.footer .section {
+  padding: 0;
+}
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.three-sevenths,
+.four-sevenths {
+  flex: 1 1 320px;
+  min-width: 260px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.three-sevenths {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+.four-sevenths {
+  flex: 0 0 55%;
+  max-width: 55%;
+}
+.footer__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.social-icons a {
+  color: #fff;
+  font-size: 22px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.social-icons a:hover {
+  color: #f5a623;
+}
+.social-icon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: inline-block;
+  margin-right: 8px;
+}
+.footer_menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer_menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer_menu li a:hover {
+  color: #f5a623;
+}
+.newsletter {
+  margin-bottom: 24px;
+}
+.newsletter .input-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.newsletter input[type="text"],
+.newsletter input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  width: 400px;
+}
+.newsletter input[type="submit"] {
+  background: #f5a623;
+  color: #232323;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newsletter input[type="submit"]:hover {
+  background: #fff;
+  color: #232323;
+}
+.footer__info {
+  margin-bottom: 16px;
+}
+.credits {
+  font-size: 14px;
+  color: #bbb;
+}
+.credits a {
+  color: #f5a623;
+  text-decoration: underline;
+}
+.payment_methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.payment-icon {
+  width: 48px;
+  height: 32px;
+  object-fit: contain;
+  display: inline-block;
+  margin-right: 8px;
+}
+.newsletter input[type="email"] {
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
+  box-sizing: border-box;
+}
