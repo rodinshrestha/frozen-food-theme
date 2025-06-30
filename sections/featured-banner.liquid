@@ -1,16 +1,21 @@
+{% assign banner_height = section.settings['banner-height'] | default: 'large' %}
 {% assign bg_image = section.settings['banner-image'] | image_url: width: 1600 %}
 
-{% if bg_image != '' %}
-  {% assign bg_image = section.settings['banner-image'] | image_url: width: 1600 %}
-{% endif %}
-
-{% assign banner_height = section.settings['banner-height'] | default: 'large' %}
-
-<section class="feature-banner-wrapper feature-banner-{{ banner_height }}">
+<section
+  id="feature-banner-{{ section.id }}"
+  class="feature-banner-wrapper feature-banner-{{ banner_height }}"
+>
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="feature-banner-content-inner-wrapper text-alignment-{{ section.settings['text_alignment'] }} vertical-content-{{ section.settings['vertical_content_align'] }} horizontal-content-{{ section.settings['row_content_align'] }}">
+        <div
+          class="
+            feature-banner-content-inner-wrapper
+            text-alignment-{{ section.settings['text_alignment'] }}
+            vertical-content-{{ section.settings['vertical_content_align'] }}
+            horizontal-content-{{ section.settings['row_content_align'] }}
+          "
+        >
           <div class="feature-banner-information-wrapper content-width-{{ section.settings['content_width'] }}">
             {% if section.settings['feature-banner-title'] != '' %}
               <h1 class="feature-banner-title">
@@ -38,22 +43,28 @@
     </div>
   </div>
 </section>
+
 <style>
-  .feature-banner-wrapper {
+  #feature-banner-{{ section.id }} {
     background-image: url({{ bg_image }});
+    background-size: cover;
+    background-position: center;
+    position: relative;
   }
 
-
-  {% comment %} .feature-banner-wrapper::before {
+  /* Optional overlay (uncomment if needed) */
+  /*
+  #feature-banner-{{ section.id }}::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, {{section.settings[ 'overlay-opacity'] | default: 0.3}});
+    background: rgba(0, 0, 0, {{ section.settings['overlay-opacity'] | default: 0.3 }});
     z-index: 1;
-  } {% endcomment %}
+  }
+  */
 </style>
 
 {% schema %}

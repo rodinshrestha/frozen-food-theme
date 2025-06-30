@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "featured-banner": {
+    "featured-banner_1": {
       "type": "featured-banner",
       "settings": {
         "banner-image": "shopify://shop_images/annie-spratt-fFxUOS69bho-unsplash.jpg",
@@ -50,12 +50,29 @@
       "settings": {
         "product_to_show": "product-6"
       }
+    },
+    "featured-banner_2": {
+      "type": "featured-banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/annie-spratt-fFxUOS69bho-unsplash.jpg",
+        "banner-height": "large",
+        "feature-banner-title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "feature-banner-subtitle": "It is a long established fact that a reader will be distracted by the readable content",
+        "button-text": "Shop Now",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
     }
   },
   "order": [
-    "featured-banner",
+    "featured-banner_1",
     "our-slogan",
     "featured_products_pwNGhn",
-    "single_product_show_case_9phqPX"
+    "single_product_show_case_9phqPX",
+    "featured-banner_2"
   ]
 }
