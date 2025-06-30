@@ -1,25 +1,55 @@
 {% assign bg_image = section.settings['banner-image'] | image_url: width: 1600 %}
+{% assign fallback_image = section.settings['fallback-image'] | image_url: width: 1600 %}
 
-{% if section.settings['banner-image'] == '' %}
-  {% assign bg_image = 'https://parallax-theme-vienna.myshopify.com/cdn/shop/files/unpacked-fixed_93c58e23-d9dc-4042-9eee-867730320532_2048x.jpg?v=1614934586' %}
+{% if section.settings['banner-image'] != '' %}
+  {% assign bg_image = section.settings['banner-image'] | image_url: width: 1600 %}
+{% elsif section.settings['fallback-image'] != '' %}
+  {% assign bg_image = section.settings['fallback-image'] | image_url: width: 1600 %}
+{% else %}
+  {% assign bg_image = 'https://placehold.co/1920x735/cccccc/666666?text=Add+Banner+Image' %}
 {% endif %}
 
-<section class="feature-banner-wrapper">
+<section
+  class="feature-banner-wrapper"
+  style="
+    {% if section.settings['text-color'] != '' %}color: {{ section.settings['text-color'] }};{% endif %}
+    {% if section.settings['background-overlay'] != '' %}background-color: {{ section.settings['background-overlay'] }};{% endif %}
+  "
+>
   <div class="container">
     <div class="row">
       <div class="col">
         <div class="feature-banner-information-wrapper">
           {% if section.settings['feature-banner-title'] != '' %}
-            <h1 class="feature-banner-title">
+            <h1
+              class="feature-banner-title"
+              style="{% if section.settings['title-color'] != '' %}color: {{ section.settings['title-color'] }};{% endif %}"
+            >
               {{ section.settings['feature-banner-title'] }}
             </h1>
           {% endif %}
 
           {% if section.settings['feature-banner-subtitle'] != '' %}
-            <p class="feature-subtitle">{{ section.settings['feature-banner-subtitle'] }}</p>
+            <p
+              class="feature-subtitle"
+              style="{% if section.settings['subtitle-color'] != '' %}color: {{ section.settings['subtitle-color'] }};{% endif %}"
+            >
+              {{ section.settings['feature-banner-subtitle'] }}
+            </p>
           {% endif %}
 
-          <a href="#" class="link-button">Show Now </a>
+          {% if section.settings['button-text'] != '' %}
+            <a
+              href="{{ section.settings['button-link'] | default: '#' }}"
+              class="link-button"
+              style="
+                {% if section.settings['button-bg-color'] != '' %}background-color: {{ section.settings['button-bg-color'] }};{% endif %}
+                {% if section.settings['button-text-color'] != '' %}color: {{ section.settings['button-text-color'] }};{% endif %}
+              "
+            >
+              {{ section.settings['button-text'] | default: 'Shop Now' }}
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -27,14 +57,27 @@
 </section>
 <style>
   .feature-banner-wrapper {
-    {% comment %} background-image: url({{ bg_image }});
-      {% endcomment %}
+    background-image: url({{ bg_image }});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
 
-      {% comment %} background-image: url('https://parallax-theme-vienna.myshopify.com/cdn/shop/files/unpacked-fixed_93c58e23-d9dc-4042-9eee-867730320532_2048x.jpg?v=1614934586');
-        {% endcomment %}
+  .feature-banner-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, {{section.settings[ 'overlay-opacity'] | default: 0.3}});
+    z-index: 1;
+  }
 
-
-        background-image: url('https://placehold.co/1920x735')
+  .feature-banner-information-wrapper {
+    position: relative;
+    z-index: 2;
   }
 </style>
 
@@ -48,16 +91,71 @@
       "label": "Banner Image"
     },
     {
+      "type": "image_picker",
+      "id": "fallback-image",
+      "label": "Fallback Image",
+      "info": "Used when banner image is not set"
+    },
+    {
       "type": "textarea",
       "id": "feature-banner-title",
-      "label": "Feature banner Title",
+      "label": "Feature Banner Title",
       "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     },
     {
       "type": "textarea",
       "id": "feature-banner-subtitle",
-      "label": "Feature banner Subtitle",
+      "label": "Feature Banner Subtitle",
       "default": "It is a long established fact that a reader will be distracted by the readable content"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button-link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "title-color",
+      "label": "Title Color"
+    },
+    {
+      "type": "color",
+      "id": "subtitle-color",
+      "label": "Subtitle Color"
+    },
+    {
+      "type": "color",
+      "id": "button-bg-color",
+      "label": "Button Background Color"
+    },
+    {
+      "type": "color",
+      "id": "button-text-color",
+      "label": "Button Text Color"
+    },
+    {
+      "type": "color",
+      "id": "background-overlay",
+      "label": "Background Overlay Color"
+    },
+    {
+      "type": "range",
+      "id": "overlay-opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3,
+      "label": "Overlay Opacity"
     }
   ]
 }
