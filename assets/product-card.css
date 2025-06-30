@@ -5,15 +5,20 @@
 }
 .featured-product-image-wrapper .open-modal-btn {
   position: absolute;
-  font-size: 45px;
   bottom: 15px;
-  right: 20px;
+  right: 0px;
   cursor: pointer;
   display: none;
   transition: all 0.2s ease-in-out;
 }
+.featured-product-image-wrapper .open-modal-btn:hover {
+  opacity: 0.5;
+}
 .featured-product-image-wrapper:hover .open-modal-btn {
   display: block;
+}
+.featured-product-image-wrapper:hover + .open-modal-btn .product-title:hover {
+  opacity: 0.5;
 }
 
 .featured-product-information {

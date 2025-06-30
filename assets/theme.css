@@ -42,6 +42,12 @@ body {
   padding-right: 15px;
 }
 
+@media (max-width: 992px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
 /* Row - to clear floats or use flexbox */
 .row {
   display: flex;
@@ -162,4 +168,36 @@ h1 {
 
 .active {
   display: block;
+}
+
+/* Navigation buttons styling - more specific to override global styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333 !important;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
 }

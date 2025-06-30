@@ -12,12 +12,28 @@
     "sections": {
       "promotional-banner": {
         "type": "promotional-banner",
+        "blocks": {
+          "text_slide_hMWp3U": {
+            "type": "text_slide",
+            "settings": {
+              "text": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **"
+            }
+          },
+          "text_slide_BaqaRd": {
+            "type": "text_slide",
+            "settings": {
+              "text": "Limited Time Offer: Free Shipping on orders of $99.99 or more"
+            }
+          }
+        },
+        "block_order": [
+          "text_slide_hMWp3U",
+          "text_slide_BaqaRd"
+        ],
         "settings": {
           "show-promotional-banner": true,
           "background-color": "#1b1f23",
           "text-color": "#ffffff",
-          "promotional-text-1": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **",
-          "promotional-text-2": "Limited Time Offer: Free Shipping on orders of $99.99 or more",
           "text-position": "center"
         }
       },
@@ -49,8 +65,21 @@
       "featured-products": {
         "type": "featured-products",
         "settings": {
-          "collection": "frontpage"
+          "collection": "frontpage",
+          "limit": 8
         }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      },
+      "wishlist-drawer": {
+        "type": "wishlist-drawer",
+        "settings": {}
+      },
+      "search-drawer": {
+        "type": "search-drawer",
+        "settings": {}
       }
     },
     "content_for_index": []

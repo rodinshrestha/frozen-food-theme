@@ -6,7 +6,7 @@
       data-line="{{ index }}"
     {% endif %}
   >
-    -
+    <img src="{{ 'minus.png' | asset_url}}" alt="Decrease product quantity" width="18" height="18">
   </button>
   <div class="quantity-input">{{ appliedQty }}</div>
   <button
@@ -16,6 +16,6 @@
       data-line="{{ index }}"
     {% endif %}
   >
-    +
+    <img src="{{ 'plus.png' | asset_url}}" alt="Increase product quantity" width="18" height="18">
   </button>
 </div>

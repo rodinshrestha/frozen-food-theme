@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const slides = wrapper.querySelectorAll(".product-slide");
       slides.forEach((slide) => {
         slide.classList.add("swiper-slide");
+        slide.classList.remove("col-3");
       });
 
       // Create Swiper container
@@ -53,12 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 20,
         loop: true,
         loopedSlides: slides.length, // Ensure proper loop with all slides
-        autoplay: shouldLoop
-          ? {
-              delay: 3000,
-              disableOnInteraction: false,
-            }
-          : false,
+        // autoplay: shouldLoop
+        //   ? {
+        //       delay: 3000,
+        //       disableOnInteraction: false,
+        //     }
+        //   : false,
         navigation: {
           nextEl: "#featured-products-next",
           prevEl: "#featured-products-prev",
@@ -66,15 +67,15 @@ document.addEventListener("DOMContentLoaded", function () {
         breakpoints: {
           0: {
             slidesPerView: 1.2,
-            spaceBetween: 10,
           },
           768: {
             slidesPerView: 2.5,
-            spaceBetween: 15,
+          },
+          940: {
+            slidesPerView: 3.5,
           },
           1024: {
-            slidesPerView: 4,
-            spaceBetween: 20,
+            slidesPerView: 4.5,
           },
         },
       });

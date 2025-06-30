@@ -5,17 +5,28 @@
 
   .open-modal-btn {
     position: absolute;
-    font-size: 45px;
     bottom: 15px;
-    right: 20px;
+    right: 0px;
     cursor: pointer;
     display: none;
     transition: all 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &:hover {
     .open-modal-btn {
       display: block;
+    }
+  }
+
+  &:hover + .open-modal-btn {
+    .product-title {
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 }
