@@ -1,15 +1,18 @@
 <section class="featured-product-wrapper">
   <div class="container">
-    {% assign product_count = section.settings.collection.products.size %}
-    <div class="row product-slider-wrapper" data-product-count="{{ product_count }}">
+    <div
+      class="row product-slider-wrapper"
+      data-product-slider="{{ section.settings["product_slider"] }}"
+      id="product-slider-wrapper"
+    >
       {% if section.settings.collection and section.settings.collection.products.size > 0 %}
-        {% for product in section.settings.collection.products limit: section.settings.limit %}
+        {% for product in section.settings.collection.products %}
           <div class="col-3 product-slide">
             {% render 'product-card', product: product %}
           </div>
         {% endfor %}
       {% else %}
-        <p>No Product found</p>
+        <p class="no-product-found-text">No Product found</p>
       {% endif %}
     </div>
   </div>
@@ -25,13 +28,11 @@
       "label": "Select a collection"
     },
     {
-      "type": "range",
-      "id": "limit",
-      "label": "Number of products to show",
-      "min": 1,
-      "max": 12,
-      "step": 1,
-      "default": 8
+      "type": "checkbox",
+      "id": "product_slider",
+      "label": "Enable slider",
+      "info": "Please add more than 4 products if you enable slider",
+      "default": true
     }
   ],
   "presets": [

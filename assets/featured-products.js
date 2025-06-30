@@ -1,16 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const wrapper = document.querySelector(".product-slider-wrapper");
+  const wrapper = document.getElementById("product-slider-wrapper");
   if (!wrapper) {
     console.log("No product slider wrapper found");
     return;
   }
 
-  const productCount = parseInt(wrapper.dataset.productCount, 10);
+  const isSliderEnable = wrapper.getAttribute("data-product-slider") || false;
 
-  // Check if we have enough products to make a slider worthwhile
-  const shouldBeSlider = productCount > 4;
-
-  if (shouldBeSlider) {
+  if (isSliderEnable) {
     // Wait for Swiper to be available
     const initSwiper = () => {
       if (typeof Swiper === "undefined") {
