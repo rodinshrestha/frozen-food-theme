@@ -80,12 +80,21 @@
     }
     &.text-alignment-left {
       text-align: left;
+
+      .link-button {
+        display: flex;
+        align-self: baseline;
+      }
     }
     &.text-alignment-center {
       text-align: center;
     }
     &.text-alignment-right {
       text-align: right;
+      .link-button {
+        display: flex;
+        align-self: end;
+      }
     }
 
     .feature-banner-information-wrapper {

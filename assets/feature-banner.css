@@ -73,11 +73,19 @@
 .feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-left {
   text-align: left;
 }
+.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-left .link-button {
+  display: flex;
+  align-self: baseline;
+}
 .feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-center {
   text-align: center;
 }
 .feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-right {
   text-align: right;
+}
+.feature-banner-wrapper .feature-banner-content-inner-wrapper.text-alignment-right .link-button {
+  display: flex;
+  align-self: end;
 }
 .feature-banner-wrapper .feature-banner-content-inner-wrapper .feature-banner-information-wrapper {
   color: #000;
