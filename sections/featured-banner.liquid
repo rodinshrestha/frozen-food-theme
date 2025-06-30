@@ -1,0 +1,239 @@
+{% assign banner_height = section.settings['banner-height'] | default: 'large' %}
+{% assign bg_image = section.settings['banner-image'] | image_url: width: 1600 %}
+
+<section
+  id="feature-banner-{{ section.id }}"
+  class="feature-banner-wrapper feature-banner-{{ banner_height }}"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div
+          class="
+            feature-banner-content-inner-wrapper
+            text-alignment-{{ section.settings['text_alignment'] }}
+            vertical-content-{{ section.settings['vertical_content_align'] }}
+            horizontal-content-{{ section.settings['row_content_align'] }}
+          "
+        >
+          <div class="feature-banner-information-wrapper content-width-{{ section.settings['content_width'] }}">
+            {% if section.settings['feature-banner-title'] != '' %}
+              <h1 class="feature-banner-title">
+                {{ section.settings['feature-banner-title'] }}
+              </h1>
+            {% endif %}
+
+            {% if section.settings['feature-banner-subtitle'] != '' %}
+              <p class="feature-subtitle">
+                {{ section.settings['feature-banner-subtitle'] }}
+              </p>
+            {% endif %}
+
+            {% if section.settings['button-text'] != '' %}
+              <a
+                href="{{ section.settings['button-link'] | default: '#' }}"
+                class="link-button"
+              >
+                {{ section.settings['button-text'] | default: 'Shop Now' }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #feature-banner-{{ section.id }} {
+    background-image: url({{ bg_image }});
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* Optional overlay (uncomment if needed) */
+  /*
+  #feature-banner-{{ section.id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, {{ section.settings['overlay-opacity'] | default: 0.3 }});
+    z-index: 1;
+  }
+  */
+</style>
+
+{% schema %}
+{
+  "name": "Feature Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner-image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "select",
+      "id": "banner-height",
+      "label": "Banner Height",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small (300px)"
+        },
+        {
+          "value": "medium",
+          "label": "Medium (500px)"
+        },
+        {
+          "value": "large",
+          "label": "Large (735px)"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "textarea",
+      "id": "feature-banner-title",
+      "label": "Banner Title",
+      "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "type": "textarea",
+      "id": "feature-banner-subtitle",
+      "label": "Banner Subtitle",
+      "default": "It is a long established fact that a reader will be distracted by the readable content"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button-link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Row Content alignment"
+    },
+
+    {
+      "type": "select",
+      "id": "row_content_align",
+      "label": "Content row alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "center"
+    },
+
+    {
+      "type": "header",
+      "content": "Row Content alignment"
+    },
+
+    {
+      "type": "select",
+      "id": "vertical_content_align",
+      "label": "Content vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "top"
+        },
+        {
+          "value": "middle",
+          "label": "middle"
+        },
+        {
+          "value": "bottom",
+          "label": "bottom"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "header",
+      "content": "Content width"
+    },
+
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content wrapper width",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "header",
+      "content": "text alignment"
+    },
+
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "overlay-opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3,
+      "label": "Overlay Opacity"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured banner"
+    }
+  ]
+}
+{% endschema %}

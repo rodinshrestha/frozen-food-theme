@@ -1,8 +1,46 @@
 .promotional-banner-wrapper {
-  padding: 20px;
-  display: flex;
+  padding: 15px !important;
+  display: flex !important;
   flex-direction: column;
-  position: fixed;
   width: 100vw;
+  overflow: hidden;
   gap: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+
+  .swiper-wrapper {
+    position: relative;
+  }
+
+  &:hover {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: flex;
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    margin-top: 0 !important;
+    transform: translateY(-50%) !important;
+    background: none;
+    color: #f2f2f2 !important;
+    opacity: 0.5;
+    display: none;
+
+    &:hover {
+      background-color: transparent !important;
+      opacity: 1;
+    }
+
+    &::after {
+      font-size: 14px;
+    }
+  }
+  .swiper-button-next {
+    right: 30px;
+  }
+  .swiper-button-prev {
+    left: 30px;
+  }
 }

@@ -1,0 +1,92 @@
+.wishlist-drawer-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 450px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.wishlist-drawer-wrapper.active {
+  display: flex;
+  right: 0;
+}
+.wishlist-drawer-wrapper .wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #818181;
+  padding: 15px;
+}
+.wishlist-drawer-wrapper .wishlist-header .wishlist-close {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper {
+  overflow-y: auto;
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .wishlist-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100%;
+  overflow: scroll;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .wishlist-items-wrapper .wishlist-item-details {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  padding: 20px 15px;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .wishlist-items-wrapper .wishlist-item-details .wishlist-loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .wishlist-items-wrapper .wishlist-item-details .wishlist-product-information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .wishlist-items-wrapper .wishlist-item-details .wishlist-product-information .wishlist-item-price {
+  font-weight: 500;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .wishlist-items-wrapper .wishlist-item-details .remove-wishlist-item {
+  position: absolute;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  top: 10px;
+  right: 15px;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .wishlist-items-wrapper .wishlist-item-details .remove-wishlist-item.disabled {
+  cursor: not-allowed;
+}
+.wishlist-drawer-wrapper .wishlist-content-wrapper .cart-empty-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-<section class="header-wrapper">
+<section class="header-wrapper" id="header">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -24,11 +24,11 @@
           </div>
           <div class="menu-right-wrapper">
             <ul class="navigation-wrappper">
-              <li class="navigation-list sub-navigation-wrapper">
+              <li class="navigation-list sub-navigation-wrapper" id="sub-navigation-wrapper">
                 <a href="#">SHOP</a>
                 <i class="fa-solid fa-angle-down down-icon"></i>
 
-                <ul class="sub-menu-wrapper">
+                <ul class="sub-menu-wrapper" id="sub-menu-wrapper">
                   <li class="sub-menu-list">
                     <a href="#"> Momo Sauce</a>
                   </li>
@@ -43,15 +43,48 @@
             <div class="menu-icon-wrapper">
               <!-- Account -->
               <a href="{{ routes.account_login_url }}">
-                <i class="fa-solid fa-user"></i>
+                <img
+                  src="{{ 'user.png' | asset_url }}"
+                  height="22"
+                  width="22"
+                  id="user-icon"
+                  aria-label="Account login"
+                >
               </a>
               <!-- Search -->
-              <i class="fa-solid fa-search"></i>
+              <img
+                src="{{ 'search-icon.png' | asset_url }}"
+                data-close-icon="{{ 'close.png' | asset_url }}"
+                data-search-icon="{{ 'search-icon.png' | asset_url }}"
+                alt="Search Icon"
+                id="search-drawer-icon"
+                height="24"
+                width="24"
+              >
               <!-- wishlist -->
-              <i class="fa-solid fa-heart"></i>
+              {% comment %}
+                <img
+                  src="{{ 'wishlist.png' | asset_url }}"
+                  alt="Wishlist Icon"
+                  id="wishlist-icon"
+                  height="24"
+                  width="24"
+                >
+              {% endcomment %}
               <!-- Cart -->
-              <i class="fa-solid fa-cart-shopping" id="cart-icon" aria-label="Open Cart"></i>
-              {% render 'cart-drawer' %}
+              <div class="add-to-cart-icon-group">
+                <img
+                  src="{{ 'shopping-bag.png' | asset_url }}"
+                  height="22"
+                  width="22"
+                  id="cart-icon"
+                  aria-label="Open Cart"
+                  class="add-to-cart-icon"
+                >
+                <span class="cart-count-number {% if cart.item_count == 0 %}hidden{% endif %}" id="cart-item-count">
+                  {{ cart.item_count }}
+                </span>
+              </div>
             </div>
           </div>
         </div>

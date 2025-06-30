@@ -12,12 +12,28 @@
     "sections": {
       "promotional-banner": {
         "type": "promotional-banner",
+        "blocks": {
+          "text_slide_hMWp3U": {
+            "type": "text_slide",
+            "settings": {
+              "text": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **"
+            }
+          },
+          "text_slide_BaqaRd": {
+            "type": "text_slide",
+            "settings": {
+              "text": "Limited Time Offer: Free Shipping on orders of $99.99 or more"
+            }
+          }
+        },
+        "block_order": [
+          "text_slide_hMWp3U",
+          "text_slide_BaqaRd"
+        ],
         "settings": {
           "show-promotional-banner": true,
           "background-color": "#1b1f23",
           "text-color": "#ffffff",
-          "promotional-text-1": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **",
-          "promotional-text-2": "Limited Time Offer: Free Shipping on orders of $99.99 or more",
           "text-position": "center"
         }
       },
@@ -26,24 +42,6 @@
         "settings": {
           "main_menu": "",
           "sub_menu": ""
-        }
-      },
-      "feature-banner": {
-        "type": "feature-banner",
-        "settings": {
-          "feature-banner-title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "feature-banner-subtitle": "It is a long established fact that a reader will be distracted by the readable content"
-        }
-      },
-      "slogan": {
-        "type": "slogan",
-        "settings": {
-          "slogan-1-title": "Lorem Ipsum",
-          "slogan-1-description": "It is a long established fact that a reader will be distracted by the",
-          "slogan-2-title": "Lorem Ipsum",
-          "slogan-2-description": "It is a long established fact that a reader will be distracted by the",
-          "slogan-3-title": "Lorem Ipsum",
-          "slogan-3-description": "It is a long established fact that a reader will be distracted by the"
         }
       },
       "featured-products": {

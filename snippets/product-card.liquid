@@ -1,0 +1,26 @@
+<div class="featured-product-inner-wrapper">
+  <div class="featured-product-image-wrapper">
+    <img
+      src="{{ product.featured_image | img_url: '280x280' }}"
+      width="280"
+      height="280"
+      alt="{{ product.title }}"
+    >
+
+    <div
+      class="open-modal-btn"
+      data-product-id="{{ product.id }}"
+    >
+      <img src="{{ 'add-icon.png' | asset_url}}" alt="Add product icon" width="32" height="32">
+    </div>
+
+    {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
+  </div>
+
+  <div class="featured-product-information">
+    <a href="{{product.url }}">
+      <p class="product-title">{{ product.title }}</p>
+    </a>
+    <p class="product-price">{{ product.price | money }}</p>
+  </div>
+</div>

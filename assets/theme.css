@@ -6,10 +6,17 @@
 @import "./cart-drawer.css";
 @import "./add-to-cart-modal.css";
 @import "./product-quantity.css";
+@import "./wishlist-drawer.css";
+@import "./search-drawer.css";
+@import "./product-card.css";
+@import "./single-product-show-case.css";
+@import "./customer-testimonials.css";
 @import "./footer.css";
-@import "./testimonials.css";
+/* @import "./footer.css"; */
+/* @import "./testimonials.css"; */
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -28,13 +35,33 @@ main {
   flex: 1 0 auto;
 }
 
+.main-overlay {
+  position: fixed;
+  transition: all 0.2s ease-in-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 999; /* make sure it's above everything else */
+}
+
+.disable-overlay {
+  display: none;
+}
+
 .container {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 900px;
+  }
 }
 
 /* Row - to clear floats or use flexbox */
@@ -43,7 +70,7 @@ main {
   flex-wrap: wrap;
   margin-left: -15px; /* negative padding to offset col padding */
   margin-right: -15px;
-  height: 100%;
+  row-gap: 10px;
 }
 
 /* Column */
@@ -53,7 +80,7 @@ main {
   box-sizing: border-box;
   flex: 1; /* will grow and fill */
   min-width: 0; /* prevent overflow */
-  height: 100%;
+  /* height: 100%; */
 }
 
 .col-3 {
@@ -64,12 +91,33 @@ main {
   box-sizing: border-box;
 }
 
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+  max-width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .col-3 {
+    width: 50%;
+    flex: 50%;
+  }
+}
+
 .col-4 {
   flex: 0 0 33.3333%;
   max-width: 33.3333%;
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .col-4 {
+    width: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 .link-button {
@@ -79,7 +127,6 @@ main {
   font-weight: 500;
   font-size: 16px;
   border-radius: 2px;
-  width: 130px;
   display: inline;
   padding: 20px;
   text-align: center;
@@ -116,4 +163,62 @@ main {
 h1 {
   margin-block-start: 0;
   margin-block-end: 0;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: #333; /* Customize spinner color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+/* Navigation buttons styling - more specific to override global styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333 !important;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
 }

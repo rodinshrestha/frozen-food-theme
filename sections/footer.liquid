@@ -1,12 +1,18 @@
-<div class="footer">
-  <section class="section">
-    <div class="container">
-      <div class="three-sevenths columns medium-down--one-whole">
-        <h6 class="footer__title">Follow</h6>
-        <div class="js-social-icons">
+<div class="footer-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="footer-social-media-wrapper">
+          <h6 class="footer-title">Follow</h6>
           <div class="social-icons">
             <a href="{{ section.settings.facebook_url }}" title="Facebook" target="_blank">
-              <img src="{{ 'facebook.png' | asset_url }}" alt="Facebook" class="social-icon-img" width="24" height="24">
+              <img
+                src="{{ 'facebook.png' | asset_url }}"
+                alt="Facebook"
+                class="social-icon-img"
+                width="24"
+                height="24"
+              >
             </a>
             <a href="{{ section.settings.instagram_url }}" title="Instagram" target="_blank">
               <img
@@ -18,66 +24,35 @@
               >
             </a>
           </div>
-        </div>
-        <p>
-          {{ section.settings.demo_text }}
-        </p>
-      </div>
-      <div class="four-sevenths columns medium-down--one-whole">
-        <ul class="footer_menu">
-          {% if section.settings.footer_menu != blank and linklists[section.settings.footer_menu] %}
-            {% for link in linklists[section.settings.footer_menu].links %}
-              <li>
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-            {% endfor %}
-          {% else %}
-            <li><a href="/pages/get-in-touch">Contact</a></li>
-            <li><a href="/products/gift-card">Gift cards</a></li>
-            <li><a href="/policies/terms-of-service">Terms of Service</a></li>
-          {% endif %}
-        </ul>
-        <p>{{ section.settings.newsletter_text }}</p>
-        <div class="newsletter display-first-name--true display-last-name--false">
-          <form
-            method="post"
-            action="/contact#contact_form"
-            id="contact_form"
-            accept-charset="UTF-8"
-            class="contact-form"
-          >
-            <input type="hidden" name="form_type" value="customer">
-            <input type="hidden" name="utf8" value="✓">
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            <div class="input-row">
-              <input type="hidden" name="challenge" value="false">
-              <input type="email" class="contact_email" name="contact[email]" required placeholder="Email address">
-              <input type="submit" class="action_button sign_up" value="Sign Up">
-            </div>
-          </form>
-        </div>
-        <div class="footer__info">
-          <p class="credits">
-            {% if section.settings.copyright_year_position == 'before' %}
-              © {{ 'now' | date: '%Y' }}
-              {{ section.settings.copyright_text }}
-            {% else %}
-              {{ section.settings.copyright_text }} © {{ 'now' | date: '%Y' }}
-            {% endif %}
+          <p class="footer-social-media-description">
+            {{ section.settings.demo_text }}
           </p>
         </div>
-        <div class="payment_methods">
-          {% if section.settings.show_visa %}
-            <img src="{{ 'visa.png' | asset_url }}" alt="Visa" class="payment-icon" width="48" height="48">
-          {% endif %}
-          {% if section.settings.show_paypal %}
-            <img src="{{ 'paypal.png' | asset_url }}" alt="PayPal" class="payment-icon" width="48" height="48">
-          {% endif %}
-          <!-- Add more as needed -->
+      </div>
+      <div class="col-6">
+        <div class="footer-newsletter-wrapper">
+          <ul class="footer_menu">
+            {% if section.settings.footer_menu != blank and linklists[section.settings.footer_menu] %}
+              {% for link in linklists[section.settings.footer_menu].links %}
+                <li class="footer-menu-list">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            {% else %}
+              <li class="footer-menu-list"><a href="#">Contact</a></li>
+              <li class="footer-menu-list"><a href="#">Gift cards</a></li>
+              <li class="footer-menu-list"><a href="#">Terms of Service</a></li>
+            {% endif %}
+          </ul>
+          <p class="news-letter-info">{{ section.settings.newsletter_text }}</p>
+          <div class="newsletter-form-wrapper">
+            <input type="email" class="contact-email" name="contact" placeholder="Your@example.com">
+            <div class="link-button">Submit</div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 
 {% schema %}

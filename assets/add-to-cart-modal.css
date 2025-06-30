@@ -73,6 +73,16 @@
   display: flex;
   gap: 10px;
   margin-top: 25px;
+  align-items: center;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper > .add-to-cart-qty-wrapper {
+  gap: 10px;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper > .add-to-cart-qty-wrapper bottom {
+  padding: 0;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper > .add-to-cart-qty-wrapper .quantity-input {
+  width: 16px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group {
   display: flex;

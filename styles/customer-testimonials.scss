@@ -1,0 +1,41 @@
+.customer-testimonials-wrapper {
+  padding: 60px 0;
+  .col {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    .testimonial-title {
+      font-size: 24px;
+      text-align: center;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 60%;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #b8c6c6;
+      }
+    }
+  }
+
+  .customer-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    > p {
+      line-height: 24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .customer-details {
+      width: 400px;
+    }
+  }
+}
