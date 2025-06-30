@@ -3,15 +3,25 @@
     <div class="row">
       <div class="col-4">
         <div class="slogan-content-wrapper">
-          <img
-            src="https://placehold.co/400x400"
-            alt="you choose"
-            width="400"
-            height="400"
-            class="slogan-image"
-          >
+          {% if section.settings['slogan-1-image'] %}
+            <img
+              src="{{ section.settings['slogan-1-image'] | image_url: width: 400 }}"
+              alt="{{ section.settings['slogan-1-title'] }}"
+              width="400"
+              height="400"
+              class="slogan-image"
+            >
+          {% else %}
+            <img
+              src="https://placehold.co/400x400"
+              alt="{{ section.settings['slogan-1-title'] }}"
+              width="400"
+              height="400"
+              class="slogan-image"
+            >
+          {% endif %}
 
-          <div class="solgan-content">
+          <div class="slogan-content">
             {% if section.settings['slogan-1-title'] != '' %}
               <h3 class="slogan-title">{{ section.settings['slogan-1-title'] }}</h3>
             {% endif %}
@@ -27,15 +37,25 @@
       </div>
       <div class="col-4">
         <div class="slogan-content-wrapper">
-          <img
-            src="https://placehold.co/400x400"
-            alt="you choose"
-            width="400"
-            height="400"
-            class="slogan-image"
-          >
+          {% if section.settings['slogan-2-image'] %}
+            <img
+              src="{{ section.settings['slogan-2-image'] | image_url: width: 400 }}"
+              alt="{{ section.settings['slogan-2-title'] }}"
+              width="400"
+              height="400"
+              class="slogan-image"
+            >
+          {% else %}
+            <img
+              src="https://placehold.co/400x400"
+              alt="{{ section.settings['slogan-2-title'] }}"
+              width="400"
+              height="400"
+              class="slogan-image"
+            >
+          {% endif %}
 
-          <div class="solgan-content">
+          <div class="slogan-content">
             {% if section.settings['slogan-2-title'] != '' %}
               <h3 class="slogan-title">{{ section.settings['slogan-2-title'] }}</h3>
             {% endif %}
@@ -51,15 +71,25 @@
       </div>
       <div class="col-4">
         <div class="slogan-content-wrapper">
-          <img
-            src="https://placehold.co/400x400"
-            alt="you choose"
-            width="400"
-            height="400"
-            class="slogan-image"
-          >
+          {% if section.settings['slogan-3-image'] %}
+            <img
+              src="{{ section.settings['slogan-3-image'] | image_url: width: 400 }}"
+              alt="{{ section.settings['slogan-3-title'] }}"
+              width="400"
+              height="400"
+              class="slogan-image"
+            >
+          {% else %}
+            <img
+              src="https://placehold.co/400x400"
+              alt="{{ section.settings['slogan-3-title'] }}"
+              width="400"
+              height="400"
+              class="slogan-image"
+            >
+          {% endif %}
 
-          <div class="solgan-content">
+          <div class="slogan-content">
             {% if section.settings['slogan-3-title'] != '' %}
               <h3 class="slogan-title">{{ section.settings['slogan-3-title'] }}</h3>
             {% endif %}
