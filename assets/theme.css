@@ -10,14 +10,27 @@
 @import "./search-drawer.css";
 @import "./product-card.css";
 @import "./single-product-show-case.css";
+@import "./footer.css";
+@import "./testimonials.css";
 
+html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "Instrument Sans", sans-serif;
   font-style: normal;
   box-sizing: border-box;
-  height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .main-overlay {
