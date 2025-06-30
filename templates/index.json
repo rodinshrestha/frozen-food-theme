@@ -55,7 +55,7 @@
       "type": "featured-banner",
       "settings": {
         "banner-image": "shopify://shop_images/bag3_2048x_1.png",
-        "banner-height": "small",
+        "banner-height": "medium",
         "feature-banner-title": "Upgrade your family meals with our value-packed bundles.",
         "feature-banner-subtitle": "Big flavors. Bigger savings. Perfect for family meals",
         "button-text": "Get the bundles",
