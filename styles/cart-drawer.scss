@@ -70,18 +70,15 @@
           display: flex;
           flex-direction: column;
           gap: 20px;
+          flex-grow: 1;
 
           .cart-item-price {
             font-weight: 500;
           }
 
           .add-to-cart-qty-wrapper {
-            .qty-btn {
-              img {
-                width: 14px;
-                height: 14px;
-              }
-            }
+            gap: 5px;
+            width: 110px;
             .quantity-input {
               width: 15px;
             }

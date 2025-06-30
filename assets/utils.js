@@ -36,11 +36,17 @@ window.getCookie = (name) => {
 
 window.updateCartCount = async () => {
   return fetch("/cart.js")
-    .then((res) => res.json())
+    .then(async (res) => await handleFetchResponse(res))
     .then((cart) => {
       const itemCount = document.getElementById("cart-item-count");
       if (itemCount) {
         itemCount.textContent = cart.item_count;
+
+        if (cart.item_count > 0) {
+          itemCount.classList.remove("hidden");
+        } else {
+          itemCount.classList.add("hidden");
+        }
       }
     })
     .catch((err) => {

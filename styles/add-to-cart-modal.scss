@@ -77,34 +77,18 @@
           display: flex;
           gap: 10px;
           margin-top: 25px;
-          // .add-to-cart-qty-wrapper {
-          //   background-color: #f8f4ef;
-          //   border-radius: 20px;
-          //   display: inline-flex;
-          //   width: 80px;
-          //   padding: 5px 8px;
-          //   height: 40px;
-          //   display: flex;
-          //   justify-content: space-between;
-          //   align-items: center;
-          //   width: 100px;
-          //   .qty-btn,
-          //   .quantity-input {
-          //     background-color: transparent;
-          //     outline: transparent;
-          //     border: none;
-          //     font-size: 20px;
-          //   }
+          align-items: center;
 
-          //   .qty-btn {
-          //     font-size: 28px;
-          //     cursor: pointer;
-          //     &.disable {
-          //       cursor: not-allowed;
-          //       opacity: 0.5;
-          //     }
-          //   }
-          // }
+          > .add-to-cart-qty-wrapper {
+            gap: 10px;
+            bottom {
+              padding: 0;
+            }
+
+            .quantity-input {
+              width: 16px;
+            }
+          }
 
           .add-to-cart-btn-group {
             display: flex;

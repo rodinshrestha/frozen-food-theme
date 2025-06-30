@@ -81,9 +81,9 @@
                   aria-label="Open Cart"
                   class="add-to-cart-icon"
                 >
-                {% if cart.item_count > 0 %}
-                  <span class="cart-count-number" id="cart-item-count">{{ cart.item_count }}</span>
-                {% endif %}
+                <span class="cart-count-number {% if cart.item_count == 0 %}hidden{% endif %}" id="cart-item-count">
+                  {{ cart.item_count }}
+                </span>
               </div>
             </div>
           </div>
