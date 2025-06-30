@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const wrapper = document.getElementById("product-slider-wrapper");
-  if (!wrapper) {
-    console.log("No product slider wrapper found");
-    return;
-  }
+  const wrappers = document.querySelectorAll(".product-slider-wrapper");
 
-  const isSliderEnable = wrapper.getAttribute("data-product-slider") || false;
+  wrappers.forEach((wrapper, index) => {
+    const isSliderEnable =
+      wrapper.getAttribute("data-product-slider") === "true";
 
-  if (isSliderEnable) {
+    if (!isSliderEnable) {
+      console.log("Slider disabled or not enough products.");
+      return;
+    }
+
     // Wait for Swiper to be available
     const initSwiper = () => {
       if (typeof Swiper === "undefined") {
@@ -15,51 +17,48 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Add Swiper slide classes
+      // Add Swiper classes
       wrapper.classList.add("swiper-wrapper");
-
       const slides = wrapper.querySelectorAll(".product-slide");
+
       slides.forEach((slide) => {
         slide.classList.add("swiper-slide");
         slide.classList.remove("col-3");
       });
 
-      // Create Swiper container
+      // Create unique container for this slider
       const swiperContainer = document.createElement("div");
       swiperContainer.classList.add("swiper", "featured-products-swiper");
+      const uniqueID = `product-slider-${index}`;
+      swiperContainer.id = uniqueID;
+
       wrapper.parentNode.insertBefore(swiperContainer, wrapper);
       swiperContainer.appendChild(wrapper);
 
-      // Create navigation buttons with unique IDs
+      // Create navigation buttons
       const nextBtn = document.createElement("div");
       nextBtn.classList.add("swiper-button-next");
-      nextBtn.id = "featured-products-next";
+      nextBtn.id = `${uniqueID}-next`;
 
       const prevBtn = document.createElement("div");
       prevBtn.classList.add("swiper-button-prev");
-      prevBtn.id = "featured-products-prev";
+      prevBtn.id = `${uniqueID}-prev`;
 
       swiperContainer.appendChild(nextBtn);
       swiperContainer.appendChild(prevBtn);
 
-      // Determine if we should use loop based on slide count
+      // Determine loop setting
       const shouldLoop = slides.length > 4;
 
       // Initialize Swiper
-      new Swiper(".featured-products-swiper", {
+      new Swiper(`#${uniqueID}`, {
         slidesPerView: 4,
         spaceBetween: 20,
-        loop: true,
-        loopedSlides: slides.length, // Ensure proper loop with all slides
-        // autoplay: shouldLoop
-        //   ? {
-        //       delay: 3000,
-        //       disableOnInteraction: false,
-        //     }
-        //   : false,
+        loop: shouldLoop,
+        loopedSlides: slides.length,
         navigation: {
-          nextEl: "#featured-products-next",
-          prevEl: "#featured-products-prev",
+          nextEl: `#${uniqueID}-next`,
+          prevEl: `#${uniqueID}-prev`,
         },
         breakpoints: {
           0: {
@@ -79,7 +78,5 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     initSwiper();
-  } else {
-    console.log("Not enough products for slider, showing as grid");
-  }
+  });
 });

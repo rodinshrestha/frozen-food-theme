@@ -36,19 +36,19 @@
         "slogan-3-description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
       }
     },
+    "single_product_show_case_9phqPX": {
+      "type": "single-product-show-case",
+      "name": "Single Product Showcase",
+      "settings": {
+        "product_to_show": "product-6"
+      }
+    },
     "featured_products_pwNGhn": {
       "type": "featured-products",
       "name": "Featured products",
       "settings": {
         "collection": "frontpage",
         "product_slider": true
-      }
-    },
-    "single_product_show_case_9phqPX": {
-      "type": "single-product-show-case",
-      "name": "Single Product Showcase",
-      "settings": {
-        "product_to_show": "product-6"
       }
     },
     "featured-banner_2": {
@@ -66,13 +66,22 @@
         "text_alignment": "left",
         "overlay-opacity": 0.3
       }
+    },
+    "featured_products_wHRjeC": {
+      "type": "featured-products",
+      "name": "Featured products",
+      "settings": {
+        "collection": "homepage-bundle-collections",
+        "product_slider": true
+      }
     }
   },
   "order": [
     "featured-banner_1",
     "our-slogan",
-    "featured_products_pwNGhn",
     "single_product_show_case_9phqPX",
-    "featured-banner_2"
+    "featured_products_pwNGhn",
+    "featured-banner_2",
+    "featured_products_wHRjeC"
   ]
 }
