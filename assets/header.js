@@ -36,4 +36,30 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   observer.observe(promoBanner);
+
+  document.getElementById("hamburger").addEventListener("click", function () {
+    const mobileMenu = document.getElementById("mobile-menu-drawer");
+    const headerWrapper = document.getElementById("header");
+
+    const isMenuActive = this.classList.contains("active");
+    const isStickyInHeader = headerWrapper.classList.contains("sticky");
+
+    if (!isMenuActive) {
+      this.classList.add("active");
+      header.classList.add("mobile-navigation-menu");
+      mobileMenu.classList.add("active");
+      window.whenDrawerOpen();
+
+      if (isStickyInHeader) {
+        mobileMenu.style.top = 0;
+      } else {
+        mobileMenu.style.top = "46px";
+      }
+    } else {
+      window.whenDrawerClose();
+      this.classList.remove("active");
+      header.classList.remove("mobile-navigation-menu");
+      mobileMenu.classList.remove("active");
+    }
+  });
 });

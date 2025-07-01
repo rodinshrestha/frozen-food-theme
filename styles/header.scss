@@ -1,19 +1,59 @@
 .header-wrapper {
   height: 55px;
-  // position: fixed;
-  // top: 89px;
   width: 100vw;
   background-color: #fff;
+  transition: all 0.3s ease-in;
   z-index: 25;
+  left: 0;
   &.sticky {
     top: 0;
     position: fixed;
     box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
   }
+  &.mobile-navigation-menu {
+    position: fixed;
+    left: 80%;
+  }
   .menu-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .mobile-menu-wrapper {
+      display: none;
+
+      @media (max-width: 980px) {
+        display: unset;
+      }
+      .ham-burger-menu {
+        width: 25px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.2s ease-in-out;
+
+        span {
+          height: 2px;
+          background: #000;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+        }
+        &.active {
+          span:nth-child(1) {
+            transform: rotate(48deg) translate(7px, 6px);
+          }
+          span:nth-child(2) {
+            opacity: 0;
+          }
+          span:nth-child(3) {
+            transform: rotate(-48deg) translate(6px, -6px);
+          }
+        }
+      }
+    }
 
     .menu-left-wrapper {
       padding: 10px 0;

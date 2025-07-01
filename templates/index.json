@@ -14,6 +14,7 @@
       "settings": {
         "banner-image": "shopify://shop_images/banner.webp",
         "banner-height": "large",
+        "banner-parallax": true,
         "feature-banner-title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
         "feature-banner-subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
         "button-text": "Shop Now",
@@ -61,6 +62,7 @@
       "settings": {
         "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
         "banner-height": "medium",
+        "banner-parallax": false,
         "feature-banner-title": "Upgrade your family meals with our value-packed bundles.",
         "feature-banner-subtitle": "Big flavors. Bigger savings. Perfect for family meals",
         "button-text": "Get the bundles",
@@ -69,7 +71,7 @@
         "vertical_content_align": "middle",
         "content_width": "large",
         "text_alignment": "center",
-        "overlay-opacity": 0.2
+        "overlay-opacity": 0.3
       }
     },
     "featured_products_wHRjeC": {

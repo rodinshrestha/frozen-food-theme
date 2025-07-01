@@ -1,0 +1,34 @@
+.mobile-menu-drawer-wrapper {
+  position: fixed;
+  top: 46px;
+  bottom: 0;
+  left: -100%;
+  width: calc(100% - 196px);
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 100;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  &.active {
+    display: flex;
+    left: 0;
+  }
+  .mobile-naivgation-wrapper {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    .mobile-navigation-list {
+      padding: 10px;
+      a {
+        color: unset;
+        text-decoration: none;
+      }
+    }
+  }
+}
