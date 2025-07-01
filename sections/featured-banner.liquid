@@ -50,10 +50,10 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    color: #fff !important;
   }
 
-  /* Optional overlay (uncomment if needed) */
-  /*
+
   #feature-banner-{{ section.id }}::before {
     content: '';
     position: absolute;
@@ -64,7 +64,6 @@
     background: rgba(0, 0, 0, {{ section.settings['overlay-opacity'] | default: 0.3 }});
     z-index: 1;
   }
-  */
 </style>
 
 {% schema %}

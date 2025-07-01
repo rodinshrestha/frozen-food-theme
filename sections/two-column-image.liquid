@@ -1,0 +1,107 @@
+<div class="two-column-image-wrapper section-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="image-wrapper image-1">
+          <div class="image-content-wrapper">
+            {% if section.settings['title-one'] != '' %}
+              <div class="image-content-title">{{ section.settings['title-one'] }}</div>
+            {% endif %}
+            {% if section.settings['button-one'] != '' %}
+              <a class="outline-btn" href="{{  section.settings['button-link-one']}}">
+                {{ section.settings['button-one'] }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="image-wrapper image-2">
+          <div class="image-content-wrapper">
+            {% if section.settings['title-two'] != '' %}
+              <div class="image-content-title">{{ section.settings['title-two'] }}</div>
+            {% endif %}
+            {% if section.settings['button-two'] != '' %}
+              <a class="outline-btn" href="{{  section.settings['button-link-two']}}">
+                {{ section.settings['button-two'] }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .image-1 {
+    background-image: url({{section.settings['image-one']}});
+  }
+
+  .image-2 {
+    background-image: url({{section.settings['image-two']}});
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Two Column Image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Column one Details"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-one",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title-one",
+      "label": "Column title"
+    },
+    {
+      "type": "text",
+      "id": "button-one",
+      "label": "Button label"
+    },
+    {
+      "type": "text",
+      "id": "button-link-one",
+      "label": "Button Link label",
+      "default": "#"
+    },
+    {
+      "type": "header",
+      "content": "Column two Details"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-two",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title-two",
+      "label": "Column title"
+    },
+    {
+      "type": "text",
+      "id": "button-two",
+      "label": "Button label"
+    },
+    {
+      "type": "text",
+      "id": "button-link-two",
+      "label": "Button Link label",
+      "default": "#"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Column Image"
+    }
+  ]
+}
+{% endschema %}

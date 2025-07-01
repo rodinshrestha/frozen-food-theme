@@ -1,0 +1,32 @@
+.two-column-image-wrapper {
+  .image-wrapper {
+    padding: 10px;
+    height: 30vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-sizing: border-box;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .image-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    z-index: 2;
+    position: relative;
+  }
+}

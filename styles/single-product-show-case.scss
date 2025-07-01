@@ -1,93 +1,96 @@
 .product-show-case-wrapper {
-  padding: 60px 0;
-
-  .show-case-product-content-wrapper {
+  .show-case-inner-wrapper {
     display: flex;
-    gap: 40px;
+    flex-direction: column;
 
-    .show-case-product-information {
-      flex-grow: 1;
-      padding: 0 10px;
+    .show-case-product-content-wrapper {
+      display: flex;
+      gap: 40px;
 
-      .show-case-product-title {
-        font-size: 20px;
-        font-weight: 600;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-        margin-bottom: 25px;
-      }
+      .show-case-product-information {
+        flex-grow: 1;
+        padding: 0 10px;
 
-      .show-case-product-title {
-        font-size: 22px;
-        color: #363636;
-        font-weight: 400;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-        margin-bottom: 25px;
-      }
-
-      .show-case-product-description {
-        font-size: 16px;
-        color: #363636;
-        font-weight: 400;
-        line-height: 28px;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        margin-bottom: 25px;
-      }
-
-      .show-case-product-details-link {
-        color: #7a9ea1;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 28px;
-        transition: all 0.2s ease-in-out;
-        margin-bottom: 20px;
-
-        &:hover {
-          opacity: 0.8;
+        .show-case-product-title {
+          font-size: 20px;
+          font-weight: 500;
+          margin-block-start: 0px;
+          margin-block-end: 0px;
+          margin-bottom: 25px;
         }
-      }
 
-      .show-case-product-cta-wrapper {
-        display: flex;
-        gap: 10px;
-        margin-top: 25px;
-        align-items: center;
-        &.disable {
-          cursor: not-allowed;
+        .show-case-product-price {
+          font-size: 20px;
+          color: #363636;
+          font-weight: 400;
+          margin-block-start: 0px;
+          margin-block-end: 0px;
+          margin-bottom: 25px;
+        }
 
-          .add-to-cart-qty-wrapper {
-            pointer-events: none;
-            opacity: 0.5;
+        .show-case-product-description {
+          font-size: 16px;
+          color: #363636;
+          font-weight: 400;
+          line-height: 28px;
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-bottom: 25px;
+        }
+
+        .show-case-product-details-link {
+          color: #7a9ea1;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 28px;
+          transition: all 0.2s ease-in-out;
+          margin-bottom: 20px;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        .show-case-product-cta-wrapper {
+          display: flex;
+          gap: 10px;
+          margin-top: 25px;
+          align-items: center;
+          &.disable {
+            cursor: not-allowed;
+
+            .add-to-cart-qty-wrapper {
+              pointer-events: none;
+              opacity: 0.5;
+            }
+
+            .show-case-btn-group {
+              pointer-events: none;
+              opacity: 0.5;
+            }
+          }
+
+          > .add-to-cart-qty-wrapper {
+            gap: 10px;
+            bottom {
+              padding: 0;
+            }
+
+            .quantity-input {
+              width: 16px;
+            }
           }
 
           .show-case-btn-group {
-            pointer-events: none;
-            opacity: 0.5;
-          }
-        }
+            display: flex;
+            gap: 10px;
+            width: 100%;
 
-        > .add-to-cart-qty-wrapper {
-          gap: 10px;
-          bottom {
-            padding: 0;
-          }
-
-          .quantity-input {
-            width: 16px;
-          }
-        }
-
-        .show-case-btn-group {
-          display: flex;
-          gap: 10px;
-          width: 100%;
-
-          .single-product-add-to-cart-btn,
-          .single-product-buy-now-btn {
-            flex-grow: 1;
-            padding: 14px;
+            .single-product-add-to-cart-btn,
+            .single-product-buy-now-btn {
+              flex-grow: 1;
+              padding: 14px;
+            }
           }
         }
       }
