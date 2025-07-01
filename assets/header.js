@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isStickyInHeader) {
         mobileMenu.style.top = 0;
       } else {
-        mobileMenu.style.top = "46px";
+        mobileMenu.style.top = "47px";
       }
     } else {
       window.whenDrawerClose();
