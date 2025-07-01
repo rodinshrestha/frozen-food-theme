@@ -59,3 +59,10 @@
 .footer-wrapper .footer-newsletter-wrapper .newsletter-form-wrapper .link-button {
   padding: 10px 20px;
 }
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+  width: 100%;
+}

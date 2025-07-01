@@ -18,7 +18,7 @@
 
     .footer-social-media-description {
       color: #6b6b6b;
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 400;
       line-height: 24px;
       margin-block-start: 0;
@@ -52,8 +52,8 @@
       }
     }
 
-    .news-letter-info {
-    }
+    // .news-letter-info {
+    // }
 
     .newsletter-form-wrapper {
       display: flex;
@@ -69,3 +69,12 @@
     }
   }
 }
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+
