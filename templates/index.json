@@ -12,10 +12,10 @@
     "featured-banner_1": {
       "type": "featured-banner",
       "settings": {
-        "banner-image": "shopify://shop_images/annie-spratt-fFxUOS69bho-unsplash.jpg",
+        "banner-image": "shopify://shop_images/banner.webp",
         "banner-height": "large",
-        "feature-banner-title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "feature-banner-subtitle": "It is a long established fact that a reader will be distracted by the readable content",
+        "feature-banner-title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
+        "feature-banner-subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
         "button-text": "Shop Now",
         "button-link": "",
         "row_content_align": "center",
@@ -28,10 +28,13 @@
     "our-slogan": {
       "type": "our-slogan",
       "settings": {
+        "slogan-1-image": "shopify://shop_images/feat-promo1-choose_800x_166ec497-a349-4f60-8a2e-3f1904451c6c.webp",
         "slogan-1-title": "You Choose",
         "slogan-1-description": "Whether its pantry essentials or healthy prepared meals, we've got you covered!",
+        "slogan-2-image": "shopify://shop_images/deliver_800x_9a689bd6-94de-4b0d-a0a0-f75e1ffc0ecd.webp",
         "slogan-2-title": "We Deliver",
         "slogan-2-description": "We'll bring fresh ingredients and/or packaged meals, straight to your door.",
+        "slogan-3-image": "shopify://shop_images/feat-promo-eat_800x_fbe1fb62-e3c8-4edd-8cea-5b2c50185cb4.webp",
         "slogan-3-title": "You Cook... or Just Eat!",
         "slogan-3-description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
       }
@@ -40,7 +43,7 @@
       "type": "single-product-show-case",
       "name": "Single Product Showcase",
       "settings": {
-        "product_to_show": "product-6"
+        "product_to_show": "meat-lover-personal-size-bundle"
       }
     },
     "featured_products_pwNGhn": {
@@ -54,17 +57,17 @@
     "featured-banner_2": {
       "type": "featured-banner",
       "settings": {
-        "banner-image": "shopify://shop_images/bag3_2048x_1.png",
+        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
         "banner-height": "medium",
         "feature-banner-title": "Upgrade your family meals with our value-packed bundles.",
         "feature-banner-subtitle": "Big flavors. Bigger savings. Perfect for family meals",
         "button-text": "Get the bundles",
         "button-link": "",
-        "row_content_align": "left",
+        "row_content_align": "center",
         "vertical_content_align": "middle",
-        "content_width": "small",
-        "text_alignment": "left",
-        "overlay-opacity": 0.3
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.2
       }
     },
     "featured_products_wHRjeC": {
