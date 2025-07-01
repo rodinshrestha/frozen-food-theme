@@ -40,6 +40,7 @@
       "header": {
         "type": "header",
         "settings": {
+          "logo": "shopify://shop_images/logo.png",
           "main_menu": "",
           "sub_menu": ""
         }
@@ -48,6 +49,24 @@
         "type": "featured-products",
         "settings": {
           "collection": "frontpage"
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "demo_text": "This is a demo shop for the Parallax Shopify theme. Products in this shop are courtesy of <a href=\"https://garypoppins.com/\" title=\"https://garypoppins.com/\"><strong>Gary Poppins</strong></a>, <a href=\"https://onehoney.ca/\" title=\"https://onehoney.ca/\"><strong>Oneroot Honey</strong></a> or created by our Design team for demonstration purposes.",
+          "newsletter_text": "Sign up for our mailing list to receive recipes and special savings",
+          "copyright_text": "Your shop name. Powered by Shopify.",
+          "copyright_year_position": "before",
+          "facebook_url": "",
+          "instagram_url": "",
+          "footer_menu": "",
+          "show_visa": false,
+          "show_paypal": false
         }
       }
     },
