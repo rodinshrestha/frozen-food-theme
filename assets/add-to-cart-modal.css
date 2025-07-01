@@ -17,6 +17,11 @@
   position: relative;
   padding: 40px;
 }
+@media (max-width: 980px) {
+  .add-to-cart-modal-wrapper .modal-content {
+    width: 680px;
+  }
+}
 .add-to-cart-modal-wrapper .modal-content .close-modal-btn {
   position: absolute;
   right: 10px;

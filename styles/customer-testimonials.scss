@@ -1,9 +1,18 @@
 .customer-testimonials-wrapper {
-  padding: 60px 0;
-  .col {
+  .row {
+    @media (max-width: 980px) {
+      gap: 40px;
+    }
+  }
+  .section-title-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .col-4 {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+
     .testimonial-title {
       font-size: 24px;
       text-align: center;
@@ -31,10 +40,8 @@
     > p {
       line-height: 24px;
     }
-  }
 
-  @media (max-width: 768px) {
-    .customer-details {
+    @media (max-width: 980px) {
       width: 400px;
     }
   }

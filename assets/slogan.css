@@ -8,6 +8,13 @@
   gap: 20px;
   justify-content: center;
 }
+@media (max-width: 980px) {
+  .slogan-wrapper .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
 .slogan-wrapper .col-4 {
   flex: 1;
   min-width: 300px;
@@ -23,7 +30,6 @@
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 @media (max-width: 1024px) {
   .slogan-wrapper .slogan-content-wrapper {
@@ -52,21 +58,6 @@
   height: 350px;
   object-fit: cover;
   display: block;
-}
-@media (max-width: 1024px) {
-  .slogan-wrapper .slogan-image {
-    height: 220px;
-  }
-}
-@media (max-width: 768px) {
-  .slogan-wrapper .slogan-image {
-    height: 200px;
-  }
-}
-@media (max-width: 480px) {
-  .slogan-wrapper .slogan-image {
-    height: 180px;
-  }
 }
 .slogan-wrapper .slogan-content {
   padding: 20px;

@@ -6,6 +6,17 @@
   display: flex;
   gap: 40px;
 }
+@media (max-width: 980px) {
+  .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper {
+    flex-direction: column;
+  }
+}
+@media (max-width: 980px) {
+  .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-image {
+    width: 100%;
+    height: 700px;
+  }
+}
 .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information {
   flex-grow: 1;
   padding: 0 10px;
@@ -34,6 +45,11 @@
   margin-block-end: 0;
   margin-bottom: 25px;
 }
+@media (max-width: 980px) {
+  .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-description {
+    font-size: 11px !important;
+  }
+}
 .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-details-link {
   color: #7a9ea1;
   font-size: 16px;
@@ -50,6 +66,13 @@
   gap: 10px;
   margin-top: 25px;
   align-items: center;
+}
+@media (max-width: 980px) {
+  .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-cta-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
 }
 .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-cta-wrapper.disable {
   cursor: not-allowed;
@@ -75,6 +98,15 @@
   display: flex;
   gap: 10px;
   width: 100%;
+}
+@media (max-width: 980px) {
+  .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-cta-wrapper .show-case-btn-group {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-cta-wrapper .show-case-btn-group .outline-btn {
+    align-self: unset;
+  }
 }
 .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-cta-wrapper .show-case-btn-group .single-product-add-to-cart-btn,
 .product-show-case-wrapper .show-case-inner-wrapper .show-case-product-content-wrapper .show-case-product-information .show-case-product-cta-wrapper .show-case-btn-group .single-product-buy-now-btn {

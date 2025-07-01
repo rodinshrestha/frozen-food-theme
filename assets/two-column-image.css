@@ -1,3 +1,6 @@
+.two-column-image-wrapper .col-6 {
+  padding: 10px;
+}
 .two-column-image-wrapper .image-wrapper {
   padding: 10px;
   height: 30vh;
@@ -5,7 +8,16 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  box-sizing: border-box;
+  background-image: url("http://127.0.0.1:9292/cdn/shop/files/banner.webp?v=1751338529&width=1600");
+}
+.two-column-image-wrapper .image-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
 }
 .two-column-image-wrapper .image-content-wrapper {
   display: flex;
@@ -16,4 +28,5 @@
   height: 100%;
   z-index: 2;
   position: relative;
+  color: #fff;
 }

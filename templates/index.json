@@ -82,20 +82,6 @@
       "type": "customer-testimonials",
       "name": "Customer Testimonials",
       "settings": {}
-    },
-    "two_column_image_nhGPHA": {
-      "type": "two-column-image",
-      "name": "Two Column Image",
-      "settings": {
-        "image-one": "shopify://shop_images/mix-size.webp",
-        "title-one": "View our",
-        "button-one": "Explore",
-        "button-link-one": "#",
-        "image-two": "shopify://shop_images/bundle-image.png",
-        "title-two": "Vegan sauce",
-        "button-two": "Explore",
-        "button-link-two": "#"
-      }
     }
   },
   "order": [
@@ -105,7 +91,6 @@
     "featured_products_pwNGhn",
     "featured-banner_2",
     "featured_products_wHRjeC",
-    "customer_testimonials_b9Nzdq",
-    "two_column_image_nhGPHA"
+    "customer_testimonials_b9Nzdq"
   ]
 }

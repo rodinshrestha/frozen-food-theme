@@ -15,6 +15,11 @@
     height: 480px;
     position: relative;
     padding: 40px;
+
+    @media (max-width: 980px) {
+      width: 680px;
+      // height: 100%;
+    }
     .close-modal-btn {
       position: absolute;
       right: 10px;
