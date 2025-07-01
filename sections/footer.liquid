@@ -53,7 +53,27 @@
       </div>
     </div>
   </div>
+  <div class="footer-copyright" data-copyright="{{ section.settings.copyright_text }}"></div>
 </div>
+
+<script>
+  function updateFooterCopyright() {
+    var copyrightDiv = document.querySelector('.footer-copyright');
+    if (copyrightDiv) {
+      window.setFooterCopyright(copyrightDiv.getAttribute('data-copyright'));
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', updateFooterCopyright);
+
+  // Listen for Shopify section re-render events in the theme editor
+  document.addEventListener('shopify:section:load', function(e) {
+    // Only update if the footer section was reloaded
+    if (e.target && e.target.querySelector && e.target.querySelector('.footer-copyright')) {
+      updateFooterCopyright();
+    }
+  });
+</script>
 
 {% schema %}
 {
@@ -63,7 +83,7 @@
       "type": "text",
       "id": "demo_text",
       "label": "Demo text (about shop)",
-      "default": "This is a demo shop for the Parallax Shopify theme. Products in this shop are courtesy of <a href='https://garypoppins.com/' title='https://garypoppins.com/'><strong>Gary Poppins</strong></a>, <a href='https://onehoney.ca/' title='https://onehoney.ca/'><strong>Oneroot Honey</strong></a> or created by our Design team for demonstration purposes."
+      "default": "Bringing authentic flavor to your table with premium frozen food, savory sauces, and value-packed family bundles — delivered with care, convenience, and quality you can trust."
     },
     {
       "type": "text",
@@ -71,23 +91,7 @@
       "label": "Newsletter text",
       "default": "Sign up for our mailing list to receive recipes and special savings"
     },
-    {
-      "type": "text",
-      "id": "copyright_text",
-      "label": "Copyright text",
-      "default": "Your shop name. Powered by Shopify.",
-      "placeholder": "Enter your custom footer text here"
-    },
-    {
-      "type": "select",
-      "id": "copyright_year_position",
-      "label": "Year Position",
-      "options": [
-        { "value": "before", "label": "Show year before text" },
-        { "value": "after", "label": "Show year after text" }
-      ],
-      "default": "before"
-    },
+
     {
       "type": "header",
       "content": "Social Media Links"
@@ -122,6 +126,13 @@
       "id": "show_paypal",
       "label": "Show PayPal",
       "default": false
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© %date% Your shop name. Powered by Shopify.",
+      "placeholder": "Enter your custom footer text here, use %date% for the year"
     }
   ]
 }

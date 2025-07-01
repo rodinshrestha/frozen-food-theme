@@ -83,3 +83,11 @@ window.handleFetchResponse = async (res) => {
 
   return data;
 };
+
+// Dynamically set copyright text in the footer
+window.setFooterCopyright = function(text) {
+  const footerCopyright = document.querySelector('.footer-copyright');
+  if (!footerCopyright) return;
+  const updatedFooterText = text.replace(/%date%/g, new Date().getFullYear().toString());
+  footerCopyright.innerHTML = updatedFooterText;
+};
