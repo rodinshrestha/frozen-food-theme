@@ -22,6 +22,7 @@
 }
 .header-wrapper .menu-wrapper .mobile-menu-wrapper {
   display: none;
+  width: 60px;
 }
 @media (max-width: 980px) {
   .header-wrapper .menu-wrapper .mobile-menu-wrapper {
