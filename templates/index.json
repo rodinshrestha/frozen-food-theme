@@ -43,7 +43,8 @@
       "type": "single-product-show-case",
       "name": "Single Product Showcase",
       "settings": {
-        "product_to_show": "meat-lover-personal-size-bundle"
+        "product_to_show": "meat-lover-personal-size-bundle",
+        "section-title": "Our Most Recommended Products"
       }
     },
     "featured_products_pwNGhn": {
@@ -51,6 +52,7 @@
       "name": "Featured products",
       "settings": {
         "collection": "frontpage",
+        "section-title": "View Other Products",
         "product_slider": true
       }
     },
@@ -75,6 +77,7 @@
       "name": "Featured products",
       "settings": {
         "collection": "homepage-bundle-collections",
+        "section-title": "Our Bundles",
         "product_slider": true
       }
     },

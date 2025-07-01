@@ -1,10 +1,10 @@
 <section class="featured-product-wrapper section-wrapper">
   <div class="container">
-    {% if settings.section['section-title'] != '' %}
+    {% if section.settings['section-title'] != '' %}
       <div class="row">
         <div class="col">
           <div class="section-title-wrapper">
-            <div class="section-title">{{ settings.section['section-title'] }}</div>
+            <div class="section-title">{{ section.settings['section-title'] }}</div>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
     {
       "type": "text",
       "id": "section-title",
-      "label": "Product Title"
+      "label": "Section Title"
     },
     {
       "type": "checkbox",

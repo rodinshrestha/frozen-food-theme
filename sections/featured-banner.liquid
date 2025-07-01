@@ -3,7 +3,7 @@
 
 <section
   id="feature-banner-{{ section.id }}"
-  class="feature-banner-wrapper feature-banner-{{ banner_height }}"
+  class="feature-banner-wrapper feature-banner-{{ banner_height }} {% if section.settings['banner-parallax'] %} banner-parallex {% endif %}"
 >
   <div class="container">
     <div class="row">
@@ -47,10 +47,10 @@
 <style>
   #feature-banner-{{ section.id }} {
     background-image: url({{ bg_image }});
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: #fff !important;
+  }
+
+  #feature-banner-{{ section.id }}.banner-parallex {
+     background-attachment: fixed;
   }
 
 
@@ -94,6 +94,12 @@
         }
       ],
       "default": "large"
+    },
+    {
+      "type": "checkbox",
+      "id": "banner-parallax",
+      "label": "Enable Banner parallax",
+      "default": true
     },
     {
       "type": "textarea",
