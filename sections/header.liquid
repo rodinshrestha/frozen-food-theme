@@ -4,9 +4,9 @@
       <div class="col">
         <div class="menu-wrapper">
           <div class="menu-left-wrapper">
-            {% if section.settings.logo == '' %}
+            {% if section.settings.logo != '' %}
               <img
-                src="{{ section.settings.logo | image_url: width: 180 }}"
+                src="{{ section.settings.logo | img_url: "180x" }}"
                 alt="Logo"
                 loading="lazy"
                 width="180"
