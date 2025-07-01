@@ -6,7 +6,9 @@
 
         {% if product %}
           <div class="show-case-inner-wrapper">
-            <div class="section-title">Our Most Recommended Products</div>
+            {% if section.settings['section-title'] != '' %}
+              <div class="section-title">{{ section.settings['section-title'] }}</div>
+            {% endif %}
             <div class="show-case-product-content-wrapper">
               <img
                 src="{{ product.featured_image | img_url: '495x' }}"
@@ -58,6 +60,12 @@
       "type": "product",
       "id": "product_to_show",
       "label": "Select product to showcase"
+    },
+    {
+      "type": "text",
+      "id": "section-title",
+      "label": "Section Title",
+      "default": "Our Most Recommended Products"
     }
   ],
   "blocks": [],

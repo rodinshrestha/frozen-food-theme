@@ -1,12 +1,14 @@
 <section class="featured-product-wrapper section-wrapper">
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="section-title-wrapper">
-          <div class="section-title">View Other Products</div>
+    {% if settings.section['section-title'] != '' %}
+      <div class="row">
+        <div class="col">
+          <div class="section-title-wrapper">
+            <div class="section-title">{{ settings.section['section-title'] }}</div>
+          </div>
         </div>
       </div>
-    </div>
+    {% endif %}
     <div
       class="row product-slider-wrapper"
       data-product-slider="{{ section.settings["product_slider"] }}"
@@ -33,6 +35,11 @@
       "type": "collection",
       "id": "collection",
       "label": "Select a collection"
+    },
+    {
+      "type": "text",
+      "id": "section-title",
+      "label": "Product Title"
     },
     {
       "type": "checkbox",
