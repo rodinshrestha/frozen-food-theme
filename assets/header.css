@@ -30,8 +30,8 @@
   }
 }
 .header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu {
-  width: 25px;
-  height: 20px;
+  width: 22px;
+  height: 18px;
   position: relative;
   cursor: pointer;
   display: flex;
@@ -40,10 +40,13 @@
   transition: all 0.2s ease-in-out;
 }
 .header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu span {
-  height: 2px;
+  height: 1px;
   background: #000;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+.header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu span:nth-child(2) {
+  width: 15px;
 }
 .header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu.active span:nth-child(1) {
   transform: rotate(48deg) translate(7px, 6px);
@@ -52,7 +55,7 @@
   opacity: 0;
 }
 .header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu.active span:nth-child(3) {
-  transform: rotate(-48deg) translate(6px, -6px);
+  transform: rotate(-48deg) translate(6px, -5px);
 }
 .header-wrapper .menu-wrapper .menu-left-wrapper {
   padding: 10px 0;

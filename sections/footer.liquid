@@ -3,13 +3,17 @@
     <div class="row">
       <div class="col">
         <div class="footer-text-wrapper">
-          <div class="footer-title-text">SHERPA FOOD</div>
-          <div class="footer-tag-line">Frozen With Care</div>
-          <div class="footer-tag-line-description">
-            At Sherpa Food, we believe great meals start with great ingredients — handled with care, flash-frozen at
-            peak freshness, and delivered straight to your table. Our process preserves taste, texture, and nutrition,
-            so you enjoy real, honest food anytime.
-          </div>
+          {% if section.settings.title != '' %}
+            <div class="footer-title-text">{{ section.settings.title }}</div>
+          {% endif %}
+          {% if section.settings.tagline != '' %}
+            <div class="footer-tag-line">{{ section.settings.tagline }}</div>
+          {% endif %}
+          {% if section.settings.subtitle != '' %}
+            <div class="footer-tag-line-description">
+              {{ section.settings.subtitle }}
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -19,9 +23,11 @@
         <div class="newsletter-wrapper">
           <div class="newsletter-form-wrapper">
             <input type="email" class="contact-email" name="contact" placeholder="Your@example.com">
-            <div class="link-button grn-btn">Subscribe</div>
+            <div class="link-button grn-btn">{{ section.settings.btn_label }}</div>
           </div>
-          <div class="newletter-helper-text">At Sherpa food we value your privacy, you can always unsubscribe.</div>
+          {% if section.settings.newletter_subtitle != '' %}
+            <div class="newletter-helper-text">{{ section.settings.newletter_subtitle }}</div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -42,7 +48,7 @@
                   height="24"
                 >
               </a>
-              <a href="{{ section.settings.gmail }}" title="Gmail" target="_blank">
+              <a href="{{ section.settings.gmail_url }}" title="Gmail" target="_blank">
                 <img
                   src="{{ 'email.png' | asset_url }}"
                   alt="Gmail"
@@ -90,36 +96,47 @@
   "settings": [
     {
       "type": "text",
-      "id": "demo_text",
-      "label": "Demo text (about shop)",
-      "default": "This is a demo shop for the Parallax Shopify theme. Products in this shop are courtesy of <a href='https://garypoppins.com/' title='https://garypoppins.com/'><strong>Gary Poppins</strong></a>, <a href='https://onehoney.ca/' title='https://onehoney.ca/'><strong>Oneroot Honey</strong></a> or created by our Design team for demonstration purposes."
+      "id": "title",
+      "label": "Title",
+      "default": "SHERPA FOOD"
     },
     {
       "type": "text",
-      "id": "newsletter_text",
-      "label": "Newsletter text",
-      "default": "Sign up for our mailing list to receive recipes and special savings"
+      "id": "tagline",
+      "label": "Tag Line",
+      "default": "Frozen With Care"
     },
     {
-      "type": "text",
-      "id": "copyright_text",
-      "label": "Copyright text",
-      "default": "Your shop name. Powered by Shopify.",
-      "placeholder": "Enter your custom footer text here"
-    },
-    {
-      "type": "select",
-      "id": "copyright_year_position",
-      "label": "Year Position",
-      "options": [
-        { "value": "before", "label": "Show year before text" },
-        { "value": "after", "label": "Show year after text" }
-      ],
-      "default": "before"
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "At Sherpa Food, we believe great meals start with great ingredients — handled with care, flash-frozen at peak freshness, and delivered straight to your table. Our process preserves taste, texture, and nutrition, so you enjoy real, honest food anytime."
     },
     {
       "type": "header",
-      "content": "Social Media Links"
+      "content": "News Lettter Section"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "Subscribe",
+      "placeholder": "Dont leave it blank"
+    },
+    {
+      "type": "text",
+      "id": "newletter_subtitle",
+      "label": "Helper Text",
+      "default": "At Sherpa food we value your privacy, you can always unsubscribe."
+    },
+    {
+      "type": "header",
+      "content": "Social Media Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo_image",
+      "label": "Footer Logo"
     },
     {
       "type": "url",
@@ -132,6 +149,11 @@
       "label": "Instagram URL"
     },
     {
+      "type": "url",
+      "id": "gmail_url",
+      "label": "Gmail URL"
+    },
+    {
       "type": "header",
       "content": "Footer Menu"
     },
@@ -139,18 +161,6 @@
       "type": "link_list",
       "id": "footer_menu",
       "label": "Footer menu"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_visa",
-      "label": "Show Visa",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_paypal",
-      "label": "Show PayPal",
-      "default": false
     }
   ]
 }

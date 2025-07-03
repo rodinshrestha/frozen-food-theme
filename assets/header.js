@@ -53,19 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (isStickyInHeader) {
         mobileMenu.style.top = headerHeight;
-        // mobileMenu.style.height = `calc(100% - ${headerHeight})`;
       } else {
         const promotionalBannerHeight =
           document.getElementById("promotional-banner");
         if (!promotionalBannerHeight) {
           mobileMenu.style.top = headerHeight;
-          // mobileMenu.style.height = `calc(100% - ${headerHeight})`;
           return;
         }
 
         const totalHeight = headerHeight + promotionalBannerHeight.offsetHeight;
-        mobileMenu.style.top = totalHeight;
-        // mobileMenu.style.height = `calc(100% - ${totalHeight})`;
+        mobileMenu.style.top = totalHeight - 0.5;
       }
     } else {
       window.whenDrawerClose();

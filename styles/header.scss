@@ -27,8 +27,8 @@
         display: unset;
       }
       .ham-burger-menu {
-        width: 25px;
-        height: 20px;
+        width: 22px;
+        height: 18px;
         position: relative;
         cursor: pointer;
         display: flex;
@@ -37,11 +37,15 @@
         transition: all 0.2s ease-in-out;
 
         span {
-          height: 2px;
+          height: 1px;
           background: #000;
           border-radius: 2px;
           transition: all 0.3s ease;
+          &:nth-child(2) {
+            width: 15px;
+          }
         }
+
         &.active {
           span:nth-child(1) {
             transform: rotate(48deg) translate(7px, 6px);
@@ -50,7 +54,7 @@
             opacity: 0;
           }
           span:nth-child(3) {
-            transform: rotate(-48deg) translate(6px, -6px);
+            transform: rotate(-48deg) translate(6px, -5px);
           }
         }
       }

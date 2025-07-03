@@ -121,6 +121,12 @@
   line-height: 62px;
   margin: 0;
 }
+@media (max-width: 980px) {
+  .feature-banner-wrapper .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-banner-title {
+    font-size: 36px;
+    line-height: 50px;
+  }
+}
 .feature-banner-wrapper .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-subtitle {
   font-size: 18px;
   line-height: 1.5;
@@ -133,22 +139,4 @@
 }
 .feature-banner-wrapper .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .outline-btn:hover {
   border-color: #000 !important;
-}
-
-@media (max-width: 768px) {
-  .feature-banner-wrapper {
-    background-attachment: scroll;
-  }
-  .feature-banner-wrapper.feature-banner-large {
-    height: 60vh;
-    padding: 60px 0;
-  }
-  .feature-banner-wrapper.feature-banner-medium {
-    height: 40vh;
-    padding: 40px 0;
-  }
-  .feature-banner-wrapper.feature-banner-small {
-    height: 25vh;
-    padding: 30px 0;
-  }
 }
