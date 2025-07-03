@@ -1,4 +1,4 @@
-<section class="featured-product-wrapper section-wrapper">
+<section class="featured-product-wrapper section-wrapper" id="product-list-{{ section.id }}">
   <div class="container">
     {% if section.settings['section-title'] != '' %}
       <div class="row">
@@ -10,19 +10,23 @@
       </div>
     {% endif %}
     <div
-      class="row product-slider-wrapper"
+      class="row"
       data-product-slider="{{ section.settings["product_slider"] }}"
       id="product-slider-wrapper"
     >
-      {% if section.settings.collection and section.settings.collection.products.size > 0 %}
-        {% for product in section.settings.collection.products %}
-          <div class="col-3 product-slide">
-            {% render 'product-card', product: product %}
+      <div class="col">
+        {% if section.settings.collection and section.settings.collection.products.size > 0 %}
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {% for product in section.settings.collection.products %}
+                {% render 'product-card', product: product %}
+              {% endfor %}
+            </div>
           </div>
-        {% endfor %}
-      {% else %}
-        <p class="no-product-found-text">No Product found</p>
-      {% endif %}
+        {% else %}
+          <p class="no-product-found-text">No Product found</p>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>

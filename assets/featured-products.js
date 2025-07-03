@@ -1,82 +1,69 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const wrappers = document.querySelectorAll(".product-slider-wrapper");
+  const productListWrappers = document.querySelectorAll(
+    "#product-slider-wrapper",
+  );
 
-  wrappers.forEach((wrapper, index) => {
+  if (!productListWrappers.length) return;
+
+  productListWrappers.forEach((wrapper, index) => {
     const isSliderEnable =
       wrapper.getAttribute("data-product-slider") === "true";
 
     if (!isSliderEnable) {
       console.log("Slider disabled or not enough products.");
+      const productWrapper = wrapper.querySelector(".swiper-wrapper");
+      productWrapper.classList.add("product-list-wrapper");
       return;
     }
 
-    // Wait for Swiper to be available
-    const initSwiper = () => {
-      if (typeof Swiper === "undefined") {
-        setTimeout(initSwiper, 100);
-        return;
-      }
+    const productSliderWrapper = wrapper.querySelector(".swiper");
 
-      // Add Swiper classes
-      wrapper.classList.add("swiper-wrapper");
-      const slides = wrapper.querySelectorAll(".product-slide");
+    const uniqueID = `product-slider-${index}`;
+    productSliderWrapper.id = uniqueID;
 
-      slides.forEach((slide) => {
-        slide.classList.add("swiper-slide");
-        slide.classList.remove("col-3");
-      });
+    // creating next buttton
+    const slideNextBtn = document.createElement("div");
+    slideNextBtn.id = `${uniqueID}-next`;
+    slideNextBtn.classList.add("swiper-button-next");
 
-      // Create unique container for this slider
-      const swiperContainer = document.createElement("div");
-      swiperContainer.classList.add("swiper", "featured-products-swiper");
-      const uniqueID = `product-slider-${index}`;
-      swiperContainer.id = uniqueID;
+    // creating back btn
+    const slidePrevBtn = document.createElement("div");
+    slidePrevBtn.id = `${uniqueID}-prev`;
+    slidePrevBtn.classList.add("swiper-button-prev");
 
-      wrapper.parentNode.insertBefore(swiperContainer, wrapper);
-      swiperContainer.appendChild(wrapper);
+    wrapper.appendChild(slideNextBtn);
+    wrapper.appendChild(slidePrevBtn);
 
-      // Create navigation buttons
-      const nextBtn = document.createElement("div");
-      nextBtn.classList.add("swiper-button-next");
-      nextBtn.id = `${uniqueID}-next`;
+    // Initialize Swiper
+    new Swiper(`#${uniqueID}`, {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      loop: true,
 
-      const prevBtn = document.createElement("div");
-      prevBtn.classList.add("swiper-button-prev");
-      prevBtn.id = `${uniqueID}-prev`;
-
-      swiperContainer.appendChild(nextBtn);
-      swiperContainer.appendChild(prevBtn);
-
-      // Determine loop setting
-      const shouldLoop = slides.length > 4;
-
-      // Initialize Swiper
-      new Swiper(`#${uniqueID}`, {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        loop: shouldLoop,
-        loopedSlides: slides.length,
-        navigation: {
-          nextEl: `#${uniqueID}-next`,
-          prevEl: `#${uniqueID}-prev`,
+      navigation: {
+        nextEl: `#${uniqueID}-next`,
+        prevEl: `#${uniqueID}-prev`,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
         },
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 1,
-          },
-          940: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 4.5,
-          },
+        616: {
+          slidesPerView: 2,
         },
-      });
-    };
-
-    initSwiper();
+        871: {
+          slidesPerView: 2.5,
+        },
+        884: {
+          slidesPerView: 3,
+        },
+        1020: {
+          slidesPerView: 3.5,
+        },
+        1200: {
+          slidesPerView: 4,
+        },
+      },
+    });
   });
 });

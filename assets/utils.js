@@ -83,3 +83,5 @@ window.handleFetchResponse = async (res) => {
 
   return data;
 };
+
+window.isMobile = () => document.documentElement.clientWidth <= 768;

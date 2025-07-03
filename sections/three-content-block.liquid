@@ -1,13 +1,13 @@
-<section class="there-content-block">
+<section class="three-content-block-wrapper" id="three-content-block">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col three-content-inner-wrapper" id="three-content-inner-wrapper">
         {% if section.blocks.size > 0 %}
           {% for block in section.blocks %}
-            <div class="block-wrapper">
+            <div class="block-wrapper" id="block-wrapper">
               <div class="block-image-wrapper">
                 <img
-                  src="{{ block.settings.block_image | asset_url }}"
+                  src="{{ block.settings.block_image | image_url }}"
                   alt="{{ block.settings.block_title }}"
                   width="400"
                   height="400"

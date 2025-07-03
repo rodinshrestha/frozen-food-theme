@@ -8,6 +8,11 @@
   box-sizing: border-box;
   font-size: 14px;
   font-weight: 400;
+  background-color: rgb(48, 51, 54);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .promotional-banner-wrapper .col {
   width: 100%;

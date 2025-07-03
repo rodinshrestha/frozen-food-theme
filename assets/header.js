@@ -46,14 +46,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!isMenuActive) {
       this.classList.add("active");
-      header.classList.add("mobile-navigation-menu");
       mobileMenu.classList.add("active");
       window.whenDrawerOpen();
 
+      const headerHeight = headerWrapper.offsetHeight;
+
       if (isStickyInHeader) {
-        mobileMenu.style.top = 0;
+        mobileMenu.style.top = headerHeight;
+        // mobileMenu.style.height = `calc(100% - ${headerHeight})`;
       } else {
-        mobileMenu.style.top = "47px";
+        const promotionalBannerHeight =
+          document.getElementById("promotional-banner");
+        if (!promotionalBannerHeight) {
+          mobileMenu.style.top = headerHeight;
+          // mobileMenu.style.height = `calc(100% - ${headerHeight})`;
+          return;
+        }
+
+        const totalHeight = headerHeight + promotionalBannerHeight.offsetHeight;
+        mobileMenu.style.top = totalHeight;
+        // mobileMenu.style.height = `calc(100% - ${totalHeight})`;
       }
     } else {
       window.whenDrawerClose();
