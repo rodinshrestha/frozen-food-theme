@@ -9,8 +9,8 @@
   font-size: 14px;
   font-weight: 400;
 }
-.promotional-banner-wrapper .swiper-wrapper {
-  position: relative;
+.promotional-banner-wrapper .col {
+  width: 100%;
 }
 .promotional-banner-wrapper:hover .swiper-button-next,
 .promotional-banner-wrapper:hover .swiper-button-prev {
@@ -23,7 +23,6 @@
   background: none;
   color: #f2f2f2 !important;
   opacity: 0.5;
-  display: none;
 }
 .promotional-banner-wrapper .swiper-button-next:hover,
 .promotional-banner-wrapper .swiper-button-prev:hover {
@@ -35,8 +34,8 @@
   font-size: 14px;
 }
 .promotional-banner-wrapper .swiper-button-next {
-  right: 30px;
+  right: -5px;
 }
 .promotional-banner-wrapper .swiper-button-prev {
-  left: 30px;
+  left: -5px;
 }

@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector("#promotional-banner");
+  const swiper = document.getElementById("promotional-banner-swiper");
 
-  if (slider && slider.classList.contains("swiper")) {
-    new Swiper("#promotional-banner", {
-      loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: true,
-      },
-      navigation: {
-        nextEl: "#promotional-banner .swiper-button-next",
-        prevEl: "#promotional-banner .swiper-button-prev",
-      },
-      slidesPerView: 1,
-      spaceBetween: 0,
-      effect: "slide", // Or "fade"
-    });
-  }
+  if (!swiper) return;
+
+  new Swiper(swiper, {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 1,
+    spaceBetween: 0,
+    effect: "slide", // Or "fade"
+  });
 });

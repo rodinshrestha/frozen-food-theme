@@ -9,8 +9,8 @@
   font-size: 14px;
   font-weight: 400;
 
-  .swiper-wrapper {
-    position: relative;
+  .col {
+    width: 100%;
   }
 
   &:hover {
@@ -26,7 +26,7 @@
     background: none;
     color: #f2f2f2 !important;
     opacity: 0.5;
-    display: none;
+    // display: none;
 
     &:hover {
       background-color: transparent !important;
@@ -38,9 +38,9 @@
     }
   }
   .swiper-button-next {
-    right: 30px;
+    right: -5px;
   }
   .swiper-button-prev {
-    left: 30px;
+    left: -5px;
   }
 }

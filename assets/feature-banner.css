@@ -48,7 +48,6 @@
 }
 .feature-banner-wrapper .container {
   height: 100%;
-  padding: 0 15px;
 }
 .feature-banner-wrapper .row {
   height: 100%;
@@ -58,7 +57,7 @@
   display: flex;
 }
 .feature-banner-wrapper .feature-banner-content-inner-wrapper {
-  width: 100vw;
+  width: 100%;
   display: flex;
   text-align: center;
 }

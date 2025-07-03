@@ -26,20 +26,6 @@
         "overlay-opacity": 0.3
       }
     },
-    "our-slogan": {
-      "type": "our-slogan",
-      "settings": {
-        "slogan-1-image": "shopify://shop_images/feat-promo1-choose_800x_166ec497-a349-4f60-8a2e-3f1904451c6c.webp",
-        "slogan-1-title": "You Choose",
-        "slogan-1-description": "Whether its pantry essentials or healthy prepared meals, we've got you covered!",
-        "slogan-2-image": "shopify://shop_images/deliver_800x_9a689bd6-94de-4b0d-a0a0-f75e1ffc0ecd.webp",
-        "slogan-2-title": "We Deliver",
-        "slogan-2-description": "We'll bring fresh ingredients and/or packaged meals, straight to your door.",
-        "slogan-3-image": "shopify://shop_images/feat-promo-eat_800x_fbe1fb62-e3c8-4edd-8cea-5b2c50185cb4.webp",
-        "slogan-3-title": "You Cook... or Just Eat!",
-        "slogan-3-description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
-      }
-    },
     "single_product_show_case_9phqPX": {
       "type": "single-product-show-case",
       "name": "Single Product Showcase",
@@ -91,7 +77,6 @@
   },
   "order": [
     "featured-banner_1",
-    "our-slogan",
     "single_product_show_case_9phqPX",
     "featured_products_pwNGhn",
     "featured-banner_2",

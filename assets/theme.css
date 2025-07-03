@@ -57,11 +57,14 @@ main {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 980px) {
   .container {
-    max-width: 900px;
+    max-width: 100%;
+    padding: 0 15px;
   }
 }
 
@@ -72,6 +75,7 @@ main {
   margin-left: -15px; /* negative padding to offset col padding */
   margin-right: -15px;
   row-gap: 10px;
+  box-sizing: border-box;
 }
 
 /* Column */
@@ -80,8 +84,6 @@ main {
   padding-right: 15px;
   box-sizing: border-box;
   flex: 1; /* will grow and fill */
-  min-width: 0; /* prevent overflow */
-  /* height: 100%; */
 }
 
 .col-3 {
