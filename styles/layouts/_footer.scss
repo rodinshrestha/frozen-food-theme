@@ -78,7 +78,7 @@
 
   .footer-link-wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     @include responsive(tablet) {
       flex-direction: column-reverse;
