@@ -1,22 +1,24 @@
 {% if section.settings['show-promotional-banner'] %}
-  <section class="promotional-banner-wrapper">
-    {% if settings['promotional-text-1'] != '' %}
-      <div class="promotional-primary-text">{{ section.settings['promotional-text-1'] }}</div>
-    {% endif %}
-
-    {% if settings['promotional-text-2'] != '' %}
-      <div class="promotional-secondary-text">{{ section.settings['promotional-text-2'] }}</div>
-    {% endif %}
-  </section>
+  <div class="promotional-banner-wrapper" id="promotional-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="swiper" id="promotional-banner-swiper">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide promotional-primary-text">
+                  {{ block.settings.text }}
+                </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endif %}
-
-<style>
-  .promotional-banner-wrapper {
-    background-color: {{ section.settings.background-color }};
-    color: {{ section.settings.text-color }};
-    text-align: {{ section.settings.text-position }};
-  }
-</style>
 
 {% schema %}
 {
@@ -32,26 +34,13 @@
       "type": "color",
       "id": "background-color",
       "label": "Background Color",
-      "default": "#1B1F23"
+      "default": "rgb(48, 51, 54)"
     },
     {
       "type": "color",
       "id": "text-color",
       "label": "Text Color",
       "default": "#fff"
-    },
-
-    {
-      "type": "textarea",
-      "id": "promotional-text-1",
-      "label": "Promotional Text 1",
-      "default": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **"
-    },
-    {
-      "type": "textarea",
-      "id": "promotional-text-2",
-      "label": "Promotional Text 2",
-      "default": "Limited Time Offer: Free Shipping on orders of $99.99 or more"
     },
     {
       "type": "select",
@@ -74,6 +63,25 @@
       "default": "center"
     }
   ],
-  "presets": []
+  "blocks": [
+    {
+      "type": "text_slide",
+      "name": "Text Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Promotional Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Promotional Banner Slider",
+      "category": "Custom"
+    }
+  ]
 }
 {% endschema %}

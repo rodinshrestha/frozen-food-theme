@@ -12,44 +12,61 @@
     "sections": {
       "promotional-banner": {
         "type": "promotional-banner",
+        "blocks": {
+          "text_slide_hMWp3U": {
+            "type": "text_slide",
+            "settings": {
+              "text": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **"
+            }
+          },
+          "text_slide_BaqaRd": {
+            "type": "text_slide",
+            "settings": {
+              "text": "Limited Time Offer: Free Shipping on orders of $99.99 or more"
+            }
+          }
+        },
+        "block_order": [
+          "text_slide_hMWp3U",
+          "text_slide_BaqaRd"
+        ],
         "settings": {
           "show-promotional-banner": true,
           "background-color": "#1b1f23",
           "text-color": "#ffffff",
-          "promotional-text-1": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **",
-          "promotional-text-2": "Limited Time Offer: Free Shipping on orders of $99.99 or more",
           "text-position": "center"
         }
       },
       "header": {
         "type": "header",
         "settings": {
+          "logo": "shopify://shop_images/logo.png",
           "main_menu": "",
           "sub_menu": ""
-        }
-      },
-      "feature-banner": {
-        "type": "feature-banner",
-        "settings": {
-          "feature-banner-title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "feature-banner-subtitle": "It is a long established fact that a reader will be distracted by the readable content"
-        }
-      },
-      "slogan": {
-        "type": "slogan",
-        "settings": {
-          "slogan-1-title": "Lorem Ipsum",
-          "slogan-1-description": "It is a long established fact that a reader will be distracted by the",
-          "slogan-2-title": "Lorem Ipsum",
-          "slogan-2-description": "It is a long established fact that a reader will be distracted by the",
-          "slogan-3-title": "Lorem Ipsum",
-          "slogan-3-description": "It is a long established fact that a reader will be distracted by the"
         }
       },
       "featured-products": {
         "type": "featured-products",
         "settings": {
           "collection": "frontpage"
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "demo_text": "This is a demo shop for the Parallax Shopify theme. Products in this shop are courtesy of <a href=\"https://garypoppins.com/\" title=\"https://garypoppins.com/\"><strong>Gary Poppins</strong></a>, <a href=\"https://onehoney.ca/\" title=\"https://onehoney.ca/\"><strong>Oneroot Honey</strong></a> or created by our Design team for demonstration purposes.",
+          "newsletter_text": "Sign up for our mailing list to receive recipes and special savings",
+          "copyright_text": "Your shop name. Powered by Shopify.",
+          "copyright_year_position": "before",
+          "facebook_url": "",
+          "instagram_url": "",
+          "footer_menu": "",
+          "show_visa": false,
+          "show_paypal": false
         }
       }
     },

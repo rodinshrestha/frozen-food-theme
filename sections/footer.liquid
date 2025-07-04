@@ -1,0 +1,167 @@
+<div class="footer-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="footer-text-wrapper">
+          {% if section.settings.title != '' %}
+            <div class="footer-title-text">{{ section.settings.title }}</div>
+          {% endif %}
+          {% if section.settings.tagline != '' %}
+            <div class="footer-tag-line">{{ section.settings.tagline }}</div>
+          {% endif %}
+          {% if section.settings.subtitle != '' %}
+            <div class="footer-tag-line-description">
+              {{ section.settings.subtitle }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="newsletter-wrapper">
+          <div class="newsletter-form-wrapper">
+            <input type="email" class="contact-email" name="contact" placeholder="Your@example.com">
+            <div class="link-button grn-btn">{{ section.settings.btn_label }}</div>
+          </div>
+          {% if section.settings.newletter_subtitle != '' %}
+            <div class="newletter-helper-text">{{ section.settings.newletter_subtitle }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="footer-link-wrapper">
+          <div class="footer-social-media-wrapper">
+            <div class="footer-logo-wrapper">
+              <img src="{{ 'logo.png' | asset_url}}" width="200" height="146" alt="footer-logo">
+            </div>
+            <div class="social-icons-wrapper">
+              <a href="{{ section.settings.facebook_url }}" title="Facebook" target="_blank">
+                <img
+                  src="{{ 'facebook.png' | asset_url }}"
+                  alt="Facebook"
+                  class="social-icon-img"
+                  width="24"
+                  height="24"
+                >
+              </a>
+              <a href="{{ section.settings.gmail_url }}" title="Gmail" target="_blank">
+                <img
+                  src="{{ 'email.png' | asset_url }}"
+                  alt="Gmail"
+                  class="social-icon-img"
+                  width="27"
+                  height="27"
+                >
+              </a>
+              <a href="{{ section.settings.instagram_url }}" title="Instagram" target="_blank">
+                <img
+                  src="{{ 'instagram.png' | asset_url }}"
+                  alt="Instagram"
+                  class="social-icon-img"
+                  width="24"
+                  height="24"
+                >
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-navigation-link-wrapper">
+            <div class="footer-title-wrapper">Useful Links</div>
+            <div class="footer-link-content">
+              <div class="footer-link"><a href="#"> Momo Sauce </a></div>
+              <div class="footer-link"><a href="#">Frozen Food</a></div>
+              <div class="footer-link"><a href="#">Bundles</a></div>
+              <div class="footer-link"><a href="#">Gift Cards</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="footer-text">Sherpa Food © 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "SHERPA FOOD"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tag Line",
+      "default": "Frozen With Care"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "At Sherpa Food, we believe great meals start with great ingredients — handled with care, flash-frozen at peak freshness, and delivered straight to your table. Our process preserves taste, texture, and nutrition, so you enjoy real, honest food anytime."
+    },
+    {
+      "type": "header",
+      "content": "News Lettter Section"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "Subscribe",
+      "placeholder": "Dont leave it blank"
+    },
+    {
+      "type": "text",
+      "id": "newletter_subtitle",
+      "label": "Helper Text",
+      "default": "At Sherpa food we value your privacy, you can always unsubscribe."
+    },
+    {
+      "type": "header",
+      "content": "Social Media Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo_image",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "gmail_url",
+      "label": "Gmail URL"
+    },
+    {
+      "type": "header",
+      "content": "Footer Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer menu"
+    }
+  ]
+}
+{% endschema %}

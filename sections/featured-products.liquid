@@ -1,38 +1,32 @@
-<section class="featured-product-wrapper">
+<section class="featured-product-wrapper section-wrapper" id="product-list-{{ section.id }}">
   <div class="container">
-    <div class="row">
-      {% if section.settings.collection and section.settings.collection.products.size > 0 %}
-        {% for product in section.settings.collection.products limit: section.settings.limit %}
-          <div class="col-3 ">
-            <div class="featured-product-image-wrapper">
-              <img
-                src="{{ product.featured_image | img_url: '280x280' }}"
-                width="280"
-                height="280"
-                alt="{{ product.title }}"
-              >
-
-              <div
-                class="open-modal-btn"
-                data-product-id="{{ product.id }}"
-              >
-                <i class="fa-solid fa-plus"></i>
-              </div>
-
-              {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
-            </div>
-
-            <div class="featured-product-information">
-              <a href="{{product.url }}">
-                <p class="product-title">{{ product.title }}</p>
-              </a>
-              <p class="product-price">{{ product.price | money }}</p>
+    {% if section.settings['section-title'] != '' %}
+      <div class="row">
+        <div class="col">
+          <div class="section-title-wrapper">
+            <div class="section-title">{{ section.settings['section-title'] }}</div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div
+      class="row"
+      data-product-slider="{{ section.settings["product_slider"] }}"
+      id="product-slider-wrapper"
+    >
+      <div class="col">
+        {% if section.settings.collection and section.settings.collection.products.size > 0 %}
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {% for product in section.settings.collection.products %}
+                {% render 'product-card', product: product %}
+              {% endfor %}
             </div>
           </div>
-        {% endfor %}
-      {% else %}
-        <p>No Product found</p>
-      {% endif %}
+        {% else %}
+          <p class="no-product-found-text">No Product found</p>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
@@ -47,13 +41,16 @@
       "label": "Select a collection"
     },
     {
-      "type": "range",
-      "id": "limit",
-      "label": "Number of products to show",
-      "min": 1,
-      "max": 8,
-      "step": 1,
-      "default": 4
+      "type": "text",
+      "id": "section-title",
+      "label": "Section Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_slider",
+      "label": "Enable slider",
+      "info": "Please add more than 4 products if you enable slider",
+      "default": true
     }
   ],
   "presets": [

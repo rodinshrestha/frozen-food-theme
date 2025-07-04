@@ -1,5 +1,21 @@
 <div class="add-to-cart-qty-wrapper" data-min="1" data-max="{{ product.variants.first.inventory_quantity }}">
-  <button type="button" class="qty-btn minus">-</button>
+  <button
+    type="button"
+    class="qty-btn minus"
+    {% if index %}
+      data-line="{{ index }}"
+    {% endif %}
+  >
+    <img src="{{ 'minus.png' | asset_url}}" alt="Decrease product quantity" width="14" height="14">
+  </button>
   <div class="quantity-input">{{ appliedQty }}</div>
-  <button type="button" class="qty-btn plus">+</button>
+  <button
+    type="button"
+    class="qty-btn plus"
+    {% if index %}
+      data-line="{{ index }}"
+    {% endif %}
+  >
+    <img src="{{ 'plus.png' | asset_url}}" alt="Increase product quantity" width="14" height="14">
+  </button>
 </div>

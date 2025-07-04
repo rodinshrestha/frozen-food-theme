@@ -1,24 +1,26 @@
 .add-to-cart-qty-wrapper {
   background-color: #f8f4ef;
   border-radius: 20px;
-  display: inline-flex;
-  width: 80px;
-  padding: 5px 8px;
+  box-sizing: border-box;
+  padding: 10px;
+  gap: 5px;
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100px;
 }
 .add-to-cart-qty-wrapper .qty-btn,
 .add-to-cart-qty-wrapper .quantity-input {
   background-color: transparent;
   outline: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 16px;
+}
+.add-to-cart-qty-wrapper .quantity-input {
+  width: 10px;
+  text-align: center;
 }
 .add-to-cart-qty-wrapper .qty-btn {
-  font-size: 28px;
   cursor: pointer;
 }
 .add-to-cart-qty-wrapper .qty-btn.disable {

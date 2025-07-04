@@ -1,0 +1,66 @@
+<section class="three-content-block-wrapper" id="three-content-block">
+  <div class="container">
+    <div class="row">
+      <div class="col three-content-inner-wrapper" id="three-content-inner-wrapper">
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            <div class="block-wrapper" id="block-wrapper">
+              <div class="block-image-wrapper">
+                <img
+                  src="{{ block.settings.block_image | image_url }}"
+                  alt="{{ block.settings.block_title }}"
+                  width="400"
+                  height="400"
+                  class="block-image"
+                >
+              </div>
+              <div class="block-content-wrapper">
+                {% if block.settings.block_title != '' %}
+                  <h3 class="block-title">{{ block.settings.block_title }}</h3>
+                {% endif %}
+                <div class="block-divider"></div>
+
+                {% if block.settings.block_description != '' %}
+                  <p class="block-information">
+                    {{ block.settings.block_description }}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="empty-content">Please add atleast one block</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Three Content Block",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+        { "type": "image_picker", "id": "block_image", "label": "Image Block" },
+        { "type": "text", "id": "block_title", "label": "Block Title" },
+        {
+          "type": "textarea",
+          "id": "block_description",
+          "label": "Block Description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Three Fixed Blocks",
+      "blocks": [{ "type": "content_block" }, { "type": "content_block" }, { "type": "content_block" }]
+    }
+  ]
+}
+{% endschema %}

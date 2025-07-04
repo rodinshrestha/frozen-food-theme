@@ -1,13 +1,64 @@
 .header-wrapper {
   height: 55px;
-  position: fixed;
-  top: 89px;
   width: 100vw;
   background-color: #fff;
+  transition: all 0.3s ease-in;
+  z-index: 25;
+  left: 0;
+  &.sticky {
+    top: 0;
+    position: fixed;
+    box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
+  }
+  &.mobile-navigation-menu {
+    position: fixed;
+    left: 80%;
+  }
   .menu-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .mobile-menu-wrapper {
+      display: none;
+      width: 73px;
+
+      @media (max-width: 980px) {
+        display: unset;
+      }
+      .ham-burger-menu {
+        width: 22px;
+        height: 18px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.2s ease-in-out;
+
+        span {
+          height: 1px;
+          background: #000;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          &:nth-child(2) {
+            width: 15px;
+          }
+        }
+
+        &.active {
+          span:nth-child(1) {
+            transform: rotate(48deg) translate(7px, 6px);
+          }
+          span:nth-child(2) {
+            opacity: 0;
+          }
+          span:nth-child(3) {
+            transform: rotate(-48deg) translate(6px, -5px);
+          }
+        }
+      }
+    }
 
     .menu-left-wrapper {
       padding: 10px 0;
@@ -20,7 +71,7 @@
         display: flex;
         list-style: none;
         gap: 15px;
-        font-weight: 500;
+        font-weight: 400;
         a {
           color: unset;
           text-decoration: none;
@@ -39,29 +90,30 @@
             color: unset;
             text-decoration: none;
           }
-          &:hover {
-            .sub-menu-wrapper {
-              display: flex;
-            }
-          }
 
           .sub-menu-wrapper {
+            overflow: hidden;
             list-style: none;
             position: absolute;
             left: 0;
             width: 200px;
             padding-inline-start: 10px;
             flex-direction: column;
-            gap: 15px;
-            padding: 20px 15px 10px 15px;
             background-color: #fff;
             color: #000;
-            display: none;
+            display: flex;
+            height: 0;
+            transition: height 0.3s ease;
+            visibility: hidden;
             .sub-menu-list {
               cursor: pointer;
               transition: all 0.2s ease-in;
+              padding: 10px;
               &:hover {
                 color: #7f8c8d;
+              }
+              &:first-child {
+                padding-top: 20px;
               }
             }
           }
@@ -70,13 +122,30 @@
 
       .menu-icon-wrapper {
         display: flex;
-        gap: 15px;
+        gap: 20px;
+        align-items: center;
+
+        img {
+          cursor: pointer;
+        }
 
         a {
           color: unset;
+          display: flex;
+          align-items: center;
         }
-        .fa-solid {
-          cursor: pointer;
+
+        .add-to-cart-icon-group {
+          display: flex;
+          align-items: center;
+          position: relative;
+          .cart-count-number {
+            font-size: 12px;
+            font-weight: 500;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+          }
         }
       }
     }
