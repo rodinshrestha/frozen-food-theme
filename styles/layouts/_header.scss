@@ -105,12 +105,13 @@
             height: 0;
             transition: height 0.3s ease;
             visibility: hidden;
+            z-index: 12;
             .sub-menu-list {
               cursor: pointer;
               transition: all 0.2s ease-in;
               padding: 10px;
               &:hover {
-                color: $light-secondary-textColor;
+                text-decoration: underline;
               }
               &:first-child {
                 padding-top: 20px;

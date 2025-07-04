@@ -100,6 +100,7 @@
   height: 0;
   transition: height 0.3s ease;
   visibility: hidden;
+  z-index: 12;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list {
   cursor: pointer;
@@ -107,7 +108,7 @@
   padding: 10px;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:hover {
-  color: rgba(242, 242, 242, 0.6);
+  text-decoration: underline;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:first-child {
   padding-top: 20px;
