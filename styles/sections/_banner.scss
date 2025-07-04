@@ -28,7 +28,7 @@
     padding: 60px 0;
 
     @media (max-width: 980px) {
-      height: 30vh;
+      height: 50vh;
     }
   }
 
@@ -39,7 +39,7 @@
     .feature-banner-title {
       font-size: 2rem !important;
       font-weight: 600;
-      color: #000;
+      color: $dark-primary-textColor;
       line-height: 1.2;
       margin: 0;
     }

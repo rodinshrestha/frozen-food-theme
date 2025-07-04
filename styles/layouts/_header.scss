@@ -82,9 +82,6 @@
         .navigation-list {
           cursor: pointer;
           transition: all 0.2s ease-in;
-          &:hover {
-            color: $light-secondary-textColor;
-          }
         }
 
         .sub-navigation-wrapper {

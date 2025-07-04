@@ -17,6 +17,9 @@
 
       .show-case-product-image {
         width: 100%;
+        @include responsive(tablet) {
+          height: 400px;
+        }
       }
 
       .show-case-product-information {
@@ -25,15 +28,23 @@
 
         .show-case-product-title {
           font-size: 1.25rem;
-          font-weight: 500;
+          font-weight: 600;
           margin-bottom: 25px;
+          color: $dark-primary-textColor;
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
         }
 
         .show-case-product-price {
           font-size: 1.25rem;
           color: $dark-primary-textColor;
-          font-weight: 500;
+          font-weight: 600;
           margin-bottom: 25px;
+
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
         }
 
         .show-case-product-description {
@@ -42,15 +53,29 @@
           font-weight: 400;
           line-height: 28px;
           margin-bottom: 25px;
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
         }
 
         .show-case-product-details-link {
-          color: $light-secondary-textColor;
+          color: $dark-primary-textColor;
           font-size: 1rem;
           font-weight: 400;
           line-height: 28px;
           transition: all 0.2s ease-in-out;
           margin-bottom: 20px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+          @include responsive(tablet) {
+            margin-bottom: 0;
+          }
 
           &:hover {
             opacity: 0.8;
@@ -65,6 +90,7 @@
 
           @include responsive(tablet) {
             gap: 15px;
+            margin-top: 15px;
           }
 
           &.disable {

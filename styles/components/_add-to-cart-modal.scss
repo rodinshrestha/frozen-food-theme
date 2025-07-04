@@ -15,13 +15,16 @@
   .modal-content {
     background: $white-color;
     width: 1024px;
-    height: 480px;
+    height: 580px;
     position: relative;
     padding: 40px;
 
     @include responsive(tablet) {
-      width: 680px;
+      padding: 20px 15px;
+      width: 90%;
+      overflow: scroll;
     }
+
     .close-modal-btn {
       position: absolute;
       right: 10px;
@@ -30,11 +33,23 @@
       background: none;
       border: none;
       cursor: pointer;
+      @include responsive(tablet) {
+        right: 2px;
+        top: 2px;
+      }
     }
 
     .add-to-cart-product-wrapper {
       display: flex;
       gap: 20px;
+      @include responsive(tablet) {
+        flex-direction: column;
+
+        .add-to-cart-product-image {
+          width: 100%;
+          height: 350px;
+        }
+      }
 
       .add-to-cart-product-information {
         flex-grow: 1;
@@ -44,6 +59,9 @@
           font-size: 1.25rem;
           font-weight: 600;
           margin-bottom: 25px;
+          @include responsive(tablet) {
+            margin-bottom: 10px;
+          }
         }
 
         .add-to-cart-product-price {
@@ -51,6 +69,9 @@
           color: $dark-primary-textColor;
           font-weight: 600;
           margin-bottom: 25px;
+          @include responsive(tablet) {
+            margin-bottom: 10px;
+          }
         }
 
         .add-to-cart-product-description {
@@ -59,6 +80,9 @@
           font-weight: 400;
           line-height: 28px;
           margin-bottom: 25px;
+          @include responsive(tablet) {
+            margin-bottom: 10px;
+          }
         }
 
         .add-to-cart-product-link {
@@ -68,6 +92,9 @@
           line-height: 28px;
           transition: all 0.2s ease-in-out;
           margin-bottom: 20px;
+          @include responsive(tablet) {
+            margin-bottom: 10px;
+          }
 
           &:hover {
             opacity: 0.8;
@@ -99,6 +126,12 @@
             .buy-now-btn {
               flex-grow: 1;
               padding: 14px;
+            }
+
+            @include responsive(tablet) {
+              .buy-now-btn {
+                display: none;
+              }
             }
           }
         }
