@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .search-drawer-wrapper {
   position: fixed;
   top: 0;
@@ -13,15 +16,14 @@
   }
 
   .search-drawer-close-icon {
-    font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 15px;
-    color: #000;
-    font-size: 24px;
+    color: $dark-bgColor;
+    font-size: 1.24;
   }
 
   .search-drawer-content {
@@ -33,7 +35,6 @@
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    // border: 1px solid black;
   }
 
   .search-drawer-input-field-wrapper {
@@ -41,7 +42,7 @@
     justify-content: center;
     margin-top: 50px;
     .search-drawer-input-field-group {
-      border-bottom: 1px solid rgba(48, 51, 54, 0.3);
+      border-bottom: 1px solid $dark-color;
       width: 50%;
       display: flex;
       padding: 10px 10px 5px 10px;
@@ -52,7 +53,7 @@
         border: none;
         width: 100%;
         background-color: transparent;
-        font-size: 18px;
+        font-size: 1.1rem;
         text-align: center;
       }
     }

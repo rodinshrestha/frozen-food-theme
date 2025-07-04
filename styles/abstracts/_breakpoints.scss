@@ -1,0 +1,39 @@
+// prettier-ignore
+$breakpoints: (
+  mobile: 575px,     // up to small phones
+  mobile-lg: 767px,  // up to large phones/small tablets
+  tablet: 1023px,    // up to tablets
+  laptop: 1199px,    // up to small laptops
+  desktop: 1399px,   // up to standard desktops
+  wide: 10000px,     // catch-all for very wide screens (optional)
+);
+
+@mixin responsive($device) {
+  @if $device == mobile {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $device == mobile-lg {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $device == laptop {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $device == desktop {
+    @media (max-width: 1399px) {
+      @content;
+    }
+  } @else if $device == wide {
+    @media (max-width: 10000px) {
+      @content;
+    }
+  } @else {
+    @warn "⚠️ Unknown max-width breakpoint: #{$device}";
+  }
+}

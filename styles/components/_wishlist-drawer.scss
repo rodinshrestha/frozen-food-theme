@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .wishlist-drawer-wrapper {
   position: fixed;
   top: 0;
@@ -5,8 +8,8 @@
   right: -110%;
   width: 450px;
   height: 100vh;
-  background: white;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  background: $white-color;
+  box-shadow: $box-shadow;
   transition: right 0.3s ease-in-out;
   z-index: 999;
   box-sizing: border-box;
@@ -19,11 +22,11 @@
   .wishlist-header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #818181;
+    border-bottom: 1px solid $dark-color;
     padding: 15px;
 
     .wishlist-close {
-      font-size: 24px;
+      font-size: $icon-size;
       background: none;
       border: none;
       cursor: pointer;
@@ -61,7 +64,7 @@
           width: 100%;
           top: 0;
           left: 0;
-          background-color: rgba(0, 0, 0, 0.05);
+          background-color: $dark-color;
         }
 
         .wishlist-product-information {

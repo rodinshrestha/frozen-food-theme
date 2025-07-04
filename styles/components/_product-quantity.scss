@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .add-to-cart-qty-wrapper {
   background-color: #f8f4ef;
   border-radius: 20px;

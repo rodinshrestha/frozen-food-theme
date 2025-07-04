@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .featured-product-image-wrapper {
   position: relative;
   cursor: pointer;

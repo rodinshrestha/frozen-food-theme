@@ -1,31 +1,34 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .footer-wrapper {
   padding: 100px 0;
   padding-bottom: 20px;
-  background-color: rgb(48, 51, 54);
+  background-color: $dark-bgColor;
 
   .footer-text-wrapper {
-    border-top: 1px solid rgba(242, 242, 242, 0.6);
-    border-bottom: 1px solid rgba(242, 242, 242, 0.6);
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
     padding: 80px 0;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    color: #fff;
+    color: $light-primary-textColor;
 
     .footer-title-text {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 400;
       letter-spacing: 1px;
     }
 
     .footer-tag-line {
-      font-size: 28px;
+      font-size: 1.8rem;
       font-weight: 600;
     }
 
     .footer-tag-line-description {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 400;
       line-height: 28px;
     }
@@ -45,7 +48,7 @@
       align-items: center;
       width: 70%;
 
-      @media (max-width: 980px) {
+      @include responsive(tablet) {
         width: 100%;
       }
 
@@ -58,15 +61,15 @@
       }
       .link-button {
         padding: 10px 20px;
-        background-color: rgb(2, 90, 49);
-        border: 1px solid rgb(2, 90, 49);
+        background-color: $green-color;
+        border: 1px solid $green-color;
         border-radius: 5px;
         letter-spacing: 1px;
       }
     }
     .newletter-helper-text {
-      color: rgb(112, 112, 112);
-      font-size: 10px;
+      color: $light-secondary-textColor;
+      font-size: 0.7rem;
       letter-spacing: 1;
     }
   }
@@ -75,8 +78,7 @@
     display: flex;
     justify-content: space-around;
 
-    @media (max-width: 980px) {
-      // justify-content: space-between;
+    @include responsive(tablet) {
       flex-direction: column-reverse;
       justify-content: space-between;
       gap: 90px;
@@ -106,9 +108,9 @@
       gap: 10px;
 
       .footer-title-wrapper {
-        font-size: 20px;
+        font-size: 1.25rem;
         font-weight: 500;
-        color: #fff;
+        color: $light-primary-textColor;
         margin-bottom: 20px;
       }
       .footer-link-content {
@@ -116,9 +118,10 @@
         flex-direction: column;
         gap: 15px;
         font-weight: 500;
-        font-size: 16px;
+        transition: all 0.2s ease-in;
+        font-size: 1rem;
         a {
-          color: #fff;
+          color: $light-primary-textColor;
           text-decoration: none;
           &:hover {
             text-decoration: underline;
@@ -131,7 +134,7 @@
   .footer-text {
     margin-top: 80px;
     text-align: center;
-    color: rgb(112, 112, 112);
+    color: $light-secondary-textColor;
     font-size: 14px;
     letter-spacing: 1px;
   }

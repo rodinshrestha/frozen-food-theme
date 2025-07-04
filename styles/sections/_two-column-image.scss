@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .two-column-image-wrapper {
   .col-6 {
     padding: 10px;
