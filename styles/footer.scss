@@ -97,6 +97,14 @@
         display: flex;
         gap: 15px;
         align-items: center;
+
+        .social-icon-img {
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
+        }
+
+     
       }
     }
 

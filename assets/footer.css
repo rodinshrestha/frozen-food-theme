@@ -91,6 +91,11 @@
   gap: 15px;
   align-items: center;
 }
+.footer-wrapper .footer-link-wrapper .footer-social-media-wrapper .social-icons-wrapper .social-icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper {
   display: flex;
   flex-direction: column;
