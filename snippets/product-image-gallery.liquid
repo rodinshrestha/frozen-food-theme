@@ -1,0 +1,81 @@
+<div class="product-gallery-wrapper">
+  <!-- Main Swiper -->
+  <div class="swiper product-gallery-image-wrapper" id="main-image-swiper">
+    <div class="swiper-wrapper product-active-image-wrapper">
+      {% for media in product.media %}
+        {% if media.media_type == 'image' %}
+          <div class="swiper-slide product-active-image">
+            <img
+              src="{{ media |  image_url }}"
+              alt="{{ media.alt | escape }}"
+              width="280"
+              height="280"
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Thumbnail Swiper -->
+  <div class="swiper image-navigation-wrapper" id="image-navigation-swiper">
+    <div class="swiper-wrapper image-navigation-list">
+      {% for media in product.media %}
+        {% if media.media_type == 'image' %}
+          <div class="swiper-slide image-navigation">
+            <img
+              src="{{ media | image_url }}"
+              alt="{{ media.alt | escape }}"
+              width="40"
+              height="60"
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next swiper-image-navigation-next"></div>
+    <div class="swiper-button-prev swiper-image-navigation-prev"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let isSyncing = false;
+
+    const thumbSwiper = new Swiper('#image-navigation-swiper', {
+      spaceBetween: 10,
+      slidesPerView: 5,
+      freeMode: true,
+      watchSlidesProgress: true,
+      slideToClickedSlide: true, //
+      navigation: {
+        nextEl: '.swiper-image-navigation-next',
+        prevEl: '.swiper-image-navigation-prev',
+      },
+    });
+
+    const mainSwiper = new Swiper('#main-image-swiper', {
+      loop: true,
+      spaceBetween: 10,
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+    });
+
+    // Sync main swiper when thumbnail swiper changes (but prevent loop)
+    thumbSwiper.on('slideChange', function () {
+      if (isSyncing) return;
+      isSyncing = true;
+      mainSwiper.slideTo(thumbSwiper.activeIndex);
+      isSyncing = false;
+    });
+
+    // Sync thumbnail swiper when main swiper changes (optional)
+    mainSwiper.on('slideChange', function () {
+      if (isSyncing) return;
+      isSyncing = true;
+      thumbSwiper.slideTo(mainSwiper.activeIndex);
+      isSyncing = false;
+    });
+  });
+</script>

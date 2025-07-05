@@ -1,0 +1,102 @@
+<div class="product-details-section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="product-bread-crumb-wrapper">
+          {% render 'bread-crumbs' %}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="product-details-wrapper">
+          <div class="product-image-wrapper">
+            {% render 'product-image-gallery' %}
+          </div>
+          <div class="product-content-wrapper">
+            <div class="product-sku">{{ product.variants.first.sku }}</div>
+            <h1 class="product-title">{{ product.title }}</h1>
+
+            <div class="product-price">{{ product.price | money }}</div>
+
+            {% if product.options_with_values.size != '' %}
+              <div class="divier"></div>
+              <div class="product-variation-wrapper">
+                {% for option in product.options_with_values %}
+                  <div class="product-variation-content">
+                    <div class="variation-title">{{ option.name }}</div>
+                    <div class="variations-list-wrapper">
+                      {% for value in option.values %}
+                        <div class="variations-list">
+                          <span>{{ value }}</span>
+                          {% comment %} <span class="variation-price">{{ value.price | money }}</span> {% endcomment %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="divier"></div>
+            {% endif %}
+
+            <div class="product-description-wrapper">
+              <span class="product-desc-value">
+                {{ product.description | truncate: 200, '... <span class="turncate-des-text">READ MORE</span>' -}}
+              </span>
+            </div>
+
+            <div class="product-stock">
+              <span>Stock Status</span>
+              <span class="stock-value">In Stock </span>
+            </div>
+
+            <div class="product-details-cta-wrapper">
+              {% render 'product-quantity', product: product, appliedQty: 1 %}
+              <div class="product-details-btn-group">
+                <button
+                  class="add-to-cart outline-btn product-add-to-cart-btn"
+                  data-variant-id="{{ product.variants.first.id }}"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+
+            <div class="shipping-information-wrapper">
+              <span class="shipping-info-title">Shipping Information</span>
+              <span class="shipping-info-value"
+                >We ship orders Mondays and Tuesdays. This shipping setup ensures your orders remain safe and frozen
+                while traveling with blocks of dry-ice!
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="product-full-description-wrapper">
+          <div class="product-full-desc-title">Product Information</div>
+          <div class="product-full-desc-value">{{ product.description }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  console.log(product.options_with_values, '@@@');
+</script>
+
+{% schema %}
+{
+  "name": "Product Details",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Details"
+    }
+  ]
+}
+{% endschema %}

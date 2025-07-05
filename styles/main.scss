@@ -14,6 +14,8 @@
 @use "components/product-quantity";
 @use "components/search-drawer";
 @use "components/wishlist-drawer";
+@use "components/product-image-gallery";
+@use "components/bread-crumbs";
 
 // Sections
 @use "sections/banner";
@@ -24,6 +26,7 @@
 @use "sections/single-product-show-case";
 @use "sections/three-content-block";
 @use "sections/two-column-image";
+@use "sections/product-details";
 
 html,
 body {
@@ -88,7 +91,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin-block-start: 0;
   margin-block-end: 0;
 }

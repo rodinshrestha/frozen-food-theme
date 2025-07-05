@@ -85,3 +85,7 @@ window.handleFetchResponse = async (res) => {
 };
 
 window.isMobile = () => document.documentElement.clientWidth <= 768;
+
+window.stringTruncate = (str, num = 150) => {
+  const cleanString = str.trim();
+};

@@ -1,0 +1,11 @@
+<nav class="breadcrumb-wrapper" aria-label="Breadcrumb">
+  <a href="{{ routes.root_url }}" class="root-crumb crumb-list">Home</a>
+
+  {% if collection %}
+    <span class="separator">/</span>
+    <a href="{{ collection.url }}" class="crumb-list">{{ collection.title }}</a>
+  {% endif %}
+
+  <span class="separator">/</span>
+  <span class="end-crumb crumb-list">{{ product.title }}</span>
+</nav>
