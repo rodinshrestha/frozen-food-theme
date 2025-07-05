@@ -15,17 +15,20 @@
         <div class="col">
           <div class="faq-wrapper" id="faq-list-wrapper">
             {% for block in section.blocks %}
-              <div class="faq-list-wrapper">
-                <div class="faq-list-title">
-                  {{ block.settings.faq_question }}
-                  <img src="{{ 'up-arrow.png' | asset_url }}" alt="Up arrow" height="18" width="18" class="faq-icon">
-                </div>
-                {% if block.settings.faq_answer != '' %}
+              {% assign question = block.settings.faq_question | strip %}
+              {% assign answer = block.settings.faq_answer | strip %}
+
+              {% if question != '' and answer != '' %}
+                <div class="faq-list-wrapper">
+                  <div class="faq-list-title">
+                    {{ block.settings.faq_question }}
+                    <img src="{{ 'up-arrow.png' | asset_url }}" alt="Up arrow" height="18" width="18" class="faq-icon">
+                  </div>
                   <div class="faq-title-description">
                     {{ block.settings.faq_answer }}
                   </div>
-                {% endif %}
-              </div>
+                </div>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -47,7 +50,7 @@
   ],
   "blocks": [
     {
-      "type": "text_slide",
+      "type": "faq",
       "name": "Questions",
       "settings": [
         {
@@ -69,7 +72,7 @@
   "presets": [
     {
       "name": "Frequently Asked Questions",
-      "category": "Custom"
+      "blocks": []
     }
   ]
 }
