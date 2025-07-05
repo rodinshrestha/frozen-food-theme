@@ -1,0 +1,8 @@
+{%- assign desc = description | strip_html | escape -%}
+{%- assign trunc_limit = limit | default: 120 -%}
+{%- assign trunc_append = append | default: '...' -%}
+{%- if desc.size > trunc_limit -%}
+  {{ desc | slice: 0, trunc_limit }}{{ trunc_append }}
+{%- else -%}
+  {{ desc }}
+{%- endif -%}

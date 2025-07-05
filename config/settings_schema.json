@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "name": "Product Description Truncation",
+    "settings": [
+      {
+        "type": "number",
+        "id": "add_to_cart_description_limit",
+        "label": "Add-to-cart modal product description character limit",
+        "default": 120
+      }
+    ]
+  }
+]
