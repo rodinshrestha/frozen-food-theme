@@ -3,6 +3,9 @@
 
 .product-details-section {
   padding: 40px;
+  @include responsive(tablet) {
+    padding: 20px 0;
+  }
 
   .product-bread-crumb-wrapper {
     margin-bottom: 20px;
@@ -10,6 +13,11 @@
 
   .product-details-wrapper {
     display: flex;
+
+    @include responsive(tablet) {
+      flex-direction: column;
+      gap: 20px;
+    }
 
     .product-image-wrapper {
       flex: 1 1 40%;
@@ -20,11 +28,15 @@
     .product-content-wrapper {
       flex: 1 1 60%;
       min-width: 0;
-      padding: 0 20px;
+      padding-left: 50px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       color: $dark-primary-textColor;
+
+      @include responsive(tablet) {
+        padding: 0;
+      }
 
       .product-sku {
         font-weight: 500;
@@ -164,11 +176,20 @@
           font-size: 0.9rem;
           font-weight: 700;
           text-decoration: underline;
+
+          @include responsive(tablet) {
+            font-size: 20px;
+          }
         }
 
         .shipping-info-value {
           font-size: 1rem;
           line-height: 22px;
+
+          @include responsive(tablet) {
+            line-height: 28px;
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -180,6 +201,10 @@
     gap: 10px;
     flex-direction: column;
     color: $dark-primary-textColor;
+
+    @include responsive(tablet) {
+      margin-top: 30px;
+    }
 
     .product-full-desc-title {
       font-size: 1.25rem;

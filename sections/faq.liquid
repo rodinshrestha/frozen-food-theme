@@ -1,0 +1,76 @@
+{% if section.blocks.size > 0 %}
+  <div class="faq-section section-wrapper">
+    <div class="container">
+      {% if section.settings.section_title != '' %}
+        <div class="row">
+          <div class="col">
+            <div class="section-title-wrapper">
+              <div class="section-title">{{ section.settings.section_title }}</div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="row">
+        <div class="col">
+          <div class="faq-wrapper" id="faq-list-wrapper">
+            {% for block in section.blocks %}
+              <div class="faq-list-wrapper">
+                <div class="faq-list-title">
+                  {{ block.settings.faq_question }}
+                  <img src="{{ 'up-arrow.png' | asset_url }}" alt="Up arrow" height="18" width="18" class="faq-icon">
+                </div>
+                {% if block.settings.faq_answer != '' %}
+                  <div class="faq-title-description">
+                    {{ block.settings.faq_answer }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Frequently Asked Question"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_slide",
+      "name": "Questions",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "faq_question",
+          "label": "Question",
+          "info": "Required Field"
+        },
+        {
+          "type": "textarea",
+          "id": "faq_answer",
+          "label": "Answer",
+          "info": "Required Field"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Frequently Asked Questions",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

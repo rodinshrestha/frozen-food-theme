@@ -27,6 +27,7 @@
 @use "sections/three-content-block";
 @use "sections/two-column-image";
 @use "sections/product-details";
+@use "sections/faq";
 
 html,
 body {
@@ -167,6 +168,11 @@ ul {
   @include responsive(tablet) {
     padding: 40px 0;
   }
+}
+
+.section-title-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .section-title {

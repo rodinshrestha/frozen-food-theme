@@ -1,0 +1,47 @@
+@use "abstracts/_breakpoints" as *;
+@use "abstracts/_variables" as *;
+
+.faq-section {
+  .faq-wrapper {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .faq-list-wrapper {
+      border-bottom: 1px solid $dark-color;
+      padding-top: 10px;
+
+      &.active {
+        .faq-icon {
+          transform: rotate(180deg);
+        }
+
+        .faq-title-description {
+          max-height: 500px; /* large enough to fit content */
+        }
+      }
+
+      .faq-list-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+
+        .faq-icon {
+          cursor: pointer;
+          transition: transform 0.2s ease-in;
+        }
+      }
+
+      .faq-title-description {
+        font-size: 1rem;
+        line-height: 24px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        margin-top: 10px;
+      }
+    }
+  }
+}
