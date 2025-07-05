@@ -58,24 +58,6 @@
         "product_slider": true
       }
     },
-    "featured_banner_yerwDL": {
-      "type": "featured-banner",
-      "name": "Featured banner",
-      "settings": {
-        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
-        "banner-height": "medium",
-        "banner-parallax": true,
-        "feature-banner-title": "Members Exclusive Discount",
-        "feature-banner-subtitle": "Enjoy member-only deals and savings on every purchase.",
-        "button-text": "Become a Member",
-        "button-link": "",
-        "row_content_align": "center",
-        "vertical_content_align": "middle",
-        "content_width": "large",
-        "text_alignment": "center",
-        "overlay-opacity": 0.3
-      }
-    },
     "faq_Wkzh7x": {
       "type": "faq",
       "blocks": {
@@ -126,13 +108,31 @@
       "settings": {
         "section_title": "Frequently Asked Question"
       }
+    },
+    "featured_banner_yerwDL": {
+      "type": "featured-banner",
+      "name": "Featured banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "feature-banner-title": "Members Exclusive Discount",
+        "feature-banner-subtitle": "Enjoy member-only deals and savings on every purchase.",
+        "button-text": "Become a Member",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
     }
   },
   "order": [
     "main",
     "three_content_block_aTbpNw",
     "featured_products_JRtpTY",
-    "featured_banner_yerwDL",
-    "faq_Wkzh7x"
+    "faq_Wkzh7x",
+    "featured_banner_yerwDL"
   ]
 }
