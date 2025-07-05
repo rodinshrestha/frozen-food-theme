@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .featured-product-wrapper {
   .row {
     position: relative;
@@ -14,7 +17,7 @@
       }
 
       &:hover {
-        background: rgba(255, 255, 255, 1);
+        background: $light-grey;
         transform: translateY(-50%) scale(1.1);
       }
     }

@@ -1,0 +1,43 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
+.link-button {
+  color: $white-color;
+  background-color: $dark-bgColor;
+  border: 1px solid $dark-bgColor;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 2px;
+  display: inline;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
+  &.hover {
+    opacity: 0.8;
+  }
+}
+
+.outline-btn {
+  color: $dark-primary-textColor;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 2px;
+  display: flex;
+  align-self: center;
+  padding: 10px 40px;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  border: 1px solid $dark-bgColor;
+  background-color: transparent;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: $dark-primary-textColor;
+    color: $white-color;
+  }
+}

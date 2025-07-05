@@ -4,15 +4,15 @@
       <div class="col">
         <div class="footer-text-wrapper">
           {% if section.settings.title != '' %}
-            <div class="footer-title-text">{{ section.settings.title }}</div>
+            <h4 class="footer-title-text">{{ section.settings.title }}</h4>
           {% endif %}
           {% if section.settings.tagline != '' %}
-            <div class="footer-tag-line">{{ section.settings.tagline }}</div>
+            <h5 class="footer-tag-line">{{ section.settings.tagline }}</h5>
           {% endif %}
           {% if section.settings.subtitle != '' %}
-            <div class="footer-tag-line-description">
+            <h6 class="footer-tag-line-description">
               {{ section.settings.subtitle }}
-            </div>
+            </h6>
           {% endif %}
         </div>
       </div>
@@ -26,7 +26,7 @@
             <div class="link-button grn-btn">{{ section.settings.btn_label }}</div>
           </div>
           {% if section.settings.newletter_subtitle != '' %}
-            <div class="newletter-helper-text">{{ section.settings.newletter_subtitle }}</div>
+            <p class="newletter-helper-text">{{ section.settings.newletter_subtitle }}</p>
           {% endif %}
         </div>
       </div>
@@ -71,12 +71,32 @@
           </div>
 
           <div class="footer-navigation-link-wrapper">
-            <div class="footer-title-wrapper">Useful Links</div>
+            <div class="footer-title-wrapper">Our Service</div>
             <div class="footer-link-content">
               <div class="footer-link"><a href="#"> Momo Sauce </a></div>
               <div class="footer-link"><a href="#">Frozen Food</a></div>
               <div class="footer-link"><a href="#">Bundles</a></div>
               <div class="footer-link"><a href="#">Gift Cards</a></div>
+            </div>
+          </div>
+
+          <div class="footer-navigation-link-wrapper">
+            <div class="footer-title-wrapper">Useful Links</div>
+            <div class="footer-link-content">
+              <div class="footer-link"><a href="#">Shop</a></div>
+              <div class="footer-link"><a href="#">Our Story</a></div>
+              <div class="footer-link"><a href="#">Contact Us</a></div>
+              <div class="footer-link"><a href="#">Login</a></div>
+            </div>
+          </div>
+
+          <div class="footer-navigation-link-wrapper">
+            <div class="footer-title-wrapper">Social Links</div>
+            <div class="footer-link-content">
+              <div class="footer-link"><a href="#">Facebook</a></div>
+              <div class="footer-link"><a href="#">Instagram</a></div>
+              <div class="footer-link"><a href="#">Gmail</a></div>
+              <div class="footer-link"><a href="#">Become a member</a></div>
             </div>
           </div>
         </div>
@@ -85,7 +105,7 @@
 
     <div class="row">
       <div class="col">
-        <div class="footer-text">Sherpa Food © 2025</div>
+        <p class="footer-text">Sherpa Food © 2025</p>
       </div>
     </div>
   </div>

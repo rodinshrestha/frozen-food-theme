@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -6,14 +9,14 @@
   width: 450px;
   height: 100vh;
   background: white;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: $box-shadow;
   transition: right 0.3s ease-in-out;
   z-index: 999;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 980px) {
+  @include responsive(tablet) {
     width: 100%;
   }
   &.active {
@@ -24,11 +27,11 @@
   .cart-header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #818181;
+    border-bottom: 1px solid $light-secondary-textColor;
     padding: 15px;
 
     .cart-close {
-      font-size: 24px;
+      font-size: 1.3rem;
       background: none;
       border: none;
       cursor: pointer;
@@ -107,7 +110,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      border-top: 1px solid #818181;
+      border-top: 1px solid $light-grey;
       padding: 15px;
 
       .cart-total-price {
@@ -141,7 +144,7 @@
 
       .link-button {
         width: 100%;
-        color: #fff !important;
+        color: $light-primary-textColor !important;
         display: flex;
         align-self: center;
         justify-content: center;

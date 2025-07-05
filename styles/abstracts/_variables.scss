@@ -1,0 +1,35 @@
+// 1rem is equal to 16px
+
+//fonts
+$font-family-primary: "Instrument Sans", sans-serif;
+
+// Icon font size
+$icon-size: 1.2rem;
+$sm-icon-size: 0.8rem;
+
+// Background color
+$dark-bgColor: #303336;
+$light-bgColor: #fff;
+
+// Divider color
+$divider-color: #30333699;
+
+// Box Shadow
+$card-box-shadow:
+  10px 10px 20px #babecc,
+  -10px -10px 20px #fff;
+$box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
+
+// Dark Text color
+$dark-primary-textColor: #303336;
+$dark-secondary-textColor: #000;
+
+// Light Text Color
+$light-primary-textColor: #fff;
+$light-secondary-textColor: #f2f2f299;
+
+// Other color
+$green-color: #025a31;
+$light-grey: #f2f2f299;
+$white-color: #fff;
+$dark-color: #303336;

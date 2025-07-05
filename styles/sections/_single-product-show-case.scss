@@ -1,3 +1,6 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
 .product-show-case-wrapper {
   .show-case-inner-wrapper {
     display: flex;
@@ -7,13 +10,16 @@
       display: flex;
       gap: 40px;
 
-      @media (max-width: 980px) {
+      @include responsive(tablet) {
         flex-direction: column;
         align-items: center;
       }
 
       .show-case-product-image {
         width: 100%;
+        @include responsive(tablet) {
+          height: 400px;
+        }
       }
 
       .show-case-product-information {
@@ -21,39 +27,55 @@
         padding: 0 10px;
 
         .show-case-product-title {
-          font-size: 20px;
-          font-weight: 500;
-          margin-block-start: 0px;
-          margin-block-end: 0px;
+          font-size: 1.25rem;
+          font-weight: 600;
           margin-bottom: 25px;
+          color: $dark-primary-textColor;
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
         }
 
         .show-case-product-price {
-          font-size: 20px;
-          color: #363636;
-          font-weight: 400;
-          margin-block-start: 0px;
-          margin-block-end: 0px;
+          font-size: 1.25rem;
+          color: $dark-primary-textColor;
+          font-weight: 600;
           margin-bottom: 25px;
+
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
         }
 
         .show-case-product-description {
-          font-size: 16px;
-          color: #363636;
+          font-size: 1rem;
+          color: $dark-primary-textColor;
           font-weight: 400;
           line-height: 28px;
-          margin-block-start: 0;
-          margin-block-end: 0;
           margin-bottom: 25px;
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
         }
 
         .show-case-product-details-link {
-          color: #7a9ea1;
-          font-size: 16px;
+          color: $dark-primary-textColor;
+          font-size: 1rem;
           font-weight: 400;
           line-height: 28px;
           transition: all 0.2s ease-in-out;
           margin-bottom: 20px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+          @include responsive(tablet) {
+            margin-bottom: 0;
+          }
 
           &:hover {
             opacity: 0.8;
@@ -66,8 +88,9 @@
           margin-top: 25px;
           align-items: center;
 
-          @media (max-width: 980px) {
+          @include responsive(tablet) {
             gap: 15px;
+            margin-top: 15px;
           }
 
           &.disable {
