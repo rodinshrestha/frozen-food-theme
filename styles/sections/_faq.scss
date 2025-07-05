@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 20px;
 
     .faq-list-wrapper {
       border-bottom: 1px solid $dark-color;
@@ -36,7 +37,8 @@
 
       .faq-title-description {
         font-size: 1rem;
-        line-height: 24px;
+        line-height: 28px;
+        margin: 0 10px;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
