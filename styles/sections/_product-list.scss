@@ -1,7 +1,7 @@
 @use "../abstracts/breakpoints" as *;
 @use "../abstracts/variables" as *;
 
-.featured-product-wrapper {
+.product-list-section {
   .row {
     position: relative;
     .swiper-button-next,

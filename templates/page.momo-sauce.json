@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "momo-sauce-main",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

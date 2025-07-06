@@ -9,8 +9,8 @@
  */
 {
   "sections": {
-    "featured-banner_1": {
-      "type": "featured-banner",
+    "banner_1": {
+      "type": "banner",
       "settings": {
         "banner-image": "shopify://shop_images/banner.webp",
         "banner-height": "large",
@@ -34,8 +34,8 @@
         "section-title": "Our Most Recommended Products"
       }
     },
-    "featured_products_pwNGhn": {
-      "type": "featured-products",
+    "product_list_pwNGhn": {
+      "type": "product-list",
       "name": "Featured products",
       "settings": {
         "collection": "frontpage",
@@ -43,8 +43,8 @@
         "product_slider": true
       }
     },
-    "featured-banner_2": {
-      "type": "featured-banner",
+    "banner_2": {
+      "type": "banner",
       "settings": {
         "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
         "banner-height": "medium",
@@ -60,8 +60,8 @@
         "overlay-opacity": 0.3
       }
     },
-    "featured_products_wHRjeC": {
-      "type": "featured-products",
+    "product_list_wHRjeC": {
+      "type": "product-list",
       "name": "Featured products",
       "settings": {
         "collection": "homepage-bundle-collections",
@@ -112,12 +112,12 @@
     }
   },
   "order": [
-    "featured-banner_1",
+    "banner_1",
     "three_content_block_yWpJjk",
     "single_product_show_case_9phqPX",
-    "featured_products_pwNGhn",
-    "featured-banner_2",
-    "featured_products_wHRjeC",
+    "product_list_pwNGhn",
+    "banner_2",
+    "product_list_wHRjeC",
     "customer_testimonials_b9Nzdq"
   ]
 }

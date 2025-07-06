@@ -49,8 +49,8 @@
       "name": "Three Fixed Blocks",
       "settings": {}
     },
-    "featured_products_JRtpTY": {
-      "type": "featured-products",
+    "product_list_JRtpTY": {
+      "type": "product-list",
       "name": "Featured products",
       "settings": {
         "collection": "frontpage",
@@ -109,9 +109,9 @@
         "section_title": "Frequently Asked Question"
       }
     },
-    "featured_banner_yerwDL": {
-      "type": "featured-banner",
-      "name": "Featured banner",
+    "banner_yerwDL": {
+      "type": "banner",
+      "name": "Banner",
       "settings": {
         "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
         "banner-height": "medium",
@@ -131,8 +131,8 @@
   "order": [
     "main",
     "three_content_block_aTbpNw",
-    "featured_products_JRtpTY",
+    "product_list_JRtpTY",
     "faq_Wkzh7x",
-    "featured_banner_yerwDL"
+    "banner_yerwDL"
   ]
 }
