@@ -1,0 +1,9 @@
+{
+  "name": "Gift Card Page",
+  "sections": {
+    "main": {
+      "type": "gift-card-main"
+    }
+  },
+  "order": ["main"]
+}

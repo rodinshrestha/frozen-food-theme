@@ -12,13 +12,15 @@
           </div>
           <div class="menu-left-wrapper">
             {% if section.settings.logo != '' %}
-              <img
-                src="{{ section.settings.logo | img_url: "180x" }}"
-                alt="Logo"
-                loading="lazy"
-                width="80"
-                height="40"
-              >
+              <a href="{{ routes.root_url }}">
+                <img
+                  src="{{ section.settings.logo | image_url }}"
+                  alt="Logo"
+                  loading="lazy"
+                  width="80"
+                  height="40"
+                >
+              </a>
             {% else %}
               <img
                 src="{{ 'fallback-logo.png' | asset_url }}"
