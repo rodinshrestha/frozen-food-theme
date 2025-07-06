@@ -41,3 +41,31 @@
     color: $white-color;
   }
 }
+
+.btn {
+  color: $light-primary-textColor;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-self: center;
+  padding: 10px 40px;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  border: 1px solid $red-color;
+  background-color: $red-color;
+  box-sizing: border-box;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  &:hover {
+    background-color: $dark-red-color;
+    border-color: $dark-red-color;
+  }
+}
+
+.btn-sm {
+  padding: 8px 20px;
+}

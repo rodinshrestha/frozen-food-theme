@@ -1,51 +1,84 @@
 @use "../abstracts/breakpoints" as *;
 @use "../abstracts/variables" as *;
 
-.featured-product-image-wrapper {
-  position: relative;
-  cursor: pointer;
-  z-index: 1;
-
-  .open-modal-btn {
-    position: absolute;
-    bottom: 15px;
-    right: 0px;
-    cursor: pointer;
-    display: none;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-
+.featured-product-inner-wrapper {
+  border: 1px solid rgb(248, 244, 239);
   &:hover {
     .open-modal-btn {
-      display: block;
+      display: flex !important;
     }
   }
+  .featured-product-image-wrapper {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
 
-  &:hover + .open-modal-btn {
-    .product-title {
-      &:hover {
-        opacity: 0.5;
+    .product-tag-wrapper {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 5px;
+
+      .tag-name {
+        background-color: $red-color;
+        padding: 6px 8px;
+        color: $light-primary-textColor;
+        font-size: 0.875rem;
+        border-radius: 5px;
+      }
+    }
+
+    &:hover {
+      .open-modal-btn {
+        display: block;
+      }
+    }
+
+    &:hover + .open-modal-btn {
+      .product-title {
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
   }
-}
-.featured-product-information {
-  text-align: center;
-  a {
-    color: unset;
-    text-decoration: none;
-    .product-title {
+  .featured-product-information {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .product-type {
+      font-size: 0.8rem;
       font-weight: 400;
+      color: $dark-red-color;
     }
-    &:hover {
-      text-decoration: underline;
+
+    a {
+      color: unset;
+      text-decoration: none;
+      .product-title {
+        font-weight: 500;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
     }
-  }
-  .product-price {
-    font-weight: 600;
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      .product-price {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .open-modal-btn {
+        display: none;
+      }
+    }
   }
 }
