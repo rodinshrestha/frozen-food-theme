@@ -2,7 +2,9 @@
 @use "../abstracts/variables" as *;
 
 .featured-product-inner-wrapper {
-  border: 1px solid rgb(248, 244, 239);
+  background-color: $light-primary-textColor;
+  padding: 10px;
+
   &:hover {
     .open-modal-btn {
       display: flex !important;
@@ -12,6 +14,12 @@
     position: relative;
     cursor: pointer;
     z-index: 1;
+    width: 100%;
+
+    .product-image {
+      width: 100%;
+      object-fit: cover;
+    }
 
     .product-tag-wrapper {
       position: absolute;
@@ -48,6 +56,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 20px;
 
     .product-type {
       font-size: 0.8rem;
@@ -59,7 +68,7 @@
       color: unset;
       text-decoration: none;
       .product-title {
-        font-weight: 500;
+        font-weight: 600;
       }
       &:hover {
         text-decoration: underline;

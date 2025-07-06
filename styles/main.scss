@@ -29,6 +29,7 @@
 @use "sections/product-details";
 @use "sections/faq";
 @use "sections/gift-card-main";
+@use "sections/page";
 
 html,
 body {
@@ -205,5 +206,14 @@ ul {
 @include responsive(tablet) {
   .hide-mobile {
     display: none !important;
+  }
+}
+
+.template-page {
+  padding-top: 40px;
+  background-color: rgb(248, 244, 239);
+
+  .bread-crumb-wrapper {
+    margin-bottom: 20px;
   }
 }

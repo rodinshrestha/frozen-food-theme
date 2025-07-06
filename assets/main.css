@@ -536,7 +536,8 @@
 }
 
 .featured-product-inner-wrapper {
-  border: 1px solid rgb(248, 244, 239);
+  background-color: #fff;
+  padding: 10px;
 }
 .featured-product-inner-wrapper:hover .open-modal-btn {
   display: flex !important;
@@ -545,6 +546,11 @@
   position: relative;
   cursor: pointer;
   z-index: 1;
+  width: 100%;
+}
+.featured-product-inner-wrapper .featured-product-image-wrapper .product-image {
+  width: 100%;
+  object-fit: cover;
 }
 .featured-product-inner-wrapper .featured-product-image-wrapper .product-tag-wrapper {
   position: absolute;
@@ -571,6 +577,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 }
 .featured-product-inner-wrapper .featured-product-information .product-type {
   font-size: 0.8rem;
@@ -582,7 +589,7 @@
   text-decoration: none;
 }
 .featured-product-inner-wrapper .featured-product-information a .product-title {
-  font-weight: 500;
+  font-weight: 600;
 }
 .featured-product-inner-wrapper .featured-product-information a:hover {
   text-decoration: underline;
@@ -916,12 +923,6 @@
   justify-content: center;
   padding: 20px;
 }
-@media (max-width: 1023px) {
-  .banner-section.banner-parallex {
-    background-size: contain;
-    background-position: unset;
-  }
-}
 .banner-section.feature-banner-large {
   height: 780px;
   padding: 80px 0;
@@ -1028,6 +1029,7 @@
   font-weight: 600;
   line-height: 62px;
   margin: 0;
+  color: #fff;
 }
 @media (max-width: 980px) {
   .banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-banner-title {
@@ -1284,10 +1286,16 @@
   justify-content: center;
 }
 .product-list-section .product-list-wrapper {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 20px;
   box-sizing: border-box;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 1023px) {
+  .product-list-section .product-list-wrapper {
+    grid-template-columns: 1fr !important;
+  }
 }
 .product-list-section .product-list-wrapper .featured-product-inner-wrapper {
   box-sizing: border-box;
@@ -1299,6 +1307,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.product-list-section .swiper .featured-product-inner-wrapper .featured-product-information {
+  width: 100%;
 }
 .product-list-section .swiper .swiper-button-next {
   right: 3px !important;
@@ -2092,4 +2103,11 @@ ul {
   .hide-mobile {
     display: none !important;
   }
+}
+.template-page {
+  padding-top: 40px;
+  background-color: rgb(248, 244, 239);
+}
+.template-page .bread-crumb-wrapper {
+  margin-bottom: 20px;
 }

@@ -15,16 +15,6 @@
       alt="{{ product.title }}"
       class="product-image"
     >
-
-    {% comment %}
-      <div
-        class="open-modal-btn"
-        data-product-id="{{ product.id }}"
-      >
-        <img src="{{ 'add-icon.png' | asset_url}}" alt="Add product icon" width="32" height="32">
-      </div>
-    {% endcomment %}
-
     {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
   </div>
 
