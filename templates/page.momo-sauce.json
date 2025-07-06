@@ -11,14 +11,16 @@
   "sections": {
     "main": {
       "type": "momo-sauce-main",
-      "settings": {}
+      "settings": {
+        "bread_crumb": true
+      }
     },
     "banner_RpEjYw": {
       "type": "banner",
       "name": "Banner",
       "settings": {
         "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
-        "banner-height": "large",
+        "banner-height": "medium",
         "banner-parallax": true,
         "feature-banner-title": "Explore Our Momo Sauce Collection",
         "feature-banner-subtitle": "Ehance your meal with our delicious Momo Sauce, created to complement every bite. Whether you prefer bold heat, nutty richness, or a hint of sweetness, we have perfect sauce for you!",
@@ -28,7 +30,7 @@
         "vertical_content_align": "middle",
         "content_width": "large",
         "text_alignment": "center",
-        "overlay-opacity": 0.3
+        "overlay-opacity": 0.6
       }
     },
     "product_list_hL8jiB": {

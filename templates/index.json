@@ -26,54 +26,6 @@
         "overlay-opacity": 0.3
       }
     },
-    "single_product_show_case_9phqPX": {
-      "type": "single-product-show-case",
-      "name": "Single Product Showcase",
-      "settings": {
-        "product_to_show": "meat-lover-personal-size-bundle",
-        "section-title": "Our Most Recommended Products"
-      }
-    },
-    "product_list_pwNGhn": {
-      "type": "product-list",
-      "name": "Featured products",
-      "settings": {
-        "collection": "frontpage",
-        "section-title": "View Other Products",
-        "product_slider": true
-      }
-    },
-    "banner_2": {
-      "type": "banner",
-      "settings": {
-        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
-        "banner-height": "medium",
-        "banner-parallax": false,
-        "feature-banner-title": "Upgrade your family meals with our value-packed bundles.",
-        "feature-banner-subtitle": "Big flavors. Bigger savings. Perfect for family meals",
-        "button-text": "Get the bundles",
-        "button-link": "",
-        "row_content_align": "center",
-        "vertical_content_align": "middle",
-        "content_width": "large",
-        "text_alignment": "center",
-        "overlay-opacity": 0.3
-      }
-    },
-    "product_list_wHRjeC": {
-      "type": "product-list",
-      "name": "Featured products",
-      "settings": {
-        "collection": "homepage-bundle-collections",
-        "section-title": "Our Bundles",
-        "product_slider": true
-      }
-    },
-    "customer_testimonials_b9Nzdq": {
-      "type": "customer-testimonials",
-      "name": "Customer Testimonials",
-      "settings": {}
-    },
     "three_content_block_yWpJjk": {
       "type": "three-content-block",
       "blocks": {
@@ -108,6 +60,54 @@
         "content_block_yKKHbA"
       ],
       "name": "Three Fixed Blocks",
+      "settings": {}
+    },
+    "single_product_show_case_9phqPX": {
+      "type": "single-product-show-case",
+      "name": "Single Product Showcase",
+      "settings": {
+        "product_to_show": "meat-lover-personal-size-bundle",
+        "section-title": "Our Most Recommended Products"
+      }
+    },
+    "product_list_pwNGhn": {
+      "type": "product-list",
+      "name": "Featured products",
+      "settings": {
+        "collection": "frontpage",
+        "section-title": "View Other Products",
+        "product_slider": false
+      }
+    },
+    "banner_2": {
+      "type": "banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
+        "banner-height": "medium",
+        "banner-parallax": false,
+        "feature-banner-title": "Upgrade your family meals with our value-packed bundles.",
+        "feature-banner-subtitle": "Big flavors. Bigger savings. Perfect for family meals",
+        "button-text": "Get the bundles",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
+    },
+    "product_list_wHRjeC": {
+      "type": "product-list",
+      "name": "Featured products",
+      "settings": {
+        "collection": "homepage-bundle-collections",
+        "section-title": "Our Bundles",
+        "product_slider": true
+      }
+    },
+    "customer_testimonials_b9Nzdq": {
+      "type": "customer-testimonials",
+      "name": "Customer Testimonials",
       "settings": {}
     }
   },

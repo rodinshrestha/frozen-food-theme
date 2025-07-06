@@ -408,11 +408,10 @@
 
 .link-button {
   color: #fff;
-  background-color: #303336;
-  border: 1px solid #303336;
+  background-color: #e4022e;
+  border: 1px solid #e4022e;
   font-weight: 500;
   font-size: 1rem;
-  border-radius: 2px;
   display: inline;
   padding: 20px;
   text-align: center;
@@ -420,13 +419,14 @@
   cursor: pointer;
   transition: all 0.2s ease-in;
   box-sizing: border-box;
+  border-radius: 10px;
 }
-.link-button.hover {
-  opacity: 0.8;
+.link-button:hover {
+  background-color: #720519;
 }
 
 .outline-btn {
-  color: #303336;
+  color: #e4022e;
   font-weight: 500;
   font-size: 1rem;
   border-radius: 2px;
@@ -437,12 +437,12 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  border: 1px solid #303336;
+  border: 1px solid #e4022e;
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 .outline-btn:hover {
-  background-color: #303336;
+  background-color: #e4022e;
   color: #fff;
 }
 
@@ -1012,7 +1012,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   z-index: 10;
 }
 .banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper.content-width-small {
@@ -1031,24 +1031,16 @@
   margin: 0;
   color: #fff;
 }
-@media (max-width: 980px) {
+@media (max-width: 1023px) {
   .banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-banner-title {
     font-size: 36px;
-    line-height: 50px;
+    line-height: 42px;
   }
 }
 .banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-subtitle {
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 28px;
   margin: 0;
-}
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .outline-btn {
-  border-color: #fff !important;
-  color: #fff !important;
-  padding: 15px 30px;
-}
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .outline-btn:hover {
-  border-color: #303336 !important;
 }
 
 .cart-drawer {

@@ -2,12 +2,11 @@
 @use "../abstracts/variables" as *;
 
 .link-button {
-  color: $white-color;
-  background-color: $dark-bgColor;
-  border: 1px solid $dark-bgColor;
+  color: $light-primary-textColor;
+  background-color: $red-color;
+  border: 1px solid $red-color;
   font-weight: 500;
   font-size: 1rem;
-  border-radius: 2px;
   display: inline;
   padding: 20px;
   text-align: center;
@@ -15,13 +14,14 @@
   cursor: pointer;
   transition: all 0.2s ease-in;
   box-sizing: border-box;
-  &.hover {
-    opacity: 0.8;
+  border-radius: 10px;
+  &:hover {
+    background-color: $dark-red-color;
   }
 }
 
 .outline-btn {
-  color: $dark-primary-textColor;
+  color: $red-color;
   font-weight: 500;
   font-size: 1rem;
   border-radius: 2px;
@@ -32,12 +32,12 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  border: 1px solid $dark-bgColor;
+  border: 1px solid$red-color;
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 10px;
 
   &:hover {
-    background-color: $dark-primary-textColor;
+    background-color: $red-color;
     color: $white-color;
   }
 }
