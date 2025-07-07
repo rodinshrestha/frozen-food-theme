@@ -1,9 +1,103 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "frozen-food-main",
       "settings": {}
+    },
+    "banner_xdJArt": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "feature-banner-title": "Explore Our Frozen Food Collection",
+        "feature-banner-subtitle": "Enjoy restaurant quality meal at home in minutes. Better than take out. From vegan, CHhicken, Beef and Pork falvour momos to Himalayan Style Vegan Chowmein and Himlayan Style Vegan Fried RIce.",
+        "button-text": "",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
+    },
+    "product_list_XzWYfr": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "homepage-bundle-collections",
+        "section-title": "Our Bundles",
+        "product_slider": false
+      }
+    },
+    "product_list_e4aHfX": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "home-page-product",
+        "section-title": "Frozen Food",
+        "product_slider": true
+      }
+    },
+    "faq_VbCmqP": {
+      "type": "faq",
+      "blocks": {
+        "faq_GWCByA": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "What are frozen foods, and how are they preserved?",
+            "faq_answer": "Frozen foods are prepared meals or ingredients that are rapidly frozen to preserve freshness, taste, and nutrients. Our products undergo quick freezing to maintain quality and extend shelf life without preservatives."
+          }
+        },
+        "faq_CqE3p7": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "How do you cook frozen momos and other items?",
+            "faq_answer": "Our frozen momos can be re-heated in microwave, pan-fried, or deep-fried for a delicious meal in minutes. Veg chowmein and fried rice can be stir-fried or microwaved for a quick and tasty dish. Cooking instructions are provided on the packaging."
+          }
+        },
+        "faq_mwjmHt": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Are your frozen foods made with fresh ingredients?",
+            "faq_answer": "Yes! We use high-quality, fresh ingredients to ensure the best taste and nutritional value. Each product is carefully prepared and frozen at peak freshness to retain its original flavor and texture."
+          }
+        },
+        "faq_x8xWj3": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "How long can frozen foods be stored?",
+            "faq_answer": "Our frozen foods have a shelf life of several months when stored at the recommended temperature (-0°F or below). Always check the packaging for specific storage instructions and best-before dates."
+          }
+        }
+      },
+      "block_order": [
+        "faq_GWCByA",
+        "faq_CqE3p7",
+        "faq_mwjmHt",
+        "faq_x8xWj3"
+      ],
+      "name": "Frequently Asked Questions",
+      "settings": {
+        "section_title": "Frequently Asked Question"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "banner_xdJArt",
+    "product_list_XzWYfr",
+    "product_list_e4aHfX",
+    "faq_VbCmqP"
+  ]
 }
