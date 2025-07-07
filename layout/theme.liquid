@@ -37,6 +37,7 @@
     {% render 'mobile-menu-drawer' %}
 
     <main id="main" role="main" class="{% unless template == 'index' %}template-page{% endunless %}">
+      {% section 'slider-banner' %}
       {{ content_for_layout }}
     </main>
     {% section 'footer' %}
@@ -53,5 +54,6 @@
     <script src="{{ 'customer-testimonials.js' | asset_url }}" defer></script>
     <script src="{{ 'faq.js' | asset_url }}" defer></script>
     <script src="{{ 'product-image-gallery.js' | asset_url }}" defer></script>
+    <script src="{{ 'slider-banner.js' | asset_url }}" defer></script>
   </body>
 </html>

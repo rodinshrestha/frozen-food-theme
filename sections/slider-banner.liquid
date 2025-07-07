@@ -1,0 +1,101 @@
+{% if section.blocks.size > 0 %}
+  <div class="slider-banner-section" id="slider-banner">
+    <div class="swiper" id="swiper-slider-banner">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div
+            class="slider-banner-wrapper swiper-slide"
+            style="background-image: url({{ block.settings.image  }})"
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="slider-banner-content">
+                    {% if block.settings.title != '' %}
+                      <h1 class="slider-banner-title">{{ block.settings.title }}</h1>
+                    {% endif %}
+
+                    {% if block.settings.subtitle != '' %}
+                      <p class="slider-banner-subtitle">{{ block.settings.subtitle }}</p>
+                    {% endif %}
+
+                    {% if block.settings.url != '' %}
+                      <a class="btn" href="{{ block.settings.url }}">{{ block.settings.button_text }}</a>
+                    {% endif %}
+
+                    <img
+                      src="{{ 'down-arrow.png' | asset_url }}"
+                      width="24"
+                      height="24"
+                      class="down-arrow-img"
+                      id="banner-down-icon"
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="banner-slider-pagination" id="slider-banner-pagination"></div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .slider-banner-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, {{section.settings[ 'overlay-opacity'] | default: 0.4}});
+    z-index: 1;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Banner Slider",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Background Image"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "subtitle",
+          "type": "text",
+          "label": "Subtitle"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "Button Text"
+        },
+        {
+          "id": "button_link",
+          "type": "url",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Slider"
+    }
+  ]
+}
+{% endschema %}
