@@ -49,15 +49,6 @@
       "name": "Three Fixed Blocks",
       "settings": {}
     },
-    "product_list_JRtpTY": {
-      "type": "product-list",
-      "name": "Featured products",
-      "settings": {
-        "collection": "frontpage",
-        "section-title": "Similar Products",
-        "product_slider": true
-      }
-    },
     "faq_Wkzh7x": {
       "type": "faq",
       "blocks": {
@@ -126,12 +117,21 @@
         "text_alignment": "center",
         "overlay-opacity": 0.3
       }
+    },
+    "product_list_c9cXCp": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "frontpage",
+        "section-title": "Similar Products",
+        "product_slider": true
+      }
     }
   },
   "order": [
     "main",
     "three_content_block_aTbpNw",
-    "product_list_JRtpTY",
+    "product_list_c9cXCp",
     "faq_Wkzh7x",
     "banner_yerwDL"
   ]

@@ -70,15 +70,6 @@
         "section-title": "Our Most Recommended Products"
       }
     },
-    "product_list_pwNGhn": {
-      "type": "product-list",
-      "name": "Featured products",
-      "settings": {
-        "collection": "frontpage",
-        "section-title": "View Other Products",
-        "product_slider": false
-      }
-    },
     "banner_2": {
       "type": "banner",
       "settings": {
@@ -96,11 +87,11 @@
         "overlay-opacity": 0.3
       }
     },
-    "product_list_wHRjeC": {
+    "product_list_DdBxrY": {
       "type": "product-list",
-      "name": "Featured products",
+      "name": "Product List",
       "settings": {
-        "collection": "homepage-bundle-collections",
+        "collection": "home-page-product",
         "section-title": "Our Bundles",
         "product_slider": true
       }
@@ -109,15 +100,24 @@
       "type": "customer-testimonials",
       "name": "Customer Testimonials",
       "settings": {}
+    },
+    "product_list_yEMzX7": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "home-page-product",
+        "section-title": "View Other Products",
+        "product_slider": true
+      }
     }
   },
   "order": [
     "banner_1",
     "three_content_block_yWpJjk",
     "single_product_show_case_9phqPX",
-    "product_list_pwNGhn",
+    "product_list_yEMzX7",
     "banner_2",
-    "product_list_wHRjeC",
+    "product_list_DdBxrY",
     "customer_testimonials_b9Nzdq"
   ]
 }

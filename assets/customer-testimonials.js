@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: "#testimonial-btn-next",
+      prevEl: "#testimonial-btn-prev",
     },
     spaceBetween: 20,
     effect: "slide", // Or "fade"
