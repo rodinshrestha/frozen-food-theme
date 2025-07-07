@@ -20,7 +20,16 @@
                     {% endif %}
 
                     {% if block.settings.url != '' %}
-                      <a class="btn" href="{{ block.settings.url }}">{{ block.settings.button_text }}</a>
+                      <a class="btn" href="{{ block.settings.url }}">
+                        {{- block.settings.button_text }}
+                        <img
+                          src="{{ 'right-arrow.png' | asset_url }}"
+                          class="btn-icon"
+                          width="22"
+                          height="22"
+                          alt="right-arrow"
+                        >
+                      </a>
                     {% endif %}
 
                     <img
