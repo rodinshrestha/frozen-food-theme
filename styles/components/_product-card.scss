@@ -80,9 +80,24 @@
       justify-content: space-between;
       align-items: center;
       height: 40px;
-      .product-price {
-        font-size: 1.25rem;
-        font-weight: 600;
+
+      .product-price-wrapper {
+        display: flex;
+        gap: 10px;
+        .original-price {
+          display: flex;
+          align-self: flex-end;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+        .product-price {
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+
+        .original-price + .discounted-price {
+          color: $red-color;
+        }
       }
 
       .open-modal-btn {

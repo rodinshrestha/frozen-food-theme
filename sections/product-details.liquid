@@ -16,9 +16,12 @@
           <div class="product-content-wrapper">
             <div class="product-sku">{{ product.type }}</div>
             <h1 class="product-title">{{ product.title }}</h1>
-
-            <div class="product-price">{{ product.price | money }}</div>
-
+            <div class="product-price-wrapper">
+              {% if product.compare_at_price > product.price %}
+                <s class="original-price">{{ product.compare_at_price | money }}</s>
+              {% endif %}
+              <div class="product-price discounted-price">{{ product.price | money }}</div>
+            </div>
             {% if product.options_with_values.size != '' %}
               <div class="divier"></div>
               <div class="product-variation-wrapper">
@@ -29,7 +32,6 @@
                       {% for value in option.values %}
                         <div class="variations-list">
                           <span>{{ value }}</span>
-                          {% comment %} <span class="variation-price">{{ value.price | money }}</span> {% endcomment %}
                         </div>
                       {% endfor %}
                     </div>

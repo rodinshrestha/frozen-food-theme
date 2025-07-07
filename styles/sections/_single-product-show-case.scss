@@ -70,8 +70,10 @@
           align-items: center;
           text-decoration: none;
 
-          &:hover {
-            text-decoration: underline;
+          span {
+            &:hover {
+              text-decoration: underline;
+            }
           }
           @include responsive(tablet) {
             margin-bottom: 0;

@@ -19,12 +19,20 @@
               >
 
               <div class="show-case-product-information">
+                {% if product.tags.size > 0 %}
+                  <div class="product-tag-wrapper">
+                    {% for tag in product.tags %}
+                      <span class="tag-name">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
                 <h3 class="show-case-product-title">{{ product.title }}</h3>
                 <h5 class="show-case-product-price">{{ product.price | money }}</h5>
                 <p class="show-case-product-description">{{ product.description | strip_html | escape }}</p>
 
-                <a href="{{ product.url }}" class="show-case-product-details-link"
-                  >View full product details
+                <a href="{{ product.url }}" class="show-case-product-details-link">
+                  <span>View full product details</span>
                   <i class="fa-solid fa-angle-right"></i>
                 </a>
 
@@ -37,13 +45,15 @@
                       data-variant-id="{{ product.variants.first.id }}"
                     >
                       Add to Cart
-                      <img
-                        src="{{ 'right-arrow.png' | asset_url }}"
-                        class="btn-icon"
-                        width="22"
-                        height="22"
-                        alt="right-arrow"
-                      >
+                      {% comment %}
+                        <img
+                          src="{{ 'right-arrow.png' | asset_url }}"
+                          class="btn-icon"
+                          width="22"
+                          height="22"
+                          alt="right-arrow"
+                        >
+                      {% endcomment %}
                     </button>
                     <a href="/checkout" class="link-button single-product-buy-now-btn">Buy Now </a>
                   </div>

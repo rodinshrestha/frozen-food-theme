@@ -26,7 +26,12 @@
       <p class="product-title">{{ product.title }}</p>
     </a>
     <div class="card-footer">
-      <p class="product-price">{{ product.price | money }}</p>
+      <div class="product-price-wrapper">
+        {% if product.compare_at_price > product.price %}
+          <s class="original-price">{{ product.compare_at_price | money }}</s>
+        {% endif %}
+        <p class="product-price discounted-price">{{ product.price | money }}</p>
+      </div>
 
       <div class="btn btn-sm open-modal-btn" data-product-id="{{ product.id }}">
         Add

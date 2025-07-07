@@ -15,6 +15,22 @@
     flex-grow: 1;
     box-sizing: border-box;
     padding-bottom: 10px;
+    position: relative;
+    .product-tag-wrapper {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 5px;
+
+      .tag-name {
+        background-color: $red-color;
+        padding: 6px 8px;
+        color: $light-primary-textColor;
+        font-size: 0.875rem;
+        border-radius: 5px;
+      }
+    }
     .product-active-image {
       height: 100%;
       width: 100%;

@@ -48,9 +48,23 @@
         font-size: 2rem;
       }
 
-      .product-price {
-        font-size: 1.5rem;
-        font-weight: 600;
+      .product-price-wrapper {
+        display: flex;
+        gap: 10px;
+        .original-price {
+          display: flex;
+          align-self: flex-end;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+        .product-price {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+
+        .original-price + .discounted-price {
+          color: $red-color;
+        }
       }
 
       .divier {

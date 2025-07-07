@@ -40,15 +40,9 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify://shop_images/logo.png",
+          "logo": "shopify://shop_images/logo_2.png",
           "main_menu": "",
           "sub_menu": ""
-        }
-      },
-      "featured-products": {
-        "type": "featured-products",
-        "settings": {
-          "collection": "frontpage"
         }
       },
       "cart-drawer": {
@@ -58,16 +52,20 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "demo_text": "This is a demo shop for the Parallax Shopify theme. Products in this shop are courtesy of <a href=\"https://garypoppins.com/\" title=\"https://garypoppins.com/\"><strong>Gary Poppins</strong></a>, <a href=\"https://onehoney.ca/\" title=\"https://onehoney.ca/\"><strong>Oneroot Honey</strong></a> or created by our Design team for demonstration purposes.",
-          "newsletter_text": "Sign up for our mailing list to receive recipes and special savings",
-          "copyright_text": "Your shop name. Powered by Shopify.",
-          "copyright_year_position": "before",
+          "title": "SHERPA FOOD",
+          "tagline": "Frozen With Care",
+          "subtitle": "At Sherpa Food, we believe great meals start with great ingredients — handled with care, flash-frozen at peak freshness, and delivered straight to your table. Our process preserves taste, texture, and nutrition, so you enjoy real, honest food anytime.",
+          "btn_label": "Subscribe",
+          "newletter_subtitle": "At Sherpa food we value your privacy, you can always unsubscribe.",
           "facebook_url": "",
           "instagram_url": "",
-          "footer_menu": "",
-          "show_visa": false,
-          "show_paypal": false
+          "gmail_url": "",
+          "footer_menu": ""
         }
+      },
+      "slider-banner": {
+        "type": "slider-banner",
+        "settings": {}
       }
     },
     "content_for_index": []
