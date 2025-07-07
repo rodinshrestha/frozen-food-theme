@@ -2113,6 +2113,7 @@
 }
 .slider-banner-section .slider-banner-wrapper .container {
   height: 100%;
+  width: unset !important;
 }
 .slider-banner-section .slider-banner-wrapper .container .row {
   height: 100%;
@@ -2144,7 +2145,7 @@
 @media (max-width: 1023px) {
   .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-title {
     font-size: 36px;
-    line-height: 42px;
+    line-height: 46px;
   }
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
@@ -2153,6 +2154,11 @@
   margin: 0;
   color: #fff;
   text-align: center;
+}
+@media (max-width: 1023px) {
+  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
+    line-height: 32px;
+  }
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .down-arrow-img {
   position: absolute;

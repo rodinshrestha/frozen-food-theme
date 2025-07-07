@@ -59,6 +59,7 @@
 
     .container {
       height: 100%;
+      width: unset !important;
 
       .row {
         height: 100%;
@@ -91,7 +92,7 @@
 
               @include responsive(tablet) {
                 font-size: 36px;
-                line-height: 42px;
+                line-height: 46px;
               }
             }
 
@@ -101,6 +102,9 @@
               margin: 0;
               color: $light-primary-textColor;
               text-align: center;
+              @include responsive(tablet) {
+                line-height: 32px;
+              }
             }
             .down-arrow-img {
               position: absolute;
