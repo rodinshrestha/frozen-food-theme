@@ -102,7 +102,7 @@
       "type": "single-product-show-case",
       "name": "Single Product Showcase",
       "settings": {
-        "product_to_show": "meat-lover-personal-size-bundle",
+        "product_to_show": "product-test-1",
         "section-title": "Our Most Recommended Products"
       }
     },
