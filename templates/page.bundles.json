@@ -13,7 +13,7 @@
       "type": "bundles-main",
       "settings": {}
     },
-    "product_list_BTXbhi": {
+    "product_list_6L8NHT": {
       "type": "product-list",
       "name": "Product List",
       "settings": {
@@ -23,5 +23,8 @@
       }
     }
   },
-  "order": ["main", "product_list_BTXbhi"]
+  "order": [
+    "main",
+    "product_list_6L8NHT"
+  ]
 }
