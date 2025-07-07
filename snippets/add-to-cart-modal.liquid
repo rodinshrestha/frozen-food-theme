@@ -19,7 +19,7 @@
         <h3 class="add-to-cart-product-title" id="add-cart-product-title">{{ product.title }}</h3>
         <h5 class="add-to-cart-product-price">{{ product.price | money }}</h5>
         <p class="add-to-cart-product-description">
-          {% render 'truncate-description', description: product.description, limit: settings.add_to_cart_description_limit %}
+          {{ product.description | strip_html | escape | truncate: 200, '...' }}
         </p>
 
         <a href="{{ product.url }}" class="add-to-cart-product-link"
