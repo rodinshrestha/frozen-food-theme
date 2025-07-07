@@ -2025,6 +2025,7 @@
   line-height: 62px;
   margin: 0;
   color: #fff;
+  text-align: center;
 }
 @media (max-width: 1023px) {
   .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-title {
@@ -2037,6 +2038,7 @@
   line-height: 28px;
   margin: 0;
   color: #fff;
+  text-align: center;
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .down-arrow-img {
   position: absolute;

@@ -9,22 +9,36 @@
  */
 {
   "sections": {
-    "banner_1": {
-      "type": "banner",
-      "settings": {
-        "banner-image": "shopify://shop_images/banner.webp",
-        "banner-height": "large",
-        "banner-parallax": true,
-        "feature-banner-title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
-        "feature-banner-subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
-        "button-text": "Shop Now",
-        "button-link": "",
-        "row_content_align": "center",
-        "vertical_content_align": "middle",
-        "content_width": "large",
-        "text_alignment": "center",
-        "overlay-opacity": 0.3
-      }
+    "slider_banner_LAqdEm": {
+      "type": "slider-banner",
+      "blocks": {
+        "slide_c6NtNe": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner.webp",
+            "title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
+            "subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        },
+        "slide_kR8XMi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
+            "title": "Bringing the Rich Falvour of the Mountains",
+            "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Teaste of the Mountains.",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_c6NtNe",
+        "slide_kR8XMi"
+      ],
+      "name": "Banner Slider",
+      "settings": {}
     },
     "three_content_block_yWpJjk": {
       "type": "three-content-block",
@@ -112,7 +126,7 @@
     }
   },
   "order": [
-    "banner_1",
+    "slider_banner_LAqdEm",
     "three_content_block_yWpJjk",
     "single_product_show_case_9phqPX",
     "product_list_yEMzX7",
