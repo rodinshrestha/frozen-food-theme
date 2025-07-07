@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "frozen-food-main",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

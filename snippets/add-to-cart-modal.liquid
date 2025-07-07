@@ -14,9 +14,11 @@
         height="495px"
         class="add-to-cart-product-image"
       >
-      {% comment %} {% render 'product-image-gallery', product: product %} {% endcomment %}
 
       <div class="add-to-cart-product-information">
+        {% if product.type != '' %}
+          <div class="add-to-cart-product-type">{{ product.type }}</div>
+        {% endif %}
         <h3 class="add-to-cart-product-title" id="add-cart-product-title">{{ product.title }}</h3>
         <h5 class="add-to-cart-product-price">{{ product.price | money }}</h5>
         <p class="add-to-cart-product-description">

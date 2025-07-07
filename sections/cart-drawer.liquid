@@ -15,13 +15,26 @@
             <div class="item-loader hidden" id="item-individual-loader">
               <div class="loader"></div>
             </div>
-            <img
-              src="{{ item.product.images[0] |  img_url: '150x'}}"
-              width="150"
-              height="150"
-              alt="{{ item.product.title }}"
-            >
+            <div class="cart-item-image-wrapper">
+              <img
+                src="{{ item.product.images[0] | image_url }}"
+                width="150"
+                height="150"
+                alt="{{ item.product.title }}"
+              >
+
+              {% if item.product.tags.size > 0 %}
+                <div class="cart-item-product-tag-wrapper">
+                  {% for tag in item.product.tags %}
+                    <span class="tag-name">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
             <div class="cart-product-information">
+              {% if item.product.type != '' %}
+                <div class="cart-product-type">{{ item.product.type }}</div>
+              {% endif %}
               <div class="cart-item-title">{{ item.product.title }}</div>
               <div class="cart-item-price">{{ item.line_price | money }}</div>
               {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}
@@ -33,7 +46,14 @@
               class="remove-cart-item"
               data-line="{{ forloop.index }}"
             >
-              <i class="fa-solid fa-xmark remove-cart-icon"></i>
+              <img
+                src="{{ "trash.png" | asset_url }}"
+                width="18"
+                height="18"
+                alt="delete icon"
+                class="remove-cart-icon"
+                title="Remove Item"
+              >
             </button>
           </div>
         {% endfor %}

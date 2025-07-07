@@ -76,7 +76,7 @@ const fetchAndRenderCartDrawer = async () => {
       reBuildCartDrawer(data["cart-drawer"]);
     })
     .catch((err) => {
-      alert("failed");
+      window.showToast(err, "error");
       console.error("Failed to update cart drawer:", err);
     });
 };

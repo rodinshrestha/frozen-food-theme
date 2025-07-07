@@ -29,7 +29,7 @@
               </p>
             {% endif %}
 
-            {% if section.settings['button-text'] != '' %}
+            {% if section.settings['button-link'] != '' %}
               <a
                 href="{{ section.settings['button-link'] | default: '#' }}"
                 class="btn"

@@ -1106,7 +1106,7 @@
 .cart-drawer .cart-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(242, 242, 242, 0.6);
+  border-bottom: 1px solid rgba(48, 51, 54, 0.6);
   padding: 15px;
 }
 .cart-drawer .cart-header .cart-close {
@@ -1149,14 +1149,43 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.05);
 }
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-item-image-wrapper {
+  position: relative;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-item-image-wrapper .cart-item-product-tag-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-item-image-wrapper .cart-item-product-tag-wrapper .tag-name {
+  background-color: #e4022e;
+  padding: 3px 6px;
+  color: #fff;
+  font-size: 0.875rem;
+  border-radius: 5px;
+}
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   flex-grow: 1;
 }
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-product-type {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #720519;
+  margin-bottom: 10px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-price {
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .add-to-cart-qty-wrapper {
   gap: 5px;
@@ -1181,7 +1210,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border-top: 1px solid rgba(242, 242, 242, 0.6);
+  border-top: 1px solid rgba(48, 51, 54, 0.6);
   padding: 15px;
 }
 .cart-drawer .cart-content-wrapper .cart-footer .cart-total-price {

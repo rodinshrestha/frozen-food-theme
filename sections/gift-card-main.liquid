@@ -40,22 +40,3 @@
   ]
 }
 {% endschema %}
-
-{% comment %}
-  <h2>{{ product.title }}</h2>
-  <img src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.title }}">
-  <div>{{ product.description | truncatewords: 20 }}</div>
-
-  <form method="post" action="/cart/add">
-    {% if product.variants.size > 1 %}
-      <select name="id">
-        {% for variant in product.variants %}
-          <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-        {% endfor %}
-      </select>
-    {% else %}
-      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-    {% endif %}
-    <button type="submit">Buy Gift Card</button>
-  </form>
-{% endcomment %}
