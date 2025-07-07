@@ -1,9 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "all-products-main",
       "settings": {}
+    },
+    "banner_qitkML": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "feature-banner-title": "Explore Our All Products",
+        "feature-banner-subtitle": "Dive into our full range of frozen delights — from savory meals to tasty sides, everything you need in one place.",
+        "button-text": "",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.5
+      }
+    },
+    "product_list_dLewcC": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "home-page-product",
+        "section-title": "Explore our Sauce",
+        "product_slider": true
+      }
+    },
+    "product_list_etWtbn": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "bundle-list",
+        "section-title": "Explore Our Bundles",
+        "product_slider": true
+      }
+    },
+    "banner_ixNB6L": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
+        "banner-height": "small",
+        "banner-parallax": true,
+        "feature-banner-title": "Explore Our Digital Products",
+        "feature-banner-subtitle": "Browse our range of digital offerings — fast, flexible, and designed to enhance your experience with instant access and easy delivery.",
+        "button-text": "Shop Now",
+        "button-link": "/pages/gift-cards",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "banner_qitkML",
+    "product_list_dLewcC",
+    "product_list_etWtbn",
+    "banner_ixNB6L"
+  ]
 }
