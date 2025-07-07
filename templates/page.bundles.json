@@ -18,7 +18,7 @@
       "name": "Banner",
       "settings": {
         "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
-        "banner-height": "large",
+        "banner-height": "medium",
         "banner-parallax": true,
         "feature-banner-title": "Explore Our Bundle Collections",
         "feature-banner-subtitle": "Discover our thoughtfully curated frozen food bundles — designed to bring you convenience, variety, and deliciousness in every bite. Make mealtime easier with our frozen food bundles, offering a perfect mix of flavor",
