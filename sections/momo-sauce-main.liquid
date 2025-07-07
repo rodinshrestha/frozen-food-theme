@@ -1,0 +1,27 @@
+<div class="momo-sauce-page-section">
+  <div class="container">
+    {% if section.settings.bread_crumb %}
+      <div class="row">
+        <div class="col">
+          <div class="bread-crumb-wrapper">
+            {% render 'bread-crumbs', title: 'Momo Sauce' %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Promotional Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "bread_crumb",
+      "label": "Show Bread crumbs",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

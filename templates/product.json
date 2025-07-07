@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-details",
+      "settings": {}
+    },
+    "three_content_block_aTbpNw": {
+      "type": "three-content-block",
+      "blocks": {
+        "content_block_zYp9id": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/feat-promo1-choose_800x_166ec497-a349-4f60-8a2e-3f1904451c6c.webp",
+            "block_title": "Become a member",
+            "block_description": "Enjoy members-only pricing, early access to bundles, and fresh frozen flavors made for real life."
+          }
+        },
+        "content_block_bqTnQY": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/deliver_800x_9a689bd6-94de-4b0d-a0a0-f75e1ffc0ecd.webp",
+            "block_title": "Exclusive Offer",
+            "block_description": "Share the love (and the discount). Gift cards that work like store credit — perfect for every food lover on your list."
+          }
+        },
+        "content_block_H6zWY8": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/feat-promo-eat_800x_fbe1fb62-e3c8-4edd-8cea-5b2c50185cb4.webp",
+            "block_title": "Redeemed",
+            "block_description": "Exclusive discounts and free shipping are now yours — enjoy your next order."
+          }
+        }
+      },
+      "block_order": [
+        "content_block_zYp9id",
+        "content_block_bqTnQY",
+        "content_block_H6zWY8"
+      ],
+      "name": "Three Fixed Blocks",
+      "settings": {}
+    },
+    "faq_Wkzh7x": {
+      "type": "faq",
+      "blocks": {
+        "faq_Nc9JgE": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "How do you keep frozen food cold during shipping?",
+            "faq_answer": "We use insulated packaging and dry ice or gel packs to maintain safe freezing temperatures throughout transit. Your order is carefully packed to ensure it arrives frozen and fresh, even if you're not home immediately."
+          }
+        },
+        "faq_rFdFGB": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Can I refreeze the meals if they arrive partially thawed?",
+            "faq_answer": "If the meals are still cold to the touch and have ice crystals present, they are safe to refreeze. However, for best quality and food safety, we recommend storing them in your freezer immediately upon delivery."
+          }
+        },
+        "faq_wEtHrF": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Are your meals pre-cooked or raw?",
+            "faq_answer": "Most of our meals are fully cooked and only need reheating. However, some items, like marinated meats or bake-at-home dishes, may be raw and include clear cooking instructions on the packaging."
+          }
+        },
+        "faq_gyiBhh": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "What’s the best way to store my frozen items after delivery?",
+            "faq_answer": "Once your order arrives, transfer all frozen items directly to your freezer. Make sure your freezer is set to 0°F (-18°C) or lower for optimal storage and quality preservation."
+          }
+        },
+        "faq_3HbUAd": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "What payment methods do you accept?",
+            "faq_answer": "We accept all major credit and debit cards, including Visa, Mastercard, American Express, and Discover. You can also pay securely via PayPal, Apple Pay, and Google Pay at checkout."
+          }
+        }
+      },
+      "block_order": [
+        "faq_Nc9JgE",
+        "faq_rFdFGB",
+        "faq_wEtHrF",
+        "faq_gyiBhh",
+        "faq_3HbUAd"
+      ],
+      "name": "Frequently Asked Questions",
+      "settings": {
+        "section_title": "Frequently Asked Question"
+      }
+    },
+    "banner_yerwDL": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "feature-banner-title": "Members Exclusive Discount",
+        "feature-banner-subtitle": "Enjoy member-only deals and savings on every purchase.",
+        "button-text": "Become a Member",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
+    },
+    "product_list_c9cXCp": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "frontpage",
+        "section-title": "Similar Products",
+        "product_slider": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "three_content_block_aTbpNw",
+    "product_list_c9cXCp",
+    "faq_Wkzh7x",
+    "banner_yerwDL"
+  ]
+}

@@ -2,7 +2,7 @@
 @use "../abstracts/breakpoints" as *;
 
 .header-wrapper {
-  height: 55px;
+  height: 65px;
   width: 100vw;
   background-color: $light-bgColor;
   transition: all 0.3s ease-in;
@@ -106,6 +106,7 @@
             transition: height 0.3s ease;
             visibility: hidden;
             z-index: 12;
+            box-shadow: $box-shadow;
             .sub-menu-list {
               cursor: pointer;
               transition: all 0.2s ease-in;

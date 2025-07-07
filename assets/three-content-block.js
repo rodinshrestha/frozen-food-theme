@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "#three-content-inner-wrapper",
   );
 
+  if (!innerWrapper) return;
+
   const blockWrapper =
     threeContentBlockWrapper.querySelectorAll(".block-wrapper");
 

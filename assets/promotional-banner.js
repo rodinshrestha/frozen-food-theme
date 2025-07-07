@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   new Swiper(swiper, {
     loop: true,
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: true,
-    // },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: "#promotional-banner-next",
+      prevEl: "#promotional-banner-prev",
     },
     slidesPerView: 1,
     spaceBetween: 0,

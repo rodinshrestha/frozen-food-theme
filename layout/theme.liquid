@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     {{ 'main.css' | asset_url | stylesheet_tag }}
-    {{ 'footer-backupo.css' | asset_url | stylesheet_tag }}
 
     <link
       rel="stylesheet"
@@ -37,7 +36,8 @@
     {% render 'search-drawer' %}
     {% render 'mobile-menu-drawer' %}
 
-    <main id="main" role="main">
+    <main id="main" role="main" class="{% unless template == 'index' %}template-page{% endunless %}">
+      {% section 'slider-banner' %}
       {{ content_for_layout }}
     </main>
     {% section 'footer' %}
@@ -47,10 +47,13 @@
     <script src="{{ 'wishlist-drawer.js' | asset_url }}" defer></script>
     <script src="{{ 'search-drawer.js' | asset_url }}" defer></script>
     <script src="{{ 'add-to-cart-modal.js' | asset_url }}" defer></script>
-    <script src="{{ "featured-products.js" | asset_url }}" defer></script>
+    <script src="{{ "product-list.js" | asset_url }}" defer></script>
     <script src="{{ 'promotional-banner.js' | asset_url }}" defer></script>
     <script src="{{ 'single-product-show-case.js' | asset_url }}" defer></script>
     <script src="{{ 'three-content-block.js' | asset_url }}" defer></script>
     <script src="{{ 'customer-testimonials.js' | asset_url }}" defer></script>
+    <script src="{{ 'faq.js' | asset_url }}" defer></script>
+    <script src="{{ 'product-image-gallery.js' | asset_url }}" defer></script>
+    <script src="{{ 'slider-banner.js' | asset_url }}" defer></script>
   </body>
 </html>

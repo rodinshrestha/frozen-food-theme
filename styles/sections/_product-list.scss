@@ -1,7 +1,7 @@
 @use "../abstracts/breakpoints" as *;
 @use "../abstracts/variables" as *;
 
-.featured-product-wrapper {
+.product-list-section {
   .row {
     position: relative;
     .swiper-button-next,
@@ -39,10 +39,15 @@
   }
 
   .product-list-wrapper {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 20px;
     box-sizing: border-box;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include responsive(tablet) {
+      grid-template-columns: 1fr !important;
+    }
 
     .featured-product-inner-wrapper {
       box-sizing: border-box;
@@ -52,10 +57,20 @@
   .swiper {
     width: 100%;
 
+    .swiper-wrapper {
+      @include responsive(tablet) {
+        box-sizing: border-box !important;
+      }
+    }
+
     .featured-product-inner-wrapper {
       display: flex;
       align-items: center;
       flex-direction: column;
+
+      .featured-product-information {
+        width: 100%;
+      }
     }
 
     .swiper-button-next {

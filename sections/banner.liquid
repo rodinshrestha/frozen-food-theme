@@ -3,7 +3,7 @@
 
 <section
   id="feature-banner-{{ section.id }}"
-  class="feature-banner-wrapper feature-banner-{{ banner_height }} {% if section.settings['banner-parallax'] %} banner-parallex {% endif %}"
+  class="banner-section feature-banner-{{ banner_height }} {% if section.settings['banner-parallax'] %} banner-parallex {% endif %}"
 >
   <div class="container" id="product-list-container">
     <div class="row">
@@ -32,9 +32,19 @@
             {% if section.settings['button-text'] != '' %}
               <a
                 href="{{ section.settings['button-link'] | default: '#' }}"
-                class="outline-btn"
+                class="btn"
               >
-                {{ section.settings['button-text'] | default: 'Shop Now' }}
+                <span>
+                  {{ section.settings['button-text'] | default: 'Shop Now' }}
+                </span>
+
+                <img
+                  src="{{ 'right-arrow.png' | asset_url }}"
+                  class="btn-icon"
+                  width="22"
+                  height="22"
+                  alt="right-arrow"
+                >
               </a>
             {% endif %}
           </div>
@@ -237,7 +247,7 @@
   ],
   "presets": [
     {
-      "name": "Featured banner"
+      "name": "Banner"
     }
   ]
 }
