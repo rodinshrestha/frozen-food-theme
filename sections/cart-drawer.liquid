@@ -1,0 +1,64 @@
+<!-- snippets/cart-drawer.liquid -->
+<div id="cart-drawer" class="cart-drawer ">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button id="close-cart" aria-label="Close cart" class="cart-close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div class="loader hidden" id="cart-loader"></div>
+  <div class="cart-content-wrapper" id="cart-content-wrapper">
+    {% if cart.item_count > 0 %}
+      <div class="cart-items-wrapper">
+        {% for item in cart.items %}
+          <div class="cart-item-details" data-key="{{ item.key }}" data-line="{{ forloop.index }}">
+            <div class="item-loader hidden" id="item-individual-loader">
+              <div class="loader"></div>
+            </div>
+            <img
+              src="{{ item.product.images[0] |  img_url: '150x'}}"
+              width="150"
+              height="150"
+              alt="{{ item.product.title }}"
+            >
+            <div class="cart-product-information">
+              <div class="cart-item-title">{{ item.product.title }}</div>
+              <div class="cart-item-price">{{ item.line_price | money }}</div>
+              {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}
+            </div>
+
+            <button
+              id="remove-cart-item"
+              aria-label="remove-cart-item"
+              class="remove-cart-item"
+              data-line="{{ forloop.index }}"
+            >
+              <i class="fa-solid fa-xmark remove-cart-icon"></i>
+            </button>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total-price">
+          <span class="cart-total-text">SubTotal:</span>
+          <span class="cart-total-amount"> {{ cart.total_price | money }}</span>
+        </div>
+        <div class="terms-condition-wrapper">
+          <div class="text-condition-text">Taxes, shipping and discounts codes calculated at checkout</div>
+
+          <div class="checkbox-wrapper">
+            <input type="checkbox" name="aggrement" id="agreement-checkbox" checked>
+            <label for="agreement-checkbox">I agree with the terms and conditions.</label>
+          </div>
+        </div>
+
+        <a href="/checkout" class="checkout-button link-button" id="proceed-to-checkout">Proceed To Checkout</a>
+      </div>
+
+    {% else %}
+      <div class="cart-empty-wrapper">
+        <p>Your cart is empty. Keep shopping</p>
+      </div>
+    {% endif %}
+  </div>
+</div>

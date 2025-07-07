@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "momo-sauce-main",
+      "settings": {
+        "bread_crumb": true
+      }
+    },
+    "banner_RpEjYw": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "feature-banner-title": "Explore Our Momo Sauce Collection",
+        "feature-banner-subtitle": "Ehance your meal with our delicious Momo Sauce, created to complement every bite. Whether you prefer bold heat, nutty richness, or a hint of sweetness, we have perfect sauce for you!",
+        "button-text": "",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.6
+      }
+    },
+    "product_list_hL8jiB": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "momo-sauce",
+        "section-title": "",
+        "product_slider": false
+      }
+    },
+    "faq_FKifLR": {
+      "type": "faq",
+      "blocks": {
+        "faq_e96jWD": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Test",
+            "faq_answer": "Test"
+          }
+        }
+      },
+      "block_order": [
+        "faq_e96jWD"
+      ],
+      "name": "Frequently Asked Questions",
+      "settings": {
+        "section_title": "Frequently Asked Question"
+      }
+    },
+    "banner_whweaF": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
+        "banner-height": "small",
+        "banner-parallax": false,
+        "feature-banner-title": "Need More Information",
+        "feature-banner-subtitle": "If you have any other questions, feel free to contact our customer service team. We’re here to help you choose the perfect sauce for your taste!",
+        "button-text": "",
+        "button-link": "",
+        "row_content_align": "center",
+        "vertical_content_align": "middle",
+        "content_width": "large",
+        "text_alignment": "center",
+        "overlay-opacity": 0.3
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner_RpEjYw",
+    "product_list_hL8jiB",
+    "faq_FKifLR",
+    "banner_whweaF"
+  ]
+}

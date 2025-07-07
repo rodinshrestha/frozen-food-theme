@@ -1,0 +1,76 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
+.link-button {
+  color: $light-primary-textColor;
+  background-color: $red-color;
+  border: 1px solid $red-color;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
+  border-radius: 10px;
+  &:hover {
+    background-color: $dark-red-color;
+  }
+}
+
+.outline-btn {
+  color: $red-color;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 2px;
+  display: flex;
+  align-self: center;
+  padding: 10px 40px;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  border: 1px solid$red-color;
+  background-color: transparent;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $red-color;
+    color: $white-color;
+  }
+}
+
+.btn {
+  color: $light-primary-textColor;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-self: center;
+  padding: 10px 40px;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  border: 1px solid $red-color;
+  background-color: $red-color;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  .btn-icon {
+    margin-top: 1px;
+  }
+  &:hover {
+    background-color: $dark-red-color;
+    border-color: $dark-red-color;
+  }
+}
+
+.btn-sm {
+  padding: 8px 20px;
+}
