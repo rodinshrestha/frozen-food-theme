@@ -1,9 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "bundle-main",
+      "type": "bundles-main",
       "settings": {}
+    },
+    "product_list_BTXbhi": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "bundle-list",
+        "section-title": "",
+        "product_slider": false
+      }
     }
   },
-  "order": ["main"]
+  "order": ["main", "product_list_BTXbhi"]
 }
