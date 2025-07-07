@@ -58,8 +58,13 @@
   background-color: $red-color;
   box-sizing: border-box;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
+  justify-content: center;
+
+  .btn-icon {
+    margin-top: 1px;
+  }
   &:hover {
     background-color: $dark-red-color;
     border-color: $dark-red-color;

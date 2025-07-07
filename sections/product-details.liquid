@@ -14,7 +14,7 @@
             {% render 'product-image-gallery' %}
           </div>
           <div class="product-content-wrapper">
-            <div class="product-sku">{{ product.variants.first.sku }}</div>
+            <div class="product-sku">{{ product.type }}</div>
             <h1 class="product-title">{{ product.title }}</h1>
 
             <div class="product-price">{{ product.price | money }}</div>
@@ -58,6 +58,14 @@
                   data-variant-id="{{ product.variants.first.id }}"
                 >
                   Add to cart
+
+                  <img
+                    src="{{ 'button-cart-icon.png' | asset_url }}"
+                    class="btn-icon"
+                    width="20"
+                    height="20"
+                    alt="right-arrow"
+                  >
                 </button>
               </div>
             </div>

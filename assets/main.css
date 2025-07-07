@@ -194,11 +194,11 @@
   border: none;
   flex-grow: 1;
 }
-.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .link-button {
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .green-btn {
   padding: 10px 20px;
   background-color: #025a31;
   border: 1px solid #025a31;
-  border-radius: 5px;
+  border-radius: 10px;
   letter-spacing: 1px;
 }
 .footer-wrapper .newsletter-wrapper .newletter-helper-text {
@@ -466,8 +466,12 @@
   background-color: #e4022e;
   box-sizing: border-box;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
+  justify-content: center;
+}
+.btn .btn-icon {
+  margin-top: 1px;
 }
 .btn:hover {
   background-color: #720519;
@@ -1298,6 +1302,11 @@
 .product-list-section .swiper {
   width: 100%;
 }
+@media (max-width: 1023px) {
+  .product-list-section .swiper .swiper-wrapper {
+    box-sizing: border-box !important;
+  }
+}
 .product-list-section .swiper .featured-product-inner-wrapper {
   display: flex;
   align-items: center;
@@ -1515,7 +1524,7 @@
 }
 @media (max-width: 1023px) {
   .three-content-block-wrapper {
-    height: 660px;
+    height: 700px;
     padding: 40px 0;
   }
   .three-content-block-wrapper .container {
@@ -1530,8 +1539,14 @@
   }
 }
 .three-content-block-wrapper .three-content-inner-wrapper {
-  display: flex;
+  display: grid;
   gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1023px) {
+  .three-content-block-wrapper .three-content-inner-wrapper {
+    display: flex;
+  }
 }
 .three-content-block-wrapper .three-content-inner-wrapper .swiper-pagination {
   bottom: 0;
@@ -1544,7 +1559,6 @@
   flex-direction: column;
   max-width: 400px;
   margin: 0 auto;
-  background: #fff;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -1554,7 +1568,7 @@
   }
 }
 .three-content-block-wrapper .three-content-inner-wrapper .block-wrapper .block-image-wrapper {
-  width: 400px;
+  width: 100%;
   height: 400px;
 }
 @media (max-width: 1199px) {
@@ -1774,6 +1788,9 @@
   align-items: center;
   margin-top: 10px;
 }
+.product-details-section .product-details-wrapper .product-content-wrapper .product-details-cta-wrapper .add-to-cart-qty-wrapper {
+  box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
+}
 .product-details-section .product-details-wrapper .product-content-wrapper .product-details-cta-wrapper .product-details-btn-group {
   display: flex;
   gap: 10px;
@@ -1847,18 +1864,21 @@
 .faq-section .faq-wrapper .faq-list-wrapper {
   border-bottom: 1px solid #303336;
   padding-top: 10px;
+  transition: all 0.4s ease-in;
 }
 .faq-section .faq-wrapper .faq-list-wrapper.active .faq-icon {
   transform: rotate(180deg);
 }
 .faq-section .faq-wrapper .faq-list-wrapper.active .faq-title-description {
-  max-height: 500px; /* large enough to fit content */
+  max-height: 100px; /* large enough to fit content */
 }
 .faq-section .faq-wrapper .faq-list-wrapper .faq-list-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  line-height: 24px;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 .faq-section .faq-wrapper .faq-list-wrapper .faq-list-title .faq-icon {
   cursor: pointer;
@@ -1870,7 +1890,7 @@
   margin: 0 10px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-in-out;
+  transition: max-height 0.3s ease-in;
   margin-top: 10px;
 }
 
@@ -1895,13 +1915,12 @@
   flex: 0 1 33.33%;
   display: flex !important;
   flex-direction: column;
-  gap: 10px;
   min-width: 0;
   background-color: #fff !important;
   padding: 15px 10px;
   border-radius: 10px;
   justify-content: space-between;
-  height: 430px;
+  min-height: 429px;
 }
 .gift-card-section .gift-card-wrapper .gift-card-list .featured-product-inner-wrapper .featured-product-image-wrapper {
   margin-bottom: 10px;
@@ -1909,6 +1928,9 @@
 .gift-card-section .gift-card-wrapper .gift-card-list .featured-product-inner-wrapper .featured-product-image-wrapper .product-image {
   width: 100%;
   height: 100%;
+}
+.gift-card-section .gift-card-wrapper .gift-card-list .featured-product-inner-wrapper .featured-product-information {
+  margin-top: 10px !important;
 }
 .gift-card-section .gift-card-wrapper .no-gift-card-wrapper {
   display: flex;

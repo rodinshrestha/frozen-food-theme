@@ -12,6 +12,7 @@
     .faq-list-wrapper {
       border-bottom: 1px solid $dark-color;
       padding-top: 10px;
+      transition: all 0.4s ease-in;
 
       &.active {
         .faq-icon {
@@ -19,15 +20,17 @@
         }
 
         .faq-title-description {
-          max-height: 500px; /* large enough to fit content */
+          max-height: 100px; /* large enough to fit content */
         }
       }
 
       .faq-list-title {
-        font-size: 1.25rem;
+        font-size: 1rem;
+        line-height: 24px;
         font-weight: 600;
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
 
         .faq-icon {
           cursor: pointer;
@@ -41,7 +44,7 @@
         margin: 0 10px;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
+        transition: max-height 0.3s ease-in;
         margin-top: 10px;
       }
     }

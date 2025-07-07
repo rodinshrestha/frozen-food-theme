@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       breakpoints: {
         0: { slidesPerView: 1 },
-        616: { slidesPerView: 2 },
-        871: { slidesPerView: 2.5 },
+        616: { slidesPerView: 1 },
+        871: { slidesPerView: 1 },
         884: { slidesPerView: 3 },
         1020: { slidesPerView: 3.5 },
         1200: { slidesPerView: 3.7 },

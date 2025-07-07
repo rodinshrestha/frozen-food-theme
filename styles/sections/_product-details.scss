@@ -156,6 +156,10 @@
         align-items: center;
         margin-top: 10px;
 
+        .add-to-cart-qty-wrapper {
+          box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
+        }
+
         .product-details-btn-group {
           display: flex;
           gap: 10px;

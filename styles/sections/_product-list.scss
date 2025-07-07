@@ -57,6 +57,12 @@
   .swiper {
     width: 100%;
 
+    .swiper-wrapper {
+      @include responsive(tablet) {
+        box-sizing: border-box !important;
+      }
+    }
+
     .featured-product-inner-wrapper {
       display: flex;
       align-items: center;

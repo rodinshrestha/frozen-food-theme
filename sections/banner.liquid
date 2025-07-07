@@ -34,7 +34,17 @@
                 href="{{ section.settings['button-link'] | default: '#' }}"
                 class="btn"
               >
-                {{ section.settings['button-text'] | default: 'Shop Now' }}
+                <span>
+                  {{ section.settings['button-text'] | default: 'Shop Now' }}
+                </span>
+
+                <img
+                  src="{{ 'right-arrow.png' | asset_url }}"
+                  class="btn-icon"
+                  width="22"
+                  height="22"
+                  alt="right-arrow"
+                >
               </a>
             {% endif %}
           </div>

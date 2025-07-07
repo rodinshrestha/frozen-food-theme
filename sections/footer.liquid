@@ -23,7 +23,16 @@
         <div class="newsletter-wrapper">
           <div class="newsletter-form-wrapper">
             <input type="email" class="contact-email" name="contact" placeholder="Your@example.com">
-            <div class="link-button grn-btn">{{ section.settings.btn_label }}</div>
+            <div class="btn green-btn">
+              {{ section.settings.btn_label }}
+              <img
+                src="{{ 'bell.png' | asset_url }}"
+                class="subscribe-btn-icon"
+                width="18"
+                height="18"
+                alt="right-arrow"
+              >
+            </div>
           </div>
           {% if section.settings.newletter_subtitle != '' %}
             <p class="newletter-helper-text">{{ section.settings.newletter_subtitle }}</p>

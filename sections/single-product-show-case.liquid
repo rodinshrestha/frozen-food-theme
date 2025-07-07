@@ -36,9 +36,16 @@
                       class="add-to-cart outline-btn single-product-add-to-cart-btn"
                       data-variant-id="{{ product.variants.first.id }}"
                     >
-                      Add to cart
+                      Add to Cart
+                      <img
+                        src="{{ 'right-arrow.png' | asset_url }}"
+                        class="btn-icon"
+                        width="22"
+                        height="22"
+                        alt="right-arrow"
+                      >
                     </button>
-                    <a href="/checkout" class="link-button single-product-buy-now-btn">Buy it now </a>
+                    <a href="/checkout" class="link-button single-product-buy-now-btn">Buy Now </a>
                   </div>
                 </div>
               </div>

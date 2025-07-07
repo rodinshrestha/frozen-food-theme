@@ -7,7 +7,7 @@
   overflow: hidden;
 
   @include responsive(tablet) {
-    height: 660px;
+    height: 700px;
     padding: 40px 0;
     .container {
       height: 100%;
@@ -24,8 +24,14 @@
   }
 
   .three-content-inner-wrapper {
-    display: flex;
+    display: grid;
     gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include responsive(tablet) {
+      display: flex;
+    }
+
     .swiper-pagination {
       bottom: 0;
 
@@ -39,7 +45,7 @@
       flex-direction: column;
       max-width: 400px;
       margin: 0 auto;
-      background: $white-color;
+      // background: $white-color;s
       border-radius: 8px;
       overflow: hidden;
 
@@ -48,7 +54,7 @@
       }
 
       .block-image-wrapper {
-        width: 400px;
+        width: 100%;
         height: 400px;
         @include responsive(laptop) {
           display: flex;

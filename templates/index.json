@@ -70,6 +70,15 @@
         "section-title": "Our Most Recommended Products"
       }
     },
+    "product_list_yEMzX7": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "home-page-product",
+        "section-title": "View Other Products",
+        "product_slider": true
+      }
+    },
     "banner_2": {
       "type": "banner",
       "settings": {
@@ -91,7 +100,7 @@
       "type": "product-list",
       "name": "Product List",
       "settings": {
-        "collection": "home-page-product",
+        "collection": "homepage-bundle-collections",
         "section-title": "Our Bundles",
         "product_slider": true
       }
@@ -100,15 +109,6 @@
       "type": "customer-testimonials",
       "name": "Customer Testimonials",
       "settings": {}
-    },
-    "product_list_yEMzX7": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "collection": "home-page-product",
-        "section-title": "View Other Products",
-        "product_slider": true
-      }
     }
   },
   "order": [
