@@ -10,9 +10,18 @@
 {
   "sections": {
     "main": {
-      "type": "frozen-food-main",
+      "type": "bundles-main",
       "settings": {}
+    },
+    "product_list_BTXbhi": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "bundle-list",
+        "section-title": "",
+        "product_slider": false
+      }
     }
   },
-  "order": ["main"]
+  "order": ["main", "product_list_BTXbhi"]
 }
