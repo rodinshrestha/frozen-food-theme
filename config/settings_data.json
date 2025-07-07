@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "promotional-banner": {
+        "type": "promotional-banner",
+        "blocks": {
+          "text_slide_hMWp3U": {
+            "type": "text_slide",
+            "settings": {
+              "text": "** WE ARE EXCITED TO ANNOUNCE 15% OFF ON OUR SUBSCRIPTION AND BUNDLE DISCOUNT!! **"
+            }
+          },
+          "text_slide_BaqaRd": {
+            "type": "text_slide",
+            "settings": {
+              "text": "Limited Time Offer: Free Shipping on orders of $99.99 or more"
+            }
+          }
+        },
+        "block_order": [
+          "text_slide_hMWp3U",
+          "text_slide_BaqaRd"
+        ],
+        "settings": {
+          "show-promotional-banner": true,
+          "background-color": "#1b1f23",
+          "text-color": "#ffffff",
+          "text-position": "center"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/logo_2.png",
+          "main_menu": "",
+          "sub_menu": ""
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "title": "SHERPA FOOD",
+          "tagline": "Frozen With Care",
+          "subtitle": "At Sherpa Food, we believe great meals start with great ingredients — handled with care, flash-frozen at peak freshness, and delivered straight to your table. Our process preserves taste, texture, and nutrition, so you enjoy real, honest food anytime.",
+          "btn_label": "Subscribe",
+          "newletter_subtitle": "At Sherpa food we value your privacy, you can always unsubscribe.",
+          "facebook_url": "",
+          "instagram_url": "",
+          "gmail_url": "",
+          "footer_menu": ""
+        }
+      },
+      "slider-banner": {
+        "type": "slider-banner",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
+}

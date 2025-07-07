@@ -1,0 +1,106 @@
+<div class="product-show-case-wrapper section-wrapper" id="product-show-case">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% assign product = all_products[section.settings.product_to_show] %}
+
+        {% if product %}
+          <div class="show-case-inner-wrapper">
+            {% if section.settings['section-title'] != '' %}
+              <div class="section-title">{{ section.settings['section-title'] }}</div>
+            {% endif %}
+            <div class="show-case-product-content-wrapper">
+              <div class="show-case-product-image-wrapper">
+                {% if product.tags.size > 0 %}
+                  <div class="product-tag-wrapper">
+                    {% for tag in product.tags %}
+                      <span class="tag-name">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <img
+                  src="{{ product.featured_image | image_url }}"
+                  alt="{{ product.title }}"
+                  width="495"
+                  height="495"
+                  class="show-case-product-image"
+                >
+              </div>
+
+              <div class="show-case-product-information">
+                {% if product.type != '' %}
+                  <div class="product-type">{{ product.type }}</div>
+                {% endif %}
+                <h3 class="show-case-product-title">{{ product.title }}</h3>
+                <div class="show-case-product-price-wrapper">
+                  {% if product.compare_at_price > product.price %}
+                    <s class="original-price">{{ product.compare_at_price | money }}</s>
+                  {% endif %}
+                  <h5 class="show-case-product-price discounted-price">{{ product.price | money }}</h5>
+                </div>
+                <p class="show-case-product-description">
+                  {{ product.description | strip_html | escape | truncate: 180, '...' }}
+                </p>
+
+                <a href="{{ product.url }}" class="show-case-product-details-link">
+                  <span>View full product details</span>
+                  <i class="fa-solid fa-angle-right"></i>
+                </a>
+
+                <hr>
+                <div class="show-case-product-cta-wrapper" id="show-case-product-cta">
+                  {% render 'product-quantity', product: product, appliedQty: 1 %}
+                  <div class="show-case-btn-group ">
+                    <button
+                      class="add-to-cart outline-btn single-product-add-to-cart-btn"
+                      data-variant-id="{{ product.variants.first.id }}"
+                    >
+                      Add to Cart
+                      {% comment %}
+                        <img
+                          src="{{ 'right-arrow.png' | asset_url }}"
+                          class="btn-icon"
+                          width="22"
+                          height="22"
+                          alt="right-arrow"
+                        >
+                      {% endcomment %}
+                    </button>
+                    <a href="/checkout" class="link-button single-product-buy-now-btn">Buy Now </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <p>Please select a product in the section settings.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Single Product Showcase",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_to_show",
+      "label": "Select product to showcase"
+    },
+    {
+      "type": "text",
+      "id": "section-title",
+      "label": "Section Title",
+      "default": "Our Most Recommended Products"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Single Product Showcase"
+    }
+  ]
+}
+{% endschema %}

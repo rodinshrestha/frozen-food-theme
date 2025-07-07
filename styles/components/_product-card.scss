@@ -1,0 +1,108 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
+.featured-product-inner-wrapper {
+  background-color: $light-primary-textColor;
+  padding: 10px;
+
+  &:hover {
+    .open-modal-btn {
+      display: flex !important;
+    }
+  }
+  .featured-product-image-wrapper {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    width: 100%;
+
+    .product-image {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .product-tag-wrapper {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 5px;
+
+      .tag-name {
+        background-color: $red-color;
+        padding: 6px 8px;
+        color: $light-primary-textColor;
+        font-size: 0.875rem;
+        border-radius: 5px;
+      }
+    }
+
+    &:hover {
+      .open-modal-btn {
+        display: block;
+      }
+    }
+
+    &:hover + .open-modal-btn {
+      .product-title {
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .featured-product-information {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    .product-type {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: $dark-red-color;
+    }
+
+    a {
+      color: unset;
+      text-decoration: none;
+      .product-title {
+        font-weight: 600;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+
+      .product-price-wrapper {
+        display: flex;
+        gap: 10px;
+        .original-price {
+          display: flex;
+          align-self: flex-end;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+        .product-price {
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+
+        .original-price + .discounted-price {
+          color: $red-color;
+        }
+      }
+
+      .open-modal-btn {
+        display: none;
+      }
+    }
+  }
+}

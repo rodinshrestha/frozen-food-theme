@@ -1,0 +1,46 @@
+<div class="product-gallery-wrapper" id="product-gallery-image">
+  <!-- Main Swiper -->
+  <div class="swiper product-gallery-image-wrapper" id="main-image-swiper">
+    <div class="swiper-wrapper product-active-image-wrapper">
+      {% for media in product.media %}
+        {% if media.media_type == 'image' %}
+          <div class="swiper-slide product-active-image">
+            {% if product.tags.size > 0 %}
+              <div class="product-tag-wrapper">
+                {% for tag in product.tags %}
+                  <span class="tag-name">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <img
+              src="{{ media |  image_url }}"
+              alt="{{ media.alt | escape }}"
+              width="280"
+              height="280"
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Thumbnail Swiper -->
+  <div class="swiper image-navigation-wrapper" id="image-navigation-swiper">
+    <div class="swiper-wrapper image-navigation-list">
+      {% for media in product.media %}
+        {% if media.media_type == 'image' %}
+          <div class="swiper-slide image-navigation">
+            <img
+              src="{{ media | image_url }}"
+              alt="{{ media.alt | escape }}"
+              width="40"
+              height="60"
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next" id="swiper-image-navigation-next"></div>
+    <div class="swiper-button-prev" id="swiper-image-navigation-prev"></div>
+  </div>
+</div>

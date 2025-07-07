@@ -1,0 +1,124 @@
+<section class="header-wrapper" id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="menu-wrapper">
+          <div class="mobile-menu-wrapper">
+            <div class="ham-burger-menu" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="menu-left-wrapper">
+            {% if section.settings.logo != '' %}
+              <a href="{{ routes.root_url }}">
+                <img
+                  src="{{ section.settings.logo | image_url }}"
+                  alt="Logo"
+                  loading="lazy"
+                  width="80"
+                  height="50"
+                >
+              </a>
+            {% else %}
+              <img
+                src="{{ 'fallback-logo.png' | asset_url }}"
+                alt="Logo"
+                loading="lazy"
+                width="80"
+                height="40"
+              >
+            {% endif %}
+          </div>
+          <div class="menu-right-wrapper">
+            <ul class="navigation-wrappper hide-mobile">
+              <li class="navigation-list sub-navigation-wrapper" id="sub-navigation-wrapper">
+                <a href="#">SHOP</a>
+                <i class="fa-solid fa-angle-down down-icon"></i>
+
+                <ul class="sub-menu-wrapper" id="sub-menu-wrapper">
+                  <li class="sub-menu-list"><a href="/pages/momo-sauce"> Momo Sauce</a></li>
+                  <li class="sub-menu-list"><a href="/pages/frozen-food"> Frozen Food</a></li>
+                  <li class="sub-menu-list"><a href="/pages/bundles"> Bundles</a></li>
+                  <li class="sub-menu-list"><a href="/pages/gift-card"> Gift Cards</a></li>
+                </ul>
+              </li>
+              <li class="navigation-list"><a href="#"> OUR STORY</a></li>
+              <li class="navigation-list"><a href="#"> CONTACT US</a></li>
+            </ul>
+            <div class="menu-icon-wrapper">
+              <!-- Account -->
+              <a href="{{ routes.account_login_url }}" class="hide-mobile">
+                <img
+                  src="{{ 'user.png' | asset_url }}"
+                  height="22"
+                  width="22"
+                  id="user-icon"
+                  aria-label="Account login"
+                >
+              </a>
+              <!-- Search -->
+              <img
+                src="{{ 'search-icon.png' | asset_url }}"
+                data-close-icon="{{ 'close.png' | asset_url }}"
+                data-search-icon="{{ 'search-icon.png' | asset_url }}"
+                alt="Search Icon"
+                id="search-drawer-icon"
+                height="24"
+                width="24"
+              >
+              <!-- wishlist -->
+              {% comment %}
+                <img
+                  src="{{ 'wishlist.png' | asset_url }}"
+                  alt="Wishlist Icon"
+                  id="wishlist-icon"
+                  height="24"
+                  width="24"
+                >
+              {% endcomment %}
+              <!-- Cart -->
+              <div class="add-to-cart-icon-group">
+                <img
+                  src="{{ 'shopping-bag.png' | asset_url }}"
+                  height="22"
+                  width="22"
+                  id="cart-icon"
+                  aria-label="Open Cart"
+                  class="add-to-cart-icon"
+                >
+                <span class="cart-count-number {% if cart.item_count == 0 %}hidden{% endif %}" id="cart-item-count">
+                  {{ cart.item_count }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "sub_menu",
+      "label": "Sub Navigation"
+    }
+  ]
+}
+{% endschema %}

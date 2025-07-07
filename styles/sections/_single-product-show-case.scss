@@ -1,0 +1,190 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/variables" as *;
+
+.product-show-case-wrapper {
+  .show-case-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .show-case-product-content-wrapper {
+      display: flex;
+      gap: 40px;
+
+      @include responsive(tablet) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .show-case-product-image-wrapper {
+        flex: 0 1 40%;
+        min-width: 0;
+        position: relative;
+
+        .product-tag-wrapper {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          display: flex;
+          gap: 5px;
+
+          .tag-name {
+            background-color: $red-color;
+            padding: 6px 8px;
+            color: $light-primary-textColor;
+            font-size: 0.875rem;
+            border-radius: 5px;
+          }
+        }
+
+        .show-case-product-image {
+          width: 100%;
+          height: 100%;
+          @include responsive(tablet) {
+            height: 400px;
+          }
+        }
+      }
+
+      .show-case-product-information {
+        flex: 0 1 60%;
+        padding: 0 10px;
+
+        .product-type {
+          font-size: 1rem;
+          font-weight: 500;
+          color: $dark-red-color;
+          margin-bottom: 15px;
+        }
+
+        .show-case-product-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 25px;
+          color: $dark-primary-textColor;
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
+        }
+
+        .show-case-product-price-wrapper {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 25px;
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
+
+          .original-price {
+            display: flex;
+            align-self: flex-end;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+          .show-case-product-price {
+            font-size: 1.25rem;
+            color: $dark-primary-textColor;
+            font-weight: 600;
+          }
+
+          .original-price + .discounted-price {
+            color: $red-color;
+          }
+        }
+
+        .show-case-product-description {
+          font-size: 1rem;
+          color: $dark-primary-textColor;
+          font-weight: 400;
+          line-height: 28px;
+          margin-bottom: 25px;
+          @include responsive(tablet) {
+            margin-bottom: 15px;
+          }
+        }
+
+        .show-case-product-details-link {
+          color: $dark-primary-textColor;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 28px;
+          transition: all 0.2s ease-in-out;
+          margin-bottom: 20px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          text-decoration: none;
+
+          span {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          @include responsive(tablet) {
+            margin-bottom: 0;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        .show-case-product-cta-wrapper {
+          display: flex;
+          gap: 10px;
+          margin-top: 25px;
+          align-items: center;
+
+          @include responsive(tablet) {
+            gap: 15px;
+            margin-top: 15px;
+          }
+
+          &.disable {
+            cursor: not-allowed;
+
+            .add-to-cart-qty-wrapper {
+              pointer-events: none;
+              opacity: 0.5;
+            }
+
+            .show-case-btn-group {
+              pointer-events: none;
+              opacity: 0.5;
+            }
+          }
+
+          > .add-to-cart-qty-wrapper {
+            gap: 10px;
+            bottom {
+              padding: 0;
+            }
+
+            .quantity-input {
+              width: 16px;
+            }
+          }
+
+          .show-case-btn-group {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+
+            @media (max-width: 980px) {
+              gap: 15px;
+
+              .outline-btn {
+                align-self: unset;
+              }
+            }
+
+            .single-product-add-to-cart-btn,
+            .single-product-buy-now-btn {
+              flex-grow: 1;
+              padding: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
