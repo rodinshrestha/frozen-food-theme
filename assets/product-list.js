@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     new Swiper(`#${uniqueID}`, {
       slidesPerView: 4,
-      spaceBetween: 0,
+      spaceBetween: 10,
       loop: true,
       navigation: {
         nextEl: `#${uniqueID}-next`,
