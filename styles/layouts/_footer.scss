@@ -65,6 +65,12 @@
         border: 1px solid $green-color;
         border-radius: 10px;
         letter-spacing: 1px;
+        transition: all 0.2s linear;
+
+        &:hover {
+          background-color: $dark-green-color;
+          border-color: $dark-green-color;
+        }
       }
     }
     .newletter-helper-text {

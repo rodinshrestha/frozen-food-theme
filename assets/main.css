@@ -201,6 +201,11 @@
   border: 1px solid #025a31;
   border-radius: 10px;
   letter-spacing: 1px;
+  transition: all 0.2s linear;
+}
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .green-btn:hover {
+  background-color: #014826;
+  border-color: #014826;
 }
 .footer-wrapper .newsletter-wrapper .newletter-helper-text {
   color: rgba(242, 242, 242, 0.6);
