@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subMenuWrapper = document.getElementById("sub-navigation-wrapper");
   const header = document.getElementById("header");
   const promoBanner = document.getElementById("promotional-banner");
+  const extraHeight = document.getElementById("extra-header-height");
 
   // Opens the header sub menu
   subMenuWrapper.addEventListener("mouseenter", () => {
@@ -25,8 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ([entry]) => {
       if (!entry.isIntersecting) {
         header.classList.add("sticky");
+        extraHeight.classList.add("extra-header-height");
       } else {
         header.classList.remove("sticky");
+        extraHeight.classList.remove("extra-header-height");
       }
     },
     {
