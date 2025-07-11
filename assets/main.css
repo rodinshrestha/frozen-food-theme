@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("../assets/BrandonGrotesque-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url('{{ "BrandonGrotesque-Medium.woff2" | asset_url }}') format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Scotch Display";
+  src: url("../assets/ScotchDisplay-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Scotch Display";
+  src: url("../assets/ScotchDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 .header-wrapper {
   height: 65px;
   width: 100vw;
@@ -435,6 +463,8 @@
   transition: all 0.2s ease-in;
   box-sizing: border-box;
   border-radius: 10px;
+  font-family: "Brandon Grotesque", sans-serif;
+  letter-spacing: 1px;
 }
 .link-button:hover {
   background-color: #720519;
@@ -455,6 +485,8 @@
   border: 1px solid #e4022e;
   background-color: transparent;
   border-radius: 10px;
+  font-family: "Brandon Grotesque", sans-serif;
+  letter-spacing: 1px;
 }
 .outline-btn:hover {
   background-color: #e4022e;
@@ -480,6 +512,8 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  font-family: "Brandon Grotesque", sans-serif;
+  letter-spacing: 1px;
 }
 .btn .btn-icon {
   margin-top: 1px;
@@ -616,7 +650,7 @@
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 40px;
 }
@@ -631,8 +665,8 @@
   font-weight: 500;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .product-price {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
@@ -1382,6 +1416,20 @@
 }
 .product-list-section.bg-section-dark .section-title-wrapper .section-title::after {
   background-color: none;
+}
+.product-list-section.bg-section-dark .featured-product-information {
+  font-family: "Brandon Grotesque", sans-serif;
+  color: #fff !important;
+  justify-content: center;
+  text-align: center;
+}
+.product-list-section.bg-section-dark .featured-product-information .product-type {
+  color: rgba(242, 242, 242, 0.6) !important;
+}
+.product-list-section.bg-section-dark .featured-product-information .product-title {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 .promotional-banner-wrapper {
@@ -2142,10 +2190,11 @@
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-title {
   font-size: 12px;
-  font-weight: 600;
-  margin: 0;
+  font-weight: 400;
+  letter-spacing: 1px;
   color: #fff;
   text-align: center;
+  font-family: "Brandon Grotesque", sans-serif;
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
   font-size: 40px;
@@ -2153,11 +2202,8 @@
   margin: 0;
   color: #fff;
   text-align: center;
-}
-@media (max-width: 1023px) {
-  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
-    line-height: 32px;
-  }
+  letter-spacing: 1px;
+  font-family: "Scotch Display", sans-serif;
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .down-arrow-img {
   position: absolute;
@@ -2245,9 +2291,11 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: "Instrument Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: "Brandon Grotesque", sans-serif;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
 }
 
 *,
@@ -2397,6 +2445,8 @@ ul {
   display: flex;
   align-self: center;
   color: #303336;
+  font-family: "Scotch Display", sans-serif;
+  letter-spacing: 1px;
 }
 @media (max-width: 1023px) {
   .section-title {

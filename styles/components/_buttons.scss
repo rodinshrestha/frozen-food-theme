@@ -15,6 +15,8 @@
   transition: all 0.2s ease-in;
   box-sizing: border-box;
   border-radius: 10px;
+  font-family: $font-family-brandon;
+  letter-spacing: 1px;
   &:hover {
     background-color: $dark-red-color;
   }
@@ -35,6 +37,8 @@
   border: 1px solid$red-color;
   background-color: transparent;
   border-radius: 10px;
+  font-family: $font-family-brandon;
+  letter-spacing: 1px;
 
   &:hover {
     background-color: $red-color;
@@ -61,6 +65,8 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  font-family: $font-family-brandon;
+  letter-spacing: 1px;
 
   .btn-icon {
     margin-top: 1px;

@@ -33,10 +33,12 @@
         <p class="product-price discounted-price">{{ product.price | money }}</p>
       </div>
 
-      <div class="btn btn-sm open-modal-btn" data-product-id="{{ product.id }}">
-        Add
-        <img src="{{ 'add.png' | asset_url}}" alt="Add product icon" width="18" height="18">
-      </div>
+      {% comment %}
+        <div class="btn btn-sm open-modal-btn" data-product-id="{{ product.id }}">
+          Add
+          <img src="{{ 'add.png' | asset_url}}" alt="Add product icon" width="18" height="18">
+        </div>
+      {% endcomment %}
     </div>
   </div>
 </div>

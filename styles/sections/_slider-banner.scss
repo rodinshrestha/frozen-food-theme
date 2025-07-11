@@ -84,10 +84,11 @@
 
             .slider-banner-title {
               font-size: 12px;
-              font-weight: 600;
-              margin: 0;
+              font-weight: 400;
+              letter-spacing: 1px;
               color: $light-primary-textColor;
               text-align: center;
+              font-family: $font-family-brandon;
             }
 
             .slider-banner-subtitle {
@@ -96,9 +97,8 @@
               margin: 0;
               color: $light-primary-textColor;
               text-align: center;
-              @include responsive(tablet) {
-                line-height: 32px;
-              }
+              letter-spacing: 1px;
+              font-family: $font-family-scotch;
             }
             .down-arrow-img {
               position: absolute;

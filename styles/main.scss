@@ -40,9 +40,11 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: $font-family-primary;
-  -webkit-font-smoothing: antialiased; // Better font rendering on WebKit
+  font-family: $font-family-brandon;
   -moz-osx-font-smoothing: grayscale; // Better font rendering on Firefox/macOS
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
 }
 
 *,
@@ -195,6 +197,8 @@ ul {
   display: flex;
   align-self: center;
   color: $dark-primary-textColor;
+  font-family: $font-family-scotch;
+  letter-spacing: 1px;
 
   @include responsive(tablet) {
     margin-bottom: 60px;

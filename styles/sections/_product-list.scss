@@ -122,5 +122,21 @@
         }
       }
     }
+
+    .featured-product-information {
+      font-family: $font-family-brandon;
+      color: $light-primary-textColor !important;
+      justify-content: center;
+      text-align: center;
+      .product-type {
+        color: $light-secondary-textColor !important;
+      }
+
+      .product-title {
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-weight: 500;
+      }
+    }
   }
 }
