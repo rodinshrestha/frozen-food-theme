@@ -56,7 +56,7 @@
       "name": "Product List",
       "settings": {
         "collection": "home-page-product",
-        "section-title": "View Other Products",
+        "section-title": "Seasonal Highlights",
         "product_slider": true
       }
     },
@@ -65,6 +65,7 @@
       "name": "Two Column Image",
       "settings": {
         "parallax-animation": true,
+        "image-one": "shopify://shop_images/1_720x_56a9cda4-7e22-4f2b-a495-da7bee8d5b41.webp",
         "title-one": "Test",
         "helper_text_one": "Test",
         "button-one": "Test",
@@ -81,7 +82,7 @@
         "text_slide_7HnwcA": {
           "type": "text_slide",
           "settings": {
-            "category_image": "shopify://shop_images/2_1296x_7032ca4f-35af-49b9-8c34-753de8543fe2.webp",
+            "category_image": "shopify://shop_images/mild_1512x_b446aa2d-56d6-4d5a-880f-0bbb115ae9fd.webp",
             "title": "Vegan",
             "url": "/pages/product-all"
           }
@@ -89,7 +90,7 @@
         "text_slide_WF9Jnw": {
           "type": "text_slide",
           "settings": {
-            "category_image": "shopify://shop_images/2_1296x_7032ca4f-35af-49b9-8c34-753de8543fe2.webp",
+            "category_image": "shopify://shop_images/6_1296x_e4a439f3-1445-46d7-a542-0be35e86d018.webp",
             "title": "Vegan",
             "url": "/pages/product-all"
           }
