@@ -1,0 +1,103 @@
+@use "abstracts/_breakpoints" as *;
+@use "abstracts/_variables" as *;
+
+.contact-us-section {
+  padding: 80px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include responsive(tablet) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  .contact-map-block {
+    flex: 0 0 480px;
+    max-width: 480px;
+    min-width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include responsive(tablet) {
+      max-width: 100%;
+      min-width: 0;
+      width: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: 380px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+  }
+
+  .contact-info-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+    font-family: "Instrument Sans", Arial, sans-serif;
+  }
+
+  .contact-greeting,
+  .contact-followup-message {
+    font-size: 1rem;
+    color: $dark-primary-textColor;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .contact-info-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .contact-info-title {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #d32f2f;
+      margin-bottom: 2px;
+      letter-spacing: 0.1px;
+    }
+    .contact-info-value {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 4px;
+      color: $dark-primary-textColor;
+      a {
+        color: $dark-primary-textColor;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      a[href^="mailto:"] {
+        color: $dark-primary-textColor;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      a[href^="mailto:"]:hover {
+        color: $dark-primary-textColor;
+        text-decoration: none;
+      }
+      i.social-icon {
+        font-size: 1.1rem;
+        margin-right: 8px;
+        vertical-align: middle;
+        color: #222;
+      }
+      i.social-icon:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

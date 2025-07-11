@@ -155,3 +155,33 @@
     letter-spacing: 1px;
   }
 }
+
+.contact-info-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; // vertical space between blocks
+
+  .contact-info-title {
+    font-weight: bold;
+    font-size: 1rem; // decreased from 1.15rem
+    color: #d32f2f;
+    margin-bottom: 2px;
+  }
+  .contact-info-value {
+    font-size: 0.70rem; // decreased from 1rem
+    font-weight: 400;
+    margin-bottom: 4px;
+    a {
+      color: $dark-primary-textColor;
+      text-decoration: none;
+      font-size: 0.98rem; // decreased from 1.05rem
+      font-weight: 500;
+    }
+    i.social-icon {
+      font-size: 1.2rem; // decreased from 1.4rem
+      margin-right: 8px;
+      vertical-align: middle;
+      color: #222;
+    }
+  }
+}
