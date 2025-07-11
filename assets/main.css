@@ -1792,12 +1792,15 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  z-index: 2;
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-title {
-  font-size: 12px;
+  font-size: 14px;
+  font-family: "Brandon Grotesque", sans-serif;
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-helper-text {
   font-size: 40px;
+  font-family: "Scotch Display", sans-serif;
 }
 
 .product-details-section {

@@ -65,14 +65,15 @@
       "name": "Two Column Image",
       "settings": {
         "parallax-animation": true,
-        "image-one": "shopify://shop_images/1_720x_56a9cda4-7e22-4f2b-a495-da7bee8d5b41.webp",
-        "title-one": "Test",
-        "helper_text_one": "Test",
-        "button-one": "Test",
+        "image-one": "shopify://shop_images/1_35efc409-3641-421c-a235-9c54eca0840c.png",
+        "title-one": "Non Veg",
+        "helper_text_one": "Sauce Collection",
+        "button-one": "Explore",
         "button-link-one": "#",
-        "title-two": "Test",
-        "helper_text_two": "Test",
-        "button-two": "Test",
+        "image-two": "shopify://shop_images/2_01a4801d-018e-43ed-b50f-14ac4d872ac5.png",
+        "title-two": "Veg",
+        "helper_text_two": "Non Veg Collection",
+        "button-two": "Explore",
         "button-link-two": "#"
       }
     },

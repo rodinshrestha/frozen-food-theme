@@ -8,6 +8,7 @@
       <div class="col">
         <div class="two-column-image-wrapper">
           <div class="image-wrapper image-1">
+            <div class="overlay"></div>
             <img
               src="{{ section.settings['image-one'] | image_url }}"
               width="280"
@@ -24,13 +25,14 @@
                 <div class="content-helper-text">{{ section.settings.helper_text_one }}</div>
               {% endif %}
               {% if section.settings['button-one'] != '' %}
-                <a class="outline-btn" href="{{  section.settings['button-link-one']}}">
+                <a class="btn" href="{{  section.settings['button-link-one']}}">
                   {{ section.settings['button-one'] }}
                 </a>
               {% endif %}
             </div>
           </div>
           <div class="image-wrapper image-1">
+            <div class="overlay"></div>
             <img
               src="{{ section.settings['image-two'] | image_url }}"
               width="280"
@@ -39,15 +41,15 @@
               id="parallax-image-animation"
             >
             <div class="text-content-wrapper" id="parallax-content-animation">
-              {% if section.settings['title-one'] != '' %}
-                <div class="content-title">{{ section.settings['title-one'] }}</div>
+              {% if section.settings['title-two'] != '' %}
+                <div class="content-title">{{ section.settings['title-two'] }}</div>
               {% endif %}
               {% if section.settings.helper_text_two != '' %}
                 <div class="content-helper-text">{{ section.settings.helper_text_two }}</div>
               {% endif %}
-              {% if section.settings['button-one'] != '' %}
-                <a class="outline-btn" href="{{  section.settings['button-link-one']}}">
-                  {{ section.settings['button-one'] }}
+              {% if section.settings['button-two'] != '' %}
+                <a class="btn" href="{{  section.settings['button-link-two']}}">
+                  {{ section.settings['button-two'] }}
                 </a>
               {% endif %}
             </div>

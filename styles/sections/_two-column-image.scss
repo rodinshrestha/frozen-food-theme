@@ -37,13 +37,16 @@
         flex-direction: column;
         gap: 20px;
         align-items: center;
+        z-index: 2;
 
         .content-title {
-          font-size: 12px;
+          font-size: 14px;
+          font-family: $font-family-brandon;
         }
 
         .content-helper-text {
           font-size: 40px;
+          font-family: $font-family-scotch;
         }
       }
     }
