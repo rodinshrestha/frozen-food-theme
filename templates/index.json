@@ -55,6 +55,7 @@
       "type": "product-list",
       "name": "Product List",
       "settings": {
+        "dark_mode": true,
         "collection": "home-page-product",
         "section-title": "Seasonal Highlights",
         "product_slider": true
@@ -144,6 +145,7 @@
       "type": "product-list",
       "name": "Product List",
       "settings": {
+        "dark_mode": true,
         "collection": "homepage-bundle-collections",
         "section-title": "Our Bundles",
         "product_slider": true
@@ -209,6 +211,7 @@
       "type": "product-list",
       "name": "Product List",
       "settings": {
+        "dark_mode": false,
         "collection": "ready-to-eat",
         "section-title": "Ready To Eat",
         "product_slider": true

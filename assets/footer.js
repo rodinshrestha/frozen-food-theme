@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       root: null, // viewport
-      rootMargin: "0px 0px -200px 0px",
+      rootMargin: "0px 0px -75px 0px",
       threshold: 0.1, // 10% of footer must be visible to trigger
     },
   );
