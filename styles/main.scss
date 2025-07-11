@@ -76,6 +76,10 @@ body {
     max-width: 100%;
   }
 
+  @include responsive(tablet) {
+    padding: 0px 1rem;
+  }
+
   .row {
     display: flex;
     flex-wrap: wrap;

@@ -1,0 +1,68 @@
+<div class="category-list-section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% if section.block.size > 0 %}
+          <div class="category-wrapper">
+            {% for block in section.blocks %}
+              <div class="category-content-list">
+                <a href="#">
+                  {% if block.settings.category_image != '' %}
+                    <img
+                      src="{{ block.settings.category_image | image_url }}"
+                      width="100"
+                      height="100"
+                      alt="Category Image"
+                    >
+                  {% endif %}
+                  {% if block.settings.title != '' %}
+                    <h3>{{ block.settings.title }}</h3>
+                  {% endif %}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="empty-category">
+            <p>Your Category is Empty</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category List",
+  "blocks": [
+    {
+      "type": "text_slide",
+      "name": "Text Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Category List"
+    }
+  ]
+}
+{% endschema %}

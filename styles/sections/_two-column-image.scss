@@ -3,9 +3,14 @@
 
 .two-column-image-section {
   .two-column-image-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     position: relative;
     overflow: hidden;
+
+    @include responsive(tablet) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     .image-wrapper {
       flex: 0 1 50%;

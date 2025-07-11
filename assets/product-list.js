@@ -5,12 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!productListWrappers.length) return;
 
   productListWrappers.forEach((wrapper, index) => {
-    // const isSliderEnable =
-    //   wrapper.getAttribute("data-product-slider") === "true";
+    const isSliderEnable =
+      wrapper.getAttribute("data-product-slider") === "true";
 
-    const isSliderEnable = false;
+    const productList = wrapper.querySelectorAll(
+      ".featured-product-inner-wrapper",
+    );
 
-    if (!isSliderEnable) {
+    const isSlider =
+      !isMobile() && (!isSliderEnable || productList.length <= 4);
+
+    if (isSlider) {
       console.log("Slider disabled or not enough products.");
       const productWrapper = wrapper.querySelector(".swiper-wrapper");
       if (productWrapper) {

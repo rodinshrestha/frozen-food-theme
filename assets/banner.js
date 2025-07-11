@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!ele) return;
     const parallaxAnimation = ele.dataset.animation;
 
-    console.log(parallaxAnimation, "@@@");
-
     if (parallaxAnimation === "true") {
       const contentWrapper = ele.querySelector(".banner-wrapper");
       // Defination can be in utils
