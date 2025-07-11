@@ -595,9 +595,6 @@
   text-decoration: underline;
 }
 
-.featured-product-inner-wrapper {
-  padding: 10px;
-}
 .featured-product-inner-wrapper:hover .open-modal-btn {
   display: flex !important;
 }
@@ -673,7 +670,7 @@
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .product-price {
   font-family: "Brandon Grotesque", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
@@ -1308,21 +1305,21 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  background-color: transparent;
 }
 .product-list-section .row .swiper-button-next::after,
 .product-list-section .row .swiper-button-prev::after {
-  font-size: 16px;
+  font-size: 21px;
 }
 .product-list-section .row .swiper-button-next:hover,
 .product-list-section .row .swiper-button-prev:hover {
-  background: rgba(242, 242, 242, 0.6);
   transform: translateY(-50%) scale(1.1);
 }
 .product-list-section .row .swiper-button-prev {
-  left: -5px;
+  left: -20px;
 }
 .product-list-section .row .swiper-button-next {
-  right: 5px;
+  right: -20px;
 }
 .product-list-section .row .col {
   width: 100%;
@@ -1333,10 +1330,11 @@
 }
 .product-list-section .product-list-wrapper {
   display: grid;
-  flex-wrap: wrap;
-  box-sizing: border-box;
   grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
   gap: 20px 10px;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 1023px) {
   .product-list-section .product-list-wrapper {
@@ -1365,17 +1363,15 @@
   justify-content: center;
   text-align: center;
 }
-.product-list-section .swiper .swiper-button-next {
-  right: 3px !important;
-}
-.product-list-section .swiper .swiper-button-prev {
-  left: 3px !important;
-}
 .product-list-section .not-product-found-text {
   text-align: center;
 }
 .product-list-section.bg-section-dark {
   background-color: #303336;
+}
+.product-list-section.bg-section-dark .swiper-button-next,
+.product-list-section.bg-section-dark .swiper-button-prev {
+  color: #fff !important;
 }
 .product-list-section.bg-section-dark.section-divider {
   padding: 180px 0;

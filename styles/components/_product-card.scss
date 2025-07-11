@@ -2,8 +2,6 @@
 @use "../abstracts/variables" as *;
 
 .featured-product-inner-wrapper {
-  padding: 10px;
-
   &:hover {
     .open-modal-btn {
       display: flex !important;
@@ -93,7 +91,7 @@
         .product-price {
           font-family: $font-family-brandon;
           font-size: 16px;
-          font-weight: 500;
+          font-weight: 400;
         }
 
         .original-price + .discounted-price {

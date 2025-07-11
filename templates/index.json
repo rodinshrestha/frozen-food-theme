@@ -56,8 +56,8 @@
       "name": "Product List",
       "settings": {
         "dark_mode": true,
-        "product_slider": true,
-        "collection": "home-page-product",
+        "product_slider": false,
+        "collection": "frontpage",
         "section-title": "Seasonal Highlights"
       }
     },
