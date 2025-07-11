@@ -1,26 +1,35 @@
-<div class="category-list-section">
+<div class="category-list-section section-wrapper" id="category-list">
   <div class="container">
     <div class="row">
       <div class="col">
-        {% if section.block.size > 0 %}
+        {% if section.blocks.size > 0 %}
           <div class="category-wrapper">
-            {% for block in section.blocks %}
-              <div class="category-content-list">
-                <a href="#">
-                  {% if block.settings.category_image != '' %}
-                    <img
-                      src="{{ block.settings.category_image | image_url }}"
-                      width="100"
-                      height="100"
-                      alt="Category Image"
-                    >
-                  {% endif %}
-                  {% if block.settings.title != '' %}
-                    <h3>{{ block.settings.title }}</h3>
-                  {% endif %}
-                </a>
+            <div class="swiper" id="category-swiper">
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  <div class="category-content-list swiper-slide">
+                    <div class="overlay"></div>
+                    <a href="#">
+                      {% if block.settings.category_image != '' %}
+                        <img
+                          src="{{ block.settings.category_image | image_url }}"
+                          width="100"
+                          height="100"
+                          alt="Category Image"
+                          class="category-image"
+                        >
+                      {% endif %}
+                      {% if block.settings.title != '' %}
+                        <h3 class="category-title">{{ block.settings.title }}</h3>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endfor %}
               </div>
-            {% endfor %}
+            </div>
+
+            <div class="category-swiper-navigation swiper-button-next" id="category-next"></div>
+            <div class="category-swiper-navigation swiper-button-prev" id="category-prev"></div>
           </div>
         {% else %}
           <div class="empty-category">

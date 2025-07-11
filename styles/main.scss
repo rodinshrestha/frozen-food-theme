@@ -31,6 +31,7 @@
 @use "sections/gift-card-main";
 @use "sections/page";
 @use "sections/slider-banner";
+@use "sections/category-list";
 
 html,
 body {
@@ -229,4 +230,14 @@ ul {
 .extra-header-height {
   width: 100%;
   height: 65px;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }

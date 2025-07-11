@@ -43,7 +43,6 @@
     <main id="main" role="main" class="{% unless template == 'index' %}template-page{% endunless %}">
       {% section 'slider-banner' %}
       {{ content_for_layout }}
-      {% section 'two-column-image' %}
     </main>
     {% section 'footer' %}
 
@@ -62,5 +61,6 @@
     <script src="{{ 'slider-banner.js' | asset_url }}" defer></script>
     <script src="{{ 'two-column-image.js' | asset_url }}" defer></script>
     <script src="{{ 'banner.js' | asset_url }}" defer></script>
+    <script src="{{ 'category-list.js' | asset_url }}" defer></script>
   </body>
 </html>
