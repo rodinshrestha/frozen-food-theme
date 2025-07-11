@@ -75,6 +75,7 @@ body {
 
   &.fluid {
     max-width: 100%;
+    padding: 0;
   }
 
   @include responsive(tablet) {
@@ -188,7 +189,7 @@ ul {
 
 .section-title {
   margin-bottom: 100px;
-  font-size: 1.8rem;
+  font-size: 40px;
   font-weight: 600;
   position: relative;
   display: flex;
@@ -196,7 +197,6 @@ ul {
   color: $dark-primary-textColor;
 
   @include responsive(tablet) {
-    font-size: 1.4rem;
     margin-bottom: 60px;
   }
 }

@@ -14,7 +14,6 @@
 
     .image-wrapper {
       flex: 0 1 50%;
-      padding: 10px;
       height: 85vh;
       width: 100%;
       position: relative;
@@ -26,15 +25,27 @@
         z-index: -1;
         object-fit: cover;
       }
-    }
 
-    .text-content-wrapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-      font-size: 36px;
+      .text-content-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        .content-title {
+          font-size: 12px;
+        }
+
+        .content-helper-text {
+          font-size: 40px;
+        }
+      }
     }
   }
 }

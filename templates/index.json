@@ -190,16 +190,30 @@
       "type": "customer-testimonials",
       "name": "Customer Testimonials",
       "settings": {}
+    },
+    "two_column_image_JWPgRP": {
+      "type": "two-column-image",
+      "name": "Two Column Image",
+      "settings": {
+        "parallax-animation": true,
+        "title-one": "Test",
+        "button-one": "Test",
+        "button-link-one": "#",
+        "title-two": "Test",
+        "button-two": "Test",
+        "button-link-two": "#"
+      }
     }
   },
   "order": [
     "slider_banner_LAqdEm",
     "product_list_yEMzX7",
+    "two_column_image_JWPgRP",
     "category_list_zJ3MmB",
+    "product_list_DdBxrY",
     "three_content_block_yWpJjk",
     "single_product_show_case_9phqPX",
     "banner_2",
-    "product_list_DdBxrY",
     "customer_testimonials_b9Nzdq"
   ]
 }
