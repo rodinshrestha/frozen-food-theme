@@ -56,9 +56,9 @@
       "name": "Product List",
       "settings": {
         "dark_mode": true,
+        "product_slider": true,
         "collection": "home-page-product",
-        "section-title": "Seasonal Highlights",
-        "product_slider": true
+        "section-title": "Seasonal Highlights"
       }
     },
     "two_column_image_JWPgRP": {
@@ -146,9 +146,9 @@
       "name": "Product List",
       "settings": {
         "dark_mode": true,
+        "product_slider": true,
         "collection": "homepage-bundle-collections",
-        "section-title": "Our Bundles",
-        "product_slider": true
+        "section-title": "Our Bundles"
       }
     },
     "banner_gbwkNy": {
@@ -166,55 +166,14 @@
         "overlay-opacity": 0.5
       }
     },
-    "three_content_block_yWpJjk": {
-      "type": "three-content-block",
-      "blocks": {
-        "content_block_DyN66V": {
-          "type": "content_block",
-          "settings": {
-            "block_image": "shopify://shop_images/feat-promo1-choose_800x_166ec497-a349-4f60-8a2e-3f1904451c6c.webp",
-            "block_title": "You Choose",
-            "block_description": "Whether its pantry essentials or healthy prepared meals, we've got you covered!"
-          }
-        },
-        "content_block_qPeicK": {
-          "type": "content_block",
-          "settings": {
-            "block_image": "shopify://shop_images/deliver_800x_9a689bd6-94de-4b0d-a0a0-f75e1ffc0ecd.webp",
-            "block_title": "We Deliver",
-            "block_description": "We'll bring fresh ingredients and/or packaged meals, straight to your door."
-          }
-        },
-        "content_block_yKKHbA": {
-          "type": "content_block",
-          "settings": {
-            "block_image": "shopify://shop_images/feat-promo-eat_800x_fbe1fb62-e3c8-4edd-8cea-5b2c50185cb4.webp",
-            "block_title": "You Cook... or Just Eat!",
-            "block_description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
-          }
-        }
-      },
-      "block_order": [
-        "content_block_DyN66V",
-        "content_block_qPeicK",
-        "content_block_yKKHbA"
-      ],
-      "name": "Three Fixed Blocks",
-      "settings": {}
-    },
-    "customer_testimonials_b9Nzdq": {
-      "type": "customer-testimonials",
-      "name": "Customer Testimonials",
-      "settings": {}
-    },
     "product_list_R9dzXy": {
       "type": "product-list",
       "name": "Product List",
       "settings": {
         "dark_mode": false,
+        "product_slider": true,
         "collection": "ready-to-eat",
-        "section-title": "Ready To Eat",
-        "product_slider": true
+        "section-title": "Ready To Eat"
       }
     }
   },
@@ -225,8 +184,6 @@
     "category_list_zJ3MmB",
     "product_list_DdBxrY",
     "banner_gbwkNy",
-    "three_content_block_yWpJjk",
-    "customer_testimonials_b9Nzdq",
     "product_list_R9dzXy"
   ]
 }
