@@ -1,3 +1,15 @@
+function getVisibleHeight(element) {
+  const rect = element.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const visibleTop = Math.max(rect.top, 0);
+  const visibleBottom = Math.min(rect.bottom, windowHeight);
+
+  const visibleHeight = visibleBottom - visibleTop;
+
+  return visibleHeight > 0 ? visibleHeight : 0;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const sliderBanner = document.getElementById("slider-banner");
 
@@ -9,10 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   downIcon.forEach((icon) => {
     icon.addEventListener("click", () => {
-      const bannerHeight = sliderBanner.offsetHeight;
+      const activeBanner = sliderBanner.querySelector(".swiper-slide-active");
+      const bannerHeight = getVisibleHeight(activeBanner);
+      const headerHeight = document.getElementById("header");
+
+      const offSet = headerHeight.classList.contains("sticky") ? 0 : 65;
 
       window.scrollBy({
-        top: bannerHeight,
+        top: bannerHeight + offSet,
         left: 0,
         behavior: "smooth",
       });
@@ -26,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   new Swiper(swiper, {
     loop: true,
     autoplay: {
-      delay: 3500,
+      delay: 5000,
       disableOnInteraction: true,
     },
     pagination: {

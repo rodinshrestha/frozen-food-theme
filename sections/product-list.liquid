@@ -1,4 +1,11 @@
-<section class="product-list-section section-wrapper" id="product-list-{{ section.id }}">
+{% capture status %}
+  {% if section.settings.dark_mode %}bg-section-dark{% else %}''{% endif %}
+{% endcapture %}
+
+<section
+  class="product-list-section section-wrapper {{ status }} section-divider"
+  id="product-list-{{ section.id }}"
+>
   <div class="container">
     {% if section.settings['section-title'] != '' %}
       <div class="row">
@@ -36,6 +43,31 @@
   "name": "Featured Products",
   "settings": [
     {
+      "type": "header",
+      "content": "Background Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "dark_mode",
+      "label": "Dark Mode",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Product Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_slider",
+      "label": "Enable slider",
+      "info": "Please add more than 4 products if you enable slider",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Product List Details"
+    },
+    {
       "type": "collection",
       "id": "collection",
       "label": "Select a collection"
@@ -44,13 +76,6 @@
       "type": "text",
       "id": "section-title",
       "label": "Section Title"
-    },
-    {
-      "type": "checkbox",
-      "id": "product_slider",
-      "label": "Enable slider",
-      "info": "Please add more than 4 products if you enable slider",
-      "default": true
     }
   ],
   "presets": [

@@ -2,9 +2,6 @@
 @use "../abstracts/variables" as *;
 
 .featured-product-inner-wrapper {
-  background-color: $light-primary-textColor;
-  padding: 10px;
-
   &:hover {
     .open-modal-btn {
       display: flex !important;
@@ -19,6 +16,7 @@
     .product-image {
       width: 100%;
       object-fit: cover;
+      height: 350px;
     }
 
     .product-tag-wrapper {
@@ -77,7 +75,7 @@
 
     .card-footer {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       height: 40px;
 
@@ -87,16 +85,20 @@
         .original-price {
           display: flex;
           align-self: flex-end;
-          font-size: 1rem;
-          font-weight: 500;
+          font-size: 16px;
+          font-weight: 400;
         }
         .product-price {
-          font-size: 1.25rem;
-          font-weight: 600;
+          font-family: $font-family-brandon;
+          font-size: 16px;
+          font-weight: 400;
         }
 
         .original-price + .discounted-price {
           color: $red-color;
+          font-size: 18px;
+          font-weight: 500;
+          font-family: $font-family-brandon;
         }
       }
 

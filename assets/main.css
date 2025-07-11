@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("../assets/BrandonGrotesque-Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url('{{ "BrandonGrotesque-Medium.woff2" | asset_url }}') format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Scotch Display";
+  src: url("../assets/ScotchDisplay-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Scotch Display";
+  src: url("../assets/ScotchDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 .header-wrapper {
   height: 65px;
   width: 100vw;
@@ -78,6 +106,8 @@
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list {
   cursor: pointer;
   transition: all 0.2s ease-in;
+  font-family: "Brandon Grotesque", sans-serif;
+  font-weight: 500;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper {
   position: relative;
@@ -143,7 +173,12 @@
 .footer-wrapper {
   padding: 100px 0;
   padding-bottom: 20px;
+  transition: all 0.3s ease-in;
+  color: #303336;
+}
+.footer-wrapper.dark-bg {
   background-color: #303336;
+  color: #fff;
 }
 .footer-wrapper .footer-text-wrapper {
   border-top: 1px solid rgba(242, 242, 242, 0.6);
@@ -153,7 +188,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  color: #fff;
+  color: inherit;
 }
 .footer-wrapper .footer-text-wrapper .footer-title-text {
   font-size: 1rem;
@@ -176,6 +211,7 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  color: inherit;
 }
 .footer-wrapper .newsletter-wrapper .newsletter-form-wrapper {
   gap: 20px;
@@ -253,7 +289,7 @@
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-title-wrapper {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #fff;
+  color: inherit;
   margin-bottom: 20px;
 }
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-link-content {
@@ -265,7 +301,7 @@
   font-size: 1rem;
 }
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-link-content a {
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-link-content a:hover {
@@ -425,16 +461,17 @@
   color: #fff;
   background-color: #e4022e;
   border: 1px solid #e4022e;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   display: inline;
-  padding: 20px;
+  padding: 5px 25px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
   box-sizing: border-box;
   border-radius: 10px;
+  font-family: "Brandon Grotesque", sans-serif;
+  letter-spacing: 1px;
 }
 .link-button:hover {
   background-color: #720519;
@@ -442,12 +479,11 @@
 
 .outline-btn {
   color: #e4022e;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   border-radius: 2px;
   display: flex;
   align-self: center;
-  padding: 10px 40px;
+  padding: 5px 25px;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
@@ -455,6 +491,8 @@
   border: 1px solid #e4022e;
   background-color: transparent;
   border-radius: 10px;
+  font-family: "Brandon Grotesque", sans-serif;
+  letter-spacing: 1px;
 }
 .outline-btn:hover {
   background-color: #e4022e;
@@ -463,30 +501,33 @@
 
 .btn {
   color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: 10px;
+  font-size: 14px;
+  border-radius: 6px;
   display: flex;
   align-self: center;
-  padding: 10px 40px;
+  padding: 5px 25px;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  border: 1px solid #e4022e;
-  background-color: #e4022e;
+  border: 1px solid #fff;
   box-sizing: border-box;
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: center;
+  font-family: "Brandon Grotesque", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 .btn .btn-icon {
   margin-top: 1px;
+  display: none;
 }
 .btn:hover {
-  background-color: #720519;
-  border-color: #720519;
+  background-color: #fff;
+  border-color: #fff;
+  color: #303336;
 }
 
 .btn-sm {
@@ -554,10 +595,6 @@
   text-decoration: underline;
 }
 
-.featured-product-inner-wrapper {
-  background-color: #fff;
-  padding: 10px;
-}
 .featured-product-inner-wrapper:hover .open-modal-btn {
   display: flex !important;
 }
@@ -570,6 +607,7 @@
 .featured-product-inner-wrapper .featured-product-image-wrapper .product-image {
   width: 100%;
   object-fit: cover;
+  height: 350px;
 }
 .featured-product-inner-wrapper .featured-product-image-wrapper .product-tag-wrapper {
   position: absolute;
@@ -615,7 +653,7 @@
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 40px;
 }
@@ -626,15 +664,19 @@
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .original-price {
   display: flex;
   align-self: flex-end;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .product-price {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-family: "Brandon Grotesque", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Brandon Grotesque", sans-serif;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .open-modal-btn {
   display: none;
@@ -967,39 +1009,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
 }
-.banner-section.feature-banner-large {
-  height: 780px;
-  padding: 80px 0;
+.banner-section.banner-large {
+  height: 1110px;
 }
-.banner-section.feature-banner-medium {
-  height: 50vh;
-  padding: 60px 0;
+.banner-section.banner-medium {
+  height: 980px;
 }
-@media (max-width: 980px) {
-  .banner-section.feature-banner-medium {
-    height: 50vh;
-  }
-}
-.banner-section.feature-banner-small {
-  height: 30vh;
-  padding: 40px 0;
-}
-.banner-section.feature-banner-small .feature-banner-title {
-  font-size: 2rem !important;
-  font-weight: 600;
-  color: #303336;
-  line-height: 1.2;
-  margin: 0;
-}
-.banner-section.feature-banner-small .feature-subtitle {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin: 0;
-}
-.banner-section.feature-banner-small .link-button {
-  padding: 15px !important;
+.banner-section.banner-small {
+  height: 500px;
 }
 .banner-section .container {
   height: 100%;
@@ -1011,82 +1029,40 @@
   height: 100%;
   display: flex;
 }
-.banner-section .feature-banner-content-inner-wrapper {
+.banner-section .banner-wrapper {
+  position: relative;
   width: 100%;
-  display: flex;
-  text-align: center;
+  height: 100%;
+  overflow: hidden;
 }
-.banner-section .feature-banner-content-inner-wrapper.vertical-content-middle {
-  align-items: center;
+.banner-section .banner-wrapper .banner-image {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
 }
-.banner-section .feature-banner-content-inner-wrapper.vertical-content-top {
-  align-items: top;
-}
-.banner-section .feature-banner-content-inner-wrapper.vertical-content-bottom {
-  align-items: end;
-}
-.banner-section .feature-banner-content-inner-wrapper.horizontal-content-left {
-  justify-content: flex-start;
-}
-.banner-section .feature-banner-content-inner-wrapper.horizontal-content-center {
-  justify-content: center;
-}
-.banner-section .feature-banner-content-inner-wrapper.horizontal-content-right {
-  justify-content: flex-end;
-}
-.banner-section .feature-banner-content-inner-wrapper.text-alignment-left {
-  text-align: left;
-}
-.banner-section .feature-banner-content-inner-wrapper.text-alignment-left .link-button,
-.banner-section .feature-banner-content-inner-wrapper.text-alignment-left .feature-subtitle {
-  display: flex;
-  align-self: baseline;
-}
-.banner-section .feature-banner-content-inner-wrapper.text-alignment-center {
-  text-align: center;
-}
-.banner-section .feature-banner-content-inner-wrapper.text-alignment-right {
-  text-align: right;
-}
-.banner-section .feature-banner-content-inner-wrapper.text-alignment-right .link-button,
-.banner-section .feature-banner-content-inner-wrapper.text-alignment-right .feature-subtitle {
-  display: flex;
-  align-self: end;
-}
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper {
+.banner-section .banner-wrapper .feature-banner-information-wrapper {
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
   z-index: 10;
-}
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper.content-width-small {
-  width: 50%;
-}
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper.content-width-medium {
-  width: 80%;
-}
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper.content-width-large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
 }
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-banner-title {
-  font-size: 46px;
-  font-weight: 600;
-  line-height: 62px;
-  margin: 0;
+.banner-section .banner-wrapper .feature-banner-information-wrapper .banner-title {
+  font-size: 12px;
+  font-family: "Brandon Grotesque", sans-serif;
   color: #fff;
+  margin-bottom: 10px;
 }
-@media (max-width: 1023px) {
-  .banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-banner-title {
-    font-size: 36px;
-    line-height: 42px;
-  }
-}
-.banner-section .feature-banner-content-inner-wrapper .feature-banner-information-wrapper .feature-subtitle {
-  font-size: 18px;
-  line-height: 28px;
-  margin: 0;
+.banner-section .banner-wrapper .feature-banner-information-wrapper .banner-subtitle {
+  font-size: 40px;
+  font-family: "Scotch Display", sans-serif;
+  margin-bottom: 20px;
 }
 
 .cart-drawer {
@@ -1329,21 +1305,21 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  background-color: transparent;
 }
 .product-list-section .row .swiper-button-next::after,
 .product-list-section .row .swiper-button-prev::after {
-  font-size: 16px;
+  font-size: 21px;
 }
 .product-list-section .row .swiper-button-next:hover,
 .product-list-section .row .swiper-button-prev:hover {
-  background: rgba(242, 242, 242, 0.6);
   transform: translateY(-50%) scale(1.1);
 }
 .product-list-section .row .swiper-button-prev {
-  left: -5px;
+  left: -20px;
 }
 .product-list-section .row .swiper-button-next {
-  right: 5px;
+  right: -20px;
 }
 .product-list-section .row .col {
   width: 100%;
@@ -1354,14 +1330,15 @@
 }
 .product-list-section .product-list-wrapper {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
-  gap: 20px;
-  box-sizing: border-box;
-  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 10px;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 1023px) {
   .product-list-section .product-list-wrapper {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .product-list-section .product-list-wrapper .featured-product-inner-wrapper {
@@ -1381,16 +1358,60 @@
   flex-direction: column;
 }
 .product-list-section .swiper .featured-product-inner-wrapper .featured-product-information {
+  font-family: "Brandon Grotesque", sans-serif;
   width: 100%;
-}
-.product-list-section .swiper .swiper-button-next {
-  right: 3px !important;
-}
-.product-list-section .swiper .swiper-button-prev {
-  left: 3px !important;
+  justify-content: center;
+  text-align: center;
 }
 .product-list-section .not-product-found-text {
   text-align: center;
+}
+.product-list-section.bg-section-dark {
+  background-color: #303336;
+}
+.product-list-section.bg-section-dark .swiper-button-next,
+.product-list-section.bg-section-dark .swiper-button-prev {
+  color: #fff !important;
+}
+.product-list-section.bg-section-dark.section-divider {
+  padding: 180px 0;
+  position: relative;
+}
+.product-list-section.bg-section-dark.section-divider::after, .product-list-section.bg-section-dark.section-divider::before {
+  width: 90%;
+  position: absolute;
+  height: 1px;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(242, 242, 242, 0.6);
+}
+.product-list-section.bg-section-dark.section-divider::after {
+  top: 100px;
+}
+.product-list-section.bg-section-dark.section-divider::before {
+  bottom: 100px;
+}
+.product-list-section.bg-section-dark .section-title-wrapper .section-title {
+  color: #fff !important;
+  margin-bottom: 50px;
+}
+.product-list-section.bg-section-dark .section-title-wrapper .section-title::after {
+  background-color: none;
+}
+.product-list-section.bg-section-dark .featured-product-information {
+  font-family: "Brandon Grotesque", sans-serif;
+  color: #fff !important;
+  justify-content: center;
+  text-align: center;
+}
+.product-list-section.bg-section-dark .featured-product-information .product-type {
+  color: rgba(242, 242, 242, 0.6) !important;
+}
+.product-list-section.bg-section-dark .featured-product-information .product-title {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 .promotional-banner-wrapper {
@@ -1720,37 +1741,50 @@
   margin: 0;
 }
 
-.two-column-image-wrapper .col-6 {
-  padding: 10px;
-}
-.two-column-image-wrapper .image-wrapper {
-  padding: 10px;
-  height: 30vh;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
+.two-column-image-section .two-column-image-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
-  background-image: url("http://127.0.0.1:9292/cdn/shop/files/banner.webp?v=1751338529&width=1600");
+  overflow: hidden;
 }
-.two-column-image-wrapper .image-wrapper::after {
-  content: "";
+@media (max-width: 1023px) {
+  .two-column-image-section .two-column-image-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper {
+  flex: 0 1 50%;
+  height: 85vh;
+  width: 100%;
+  position: relative;
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .two-column-image {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  object-fit: cover;
 }
-.two-column-image-wrapper .image-content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  height: 100%;
-  z-index: 2;
-  position: relative;
+.two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  z-index: 2;
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-title {
+  font-size: 14px;
+  font-family: "Brandon Grotesque", sans-serif;
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-helper-text {
+  font-size: 40px;
+  font-family: "Scotch Display", sans-serif;
 }
 
 .product-details-section {
@@ -2140,30 +2174,21 @@
   margin-bottom: 30px;
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-title {
-  font-size: 46px;
-  font-weight: 600;
-  line-height: 62px;
-  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
   color: #fff;
   text-align: center;
-}
-@media (max-width: 1023px) {
-  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-title {
-    font-size: 36px;
-    line-height: 46px;
-  }
+  font-family: "Brandon Grotesque", sans-serif;
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 40px;
+  line-height: 42px;
   margin: 0;
   color: #fff;
   text-align: center;
-}
-@media (max-width: 1023px) {
-  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
-    line-height: 32px;
-  }
+  letter-spacing: 1px;
+  font-family: "Scotch Display", sans-serif;
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .down-arrow-img {
   position: absolute;
@@ -2191,6 +2216,7 @@
     transform: translateY(10px);
   }
 }
+
 .contact-us-section {
   padding: 80px 0 80px 0;
 }
@@ -2310,6 +2336,61 @@
 .contact-info-value a:hover .social-icon {
   opacity: 0.7;
 }
+.category-list-section .category-wrapper {
+  position: relative;
+}
+.category-list-section .category-wrapper .category-content-list {
+  height: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.category-list-section .category-wrapper .category-content-list a {
+  text-decoration: none;
+  z-index: 5;
+}
+.category-list-section .category-wrapper .category-content-list:hover .category-image {
+  transform: scale(1.1);
+}
+.category-list-section .category-wrapper .category-content-list .overlay {
+  z-index: 2;
+}
+.category-list-section .category-wrapper .category-content-list .category-image {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transition: transform 0.4s linear;
+}
+.category-list-section .category-wrapper .category-content-list .category-title {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Scotch Display", sans-serif;
+}
+.category-list-section .category-wrapper .category-swiper-navigation {
+  background: transparent;
+  top: 50% !important;
+  transform: rotateY(-50%);
+}
+.category-list-section .category-wrapper .category-swiper-navigation::after {
+  font-size: 28px;
+}
+.category-list-section .category-wrapper .category-swiper-navigation.swiper-button-next {
+  right: -30px;
+}
+.category-list-section .category-wrapper .category-swiper-navigation.swiper-button-prev {
+  left: -30px;
+
+}
 
 html,
 body {
@@ -2318,9 +2399,11 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: "Instrument Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: "Brandon Grotesque", sans-serif;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
 }
 
 *,
@@ -2345,12 +2428,19 @@ body {
 }
 
 .container {
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0px 3.25rem;
   width: 100%;
+}
+.container.fluid {
+  max-width: 100%;
+  padding: 0;
+}
+@media (max-width: 1023px) {
+  .container {
+    padding: 0px 1rem;
+  }
 }
 .container .row {
   display: flex;
@@ -2457,16 +2547,17 @@ ul {
 
 .section-title {
   margin-bottom: 100px;
-  font-size: 1.8rem;
+  font-size: 40px;
   font-weight: 600;
   position: relative;
   display: flex;
   align-self: center;
   color: #303336;
+  font-family: "Scotch Display", sans-serif;
+  letter-spacing: 3px;
 }
 @media (max-width: 1023px) {
   .section-title {
-    font-size: 1.4rem;
     margin-bottom: 60px;
   }
 }
@@ -2493,4 +2584,19 @@ ul {
 .template-page .bread-crumb-wrapper {
   padding-top: 40px;
   margin-bottom: 20px;
+}
+
+.extra-header-height {
+  width: 100%;
+  height: 65px;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }

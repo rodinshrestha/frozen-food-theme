@@ -1,31 +1,58 @@
-<div class="two-column-image-wrapper section-wrapper" id="two-column-image-{{ section.id }}">
-  <div class="container">
+<div
+  class="two-column-image-section"
+  id="two-column-image-{{ section.id }}"
+  data-animation="{{section.settings.parallax-animation}}"
+>
+  <div class="container fluid">
     <div class="row">
-      <div class="col-6">
-        <div class="image-wrapper image-1">
-          <div class="image-content-wrapper">
-            {% if section.settings['title-one'] != '' %}
-              <div class="image-content-title">{{ section.settings['title-one'] }}</div>
-            {% endif %}
-            {% if section.settings['button-one'] != '' %}
-              <a class="outline-btn" href="{{  section.settings['button-link-one']}}">
-                {{ section.settings['button-one'] }}
-              </a>
-            {% endif %}
+      <div class="col">
+        <div class="two-column-image-wrapper">
+          <div class="image-wrapper image-1">
+            <div class="overlay"></div>
+            <img
+              src="{{ section.settings['image-one'] | image_url }}"
+              width="280"
+              height="280"
+              class="two-column-image"
+              id="parallax-image-animation"
+            >
+            <div class="text-content-wrapper" id="parallax-content-animation">
+              {% if section.settings['title-one'] != '' %}
+                <div class="content-title">{{ section.settings['title-one'] }}</div>
+              {% endif %}
+
+              {% if section.settings.helper_text_one != '' %}
+                <div class="content-helper-text">{{ section.settings.helper_text_one }}</div>
+              {% endif %}
+              {% if section.settings['button-one'] != '' %}
+                <a class="btn" href="{{  section.settings['button-link-one']}}">
+                  {{ section.settings['button-one'] }}
+                </a>
+              {% endif %}
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="image-wrapper image-2">
-          <div class="image-content-wrapper">
-            {% if section.settings['title-two'] != '' %}
-              <div class="image-content-title">{{ section.settings['title-two'] }}</div>
-            {% endif %}
-            {% if section.settings['button-two'] != '' %}
-              <a class="outline-btn" href="{{  section.settings['button-link-two']}}">
-                {{ section.settings['button-two'] }}
-              </a>
-            {% endif %}
+          <div class="image-wrapper image-1">
+            <div class="overlay"></div>
+            <img
+              src="{{ section.settings['image-two'] | image_url }}"
+              width="280"
+              height="280"
+              class="two-column-image"
+              id="parallax-image-animation"
+            >
+            <div class="text-content-wrapper" id="parallax-content-animation">
+              {% if section.settings['title-two'] != '' %}
+                <div class="content-title">{{ section.settings['title-two'] }}</div>
+              {% endif %}
+              {% if section.settings.helper_text_two != '' %}
+                <div class="content-helper-text">{{ section.settings.helper_text_two }}</div>
+              {% endif %}
+              {% if section.settings['button-two'] != '' %}
+                <a class="btn" href="{{  section.settings['button-link-two']}}">
+                  {{ section.settings['button-two'] }}
+                </a>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
@@ -49,6 +76,16 @@
   "settings": [
     {
       "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax-animation",
+      "label": "Enable Parallax Animation",
+      "default": true
+    },
+    {
+      "type": "header",
       "content": "Column one Details"
     },
     {
@@ -59,12 +96,20 @@
     {
       "type": "textarea",
       "id": "title-one",
-      "label": "Column title"
+      "label": "Column title",
+      "default": "Test"
+    },
+    {
+      "type": "textarea",
+      "id": "helper_text_one",
+      "label": "SubTitle",
+      "default": "Test"
     },
     {
       "type": "text",
       "id": "button-one",
-      "label": "Button label"
+      "label": "Button label",
+      "default": "Test"
     },
     {
       "type": "text",
@@ -84,18 +129,31 @@
     {
       "type": "textarea",
       "id": "title-two",
-      "label": "Column title"
+      "label": "Column title",
+      "default": "Test"
+    },
+    {
+      "type": "textarea",
+      "id": "helper_text_two",
+      "label": "SubTitle",
+      "default": "Test"
     },
     {
       "type": "text",
       "id": "button-two",
-      "label": "Button label"
+      "label": "Button label",
+      "default": "Test"
     },
     {
       "type": "text",
       "id": "button-link-two",
       "label": "Button Link label",
       "default": "#"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Column Image"
     }
   ]
 }

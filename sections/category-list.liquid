@@ -1,0 +1,78 @@
+<div class="category-list-section section-wrapper" id="category-list">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% if section.blocks.size > 0 %}
+          <div class="category-wrapper">
+            <div class="swiper" id="category-swiper">
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  <div class="category-content-list swiper-slide">
+                    <a href="#">
+                      <div class="overlay"></div>
+
+                      {% if block.settings.category_image != '' %}
+                        <img
+                          src="{{ block.settings.category_image | image_url }}"
+                          width="100"
+                          height="100"
+                          alt="Category Image"
+                          class="category-image"
+                        >
+                      {% endif %}
+                      {% if block.settings.title != '' %}
+                        <h3 class="category-title">{{ block.settings.title }}</h3>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="category-swiper-navigation swiper-button-next" id="category-next"></div>
+            <div class="category-swiper-navigation swiper-button-prev" id="category-prev"></div>
+          </div>
+        {% else %}
+          <div class="empty-category">
+            <p>Your Category is Empty</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category List",
+  "blocks": [
+    {
+      "type": "text_slide",
+      "name": "Text Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Category List"
+    }
+  ]
+}
+{% endschema %}

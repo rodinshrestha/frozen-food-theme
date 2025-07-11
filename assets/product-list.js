@@ -8,7 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const isSliderEnable =
       wrapper.getAttribute("data-product-slider") === "true";
 
-    if (!isSliderEnable) {
+    const productList = wrapper.querySelectorAll(
+      ".featured-product-inner-wrapper",
+    );
+
+    const isSlider =
+      !isMobile() && (!isSliderEnable || productList.length <= 4);
+
+    if (isSlider) {
       console.log("Slider disabled or not enough products.");
       const productWrapper = wrapper.querySelector(".swiper-wrapper");
       if (productWrapper) {
@@ -36,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     new Swiper(`#${uniqueID}`, {
       slidesPerView: 4,
-      spaceBetween: 10,
+      spaceBetween: 20,
       loop: true,
       navigation: {
         nextEl: `#${uniqueID}-next`,
@@ -48,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         871: { slidesPerView: 1 },
         884: { slidesPerView: 3 },
         1020: { slidesPerView: 3.5 },
-        1200: { slidesPerView: 3.7 },
+        1200: { slidesPerView: 4 },
       },
     });
   });

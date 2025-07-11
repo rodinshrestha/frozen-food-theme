@@ -83,28 +83,22 @@
             margin-bottom: 30px;
 
             .slider-banner-title {
-              font-size: 46px;
-              font-weight: 600;
-              line-height: 62px;
-              margin: 0;
+              font-size: 12px;
+              font-weight: 400;
+              letter-spacing: 1px;
               color: $light-primary-textColor;
               text-align: center;
-
-              @include responsive(tablet) {
-                font-size: 36px;
-                line-height: 46px;
-              }
+              font-family: $font-family-brandon;
             }
 
             .slider-banner-subtitle {
-              font-size: 18px;
-              line-height: 28px;
+              font-size: 40px;
+              line-height: 42px;
               margin: 0;
               color: $light-primary-textColor;
               text-align: center;
-              @include responsive(tablet) {
-                line-height: 32px;
-              }
+              letter-spacing: 1px;
+              font-family: $font-family-scotch;
             }
             .down-arrow-img {
               position: absolute;

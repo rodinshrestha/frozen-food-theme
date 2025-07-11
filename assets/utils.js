@@ -1,5 +1,6 @@
 const mainOverlay = document.querySelector(".main-overlay");
 const body = document.getElementById("body");
+gsap.registerPlugin(ScrollTrigger);
 
 window.whenDrawerOpen = (showOverlay = true) => {
   if (mainOverlay & showOverlay) {
@@ -84,8 +85,51 @@ window.handleFetchResponse = async (res) => {
   return data;
 };
 
-window.isMobile = () => document.documentElement.clientWidth <= 768;
+isMobile = () => document.documentElement.clientWidth <= 768;
 
 window.stringTruncate = (str, num = 150) => {
   const cleanString = str.trim();
+};
+
+getTransition = (position, factor) => position * factor * -1;
+
+getParallaxAnimation = (wrapperSection, contentWrapper) => {
+  if (!wrapperSection) {
+    console.error("Main Section cannot be empty or null");
+    return;
+  }
+
+  ScrollTrigger.create({
+    trigger: wrapperSection,
+    start: "top top",
+    end: "bottom top",
+    pinType: "transform",
+
+    onUpdate: (self) => {
+      const progress = self.progress;
+      const clientRect = wrapperSection.getBoundingClientRect();
+      const top = clientRect.top;
+
+      contentWrapper.forEach((ele) => {
+        const content = ele.querySelector("#parallax-content-animation");
+        const image = ele.querySelector("#parallax-image-animation");
+
+        if (!content || !image) {
+          console.error("text and image element cannot be empty");
+          return;
+        }
+
+        const position = top < 0 ? top : 0;
+
+        gsap.set(content, {
+          y: getTransition(position, 0.5),
+          opacity: 1 - progress,
+        });
+
+        gsap.set(image, {
+          y: getTransition(position, 0.5),
+        });
+      });
+    },
+  });
 };

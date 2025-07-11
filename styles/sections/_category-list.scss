@@ -1,0 +1,69 @@
+@use "abstracts/_breakpoints" as *;
+@use "abstracts/_variables" as *;
+
+.category-list-section {
+  .category-wrapper {
+    position: relative;
+    .category-content-list {
+      height: 600px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        z-index: 5;
+      }
+
+      &:hover {
+        .category-image {
+          transform: scale(1.1);
+        }
+      }
+
+      .overlay {
+        z-index: 2;
+      }
+
+      .category-image {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        transition: transform 0.4s linear;
+      }
+
+      .category-title {
+        position: relative;
+        z-index: 2;
+        color: $light-primary-textColor;
+        font-size: 40px;
+        font-weight: 500;
+        font-family: $font-family-scotch;
+      }
+    }
+
+    .category-swiper-navigation {
+      background: transparent;
+      top: 50% !important;
+
+      transform: rotateY(-50%);
+      &::after {
+        font-size: 28px;
+      }
+
+      &.swiper-button-next {
+        right: -30px;
+      }
+      &.swiper-button-prev {
+        left: -30px;
+      }
+    }
+  }
+}
