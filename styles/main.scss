@@ -198,7 +198,7 @@ ul {
   align-self: center;
   color: $dark-primary-textColor;
   font-family: $font-family-scotch;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 
   @include responsive(tablet) {
     margin-bottom: 60px;

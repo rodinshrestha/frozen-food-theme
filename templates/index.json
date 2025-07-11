@@ -43,11 +43,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_c6NtNe",
-        "slide_kR8XMi",
-        "slide_qQi3xx"
-      ],
+      "block_order": ["slide_c6NtNe", "slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -149,6 +145,21 @@
         "product_slider": true
       }
     },
+    "banner_gbwkNy": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-height": "large",
+        "banner-parallax": true,
+        "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
+        "feature-banner-title": "Hot Sauce",
+        "feature-banner-subtitle": "Expore Our Hot Sauce",
+        "button-text": "Explore",
+        "button-link": "",
+        "banner-overlay": true,
+        "overlay-opacity": 0.5
+      }
+    },
     "three_content_block_yWpJjk": {
       "type": "three-content-block",
       "blocks": {
@@ -219,6 +230,7 @@
     "two_column_image_JWPgRP",
     "category_list_zJ3MmB",
     "product_list_DdBxrY",
+    "banner_gbwkNy",
     "three_content_block_yWpJjk",
     "single_product_show_case_9phqPX",
     "banner_2",

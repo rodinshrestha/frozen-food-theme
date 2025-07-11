@@ -87,16 +87,20 @@
         .original-price {
           display: flex;
           align-self: flex-end;
-          font-size: 1rem;
-          font-weight: 500;
-        }
-        .product-price {
           font-size: 16px;
           font-weight: 400;
+        }
+        .product-price {
+          font-family: $font-family-brandon;
+          font-size: 16px;
+          font-weight: 500;
         }
 
         .original-price + .discounted-price {
           color: $red-color;
+          font-size: 18px;
+          font-weight: 500;
+          font-family: $font-family-brandon;
         }
       }
 

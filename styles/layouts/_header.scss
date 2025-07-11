@@ -82,6 +82,8 @@
         .navigation-list {
           cursor: pointer;
           transition: all 0.2s ease-in;
+          font-family: $font-family-brandon;
+          font-weight: 500;
         }
 
         .sub-navigation-wrapper {
