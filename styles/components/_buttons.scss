@@ -46,10 +46,10 @@
   color: $light-primary-textColor;
   font-weight: 500;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 6px;
   display: flex;
   align-self: center;
-  padding: 10px 40px;
+  padding: 5px 25px;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
@@ -64,6 +64,7 @@
 
   .btn-icon {
     margin-top: 1px;
+    display: none;
   }
   &:hover {
     background-color: $dark-red-color;

@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!productListWrappers.length) return;
 
   productListWrappers.forEach((wrapper, index) => {
-    const isSliderEnable =
-      wrapper.getAttribute("data-product-slider") === "true";
+    // const isSliderEnable =
+    //   wrapper.getAttribute("data-product-slider") === "true";
+
+    const isSliderEnable = false;
 
     if (!isSliderEnable) {
       console.log("Slider disabled or not enough products.");
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         871: { slidesPerView: 1 },
         884: { slidesPerView: 3 },
         1020: { slidesPerView: 3.5 },
-        1200: { slidesPerView: 3.7 },
+        1200: { slidesPerView: 4 },
       },
     });
   });

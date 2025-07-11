@@ -32,16 +32,7 @@
             "button_link": ""
           }
         },
-        "slide_yVjeC9": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
-            "title": "Vegan Eats, Frozen Treats",
-            "subtitle": "Vegan momo, CHowmein and Fried RIce falvorful and guilt-free. Discover a variety of delicious and nutritious vegan frozen food, perfect for quick, plant-based neals",
-            "button_text": "Shop Now",
-            "button_link": ""
-          }
-        },
+
         "slide_qQi3xx": {
           "type": "slide",
           "settings": {
@@ -53,12 +44,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_c6NtNe",
-        "slide_kR8XMi",
-        "slide_yVjeC9",
-        "slide_qQi3xx"
-      ],
+      "block_order": ["slide_c6NtNe", "slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -120,7 +106,7 @@
       "settings": {
         "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
         "banner-height": "medium",
-        "banner-parallax": false,
+        "banner-parallax": true,
         "feature-banner-title": "Upgrade your family meals with our value-packed bundles.",
         "feature-banner-subtitle": "Big flavors. Bigger savings. Perfect for family meals",
         "button-text": "Get the bundles",
@@ -149,9 +135,9 @@
   },
   "order": [
     "slider_banner_LAqdEm",
+    "product_list_yEMzX7",
     "three_content_block_yWpJjk",
     "single_product_show_case_9phqPX",
-    "product_list_yEMzX7",
     "banner_2",
     "product_list_DdBxrY",
     "customer_testimonials_b9Nzdq"

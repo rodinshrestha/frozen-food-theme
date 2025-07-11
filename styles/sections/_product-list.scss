@@ -2,6 +2,30 @@
 @use "../abstracts/variables" as *;
 
 .product-list-section {
+  &.section-divider {
+    padding: 180px 0;
+    position: relative;
+
+    &::after,
+    &::before {
+      width: 90%;
+      position: absolute;
+      height: 1px;
+      content: "";
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $white-color;
+    }
+
+    &::after {
+      top: 100px;
+    }
+
+    &::before {
+      bottom: 100px;
+    }
+  }
+
   .row {
     position: relative;
     .swiper-button-next,
@@ -41,13 +65,9 @@
   .product-list-wrapper {
     display: grid;
     flex-wrap: wrap;
-    gap: 20px;
     box-sizing: border-box;
-    grid-template-columns: 1fr 1fr 1fr;
-
-    @include responsive(tablet) {
-      grid-template-columns: 1fr !important;
-    }
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 10px;
 
     .featured-product-inner-wrapper {
       box-sizing: border-box;
@@ -84,5 +104,19 @@
 
   .not-product-found-text {
     text-align: center;
+  }
+
+  &.bg-section-dark {
+    background-color: $dark-bgColor;
+
+    .section-title-wrapper {
+      .section-title {
+        color: $light-primary-textColor !important;
+        margin-bottom: 50px;
+        &::after {
+          background-color: none;
+        }
+      }
+    }
   }
 }

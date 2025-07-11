@@ -1,30 +1,33 @@
 {% assign banner_height = section.settings['banner-height'] | default: 'large' %}
-{% assign bg_image = section.settings['banner-image'] | image_url: width: 1600 %}
 
 <section
-  id="feature-banner-{{ section.id }}"
-  class="banner-section feature-banner-{{ banner_height }} {% if section.settings['banner-parallax'] %} banner-parallex {% endif %}"
+  id="banner-{{ section.id }}"
+  class="banner-section banner-{{ banner_height }}"
+  data-animation="{{ section.settings['banner-parallax'] }}"
 >
-  <div class="container" id="product-list-container">
+  <div class="container">
     <div class="row">
       <div class="col">
-        <div
-          class="
-            feature-banner-content-inner-wrapper
-            text-alignment-{{ section.settings['text_alignment'] }}
-            vertical-content-{{ section.settings['vertical_content_align'] }}
-            horizontal-content-{{ section.settings['row_content_align'] }}
-          "
-        >
-          <div class="feature-banner-information-wrapper content-width-{{ section.settings['content_width'] }}">
+        <div class="banner-wrapper">
+          {% if section.settings['banner-overlay'] %}
+            <div class="banner-overlay"></div>
+          {% endif %}
+          <img
+            src="{{ section.settings['banner-image'] | image_url }}"
+            width="100%"
+            height="100%"
+            class="banner-image"
+            id="parallax-image-animation"
+          >
+          <div class="feature-banner-information-wrapper" id="parallax-content-animation">
             {% if section.settings['feature-banner-title'] != '' %}
-              <h1 class="feature-banner-title">
+              <h1 class="banner-title">
                 {{ section.settings['feature-banner-title'] }}
               </h1>
             {% endif %}
 
             {% if section.settings['feature-banner-subtitle'] != '' %}
-              <p class="feature-subtitle">
+              <p class="banner-subtitle">
                 {{ section.settings['feature-banner-subtitle'] }}
               </p>
             {% endif %}
@@ -55,23 +58,14 @@
 </section>
 
 <style>
-  #feature-banner-{{ section.id }} {
-    background-image: url({{ bg_image }});
-  }
-
-  #feature-banner-{{ section.id }}.banner-parallex {
-     background-attachment: fixed;
-  }
-
-
-  #feature-banner-{{ section.id }}::before {
+  .banner-overlay {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, {{ section.settings['overlay-opacity'] | default: 0.3 }});
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, {{section.settings[ 'overlay-opacity'] | default: 0.9}});
     z-index: 1;
   }
 </style>
@@ -81,9 +75,8 @@
   "name": "Feature Banner",
   "settings": [
     {
-      "type": "image_picker",
-      "id": "banner-image",
-      "label": "Banner Image"
+      "type": "header",
+      "content": "Banner Height"
     },
     {
       "type": "select",
@@ -105,12 +98,30 @@
       ],
       "default": "large"
     },
+
+    {
+      "type": "header",
+      "content": "Banner Animation"
+    },
+
     {
       "type": "checkbox",
       "id": "banner-parallax",
       "label": "Enable Banner parallax",
       "default": true
     },
+
+    {
+      "type": "header",
+      "content": "Banner Content"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "banner-image",
+      "label": "Banner Image"
+    },
+
     {
       "type": "textarea",
       "id": "feature-banner-title",
@@ -137,108 +148,23 @@
     },
 
     {
-      "type": "select",
-      "id": "row_content_align",
-      "label": "Content row alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "left"
-        },
-        {
-          "value": "center",
-          "label": "center"
-        },
-        {
-          "value": "right",
-          "label": "right"
-        }
-      ],
-      "default": "center"
-    },
-
-    {
       "type": "header",
-      "content": "Row Content alignment"
+      "content": "Banner Image Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "banner-overlay",
+      "label": "Banner Overlay",
+      "default": true
     },
 
-    {
-      "type": "select",
-      "id": "vertical_content_align",
-      "label": "Content vertical alignment",
-      "options": [
-        {
-          "value": "top",
-          "label": "top"
-        },
-        {
-          "value": "middle",
-          "label": "middle"
-        },
-        {
-          "value": "bottom",
-          "label": "bottom"
-        }
-      ],
-      "default": "middle"
-    },
-    {
-      "type": "header",
-      "content": "Content width"
-    },
-
-    {
-      "type": "select",
-      "id": "content_width",
-      "label": "Content wrapper width",
-      "options": [
-        {
-          "value": "small",
-          "label": "Small"
-        },
-        {
-          "value": "medium",
-          "label": "Medium"
-        },
-        {
-          "value": "large",
-          "label": "Large"
-        }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "header",
-      "content": "text alignment"
-    },
-
-    {
-      "type": "select",
-      "id": "text_alignment",
-      "label": "Text alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "left"
-        },
-        {
-          "value": "center",
-          "label": "center"
-        },
-        {
-          "value": "right",
-          "label": "right"
-        }
-      ],
-      "default": "center"
-    },
     {
       "type": "range",
       "id": "overlay-opacity",
       "min": 0,
       "max": 1,
       "step": 0.1,
-      "default": 0.3,
+      "default": 1,
       "label": "Overlay Opacity"
     }
   ],

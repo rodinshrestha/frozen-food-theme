@@ -2,7 +2,6 @@
 @use "../abstracts/variables" as *;
 
 .featured-product-inner-wrapper {
-  background-color: $light-primary-textColor;
   padding: 10px;
 
   &:hover {
@@ -19,6 +18,7 @@
     .product-image {
       width: 100%;
       object-fit: cover;
+      height: 100%;
     }
 
     .product-tag-wrapper {
