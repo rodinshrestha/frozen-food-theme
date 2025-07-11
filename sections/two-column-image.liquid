@@ -9,7 +9,7 @@
         <div class="two-column-image-wrapper">
           <div class="image-wrapper image-1">
             <img
-              src="http://127.0.0.1:9292/cdn/shop/files/banner.webp?v=1751338529&width=1600"
+              src="{{ section.settings['image-one'] | image_url }}"
               width="280"
               height="280"
               class="two-column-image"
@@ -32,7 +32,7 @@
           </div>
           <div class="image-wrapper image-1">
             <img
-              src="http://127.0.0.1:9292/cdn/shop/files/banner.webp?v=1751338529&width=1600"
+              src="{{ section.settings['image-two'] | image_url }}"
               width="280"
               height="280"
               class="two-column-image"

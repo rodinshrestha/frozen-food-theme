@@ -2266,6 +2266,8 @@
   z-index: 2;
   color: #fff;
   font-size: 40px;
+  font-weight: 500;
+  font-family: "Scotch Display", sans-serif;
 }
 .category-list-section .category-wrapper .category-swiper-navigation {
   background: transparent;
