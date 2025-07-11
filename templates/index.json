@@ -16,9 +16,9 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/banner.webp",
-            "title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
-            "subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
-            "button_text": "Shop Now",
+            "title": "A Taste of Nepal",
+            "subtitle": "Unwrap Nepal’s flavor with Momo, Sauce, Chowmein, and more!",
+            "button_text": "EXPLORE",
             "button_link": ""
           }
         },
@@ -26,9 +26,9 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
-            "title": "Bringing the Rich Falvour of the Mountains",
+            "title": "Taste of the Himalayas",
             "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Teaste of the Mountains.",
-            "button_text": "Shop Now",
+            "button_text": "EXPLORE",
             "button_link": ""
           }
         },
@@ -36,14 +36,18 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
-            "title": "Explore Our Momo Sauce Collection",
-            "subtitle": "Ehance your meal with our delicious Momo Sauce, created to complement every bite. Whether you prefer bold heat, nutty richness, or a hint of sweetness, we have perfect sauce for you!",
-            "button_text": "Shop Now",
+            "title": "Momo Sauce Collection",
+            "subtitle": "Our Momo Sauce is made to complement every bite – bold, rich, or sweet, there’s a perfect flavor for every taste.",
+            "button_text": "EXPLORE",
             "button_link": "/pages"
           }
         }
       },
-      "block_order": ["slide_c6NtNe", "slide_kR8XMi", "slide_qQi3xx"],
+      "block_order": [
+        "slide_c6NtNe",
+        "slide_kR8XMi",
+        "slide_qQi3xx"
+      ],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -54,6 +58,21 @@
         "collection": "home-page-product",
         "section-title": "View Other Products",
         "product_slider": true
+      }
+    },
+    "two_column_image_JWPgRP": {
+      "type": "two-column-image",
+      "name": "Two Column Image",
+      "settings": {
+        "parallax-animation": true,
+        "title-one": "Test",
+        "helper_text_one": "Test",
+        "button-one": "Test",
+        "button-link-one": "#",
+        "title-two": "Test",
+        "helper_text_two": "Test",
+        "button-two": "Test",
+        "button-link-two": "#"
       }
     },
     "category_list_zJ3MmB": {
@@ -119,6 +138,15 @@
       "name": "Category List",
       "settings": {}
     },
+    "product_list_DdBxrY": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "homepage-bundle-collections",
+        "section-title": "Our Bundles",
+        "product_slider": true
+      }
+    },
     "three_content_block_yWpJjk": {
       "type": "three-content-block",
       "blocks": {
@@ -177,32 +205,10 @@
         "overlay-opacity": 0.3
       }
     },
-    "product_list_DdBxrY": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "collection": "homepage-bundle-collections",
-        "section-title": "Our Bundles",
-        "product_slider": true
-      }
-    },
     "customer_testimonials_b9Nzdq": {
       "type": "customer-testimonials",
       "name": "Customer Testimonials",
       "settings": {}
-    },
-    "two_column_image_JWPgRP": {
-      "type": "two-column-image",
-      "name": "Two Column Image",
-      "settings": {
-        "parallax-animation": true,
-        "title-one": "Test",
-        "button-one": "Test",
-        "button-link-one": "#",
-        "title-two": "Test",
-        "button-two": "Test",
-        "button-link-two": "#"
-      }
     }
   },
   "order": [

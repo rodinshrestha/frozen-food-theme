@@ -5,10 +5,9 @@
   color: $light-primary-textColor;
   background-color: $red-color;
   border: 1px solid $red-color;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   display: inline;
-  padding: 20px;
+  padding: 5px 25px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -24,12 +23,11 @@
 
 .outline-btn {
   color: $red-color;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   border-radius: 2px;
   display: flex;
   align-self: center;
-  padding: 10px 40px;
+  padding: 5px 25px;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
@@ -48,8 +46,7 @@
 
 .btn {
   color: $light-primary-textColor;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   border-radius: 6px;
   display: flex;
   align-self: center;
@@ -58,8 +55,7 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  border: 1px solid $red-color;
-  background-color: $red-color;
+  border: 1px solid $white-color;
   box-sizing: border-box;
   display: flex;
   gap: 10px;
@@ -67,14 +63,16 @@
   justify-content: center;
   font-family: $font-family-brandon;
   letter-spacing: 1px;
+  font-weight: 500;
 
   .btn-icon {
     margin-top: 1px;
     display: none;
   }
   &:hover {
-    background-color: $dark-red-color;
-    border-color: $dark-red-color;
+    background-color: $white-color;
+    border-color: $white-color;
+    color: $dark-primary-textColor;
   }
 }
 

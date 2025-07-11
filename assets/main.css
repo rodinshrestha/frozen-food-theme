@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Brandon Grotesque";
   src: url("../assets/BrandonGrotesque-Light.woff") format("woff");
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -453,10 +453,9 @@
   color: #fff;
   background-color: #e4022e;
   border: 1px solid #e4022e;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   display: inline;
-  padding: 20px;
+  padding: 5px 25px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -472,12 +471,11 @@
 
 .outline-btn {
   color: #e4022e;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   border-radius: 2px;
   display: flex;
   align-self: center;
-  padding: 10px 40px;
+  padding: 5px 25px;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
@@ -495,8 +493,7 @@
 
 .btn {
   color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 14px;
   border-radius: 6px;
   display: flex;
   align-self: center;
@@ -505,8 +502,7 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  border: 1px solid #e4022e;
-  background-color: #e4022e;
+  border: 1px solid #fff;
   box-sizing: border-box;
   display: flex;
   gap: 10px;
@@ -514,14 +510,16 @@
   justify-content: center;
   font-family: "Brandon Grotesque", sans-serif;
   letter-spacing: 1px;
+  font-weight: 500;
 }
 .btn .btn-icon {
   margin-top: 1px;
   display: none;
 }
 .btn:hover {
-  background-color: #720519;
-  border-color: #720519;
+  background-color: #fff;
+  border-color: #fff;
+  color: #303336;
 }
 
 .btn-sm {

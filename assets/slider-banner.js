@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   new Swiper(swiper, {
     loop: true,
-    // autoplay: {
-    //   delay: 3500,
-    //   disableOnInteraction: true,
-    // },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: true,
+    },
     pagination: {
       el: "#slider-banner-pagination",
       type: "bullets",
