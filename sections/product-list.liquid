@@ -1,5 +1,9 @@
+{% capture status %}
+  {% if section.settings.dark_mode %}bg-section-dark{% else %}''{% endif %}
+{% endcapture %}
+
 <section
-  class="product-list-section section-wrapper bg-section-dark section-divider"
+  class="product-list-section section-wrapper {{ status }} section-divider"
   id="product-list-{{ section.id }}"
 >
   <div class="container">
@@ -38,6 +42,20 @@
 {
   "name": "Featured Products",
   "settings": [
+    {
+      "type": "header",
+      "content": "Background Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "dark_mode",
+      "label": "Dark Mode",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Product List Details"
+    },
     {
       "type": "collection",
       "id": "collection",

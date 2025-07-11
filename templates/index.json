@@ -204,6 +204,15 @@
       "type": "customer-testimonials",
       "name": "Customer Testimonials",
       "settings": {}
+    },
+    "product_list_R9dzXy": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "collection": "ready-to-eat",
+        "section-title": "Ready To Eat",
+        "product_slider": true
+      }
     }
   },
   "order": [
@@ -214,6 +223,7 @@
     "product_list_DdBxrY",
     "banner_gbwkNy",
     "three_content_block_yWpJjk",
-    "customer_testimonials_b9Nzdq"
+    "customer_testimonials_b9Nzdq",
+    "product_list_R9dzXy"
   ]
 }
