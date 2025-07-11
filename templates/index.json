@@ -43,7 +43,11 @@
           }
         }
       },
-      "block_order": ["slide_c6NtNe", "slide_kR8XMi", "slide_qQi3xx"],
+      "block_order": [
+        "slide_c6NtNe",
+        "slide_kR8XMi",
+        "slide_qQi3xx"
+      ],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -196,28 +200,6 @@
       "name": "Three Fixed Blocks",
       "settings": {}
     },
-    "single_product_show_case_9phqPX": {
-      "type": "single-product-show-case",
-      "name": "Single Product Showcase",
-      "settings": {
-        "product_to_show": "product-test-1",
-        "section-title": "Our Most Recommended Products"
-      }
-    },
-    "banner_2": {
-      "type": "banner",
-      "settings": {
-        "banner-height": "medium",
-        "banner-parallax": true,
-        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
-        "feature-banner-title": "Upgrade your family meals with our value-packed bundles.",
-        "feature-banner-subtitle": "Big flavors. Bigger savings. Perfect for family meals",
-        "button-text": "Get the bundles",
-        "button-link": "",
-        "banner-overlay": true,
-        "overlay-opacity": 0.3
-      }
-    },
     "customer_testimonials_b9Nzdq": {
       "type": "customer-testimonials",
       "name": "Customer Testimonials",
@@ -232,8 +214,6 @@
     "product_list_DdBxrY",
     "banner_gbwkNy",
     "three_content_block_yWpJjk",
-    "single_product_show_case_9phqPX",
-    "banner_2",
     "customer_testimonials_b9Nzdq"
   ]
 }

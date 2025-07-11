@@ -4,8 +4,13 @@
 .footer-wrapper {
   padding: 100px 0;
   padding-bottom: 20px;
-  background-color: $dark-bgColor;
+  transition: all 0.3s ease-in;
+  color: $dark-primary-textColor;
 
+  &.dark-bg {
+    background-color: $dark-bgColor;
+    color: $light-primary-textColor;
+  }
   .footer-text-wrapper {
     border-top: 1px solid $light-grey;
     border-bottom: 1px solid $light-grey;
@@ -14,7 +19,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    color: $light-primary-textColor;
+    color: inherit;
 
     .footer-title-text {
       font-size: 1rem;
@@ -41,7 +46,7 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-
+    color: inherit;
     .newsletter-form-wrapper {
       gap: 20px;
       display: flex;
@@ -113,8 +118,6 @@
           height: 24px;
           object-fit: contain;
         }
-
-     
       }
     }
 
@@ -126,7 +129,7 @@
       .footer-title-wrapper {
         font-size: 1.25rem;
         font-weight: 500;
-        color: $light-primary-textColor;
+        color: inherit;
         margin-bottom: 20px;
       }
       .footer-link-content {
@@ -137,7 +140,7 @@
         transition: all 0.2s ease-in;
         font-size: 1rem;
         a {
-          color: $light-primary-textColor;
+          color: inherit;
           text-decoration: none;
           &:hover {
             text-decoration: underline;

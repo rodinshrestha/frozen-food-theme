@@ -173,7 +173,12 @@
 .footer-wrapper {
   padding: 100px 0;
   padding-bottom: 20px;
+  transition: all 0.3s ease-in;
+  color: #303336;
+}
+.footer-wrapper.dark-bg {
   background-color: #303336;
+  color: #fff;
 }
 .footer-wrapper .footer-text-wrapper {
   border-top: 1px solid rgba(242, 242, 242, 0.6);
@@ -183,7 +188,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  color: #fff;
+  color: inherit;
 }
 .footer-wrapper .footer-text-wrapper .footer-title-text {
   font-size: 1rem;
@@ -206,6 +211,7 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  color: inherit;
 }
 .footer-wrapper .newsletter-wrapper .newsletter-form-wrapper {
   gap: 20px;
@@ -283,7 +289,7 @@
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-title-wrapper {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #fff;
+  color: inherit;
   margin-bottom: 20px;
 }
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-link-content {
@@ -295,7 +301,7 @@
   font-size: 1rem;
 }
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-link-content a {
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 .footer-wrapper .footer-link-wrapper .footer-navigation-link-wrapper .footer-link-content a:hover {
