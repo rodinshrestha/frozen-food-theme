@@ -60,9 +60,16 @@
 
       &.swiper-button-next {
         right: -30px;
+
+        @include responsive(tablet) {
+          right: -20px;
+        }
       }
       &.swiper-button-prev {
         left: -30px;
+        @include responsive(tablet) {
+          left: -20px;
+        }
       }
     }
   }

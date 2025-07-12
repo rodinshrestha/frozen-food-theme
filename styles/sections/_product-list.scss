@@ -24,9 +24,16 @@
 
     .swiper-button-prev {
       left: -20px;
+
+      @include responsive(tablet) {
+        left: -10px;
+      }
     }
     .swiper-button-next {
       right: -20px;
+      @include responsive(tablet) {
+        right: -10px;
+      }
     }
     .col {
       width: 100%;
@@ -119,6 +126,7 @@
       .section-title {
         color: $light-primary-textColor !important;
         margin-bottom: 120px;
+        text-align: center;
         &::after {
           background-color: none;
         }

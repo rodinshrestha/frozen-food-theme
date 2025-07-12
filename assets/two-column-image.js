@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const animation = section.dataset.animation;
 
-  if (animation === "true") {
+  if (animation === "true" && !isMobile()) {
     const contentWrapper = section.querySelectorAll(".image-wrapper");
     getParallaxAnimation(section, contentWrapper);
   }

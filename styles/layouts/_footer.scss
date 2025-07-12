@@ -94,13 +94,17 @@
     @include responsive(tablet) {
       flex-direction: column-reverse;
       justify-content: space-between;
-      gap: 90px;
+      gap: 20px;
     }
 
     .footer-social-media-wrapper {
       display: flex;
       flex-direction: column;
       gap: 10px;
+
+      @include responsive(tablet) {
+        margin-top: 40px;
+      }
 
       .footer-logo-wrapper {
         display: flex;
@@ -124,26 +128,58 @@
     .footer-navigation-link-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 20px;
 
       .footer-title-wrapper {
         font-size: 1.25rem;
         font-weight: 500;
         color: inherit;
         margin-bottom: 20px;
+        .footer-link-icon {
+          display: none;
+        }
+
+        @include responsive(tablet) {
+          margin-bottom: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: transform 0.2s linear;
+          .footer-link-icon {
+            display: unset;
+          }
+
+          &.active {
+            .footer-link-icon {
+              transform: rotate(90deg);
+            }
+          }
+        }
       }
       .footer-link-content {
         display: flex;
         flex-direction: column;
         gap: 15px;
         font-weight: 400;
-        transition: all 0.2s ease-in;
+        transition: all 0.2s linear;
         font-size: 1rem;
+        overflow: hidden;
+        @include responsive(tablet) {
+          margin-left: 10px;
+        }
         a {
           color: inherit;
           text-decoration: none;
           &:hover {
             text-decoration: underline;
+          }
+        }
+
+        @include responsive(tablet) {
+          height: 0;
+
+          &.active {
+            height: 150px;
           }
         }
       }
