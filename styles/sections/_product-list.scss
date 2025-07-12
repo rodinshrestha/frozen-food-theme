@@ -39,19 +39,20 @@
   }
 
   .product-list-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     flex-wrap: wrap;
     gap: 20px 10px;
     justify-content: center;
     align-items: center;
-
-    @include responsive(tablet) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    height: auto;
 
     .featured-product-inner-wrapper {
       box-sizing: border-box;
+      flex: 0 1 20%;
+
+      @include responsive(tablet) {
+        flex: 0 1 100%;
+      }
     }
   }
 
@@ -125,18 +126,9 @@
     }
 
     .featured-product-information {
-      font-family: $font-family-brandon;
       color: $light-primary-textColor !important;
-      justify-content: center;
-      text-align: center;
       .product-type {
         color: $light-secondary-textColor !important;
-      }
-
-      .product-title {
-        font-size: 20px;
-        letter-spacing: 1px;
-        font-weight: 500;
       }
     }
   }

@@ -32,6 +32,9 @@
         {% endif %}
         <p class="product-price discounted-price">{{ product.price | money }}</p>
       </div>
+      <div class="quick-view-wrapper open-modal-btn" data-product-id="{{ product.id }}">
+        <p>Quick View</p>
+      </div>
 
       {% comment %}
         <div class="btn btn-sm open-modal-btn" data-product-id="{{ product.id }}">

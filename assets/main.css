@@ -595,8 +595,13 @@
   text-decoration: underline;
 }
 
-.featured-product-inner-wrapper:hover .open-modal-btn {
-  display: flex !important;
+.featured-product-inner-wrapper:hover .product-price-wrapper {
+  transform: translateY(-100%);
+  opacity: 0 !important;
+}
+.featured-product-inner-wrapper:hover .quick-view-wrapper {
+  transform: translate(-50%, -50%) !important;
+  opacity: 1 !important;
 }
 .featured-product-inner-wrapper .featured-product-image-wrapper {
   position: relative;
@@ -623,18 +628,14 @@
   font-size: 0.875rem;
   border-radius: 5px;
 }
-.featured-product-inner-wrapper .featured-product-image-wrapper:hover .open-modal-btn {
-  display: block;
-}
-.featured-product-inner-wrapper .featured-product-image-wrapper:hover + .open-modal-btn .product-title:hover {
-  opacity: 0.5;
-}
 .featured-product-inner-wrapper .featured-product-information {
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
+  justify-content: center;
+  text-align: center;
 }
 .featured-product-inner-wrapper .featured-product-information .product-type {
   font-size: 0.8rem;
@@ -647,6 +648,10 @@
 }
 .featured-product-inner-wrapper .featured-product-information a .product-title {
   font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-family: "Brandon Grotesque", sans-serif;
 }
 .featured-product-inner-wrapper .featured-product-information a:hover {
   text-decoration: underline;
@@ -656,10 +661,13 @@
   justify-content: center;
   align-items: center;
   height: 40px;
+  position: relative;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper {
   display: flex;
   gap: 10px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .original-price {
   display: flex;
@@ -678,8 +686,15 @@
   font-weight: 500;
   font-family: "Brandon Grotesque", sans-serif;
 }
-.featured-product-inner-wrapper .featured-product-information .card-footer .open-modal-btn {
-  display: none;
+.featured-product-inner-wrapper .featured-product-information .card-footer .quick-view-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  cursor: pointer;
+  transform: translate(-50%, 100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  text-decoration: underline;
 }
 
 .add-to-cart-qty-wrapper {
@@ -1329,20 +1344,21 @@
   justify-content: center;
 }
 .product-list-section .product-list-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   flex-wrap: wrap;
   gap: 20px 10px;
   justify-content: center;
   align-items: center;
-}
-@media (max-width: 1023px) {
-  .product-list-section .product-list-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  height: auto;
 }
 .product-list-section .product-list-wrapper .featured-product-inner-wrapper {
   box-sizing: border-box;
+  flex: 0 1 20%;
+}
+@media (max-width: 1023px) {
+  .product-list-section .product-list-wrapper .featured-product-inner-wrapper {
+    flex: 0 1 100%;
+  }
 }
 .product-list-section .swiper {
   width: 100%;
@@ -1400,18 +1416,10 @@
   background-color: none;
 }
 .product-list-section.bg-section-dark .featured-product-information {
-  font-family: "Brandon Grotesque", sans-serif;
   color: #fff !important;
-  justify-content: center;
-  text-align: center;
 }
 .product-list-section.bg-section-dark .featured-product-information .product-type {
   color: rgba(242, 242, 242, 0.6) !important;
-}
-.product-list-section.bg-section-dark .featured-product-information .product-title {
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-weight: 500;
 }
 
 .promotional-banner-wrapper {
@@ -2311,6 +2319,11 @@ body {
   margin-right: auto;
   padding: 0px 3.25rem;
   width: 100%;
+}
+@media (max-width: 10000px) {
+  .container {
+    max-width: 2500px;
+  }
 }
 .container.fluid {
   max-width: 100%;
