@@ -5,7 +5,7 @@ $breakpoints: (
   tablet: 1023px,    // up to tablets
   laptop: 1199px,    // up to small laptops
   desktop: 1399px,   // up to standard desktops
-  wide: 10000px,     // catch-all for very wide screens (optional)
+  wide: 2500px,     // catch-all for very wide screens (optional)
 );
 
 @mixin responsive($device) {

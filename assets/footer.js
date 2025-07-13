@@ -3,17 +3,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!footer) return;
 
+  footer
+    .querySelectorAll(".footer-navigation-link-wrapper")
+    .forEach((wrapper) => {
+      const title = wrapper.querySelector(".footer-title-wrapper");
+      const content = wrapper.querySelector(".footer-link-content");
+
+      title.addEventListener("click", () => {
+        content.classList.toggle("active");
+        title.classList.toggle("active");
+      });
+    });
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           footer.classList.add("dark-bg");
-          console.log("Footer is in view!  @@@");
-          // You can trigger animations, lazy load, etc. here
         } else {
           footer.classList.remove("dark-bg");
-
-          console.log("Footer is out of view!  @@@");
         }
       });
     },

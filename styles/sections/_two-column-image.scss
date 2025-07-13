@@ -3,13 +3,18 @@
 
 .two-column-image-section {
   .two-column-image-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     position: relative;
     overflow: hidden;
+    flex-wrap: wrap;
 
-    @include responsive(tablet) {
-      grid-template-columns: repeat(1, 1fr);
+    &.gap {
+      gap: 20px;
+      justify-content: space-between;
+
+      .image-wrapper {
+        flex: 0 1 calc(50% - 20px);
+      }
     }
 
     .image-wrapper {
@@ -17,6 +22,10 @@
       height: 85vh;
       width: 100%;
       position: relative;
+
+      @include responsive(tablet) {
+        flex: 0 1 100% !important;
+      }
 
       .two-column-image {
         position: absolute;
@@ -42,11 +51,13 @@
         .content-title {
           font-size: 14px;
           font-family: $font-family-brandon;
+          text-align: center;
         }
 
         .content-helper-text {
           font-size: 40px;
           font-family: $font-family-scotch;
+          text-align: center;
         }
       }
     }

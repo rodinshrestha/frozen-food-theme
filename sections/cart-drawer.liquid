@@ -45,6 +45,7 @@
               aria-label="remove-cart-item"
               class="remove-cart-item"
               data-line="{{ forloop.index }}"
+              data-key="{{ item.key }}"
             >
               <img
                 src="{{ "trash.png" | asset_url }}"

@@ -55,20 +55,24 @@
       display: flex;
       gap: 10px;
       .image-navigation {
-        opacity: 0.5;
+        opacity: 0.4;
         cursor: pointer;
         padding: 2px;
         box-sizing: border-box;
 
         &.swiper-slide-thumb-active {
           opacity: 1;
-          border: 1px solid $dark-color;
+
+          img {
+            transform: scale(1.1);
+          }
         }
 
         img {
           object-fit: contain;
           width: 100%;
           height: 100%;
+          transition: transform 0.4s linear;
         }
       }
     }
