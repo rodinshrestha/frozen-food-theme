@@ -5,13 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!productListWrappers.length) return;
 
   productListWrappers.forEach((wrapper, index) => {
-    // Initially hide the swiper wrapper to prevent glitch
-    const swiperWrapper = wrapper.querySelector(".swiper-wrapper");
-    if (swiperWrapper) {
-      swiperWrapper.style.opacity = "0";
-      swiperWrapper.style.transition = "opacity 0.3s ease";
-    }
-
     const isSliderEnable =
       wrapper.getAttribute("data-product-slider") === "true";
 
@@ -19,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
       ".featured-product-inner-wrapper",
     );
 
-    const isSlider = !isMobile() && isSliderEnable && productList.length > 4;
+    const isSlider = isSliderEnable && productList.length > 4;
 
-    if (!isSlider) {
+    if (!isSlider && !isMobile()) {
       console.log("Slider disabled or not enough products.");
       const productWrapper = wrapper.querySelector(".swiper-wrapper");
       if (productWrapper) {
@@ -48,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     wrapper.appendChild(slideNextBtn);
     wrapper.appendChild(slidePrevBtn);
 
-    const swiper = new Swiper(`#${uniqueID}`, {
+    new Swiper(`#${uniqueID}`, {
       slidesPerView: 4,
       spaceBetween: 20,
       loop: true,
@@ -63,14 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         884: { slidesPerView: 3 },
         1020: { slidesPerView: 3.5 },
         1200: { slidesPerView: 4 },
-      },
-      on: {
-        init: function () {
-          // Show the wrapper after swiper is initialized
-          if (swiperWrapper) {
-            swiperWrapper.style.opacity = "1";
-          }
-        },
       },
     });
   });
