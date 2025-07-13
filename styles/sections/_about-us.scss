@@ -1,0 +1,67 @@
+@use "abstracts/_breakpoints" as *;
+@use "abstracts/_variables" as *;
+
+
+.about-us-section {
+  background: #fff;
+  padding: 60px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-us-row {
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+  }
+
+  .about-us-image-block,
+  .about-us-content-block {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+  }
+
+  .about-us-image-block img {
+    max-width: 100%;
+    max-height: 550px; // Increased from 400px
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .about-us-content-block {
+    flex-direction: column;
+    text-align: left;
+
+    .about-us-title {
+      font-family: 'Scotch Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .about-us-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+  }
+
+  @include responsive(tablet) {
+    .about-us-row {
+      flex-direction: column;
+      gap: 30px;
+      min-height: unset;
+    }
+    .about-us-image-block,
+    .about-us-content-block {
+      min-height: unset;
+      height: auto;
+    }
+    .about-us-image-block img {
+      max-height: 250px;
+    }
+  }
+}

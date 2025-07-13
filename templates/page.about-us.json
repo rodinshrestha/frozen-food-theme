@@ -1,0 +1,9 @@
+{
+  "name": "About Us",
+  "sections": {
+    "main": {
+      "type": "about-us"
+    }
+  },
+  "order": ["main"]
+}
