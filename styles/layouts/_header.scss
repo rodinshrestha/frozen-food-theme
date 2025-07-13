@@ -84,6 +84,20 @@
           transition: all 0.2s ease-in;
           font-family: $font-family-brandon;
           font-weight: 500;
+          position: relative;
+
+          // &.active {
+          //   &::after {
+          //     content: "";
+          //     position: absolute;
+          //     left: 50%;
+          //     transform: translateX(-50%);
+          //     background-color: $dark-bgColor;
+          //     width: 100%;
+          //     height: 2px;
+          //     bottom: -2px;
+          //   }
+          // }
         }
 
         .sub-navigation-wrapper {

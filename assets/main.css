@@ -108,6 +108,7 @@
   transition: all 0.2s ease-in;
   font-family: "Brandon Grotesque", sans-serif;
   font-weight: 500;
+  position: relative;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper {
   position: relative;
