@@ -1,12 +1,24 @@
+{% capture columnwidth %}
+  {% if section.settings.full_width %}fluid{% else %}''{% endif %}
+{% endcapture %}
+
+{% capture gap %}
+  {% if section.settings.gap_between %}gap{% else %}''{% endif %}
+{% endcapture %}
+
+{% capture sectiongap %}
+  {% if section.settings.section_gap %}section-wrapper{% else %}''{% endif %}
+{% endcapture %}
+
 <div
-  class="two-column-image-section"
+  class="two-column-image-section {{ sectiongap }}"
   id="two-column-image-{{ section.id }}"
   data-animation="{{section.settings.parallax-animation}}"
 >
-  <div class="container fluid">
-    <div class="row no-gutters">
+  <div class="container {{ columnwidth }}">
+    <div class="row {% if columnwidth == 'fluid' %}no-gutters{% endif %}">
       <div class="col">
-        <div class="two-column-image-wrapper">
+        <div class="two-column-image-wrapper {{ gap }}">
           <div class="image-wrapper image-1">
             <div class="overlay"></div>
             <img
@@ -74,6 +86,28 @@
 {
   "name": "Two Column Image",
   "settings": [
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "gap_between",
+      "label": "Gap Between Section",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "section_gap",
+      "label": "Gap Between Section",
+      "default": false
+    },
     {
       "type": "header",
       "content": "Animation"

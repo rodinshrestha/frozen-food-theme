@@ -8,6 +8,15 @@
     overflow: hidden;
     flex-wrap: wrap;
 
+    &.gap {
+      gap: 20px;
+      justify-content: space-between;
+
+      .image-wrapper {
+        flex: 0 1 calc(50% - 20px);
+      }
+    }
+
     .image-wrapper {
       flex: 0 1 50%;
       height: 85vh;
@@ -15,7 +24,7 @@
       position: relative;
 
       @include responsive(tablet) {
-        flex: 0 1 100%;
+        flex: 0 1 100% !important;
       }
 
       .two-column-image {

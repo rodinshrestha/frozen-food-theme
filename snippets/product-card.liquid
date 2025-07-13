@@ -1,5 +1,5 @@
 <div class="featured-product-inner-wrapper swiper-slide">
-  <div class="featured-product-image-wrapper">
+  <div class="featured-product-image-wrapper {% if product.images.size > 1 %}has-hover{% endif %}">
     {% if product.tags.size > 0 %}
       <div class="product-tag-wrapper">
         {% for tag in product.tags %}
@@ -15,6 +15,17 @@
       alt="{{ product.title }}"
       class="product-image"
     >
+
+    {% if product.images.size > 1 %}
+      <img
+        src="{{ product.images[1] | image_url }}"
+        alt="{{ product.title }} hover image"
+        width="280"
+        height="280"
+        class="hover-image"
+      >
+    {% endif %}
+
     {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
   </div>
 
@@ -35,13 +46,6 @@
       <div class="quick-view-wrapper open-modal-btn" data-product-id="{{ product.id }}">
         <p>Quick View</p>
       </div>
-
-      {% comment %}
-        <div class="btn btn-sm open-modal-btn" data-product-id="{{ product.id }}">
-          Add
-          <img src="{{ 'add.png' | asset_url}}" alt="Add product icon" width="18" height="18">
-        </div>
-      {% endcomment %}
     </div>
   </div>
 </div>
