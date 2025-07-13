@@ -2,6 +2,7 @@
 @use "../abstracts/variables" as *;
 
 .product-list-section {
+  overflow: hidden;
   .row {
     position: relative;
     .swiper-button-next,

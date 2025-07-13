@@ -43,11 +43,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_c6NtNe",
-        "slide_kR8XMi",
-        "slide_qQi3xx"
-      ],
+      "block_order": ["slide_c6NtNe", "slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },

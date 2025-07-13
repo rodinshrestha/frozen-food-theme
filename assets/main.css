@@ -204,6 +204,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 28px;
+  letter-spacing: 1px;
 }
 .footer-wrapper .newsletter-wrapper {
   margin: 80px 0;
@@ -1378,6 +1379,9 @@
   line-height: 24px;
 }
 
+.product-list-section {
+  overflow: hidden;
+}
 .product-list-section .row {
   position: relative;
 }
@@ -1830,21 +1834,21 @@
 }
 
 .two-column-image-section .two-column-image-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   position: relative;
   overflow: hidden;
-}
-@media (max-width: 1023px) {
-  .two-column-image-section .two-column-image-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  flex-wrap: wrap;
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper {
   flex: 0 1 50%;
   height: 85vh;
   width: 100%;
   position: relative;
+}
+@media (max-width: 1023px) {
+  .two-column-image-section .two-column-image-wrapper .image-wrapper {
+    flex: 0 1 100%;
+  }
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .two-column-image {
   position: absolute;
@@ -2574,7 +2578,7 @@ body {
   }
 }
 .container.fluid {
-  max-width: 100%;
+  width: 100%;
   padding: 0;
 }
 @media (max-width: 1023px) {
@@ -2589,6 +2593,14 @@ body {
   margin-right: -15px;
   gap: 10px;
   box-sizing: border-box;
+}
+.container .row.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+}
+.container .row.no-gutters .col {
+  padding-left: 0;
+  padding-right: 0;
 }
 .container .col {
   padding-left: 15px;

@@ -81,7 +81,7 @@ body {
   }
 
   &.fluid {
-    max-width: 100%;
+    width: 100%;
     padding: 0;
   }
 
@@ -96,6 +96,16 @@ body {
     margin-right: -15px;
     gap: 10px;
     box-sizing: border-box;
+
+    &.no-gutters {
+      margin-left: 0;
+      margin-right: 0;
+
+      .col {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
   }
 
   .col {
