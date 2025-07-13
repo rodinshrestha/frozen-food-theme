@@ -449,26 +449,40 @@
   flex: 0 1 50%;
   padding: 0 10px;
 }
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-type {
+  margin-bottom: 10px;
+}
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-title {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 @media (max-width: 1023px) {
   .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-title {
     margin-bottom: 10px;
   }
 }
-.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-price {
-  font-size: 1.25;
-  color: #303336;
-  font-weight: 600;
-  margin-bottom: 25px;
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 }
-@media (max-width: 1023px) {
-  .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-price {
-    margin-bottom: 10px;
-  }
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper .original-price {
+  display: flex;
+  align-self: flex-end;
+  font-size: 16px;
+  font-weight: 400;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper .product-price {
+  font-family: "Brandon Grotesque", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper .original-price + .discounted-price {
+  color: #e4022e;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Brandon Grotesque", sans-serif;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description {
   font-size: 1rem;
@@ -483,7 +497,7 @@
   }
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-link {
-  color: #7a9ea1;
+  color: #303336;
   font-size: 1rem;
   font-weight: 400;
   line-height: 28px;
@@ -521,7 +535,7 @@
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .add-to-cart-btn,
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .buy-now-btn {
   flex-grow: 1;
-  padding: 14px;
+  padding: 10px;
 }
 @media (max-width: 1023px) {
   .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .buy-now-btn {

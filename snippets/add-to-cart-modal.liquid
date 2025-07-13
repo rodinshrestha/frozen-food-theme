@@ -14,24 +14,26 @@
           <div class="add-to-cart-product-type">{{ product.type }}</div>
         {% endif %}
         <h3 class="add-to-cart-product-title" id="add-cart-product-title">{{ product.title }}</h3>
-        <h5 class="add-to-cart-product-price">{{ product.price | money }}</h5>
+        <div class="product-price-wrapper">
+          {% if product.compare_at_price > product.price %}
+            <s class="original-price">{{ product.compare_at_price | money }}</s>
+          {% endif %}
+          <p class="product-price discounted-price">{{ product.price | money }}</p>
+        </div>
         <p class="add-to-cart-product-description">
           {{ product.description | strip_html | escape | truncate: 200, '...' }}
         </p>
 
-        <a href="{{ product.url }}" class="add-to-cart-product-link"
-          >View full product details
-          <i class="fa-solid fa-angle-right"></i>
-        </a>
+        <a href="{{ product.url }}" class="add-to-cart-product-link">View full product details </a>
 
         <hr>
         <div class="add-to-cart-cta-wrapper">
           {% render 'product-quantity', product: product, appliedQty: appliedQty %}
           <div class="add-to-cart-btn-group">
             <button class="add-to-cart outline-btn add-to-cart-btn" data-variant-id="{{ product.variants.first.id }}">
-              Add to cart
+              Add to Cart
             </button>
-            <a href="/checkout" class="link-button buy-now-btn">Buy it now </a>
+            <a href="/checkout" class="link-button buy-now-btn">Buy Now </a>
           </div>
         </div>
       </div>
