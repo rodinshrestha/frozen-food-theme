@@ -155,3 +155,9 @@
     }
   }
 }
+
+.navigation-wrappper {
+  .navigation-list.active > a {
+    color: red !important;
+  }
+}
