@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (modal) {
         modal.style.display = "flex";
         window.whenDrawerOpen();
+        imageGallery(modal);
       }
     }
   });

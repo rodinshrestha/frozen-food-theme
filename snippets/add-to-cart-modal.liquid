@@ -6,15 +6,9 @@
     </button>
 
     <div class="add-to-cart-product-wrapper">
-      <img
-        id="modal-image"
-        src="{{ product.featured_image | image_url}}"
-        alt="{{ product.title }}"
-        width="495px"
-        height="495px"
-        class="add-to-cart-product-image"
-      >
-
+      <div class="add-to-cart-image-wrapper">
+        {% render 'product-image-gallery', product: product %}
+      </div>
       <div class="add-to-cart-product-information">
         {% if product.type != '' %}
           <div class="add-to-cart-product-type">{{ product.type }}</div>
@@ -22,9 +16,7 @@
         <h3 class="add-to-cart-product-title" id="add-cart-product-title">{{ product.title }}</h3>
         <h5 class="add-to-cart-product-price">{{ product.price | money }}</h5>
         <p class="add-to-cart-product-description">
-
           {{ product.description | strip_html | escape | truncate: 200, '...' }}
-
         </p>
 
         <a href="{{ product.url }}" class="add-to-cart-product-link"

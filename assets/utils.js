@@ -87,10 +87,6 @@ window.handleFetchResponse = async (res) => {
 
 isMobile = () => document.documentElement.clientWidth <= 768;
 
-window.stringTruncate = (str, num = 150) => {
-  const cleanString = str.trim();
-};
-
 getTransition = (position, factor) => position * factor * -1;
 
 getParallaxAnimation = (wrapperSection, contentWrapper) => {

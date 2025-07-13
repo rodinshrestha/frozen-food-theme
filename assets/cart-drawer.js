@@ -154,7 +154,8 @@ document.addEventListener("click", (e) => {
   }
 
   const itemIndex = removeButton.getAttribute("data-line");
-  if (!itemIndex) return;
+
+  const itemKey = removeButton.getAttribute("data-key");
 
   // Capture "before" positions of all items in a cart
   const cartItemListBefore = document.querySelectorAll(".cart-item-details");
@@ -170,7 +171,7 @@ document.addEventListener("click", (e) => {
   fetch("/cart/change.js", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ line: parseInt(itemIndex), quantity: 0 }),
+    body: JSON.stringify({ id: itemKey, quantity: 0 }),
   })
     .then(async (res) => await window.handleFetchResponse(res))
     .then(() => fetchAndRenderCartDrawer())
@@ -179,31 +180,31 @@ document.addEventListener("click", (e) => {
       itemLoader(itemIndex, false);
 
       // Animate items from old position to new
-      requestAnimationFrame(() => {
-        const cartItemList = document.querySelectorAll(".cart-item-details");
+      // requestAnimationFrame(() => {
+      //   const cartItemList = document.querySelectorAll(".cart-item-details");
 
-        cartItemList.forEach((item) => {
-          const key = item.dataset.key;
-          const oldPos = positions.get(key);
-          const newPos = item.getBoundingClientRect();
+      //   cartItemList.forEach((item) => {
+      //     const key = item.dataset.key;
+      //     const oldPos = positions.get(key);
+      //     const newPos = item.getBoundingClientRect();
 
-          if (oldPos) {
-            const dy = oldPos.top - newPos.top;
-            item.style.transform = `translateY(${dy}px)`;
-            item.offsetHeight; // force reflow
-            item.style.transition = "transform 0.3s ease";
-            item.style.transform = "translateY(0)";
-          }
-        });
+      //     if (oldPos) {
+      //       const dy = oldPos.top - newPos.top;
+      //       item.style.transform = `translateY(${dy}px)`;
+      //       item.offsetHeight; // force reflow
+      //       item.style.transition = "transform 0.3s ease";
+      //       item.style.transform = "translateY(0)";
+      //     }
+      //   });
 
-        // Clean up after animation
-        setTimeout(() => {
-          document.querySelectorAll(".cart-item-details").forEach((item) => {
-            item.style.transition = "";
-            item.style.transform = "";
-          });
-        }, 300);
-      });
+      //   // Clean up after animation
+      //   setTimeout(() => {
+      //     document.querySelectorAll(".cart-item-details").forEach((item) => {
+      //       item.style.transition = "";
+      //       item.style.transform = "";
+      //     });
+      //   }, 300);
+      // });
     })
     .catch((err) => {
       alert("Error, view console for more information");
