@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("{{ 'BrandonGrotesque-Light.woff' | asset_url }}") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("{{ 'BrandonGrotesque-Medium.woff2' | asset_url }}") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Scotch Display";
+  src: url("{{ 'ScotchDisplay-Light.ttf' | asset_url }}") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Scotch Display";
+  src: url("{{ 'ScotchDisplay-Medium.woff2' | asset_url }}") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

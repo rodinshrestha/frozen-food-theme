@@ -150,10 +150,9 @@
             display: flex;
             gap: 10px;
             width: 100%;
-            .add-to-cart-btn,
-            .buy-now-btn {
+
+            .btn {
               flex-grow: 1;
-              padding: 10px;
             }
 
             @include responsive(tablet) {

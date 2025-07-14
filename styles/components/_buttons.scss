@@ -1,78 +1,69 @@
 @use "../abstracts/breakpoints" as *;
 @use "../abstracts/variables" as *;
 
-.link-button {
-  color: $light-primary-textColor;
-  background-color: $red-color;
-  border: 1px solid $red-color;
-  font-size: 14px;
-  display: inline;
-  padding: 5px 25px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  box-sizing: border-box;
-  border-radius: 10px;
-  font-family: $font-family-brandon;
-  letter-spacing: 1px;
-  &:hover {
-    background-color: $dark-red-color;
-  }
-}
-
-.outline-btn {
-  color: $red-color;
-  font-size: 14px;
-  border-radius: 2px;
-  display: flex;
-  align-self: center;
-  padding: 5px 25px;
-  justify-content: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  border: 1px solid$red-color;
-  background-color: transparent;
-  border-radius: 10px;
-  font-family: $font-family-brandon;
-  letter-spacing: 1px;
-
-  &:hover {
-    background-color: $red-color;
-    color: $white-color;
-  }
-}
-
 .btn {
-  color: $light-primary-textColor;
+  border: 1px solid $light-primary-textColor;
+  color: $dark-primary-textColor;
   font-size: 14px;
+  padding: 5px 25px;
+  transition: all 0.2s ease-in;
   border-radius: 6px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: $font-family-brandon;
+  cursor: pointer;
   display: flex;
   align-self: center;
-  padding: 5px 25px;
   justify-content: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  border: 1px solid $white-color;
-  box-sizing: border-box;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  font-family: $font-family-brandon;
-  letter-spacing: 1px;
   font-weight: 500;
+  background-color: transparent;
+  outline: none;
+  gap: 10px;
+}
 
-  .btn-icon {
-    margin-top: 1px;
-    display: none;
+.btn-contained {
+  background-color: $white-color;
+  color: $dark-primary-textColor;
+
+  &.btn-red {
+    background-color: $red-color;
+    border-color: $red-color;
+    color: $light-primary-textColor;
+
+    &:hover {
+      background-color: $dark-red-color;
+      border-color: $dark-red-color;
+    }
   }
+
+  &.btn-green {
+    background-color: $green-color;
+    border-color: $green-color;
+    color: $light-primary-textColor;
+
+    &:hover {
+      border-color: $dark-green-color;
+      background-color: $dark-green-color;
+    }
+  }
+}
+
+.btn-outline {
+  color: $light-primary-textColor;
   &:hover {
     background-color: $white-color;
     border-color: $white-color;
     color: $dark-primary-textColor;
+  }
+
+  &.btn-red {
+    color: $red-color;
+    border-color: $red-color;
+    &:hover {
+      background-color: $red-color;
+      border-color: $red-color;
+      color: $light-primary-textColor;
+    }
   }
 }
 

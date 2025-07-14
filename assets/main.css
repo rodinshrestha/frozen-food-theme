@@ -1,31 +1,3 @@
-@font-face {
-  font-family: "Brandon Grotesque";
-  src: url("../assets/BrandonGrotesque-Light.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Brandon Grotesque";
-  src: url('{{ "BrandonGrotesque-Medium.woff2" | asset_url }}') format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Scotch Display";
-  src: url("../assets/ScotchDisplay-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Scotch Display";
-  src: url("../assets/ScotchDisplay-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
 .header-wrapper {
   height: 65px;
   width: 100vw;
@@ -233,17 +205,9 @@
   border: none;
   flex-grow: 1;
 }
-.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .green-btn {
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .btn {
   padding: 10px 20px;
-  background-color: #025a31;
-  border: 1px solid #025a31;
   border-radius: 10px;
-  letter-spacing: 1px;
-  transition: all 0.2s linear;
-}
-.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .green-btn:hover {
-  background-color: #014826;
-  border-color: #014826;
 }
 .footer-wrapper .newsletter-wrapper .newletter-helper-text {
   color: rgba(242, 242, 242, 0.6);
@@ -532,10 +496,8 @@
   gap: 10px;
   width: 100%;
 }
-.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .add-to-cart-btn,
-.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .buy-now-btn {
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .btn {
   flex-grow: 1;
-  padding: 10px;
 }
 @media (max-width: 1023px) {
   .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .buy-now-btn {
@@ -543,77 +505,65 @@
   }
 }
 
-.link-button {
-  color: #fff;
-  background-color: #e4022e;
-  border: 1px solid #e4022e;
-  font-size: 14px;
-  display: inline;
-  padding: 5px 25px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  box-sizing: border-box;
-  border-radius: 10px;
-  font-family: "Brandon Grotesque", sans-serif;
-  letter-spacing: 1px;
-}
-.link-button:hover {
-  background-color: #720519;
-}
-
-.outline-btn {
-  color: #e4022e;
-  font-size: 14px;
-  border-radius: 2px;
-  display: flex;
-  align-self: center;
-  padding: 5px 25px;
-  justify-content: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  border: 1px solid #e4022e;
-  background-color: transparent;
-  border-radius: 10px;
-  font-family: "Brandon Grotesque", sans-serif;
-  letter-spacing: 1px;
-}
-.outline-btn:hover {
-  background-color: #e4022e;
-  color: #fff;
-}
-
 .btn {
-  color: #fff;
+  border: 1px solid #fff;
+  color: #303336;
   font-size: 14px;
+  padding: 5px 25px;
+  transition: all 0.2s ease-in;
   border-radius: 6px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-family: "Brandon Grotesque", sans-serif;
+  cursor: pointer;
   display: flex;
   align-self: center;
-  padding: 5px 25px;
   justify-content: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-  border: 1px solid #fff;
-  box-sizing: border-box;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  font-family: "Brandon Grotesque", sans-serif;
-  letter-spacing: 1px;
   font-weight: 500;
+  background-color: transparent;
+  outline: none;
+  gap: 10px;
 }
-.btn .btn-icon {
-  margin-top: 1px;
-  display: none;
+
+.btn-contained {
+  background-color: #fff;
+  color: #303336;
 }
-.btn:hover {
+.btn-contained.btn-red {
+  background-color: #e4022e;
+  border-color: #e4022e;
+  color: #fff;
+}
+.btn-contained.btn-red:hover {
+  background-color: #720519;
+  border-color: #720519;
+}
+.btn-contained.btn-green {
+  background-color: #025a31;
+  border-color: #025a31;
+  color: #fff;
+}
+.btn-contained.btn-green:hover {
+  border-color: #014826;
+  background-color: #014826;
+}
+
+.btn-outline {
+  color: #fff;
+}
+.btn-outline:hover {
   background-color: #fff;
   border-color: #fff;
   color: #303336;
+}
+.btn-outline.btn-red {
+  color: #e4022e;
+  border-color: #e4022e;
+}
+.btn-outline.btn-red:hover {
+  background-color: #e4022e;
+  border-color: #e4022e;
+  color: #fff;
 }
 
 .btn-sm {
@@ -806,7 +756,7 @@
   box-sizing: border-box;
   padding: 10px;
   gap: 5px;
-  height: 40px;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;

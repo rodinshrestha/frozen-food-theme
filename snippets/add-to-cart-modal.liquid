@@ -30,10 +30,13 @@
         <div class="add-to-cart-cta-wrapper">
           {% render 'product-quantity', product: product, appliedQty: appliedQty %}
           <div class="add-to-cart-btn-group">
-            <button class="add-to-cart outline-btn add-to-cart-btn" data-variant-id="{{ product.variants.first.id }}">
+            <button
+              class="btn btn-outline btn-red add-to-cart-btn"
+              data-variant-id="{{ product.variants.first.id }}"
+            >
               Add to Cart
             </button>
-            <a href="/checkout" class="link-button buy-now-btn">Buy Now </a>
+            <a href="/checkout" class="btn btn-contained btn-red buy-now-btn">Buy Now </a>
           </div>
         </div>
       </div>
