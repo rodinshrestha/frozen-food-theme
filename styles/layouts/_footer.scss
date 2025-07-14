@@ -41,6 +41,10 @@
       width: 50%;
       display: flex;
       align-self: center;
+
+      @include responsive(tablet) {
+        width: 100%;
+      }
     }
   }
 

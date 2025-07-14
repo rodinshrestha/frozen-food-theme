@@ -434,6 +434,11 @@ ul {
   display: flex;
   align-self: center;
 }
+@media (max-width: 1023px) {
+  .footer-wrapper .footer-text-wrapper .footer-tag-line-description {
+    width: 100%;
+  }
+}
 .footer-wrapper .newsletter-wrapper {
   margin: 80px 0;
   display: flex;
