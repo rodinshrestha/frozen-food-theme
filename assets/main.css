@@ -673,8 +673,8 @@ ul {
   margin-bottom: 10px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 20px;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
   margin-bottom: 15px;
 }
 @media (max-width: 1023px) {
@@ -685,6 +685,7 @@ ul {
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper {
   display: flex;
   gap: 10px;
+  opacity: 1;
   margin-bottom: 15px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper .original-price {
@@ -692,45 +693,62 @@ ul {
   align-self: flex-end;
   font-size: 16px;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper .product-price {
   font-family: "Brandon Grotesque", "Helvetica Neue";
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
   font-size: 18px;
   font-weight: 500;
-  font-family: "Brandon Grotesque", "Helvetica Neue";
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  letter-spacing: 1px;
 }
-.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description {
-  font-size: 1rem;
-  color: #303336;
-  font-weight: 400;
-  line-height: 28px;
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description-wrapper {
   margin-bottom: 25px;
 }
-@media (max-width: 1023px) {
-  .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description {
-    margin-bottom: 10px;
-  }
-}
-.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-link {
-  color: #303336;
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description-wrapper .add-to-cart-product-description {
+  display: inline;
   font-size: 1rem;
+  color: #303336;
   font-weight: 400;
   line-height: 28px;
-  transition: all 0.2s ease-in-out;
-  margin-bottom: 20px;
 }
 @media (max-width: 1023px) {
-  .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-link {
+  .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description-wrapper .add-to-cart-product-description {
     margin-bottom: 10px;
   }
 }
-.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-link:hover {
-  opacity: 0.8;
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description-wrapper .product-read-more {
+  display: inline;
+  font-size: 1rem;
+  color: #303336;
+  font-weight: 400;
+  line-height: 28px;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status {
+  position: relative;
+  margin-left: 15px;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status::after {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status.green::after {
+  background-color: #025a31;
+}
+.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status.grey::after {
+  background-color: grey;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper {
   display: flex;
@@ -743,9 +761,6 @@ ul {
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper > .add-to-cart-qty-wrapper bottom {
   padding: 0;
-}
-.add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper > .add-to-cart-qty-wrapper .quantity-input {
-  width: 16px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group {
   display: flex;
@@ -779,6 +794,22 @@ ul {
   background-color: transparent;
   outline: none;
   gap: 10px;
+}
+.btn.disabled {
+  cursor: not-allowed;
+  background-color: gray !important;
+  color: #fff !important;
+  border-color: gray !important;
+}
+.btn.disabled span {
+  pointer-events: none;
+}
+.btn span {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
 .btn-contained {
@@ -998,7 +1029,7 @@ ul {
   color: #e4022e;
   font-size: 18px;
   font-weight: 500;
-  font-family: "Brandon Grotesque", "Helvetica Neue";
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
   letter-spacing: 1px;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .quick-view-wrapper {
@@ -1016,7 +1047,7 @@ ul {
   background-color: #f8f4ef;
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 10px 5px;
   gap: 5px;
   height: 30px;
   display: flex;
@@ -2662,6 +2693,9 @@ ul {
   margin-right: 0;
 }
 
+.category-list-section {
+  overflow: hidden;
+}
 .category-list-section .category-wrapper {
   position: relative;
 }

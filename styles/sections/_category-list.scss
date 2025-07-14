@@ -2,6 +2,7 @@
 @use "abstracts/_variables" as *;
 
 .category-list-section {
+  overflow: hidden;
   .category-wrapper {
     position: relative;
     .category-content-list {

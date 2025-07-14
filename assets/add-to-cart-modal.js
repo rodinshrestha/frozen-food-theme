@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.portal(modal); // Moves modal directly under <body>
   });
 
+  //Disabling the click and link events for disabled btn
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("disabled")) {
+      e.preventDefault();
+      return;
+    }
+  });
+
   // Use event delegation for open modal buttons (works with dynamically added elements)
   document.addEventListener("click", (e) => {
     if (e.target.closest(".open-modal-btn")) {
@@ -11,6 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const id = button.dataset.productId;
       const modal = document.getElementById(`modal-${id}`);
       if (modal) {
+        const addToCartBtn = modal.querySelector(".add-to-cart-btn");
+
+        if (addToCartBtn.classList.contains("disabled")) {
+          addToCartBtn.innerHTML = "Out of Stock";
+        }
+
         modal.style.display = "flex";
         window.whenDrawerOpen();
         imageGallery(modal);

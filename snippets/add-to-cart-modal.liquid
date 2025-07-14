@@ -1,3 +1,7 @@
+{% capture productstatus %}
+  {% if product.variants.first.available %}{% else %}disabled{% endif %}
+{% endcapture %}
+
 <!-- Product Modal -->
 <div class="add-to-cart-modal-wrapper" id="modal-{{ product.id }}" style="display:none;">
   <div class="modal-content">
@@ -20,23 +24,33 @@
           {% endif %}
           <p class="product-price discounted-price">{{ product.price | money }}</p>
         </div>
-        <p class="add-to-cart-product-description">
-          {{ product.description | strip_html | escape | truncate: 200, '...' }}
-        </p>
+        <div class="add-to-cart-product-description-wrapper">
+          <p class="add-to-cart-product-description">
+            {{ product.description | strip_html | escape | truncate: 200, '...' }}
+          </p>
+          <a href="{{ product.url }}" class="product-read-more">View More</a>
+        </div>
 
-        <a href="{{ product.url }}" class="add-to-cart-product-link">View full product details </a>
+        <div class="stock-status-wrapper">
+          {% if product.variants.first.available %}
+            <p class="stock-status green">In Stock</p>
+          {% else %}
+            <p class="stock-status grey">Out of Stock</p>
+          {% endif %}
+        </div>
 
         <hr>
         <div class="add-to-cart-cta-wrapper">
           {% render 'product-quantity', product: product, appliedQty: appliedQty %}
           <div class="add-to-cart-btn-group">
-            <button
-              class="btn btn-outline btn-red add-to-cart-btn"
-              data-variant-id="{{ product.variants.first.id }}"
-            >
-              Add to Cart
+            <button class="btn btn-outline btn-red {{ productstatus }}">
+              <span class="add-to-cart-btn {{ productstatus }}" data-variant-id="{{ product.variants.first.id }}">
+                Add to Cart
+              </span>
             </button>
-            <a href="/checkout" class="btn btn-contained btn-red buy-now-btn">Buy Now </a>
+            <a href="/checkout" class="btn btn-contained btn-red buy-now-btn {{ productstatus }}">
+              <span>Buy Now</span>
+            </a>
           </div>
         </div>
       </div>

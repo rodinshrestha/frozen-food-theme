@@ -19,6 +19,24 @@
   background-color: transparent;
   outline: none;
   gap: 10px;
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: gray !important;
+    color: $light-primary-textColor !important;
+    border-color: gray !important;
+    span {
+      pointer-events: none;
+    }
+  }
+
+  span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
 }
 
 .btn-contained {

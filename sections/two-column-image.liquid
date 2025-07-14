@@ -1,13 +1,17 @@
 {% capture columnwidth %}
-  {% if section.settings.full_width %}fluid{% else %}''{% endif %}
+  {% if section.settings.full_width %}fluid{% endif %}
+{% endcapture %}
+
+{% capture rowwidth %}
+  {% if section.settings.full_width %}no-gutters{% endif %}
 {% endcapture %}
 
 {% capture gap %}
-  {% if section.settings.gap_between %}gap{% else %}''{% endif %}
+  {% if section.settings.gap_between %}gap{% endif %}
 {% endcapture %}
 
 {% capture sectiongap %}
-  {% if section.settings.section_gap %}section-wrapper{% else %}''{% endif %}
+  {% if section.settings.section_gap %}section-wrapper{% endif %}
 {% endcapture %}
 
 <div
@@ -16,7 +20,7 @@
   data-animation="{{section.settings.parallax-animation}}"
 >
   <div class="container {{ columnwidth }}">
-    <div class="row {% if columnwidth == 'fluid' %}no-gutters{% endif %}">
+    <div class="row {{ rowwidth }}">
       <div class="col">
         <div class="two-column-image-wrapper {{ gap }}">
           <div class="image-wrapper image-1">

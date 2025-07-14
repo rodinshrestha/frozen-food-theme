@@ -70,7 +70,7 @@ const itemLoader = (index, isLoading) => {
 
 // Fetch updated cart section and re-render
 const fetchAndRenderCartDrawer = async () => {
-  return fetch("/?sections=cart-drawer")
+  return fetch("/?sections=cart-drawer&v=" + Date.now())
     .then(async (res) => await window.handleFetchResponse(res))
     .then((data) => {
       reBuildCartDrawer(data["cart-drawer"]);
@@ -174,37 +174,40 @@ document.addEventListener("click", (e) => {
     body: JSON.stringify({ id: itemKey, quantity: 0 }),
   })
     .then(async (res) => await window.handleFetchResponse(res))
-    .then(() => fetchAndRenderCartDrawer())
+    .then(async () => {
+      await fetch("/cart.js").then((res) => res.json());
+      await fetchAndRenderCartDrawer();
+    })
     .then(() => {
       window.updateCartCount();
       itemLoader(itemIndex, false);
 
       // Animate items from old position to new
-      // requestAnimationFrame(() => {
-      //   const cartItemList = document.querySelectorAll(".cart-item-details");
+      requestAnimationFrame(() => {
+        const cartItemList = document.querySelectorAll(".cart-item-details");
 
-      //   cartItemList.forEach((item) => {
-      //     const key = item.dataset.key;
-      //     const oldPos = positions.get(key);
-      //     const newPos = item.getBoundingClientRect();
+        cartItemList.forEach((item) => {
+          const key = item.dataset.key;
+          const oldPos = positions.get(key);
+          const newPos = item.getBoundingClientRect();
 
-      //     if (oldPos) {
-      //       const dy = oldPos.top - newPos.top;
-      //       item.style.transform = `translateY(${dy}px)`;
-      //       item.offsetHeight; // force reflow
-      //       item.style.transition = "transform 0.3s ease";
-      //       item.style.transform = "translateY(0)";
-      //     }
-      //   });
+          if (oldPos) {
+            const dy = oldPos.top - newPos.top;
+            item.style.transform = `translateY(${dy}px)`;
+            item.offsetHeight; // force reflow
+            item.style.transition = "transform 0.3s ease";
+            item.style.transform = "translateY(0)";
+          }
+        });
 
-      //   // Clean up after animation
-      //   setTimeout(() => {
-      //     document.querySelectorAll(".cart-item-details").forEach((item) => {
-      //       item.style.transition = "";
-      //       item.style.transform = "";
-      //     });
-      //   }, 300);
-      // });
+        // Clean up after animation
+        setTimeout(() => {
+          document.querySelectorAll(".cart-item-details").forEach((item) => {
+            item.style.transition = "";
+            item.style.transform = "";
+          });
+        }, 300);
+      });
     })
     .catch((err) => {
       alert("Error, view console for more information");
