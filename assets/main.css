@@ -1,3 +1,254 @@
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("./BrandonGrotesque-Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Grotesque Medium";
+  src: url("./BrandonGrotesque-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Scotch Display";
+  src: url("./ScotchDisplay-Light.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Scotch Display";
+  src: url("./ScotchDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.main-overlay {
+  position: fixed;
+  transition: all 0.2s ease-in-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 999; /* make sure it's above everything else */
+}
+
+.disable-overlay {
+  display: none;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 3.25rem;
+  width: 100%;
+}
+@media (max-width: 10000px) {
+  .container {
+    max-width: 2500px;
+  }
+}
+.container.fluid {
+  width: 100%;
+  padding: 0;
+}
+@media (max-width: 1023px) {
+  .container {
+    padding: 0px 1rem;
+  }
+}
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.container .row.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+}
+.container .row.no-gutters .col {
+  padding-left: 0;
+  padding-right: 0;
+}
+.container .col {
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul {
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: #333; /* Customize spinner color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333 !important;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  position: absolute;
+  top: 42% !important;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgb(255, 255, 255);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.section-wrapper {
+  padding: 60px 0;
+}
+@media (max-width: 1023px) {
+  .section-wrapper {
+    padding: 40px 0;
+  }
+}
+
+.section-title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.section-title {
+  margin-bottom: 100px;
+  font-size: 40px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-self: center;
+  color: #303336;
+  font-family: "Scotch Display", "Helvetica Neue";
+  letter-spacing: 3px;
+}
+@media (max-width: 1023px) {
+  .section-title {
+    margin-bottom: 60px;
+    font-size: 36px;
+  }
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 1.5px;
+  background-color: rgba(48, 51, 54, 0.6);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+}
+
+@media (max-width: 1023px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+.template-page {
+  background-color: rgb(248, 244, 239);
+}
+.template-page .bread-crumb-wrapper {
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
+.extra-header-height {
+  width: 100%;
+  height: 65px;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
 .header-wrapper {
   height: 65px;
   width: 100vw;
@@ -66,10 +317,11 @@
   gap: 20px;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper {
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   display: flex;
   list-style: none;
   gap: 15px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper a {
   color: unset;
@@ -78,7 +330,7 @@
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list {
   cursor: pointer;
   transition: all 0.2s ease-in;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   font-weight: 500;
   position: relative;
 }
@@ -164,19 +416,23 @@
   color: inherit;
 }
 .footer-wrapper .footer-text-wrapper .footer-title-text {
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 1px;
 }
 .footer-wrapper .footer-text-wrapper .footer-tag-line {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Scotch Display", "Helvetica Neue";
 }
 .footer-wrapper .footer-text-wrapper .footer-tag-line-description {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 1px;
+  width: 50%;
+  display: flex;
+  align-self: center;
 }
 .footer-wrapper .newsletter-wrapper {
   margin: 80px 0;
@@ -438,7 +694,7 @@
   font-weight: 400;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .product-price-wrapper .product-price {
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   font-size: 16px;
   font-weight: 500;
 }
@@ -446,7 +702,7 @@
   color: #e4022e;
   font-size: 18px;
   font-weight: 500;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-description {
   font-size: 1rem;
@@ -506,7 +762,7 @@
 }
 
 .btn {
-  border: 1px solid #fff;
+  border: 1px solid rgba(242, 242, 242, 0.5);
   color: #303336;
   font-size: 14px;
   padding: 5px 25px;
@@ -514,7 +770,7 @@
   border-radius: 6px;
   letter-spacing: 1px;
   text-decoration: none;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   cursor: pointer;
   display: flex;
   align-self: center;
@@ -552,8 +808,8 @@
   color: #fff;
 }
 .btn-outline:hover {
-  background-color: #fff;
-  border-color: #fff;
+  background-color: rgba(242, 242, 242, 0.5);
+  border-color: rgba(242, 242, 242, 0.5);
   color: #303336;
 }
 .btn-outline.btn-red {
@@ -568,6 +824,10 @@
 
 .btn-sm {
   padding: 8px 20px;
+}
+
+.btn-md {
+  min-width: 150px;
 }
 
 .mobile-menu-drawer-wrapper {
@@ -700,11 +960,10 @@
   text-decoration: none;
 }
 .featured-product-inner-wrapper .featured-product-information a .product-title {
-  font-weight: 600;
   font-size: 20px;
   letter-spacing: 1px;
-  font-weight: 500;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  text-transform: uppercase;
 }
 .featured-product-inner-wrapper .featured-product-information a:hover {
   text-decoration: underline;
@@ -727,17 +986,20 @@
   align-self: flex-end;
   font-size: 16px;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .product-price {
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   font-size: 16px;
   font-weight: 400;
+  letter-spacing: 1px;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
   font-size: 18px;
   font-weight: 500;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  letter-spacing: 1px;
 }
 .featured-product-inner-wrapper .featured-product-information .card-footer .quick-view-wrapper {
   position: absolute;
@@ -1073,9 +1335,6 @@
 }
 
 .banner-section {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -1126,14 +1385,15 @@
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-title {
   font-size: 12px;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   color: #fff;
   margin-bottom: 10px;
   text-align: center;
+  letter-spacing: 1px;
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-subtitle {
   font-size: 40px;
-  font-family: "Scotch Display", sans-serif;
+  font-family: "Scotch Display", "Helvetica Neue";
   margin-bottom: 20px;
   text-align: center;
 }
@@ -1296,15 +1556,12 @@
   align-items: center;
   gap: 5px;
 }
-.cart-drawer .cart-content-wrapper .cart-footer .link-button {
-  width: 100%;
+.cart-drawer .cart-content-wrapper .cart-footer .btn {
   color: #fff !important;
-  display: flex;
-  align-self: center;
-  justify-content: center;
   padding: 10px;
+  width: 100%;
 }
-.cart-drawer .cart-content-wrapper .cart-footer .link-button.disable {
+.cart-drawer .cart-content-wrapper .cart-footer .btn.disable {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -1445,7 +1702,7 @@
   flex-direction: column;
 }
 .product-list-section .swiper .featured-product-inner-wrapper .featured-product-information {
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   width: 100%;
   justify-content: center;
   text-align: center;
@@ -1523,6 +1780,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 .promotional-banner-wrapper .swiper-button-next,
 .promotional-banner-wrapper .swiper-button-prev {
@@ -1867,12 +2125,12 @@
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-title {
   font-size: 14px;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
   text-align: center;
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-helper-text {
   font-size: 40px;
-  font-family: "Scotch Display", sans-serif;
+  font-family: "Scotch Display", "Helvetica Neue";
   text-align: center;
 }
 
@@ -2268,7 +2526,7 @@
   letter-spacing: 1px;
   color: #fff;
   text-align: center;
-  font-family: "Brandon Grotesque", sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
   font-size: 40px;
@@ -2277,7 +2535,7 @@
   color: #fff;
   text-align: center;
   letter-spacing: 1px;
-  font-family: "Scotch Display", sans-serif;
+  font-family: "Scotch Display", "Helvetica Neue";
 }
 .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .down-arrow-img {
   position: absolute;
@@ -2442,7 +2700,7 @@
   color: #fff;
   font-size: 40px;
   font-weight: 500;
-  font-family: "Scotch Display", sans-serif;
+  font-family: "Scotch Display", "Helvetica Neue";
 }
 .category-list-section .category-wrapper .category-swiper-navigation {
   background: transparent;
@@ -2524,227 +2782,4 @@
   .about-us-section .about-us-image-block img {
     max-height: 250px;
   }
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-  font-family: "Brandon Grotesque", sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: subpixel-antialiased;
-  box-sizing: border-box;
-  text-rendering: optimizelegibility;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-.main-overlay {
-  position: fixed;
-  transition: all 0.2s ease-in-out;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-  z-index: 999; /* make sure it's above everything else */
-}
-
-.disable-overlay {
-  display: none;
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px 3.25rem;
-  width: 100%;
-}
-@media (max-width: 10000px) {
-  .container {
-    max-width: 2500px;
-  }
-}
-.container.fluid {
-  width: 100%;
-  padding: 0;
-}
-@media (max-width: 1023px) {
-  .container {
-    padding: 0px 1rem;
-  }
-}
-.container .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-  gap: 10px;
-  box-sizing: border-box;
-}
-.container .row.no-gutters {
-  margin-left: 0;
-  margin-right: 0;
-}
-.container .row.no-gutters .col {
-  padding-left: 0;
-  padding-right: 0;
-}
-.container .col {
-  padding-left: 15px;
-  padding-right: 15px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-ul {
-  padding-inline-start: 0 !important;
-  padding-inline-end: 0 !important;
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
-}
-
-.loader {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #ccc;
-  border-top-color: #333; /* Customize spinner color */
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-.hidden {
-  display: none;
-}
-
-.active {
-  display: block;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #333 !important;
-  background: transparent;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  position: absolute;
-  top: 42% !important;
-  transform: translateY(-50%);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.8);
-  width: 35px;
-  height: 35px;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: rgb(255, 255, 255);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.section-wrapper {
-  padding: 60px 0;
-}
-@media (max-width: 1023px) {
-  .section-wrapper {
-    padding: 40px 0;
-  }
-}
-
-.section-title-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.section-title {
-  margin-bottom: 100px;
-  font-size: 40px;
-  font-weight: 600;
-  position: relative;
-  display: flex;
-  align-self: center;
-  color: #303336;
-  font-family: "Scotch Display", sans-serif;
-  letter-spacing: 3px;
-}
-@media (max-width: 1023px) {
-  .section-title {
-    margin-bottom: 60px;
-    font-size: 36px;
-  }
-}
-
-.section-title::after {
-  position: absolute;
-  content: "";
-  width: 50%;
-  height: 1.5px;
-  background-color: rgba(48, 51, 54, 0.6);
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -20px;
-}
-
-@media (max-width: 1023px) {
-  .hide-mobile {
-    display: none !important;
-  }
-}
-.template-page {
-  background-color: rgb(248, 244, 239);
-}
-.template-page .bread-crumb-wrapper {
-  padding-top: 40px;
-  margin-bottom: 20px;
-}
-
-.extra-header-height {
-  width: 100%;
-  height: 65px;
-}
-
-.overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
 }

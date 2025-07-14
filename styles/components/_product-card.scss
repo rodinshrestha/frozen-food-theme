@@ -83,11 +83,10 @@
       color: unset;
       text-decoration: none;
       .product-title {
-        font-weight: 600;
         font-size: 20px;
         letter-spacing: 1px;
-        font-weight: 500;
-        font-family: $font-family-brandon;
+        font-family: $font-family-brandon-med;
+        text-transform: uppercase;
       }
       &:hover {
         text-decoration: underline;
@@ -113,11 +112,13 @@
           align-self: flex-end;
           font-size: 16px;
           font-weight: 400;
+          letter-spacing: 1px;
         }
         .product-price {
           font-family: $font-family-brandon;
           font-size: 16px;
           font-weight: 400;
+          letter-spacing: 1px;
         }
 
         .original-price + .discounted-price {
@@ -125,6 +126,7 @@
           font-size: 18px;
           font-weight: 500;
           font-family: $font-family-brandon;
+          letter-spacing: 1px;
         }
       }
 

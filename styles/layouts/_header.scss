@@ -71,10 +71,11 @@
       align-items: center;
       gap: 20px;
       .navigation-wrappper {
+        font-family: $font-family-brandon;
         display: flex;
         list-style: none;
         gap: 15px;
-        font-weight: 400;
+        font-weight: 500;
         a {
           color: unset;
           text-decoration: none;

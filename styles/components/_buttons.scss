@@ -2,7 +2,7 @@
 @use "../abstracts/variables" as *;
 
 .btn {
-  border: 1px solid $light-primary-textColor;
+  border: 1px solid $light-white-color;
   color: $dark-primary-textColor;
   font-size: 14px;
   padding: 5px 25px;
@@ -51,8 +51,8 @@
 .btn-outline {
   color: $light-primary-textColor;
   &:hover {
-    background-color: $white-color;
-    border-color: $white-color;
+    background-color: $light-white-color;
+    border-color: $light-white-color;
     color: $dark-primary-textColor;
   }
 
@@ -69,4 +69,8 @@
 
 .btn-sm {
   padding: 8px 20px;
+}
+
+.btn-md {
+  min-width: 150px;
 }

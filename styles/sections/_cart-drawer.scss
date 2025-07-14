@@ -177,13 +177,10 @@
         }
       }
 
-      .link-button {
-        width: 100%;
+      .btn {
         color: $light-primary-textColor !important;
-        display: flex;
-        align-self: center;
-        justify-content: center;
         padding: 10px;
+        width: 100%;
         &.disable {
           opacity: 0.5;
           cursor: not-allowed;
