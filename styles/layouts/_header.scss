@@ -38,6 +38,7 @@
         flex-direction: column;
         justify-content: space-between;
         transition: all 0.2s ease-in-out;
+        z-index: 100;
 
         span {
           height: 1px;

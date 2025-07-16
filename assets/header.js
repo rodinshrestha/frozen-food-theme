@@ -23,23 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300); // match the transition duration
   });
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        header.classList.add("sticky");
-        extraHeight.classList.add("extra-header-height");
-      } else {
-        header.classList.remove("sticky");
-        extraHeight.classList.remove("extra-header-height");
-      }
-    },
-    {
-      root: null,
-      threshold: 0,
-    },
-  );
+  const updateStickyHeader = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const bannerHeight = promoBanner ? promoBanner.offsetHeight : 0;
 
-  observer.observe(promoBanner);
+    if (scrollTop > bannerHeight) {
+      header.classList.add("sticky");
+      extraHeight.classList.add("extra-header-height");
+    } else {
+      header.classList.remove("sticky");
+      extraHeight.classList.remove("extra-header-height");
+    }
+  };
+
+  // Use passive scroll listener for better mobile performance
+  window.addEventListener("scroll", updateStickyHeader, { passive: true });
 
   hamburger.addEventListener("click", function () {
     const mobileMenu = document.getElementById("mobile-menu-drawer");

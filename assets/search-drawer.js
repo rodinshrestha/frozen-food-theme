@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .finally(() => {
           searchDrawer.style.backgroundColor = "#fff";
           searchDrawer.style.boxShadow = "rgba(48, 51, 54, 1.16) 0px 1px 3px";
+          searchInputField.blur();
         });
     }, 300); // debounce delay in ms
   });
