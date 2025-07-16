@@ -25,6 +25,7 @@
 
       @include responsive(tablet) {
         flex: 0 1 100% !important;
+        height: 85vh !important;
       }
 
       .two-column-image {
@@ -33,6 +34,9 @@
         height: 100%;
         z-index: -1;
         object-fit: cover;
+        @include responsive(tablet) {
+          transform: unset !important;
+        }
       }
 
       .text-content-wrapper {
@@ -49,6 +53,7 @@
         z-index: 2;
         @include responsive(tablet) {
           opacity: 1 !important;
+          transform: translate(-50%, -50%) !important;
         }
 
         .content-title {
@@ -61,6 +66,10 @@
           font-size: 40px;
           font-family: $font-family-scotch;
           text-align: center;
+
+          @include responsive(tablet) {
+            line-height: 52px;
+          }
         }
       }
     }

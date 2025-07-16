@@ -110,12 +110,19 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        @include responsive(tablet) {
+          align-items: center;
+          justify-content: center;
+        }
       }
 
       .social-icons-wrapper {
         display: flex;
         gap: 15px;
         align-items: center;
+        @include responsive(tablet) {
+          justify-content: center;
+        }
 
         .social-icon-img {
           width: 24px;
@@ -192,6 +199,10 @@
     color: $light-secondary-textColor;
     font-size: 14px;
     letter-spacing: 1px;
+
+    @include responsive(tablet) {
+      margin-top: 30px;
+    }
   }
 }
 

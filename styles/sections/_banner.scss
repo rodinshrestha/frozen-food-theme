@@ -70,6 +70,9 @@
         font-family: $font-family-scotch;
         margin-bottom: 20px;
         text-align: center;
+        @include responsive(tablet) {
+          line-height: 52px;
+        }
       }
     }
   }

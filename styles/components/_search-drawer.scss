@@ -11,8 +11,17 @@
   z-index: 30;
   background-color: rgba(242, 242, 242, 0.95);
   transition: height 0.4s ease-in-out;
+  overflow-y: auto;
+
   &.active {
     height: 100vh;
+
+    .search-drawer-input-field-wrapper {
+      margin-top: 80px;
+      transition: opacity 0.2s linear;
+
+      opacity: 1 !important;
+    }
   }
 
   .search-drawer-close-icon {
@@ -26,48 +35,105 @@
     font-size: 1.24;
   }
 
-  .search-drawer-content {
+  .container {
     height: 100%;
-    width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-  }
 
-  .search-drawer-input-field-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    .search-drawer-input-field-group {
-      border-bottom: 1px solid $dark-color;
-      width: 50%;
-      display: flex;
-      padding: 10px 10px 5px 10px;
-      gap: 10px;
+    .row {
+      height: 100%;
 
-      .search-field-input {
-        outline: none;
-        border: none;
-        width: 100%;
-        background-color: transparent;
-        font-size: 1.1rem;
-        text-align: center;
-      }
-    }
-  }
+      .col {
+        height: 100%;
 
-  .search-product-result-list {
-    margin-top: 40px;
-    height: 100%;
-    overflow: auto;
+        .search-drawer-content {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 60px;
+          flex-wrap: wrap;
 
-    .search-list-loader {
-      top: 30%;
-      &.active {
-        display: block;
+          .search-drawer-input-field-wrapper {
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            @include responsive(tablet) {
+              width: 100%;
+            }
+            .search-drawer-input-field-group {
+              border-bottom: 1px solid $dark-color;
+              width: 50%;
+              display: flex;
+              padding: 10px 10px 5px 10px;
+              gap: 10px;
+              @include responsive(tablet) {
+                width: 100%;
+              }
+
+              .search-drawer-icon {
+                @include responsive(tablet) {
+                  height: 20px;
+                  width: 20px;
+                }
+              }
+
+              .search-field-input {
+                outline: none;
+                border: none;
+                width: 100%;
+                background-color: transparent;
+                font-size: 1.1rem;
+                text-align: center;
+
+                @include responsive(tablet) {
+                  font-size: 14px;
+                  text-align: left;
+                }
+              }
+            }
+          }
+          .search-product-result-wrapper {
+            .search-product-list {
+              display: flex;
+              gap: 40px 20px;
+              flex-wrap: wrap;
+              height: 100%;
+              justify-content: center;
+
+              .featured-product-inner-wrapper {
+                flex: 1 1 20%;
+                height: unset;
+                max-width: 439px;
+
+                @include responsive(tablet) {
+                  flex: 1 1 100%;
+                }
+              }
+
+              @include responsive(tablet) {
+                flex-direction: column;
+              }
+
+              .search-list-loader {
+                top: 30%;
+                &.active {
+                  display: block;
+                }
+              }
+
+              .no-product-found {
+                text-align: center;
+              }
+            }
+
+            .total-product-count {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 40px 0 30px 0;
+              font-size: 20px;
+              font-family: $font-family-brandon;
+            }
+          }
+        }
       }
     }
   }

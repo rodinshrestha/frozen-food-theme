@@ -2,7 +2,6 @@ async function renderProductCard(handle) {
   return fetch(`/products/${handle}?view=card`)
     .then((res) => res.text())
     .then((html) => {
-      console.log(html);
       const container = document.createElement("div");
       container.innerHTML = html;
       return container;
@@ -22,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInputField = document.getElementById("search-field-input");
   const searchResults = document.getElementById("search-product-list");
   const searchLoader = document.getElementById("search-loader");
+  const totalProductCount = searchDrawer.querySelector(
+    "#searched-product-total-count",
+  );
 
   const whenSearchDrawerClose = () => {
     searchDrawer.classList.remove("active");
@@ -75,10 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
       searchDrawerIcon.height = "26";
       searchResults.innerHTML = "";
       searchInputField.value = "";
+      totalProductCount.innerHTML = "";
       searchInputField.focus();
       searchDrawer.classList.add("active");
     } else {
       //close
+      totalProductCount.innerHTML = "";
       whenSearchDrawerClose();
     }
   });
@@ -93,15 +97,17 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInputField.addEventListener("input", () => {
     toggleLoading(true);
     clearTimeout(debounceTimeout);
+    searchResults.innerHTML = "";
+    totalProductCount.innerHTML = "";
+
     debounceTimeout = setTimeout(() => {
       const query = searchInputField.value.trim();
 
-      if (query.length < 2) {
+      if (query.length < 1) {
         searchInputField.innerHTML = "";
+        toggleLoading(false);
         return;
       }
-
-      searchResults.innerHTML = "";
 
       fetch(
         `/search/suggest.json?q=${encodeURIComponent(query)}&resources[type]=product`,
@@ -111,21 +117,23 @@ document.addEventListener("DOMContentLoaded", () => {
           const products = data.resources.results.products;
 
           if (products.length === 0) {
-            searchResults.innerHTML = "<p>No results found.</p>";
+            toggleLoading(false);
+            searchResults.innerHTML =
+              "<p class='no-product-found'>No product found.</p>";
             return;
           }
 
           products.forEach((product) => {
             renderProductCard(product.handle).then((card) => {
-              const divElement = document.createElement("div");
-              divElement.classList.add("col-3");
-              divElement.appendChild(card.firstElementChild);
-              searchResults.appendChild(divElement);
-
+              searchResults.appendChild(card.firstElementChild);
               // Initialize modal functionality for the newly added product card
               initializeModalsForSearchResults();
             });
           });
+
+          setTimeout(() => {
+            totalProductCount.innerHTML = `SHOWING ${products.length}  /  ${products.length}`;
+          }, 500);
           toggleLoading(false);
         })
         .catch((err) => {
