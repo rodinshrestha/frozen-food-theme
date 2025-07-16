@@ -13,66 +13,73 @@
       "type": "all-products-main",
       "settings": {}
     },
-    "banner_qitkML": {
-      "type": "banner",
-      "name": "Banner",
-      "settings": {
-        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
-        "banner-height": "medium",
-        "banner-parallax": true,
-        "feature-banner-title": "Explore Our All Products",
-        "feature-banner-subtitle": "Dive into our full range of frozen delights — from savory meals to tasty sides, everything you need in one place.",
-        "button-text": "",
-        "button-link": "",
-        "row_content_align": "center",
-        "vertical_content_align": "middle",
-        "content_width": "large",
-        "text_alignment": "center",
-        "overlay-opacity": 0.5
-      }
-    },
     "product_list_dLewcC": {
       "type": "product-list",
       "name": "Product List",
       "settings": {
+        "dark_mode": false,
+        "product_slider": true,
         "collection": "home-page-product",
-        "section-title": "Explore our Sauce",
-        "product_slider": true
+        "section-title": "Explore our Sauce"
       }
     },
     "product_list_etWtbn": {
       "type": "product-list",
       "name": "Product List",
       "settings": {
+        "dark_mode": false,
+        "product_slider": true,
         "collection": "bundle-list",
-        "section-title": "Explore Our Bundles",
-        "product_slider": true
+        "section-title": "Explore Our Bundles"
+      }
+    },
+    "product_list_rXRcGx": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "dark_mode": false,
+        "product_slider": true,
+        "collection": "ready-to-eat",
+        "section-title": "Frozen Foods"
+      }
+    },
+    "banner_qitkML": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
+        "feature-banner-title": "Explore Our All Products",
+        "feature-banner-subtitle": "Dive into our full range of frozen delights — from savory meals to tasty sides, everything you need in one place.",
+        "button-text": "",
+        "button-link": "",
+        "banner-overlay": true,
+        "overlay-opacity": 0.5
       }
     },
     "banner_ixNB6L": {
       "type": "banner",
       "name": "Banner",
       "settings": {
-        "banner-image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
         "banner-height": "small",
         "banner-parallax": true,
+        "banner-image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
         "feature-banner-title": "Explore Our Digital Products",
         "feature-banner-subtitle": "Browse our range of digital offerings — fast, flexible, and designed to enhance your experience with instant access and easy delivery.",
         "button-text": "Shop Now",
         "button-link": "/pages/gift-card",
-        "row_content_align": "center",
-        "vertical_content_align": "middle",
-        "content_width": "large",
-        "text_alignment": "center",
+        "banner-overlay": true,
         "overlay-opacity": 0.3
       }
     }
   },
   "order": [
     "main",
-    "banner_qitkML",
     "product_list_dLewcC",
     "product_list_etWtbn",
+    "product_list_rXRcGx",
+    "banner_qitkML",
     "banner_ixNB6L"
   ]
 }
