@@ -1,12 +1,6 @@
 <html>
   <head>
     {{ content_for_header }}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet"
-    >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     {{ 'main.css' | asset_url | stylesheet_tag }}
@@ -20,12 +14,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     >
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body id="body">
-    <script src="{{ 'header.js' | asset_url }}" async></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
@@ -43,10 +35,13 @@
     <main id="main" role="main" class="{% unless template == 'index' %}template-page{% endunless %}">
       {% section 'slider-banner' %}
       {{ content_for_layout }}
+
+      <div style="height: 200vh;"></div>
     </main>
     {% section 'footer' %}
 
-    <script src="{{ 'utils.js' | asset_url }}" defer></script>
+    <script src="{{ 'utils.js' | asset_url }}" async></script>
+    <script src="{{ 'header.js' | asset_url }}" defer></script>
     <script src="{{ 'product-image-gallery.js' | asset_url }}" defer></script>
     <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
     <script src="{{ 'wishlist-drawer.js' | asset_url }}" defer></script>
