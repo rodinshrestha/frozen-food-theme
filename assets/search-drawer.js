@@ -113,9 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
         `/search/suggest.json?q=${encodeURIComponent(query)}&resources[type]=product`,
       )
         .then(async (res) => await window.handleFetchResponse(res))
-        .then((data) => {
-          const products = data.resources.results.products;
-
+        .then((data) => data.resources.results.products)
+        .then((products) => {
           if (products.length === 0) {
             toggleLoading(false);
             searchResults.innerHTML =
@@ -123,18 +122,17 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
           }
 
-          products.forEach((product) => {
-            renderProductCard(product.handle).then((card) => {
-              searchResults.appendChild(card.firstElementChild);
-              // Initialize modal functionality for the newly added product card
-              initializeModalsForSearchResults();
-            });
+          Promise.all(
+            products.map((product) =>
+              renderProductCard(product.handle).then((card) => {
+                searchResults.appendChild(card.firstElementChild);
+                initializeModalsForSearchResults();
+              }),
+            ),
+          ).then(() => {
+            totalProductCount.innerHTML = `SHOWING ${products.length} / ${products.length}`;
+            toggleLoading(false);
           });
-
-          setTimeout(() => {
-            totalProductCount.innerHTML = `SHOWING ${products.length}  /  ${products.length}`;
-          }, 500);
-          toggleLoading(false);
         })
         .catch((err) => {
           console.error("Search failed:", err);

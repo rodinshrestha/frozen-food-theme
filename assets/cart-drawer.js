@@ -289,6 +289,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .finally(() => toggleCartLoading(false));
   });
 
+  // Close drawer with Esc key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && cartDrawer.classList.contains("active")) {
+      cartDrawer.classList.remove("active");
+      window.whenDrawerClose();
+    }
+  });
+
   // 4. Close cart drawer on outside click
   document.addEventListener("click", (e) => {
     if (

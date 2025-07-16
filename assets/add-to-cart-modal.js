@@ -32,6 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Close modal on ESC key press
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const openModal = document.querySelector(
+        ".add-to-cart-modal-wrapper[style*='display: flex']",
+      );
+      if (openModal) {
+        openModal.style.display = "none";
+        window.whenDrawerClose();
+      }
+    }
+  });
+
   // Use event delegation for close modal buttons
   document.addEventListener("click", (e) => {
     if (e.target.closest(".close-modal-btn")) {
