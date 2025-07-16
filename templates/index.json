@@ -12,16 +12,6 @@
     "slider_banner_LAqdEm": {
       "type": "slider-banner",
       "blocks": {
-        "slide_c6NtNe": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/banner.webp",
-            "title": "A Taste of Nepal",
-            "subtitle": "Unwrap Nepal’s flavor",
-            "button_text": "EXPLORE",
-            "button_link": ""
-          }
-        },
         "slide_kR8XMi": {
           "type": "slide",
           "settings": {
@@ -43,7 +33,7 @@
           }
         }
       },
-      "block_order": ["slide_c6NtNe", "slide_kR8XMi", "slide_qQi3xx"],
+      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },
