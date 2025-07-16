@@ -1491,9 +1491,9 @@ ul {
   align-items: center;
   z-index: 10;
   position: absolute;
-  top: 50%;
+  top: 43%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   width: 100%;
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-title {
@@ -2223,6 +2223,8 @@ ul {
   position: relative;
   overflow: hidden;
   flex-wrap: wrap;
+  height: 85vh;
+  width: 100%;
 }
 .two-column-image-section .two-column-image-wrapper.gap {
   gap: 20px;
@@ -2233,14 +2235,12 @@ ul {
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper {
   flex: 0 1 50%;
-  height: 85vh;
   width: 100%;
   position: relative;
 }
 @media (max-width: 1023px) {
   .two-column-image-section .two-column-image-wrapper .image-wrapper {
     flex: 0 1 100% !important;
-    height: 85vh !important;
   }
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .two-column-image {
@@ -2250,16 +2250,11 @@ ul {
   z-index: -1;
   object-fit: cover;
 }
-@media (max-width: 1023px) {
-  .two-column-image-section .two-column-image-wrapper .image-wrapper .two-column-image {
-    transform: unset !important;
-  }
-}
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   color: #fff;
   font-size: 36px;
   display: flex;

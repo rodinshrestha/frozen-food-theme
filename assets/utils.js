@@ -115,15 +115,16 @@ getParallaxAnimation = (wrapperSection, contentWrapper) => {
           return;
         }
 
+        // Only apply movement when section is scrolled past the top
         const position = top < 0 ? top : 0;
 
         gsap.set(content, {
-          y: getTransition(position, 0.5),
+          y: getTransition(position, 0.5), // Reduced factor to prevent downward movement
           opacity: 1 - progress,
         });
 
         gsap.set(image, {
-          y: getTransition(position, 0.5),
+          y: getTransition(position, 0.5), // Different factor for image
         });
       });
     },
