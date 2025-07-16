@@ -35,12 +35,10 @@
     <main id="main" role="main" class="{% unless template == 'index' %}template-page{% endunless %}">
       {% section 'slider-banner' %}
       {{ content_for_layout }}
-
-      <div style="height: 200vh;"></div>
     </main>
     {% section 'footer' %}
 
-    <script src="{{ 'utils.js' | asset_url }}" async></script>
+    <script src="{{ 'utils.js' | asset_url }}" defer></script>
     <script src="{{ 'header.js' | asset_url }}" defer></script>
     <script src="{{ 'product-image-gallery.js' | asset_url }}" defer></script>
     <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>

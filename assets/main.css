@@ -316,6 +316,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 20px;
+  z-index: 100;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper {
   font-family: "Brandon Grotesque", "Helvetica Neue";
