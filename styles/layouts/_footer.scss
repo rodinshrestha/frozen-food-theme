@@ -64,6 +64,7 @@
 
       @include responsive(tablet) {
         width: 100%;
+        flex-wrap: wrap;
       }
 
       .contact-email {

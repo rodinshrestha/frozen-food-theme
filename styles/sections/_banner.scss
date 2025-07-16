@@ -2,11 +2,6 @@
 @use "../abstracts/variables" as *;
 
 .banner-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   &.banner-large {
     height: 1110px;
   }
@@ -57,7 +52,7 @@
       width: 100%;
 
       .banner-title {
-        font-size: 12px;
+        font-size: 18px;
         font-family: $font-family-brandon;
         color: $light-primary-textColor;
         margin-bottom: 10px;
@@ -70,8 +65,10 @@
         font-family: $font-family-scotch;
         margin-bottom: 20px;
         text-align: center;
+
         @include responsive(tablet) {
-          line-height: 52px;
+          line-height: 46px;
+          font-size: 32px;
         }
       }
     }

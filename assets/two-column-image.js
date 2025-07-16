@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let parallaxScrollTrigger = null;
 
   const animationInit = () => {
-    console.log(isMobile(), parallaxScrollTrigger, "@@@");
-
     if (parallaxScrollTrigger) {
       parallaxScrollTrigger.kill();
       parallaxScrollTrigger = null;

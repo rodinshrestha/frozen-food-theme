@@ -16,9 +16,9 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
-            "title": "Taste of the Himalayas",
-            "subtitle": "Handcrafted with Timeless Recipes",
-            "button_text": "EXPLORE",
+            "title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States ",
+            "subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious proiducts!",
+            "button_text": "SHOP NOW",
             "button_link": ""
           }
         },
@@ -26,9 +26,9 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
-            "title": "Momo Sauce Collection",
-            "subtitle": "Made to Complement Every Bite",
-            "button_text": "EXPLORE",
+            "title": "Bringing the Rich Flavors of the Mountains",
+            "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Taste of the Mountains..",
+            "button_text": "SHOP NOW",
             "button_link": "/pages"
           }
         }
@@ -55,12 +55,12 @@
         "image-one": "shopify://shop_images/1_35efc409-3641-421c-a235-9c54eca0840c.png",
         "title-one": "Non Veg",
         "helper_text_one": "Sauce Collection",
-        "button-one": "Explore",
+        "button-one": "EXPLORE",
         "button-link-one": "#",
         "image-two": "shopify://shop_images/2_01a4801d-018e-43ed-b50f-14ac4d872ac5.png",
         "title-two": "Veg",
         "helper_text_two": "Non Veg Collection",
-        "button-two": "Explore",
+        "button-two": "EXPLORE",
         "button-link-two": "#"
       }
     },

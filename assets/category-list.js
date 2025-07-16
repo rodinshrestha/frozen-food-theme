@@ -24,12 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     effect: "slide", // Or "fade"
 
     breakpoints: {
-      0: { slidesPerView: 1 },
-      616: { slidesPerView: 1 },
-      871: { slidesPerView: 1 },
-      884: { slidesPerView: 3 },
-      1020: { slidesPerView: 3.5 },
-      1200: { slidesPerView: 4 },
+      420: { slidesPerView: 1 },
+      600: { slidesPerView: 1.5 },
+      871: { slidesPerView: 2 },
+      884: { slidesPerView: 2.5 },
+      1020: { slidesPerView: 3 },
+      1200: { slidesPerView: 3.5 },
+      1300: { slidesPerView: 4 },
     },
   });
 });

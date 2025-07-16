@@ -82,18 +82,26 @@
               transform 0.8s linear;
             margin-bottom: 30px;
 
+            @include responsive(tablet) {
+              gap: 20px;
+            }
+
             .slider-banner-title {
-              font-size: 12px;
+              font-size: 18px;
               font-weight: 400;
               letter-spacing: 1px;
               color: $light-primary-textColor;
               text-align: center;
               font-family: $font-family-brandon;
+
+              @include responsive(tablet) {
+                line-height: 28px;
+              }
             }
 
             .slider-banner-subtitle {
               font-size: 40px;
-              line-height: 42px;
+              line-height: 52px;
               margin: 0;
               color: $light-primary-textColor;
               text-align: center;
@@ -101,7 +109,8 @@
               font-family: $font-family-scotch;
 
               @include responsive(tablet) {
-                line-height: 52px;
+                line-height: 46px;
+                font-size: 32px;
               }
             }
             .down-arrow-img {

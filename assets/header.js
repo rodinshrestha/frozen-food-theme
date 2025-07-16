@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
   const promoBanner = document.getElementById("promotional-banner");
   const extraHeight = document.getElementById("extra-header-height");
+  const hamburger = document.getElementById("hamburger");
 
   // Opens the header sub menu
   subMenuWrapper.addEventListener("mouseenter", () => {
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(promoBanner);
 
-  document.getElementById("hamburger").addEventListener("click", function () {
+  hamburger.addEventListener("click", function () {
     const mobileMenu = document.getElementById("mobile-menu-drawer");
     const headerWrapper = document.getElementById("header");
 

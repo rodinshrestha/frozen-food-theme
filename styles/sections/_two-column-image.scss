@@ -57,7 +57,7 @@
         }
 
         .content-title {
-          font-size: 14px;
+          font-size: 18px;
           font-family: $font-family-brandon;
           text-align: center;
         }
@@ -68,7 +68,8 @@
           text-align: center;
 
           @include responsive(tablet) {
-            line-height: 52px;
+            line-height: 46px;
+            font-size: 32px;
           }
         }
       }

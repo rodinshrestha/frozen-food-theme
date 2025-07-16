@@ -5,7 +5,7 @@
   height: 65px;
   width: 100vw;
   background-color: $light-bgColor;
-  transition: all 0.3s ease-in;
+  transition: top 0.3s ease-in;
   z-index: 25;
   left: 0;
   &.sticky {
@@ -82,7 +82,7 @@
         }
         .navigation-list {
           cursor: pointer;
-          transition: all 0.2s ease-in;
+          // transition: all 0.2s ease-in;
           font-family: $font-family-brandon;
           font-weight: 500;
           position: relative;
