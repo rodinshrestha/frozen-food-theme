@@ -1,12 +1,19 @@
 {% assign banner_height = section.settings['banner-height'] | default: 'large' %}
+{% capture columnwidth %}
+  {% if section.settings.full_width %}fluid{% endif %}
+{% endcapture %}
+
+{% capture rowwidth %}
+  {% if section.settings.full_width %}no-gutters{% endif %}
+{% endcapture %}
 
 <section
   id="banner-{{ section.id }}"
   class="banner-section banner-{{ banner_height }} section-wrapper"
   data-animation="{{ section.settings['banner-parallax'] }}"
 >
-  <div class="container">
-    <div class="row">
+  <div class="container {{ columnwidth }}">
+    <div class="row {{ columnwidth }}">
       <div class="col">
         <div class="banner-wrapper">
           {% if section.settings['banner-overlay'] %}
@@ -76,6 +83,17 @@
 {
   "name": "Feature Banner",
   "settings": [
+    {
+      "type": "header",
+      "content": "Banner Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": false
+    },
+
     {
       "type": "header",
       "content": "Banner Height"

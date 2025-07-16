@@ -85,7 +85,7 @@ window.handleFetchResponse = async (res) => {
   return data;
 };
 
-isMobile = () => document.documentElement.clientWidth <= 768;
+isMobile = () => document.documentElement.clientWidth <= 1024;
 
 getTransition = (position, factor) => position * factor * -1;
 
@@ -95,7 +95,7 @@ getParallaxAnimation = (wrapperSection, contentWrapper) => {
     return;
   }
 
-  ScrollTrigger.create({
+  return ScrollTrigger.create({
     trigger: wrapperSection,
     start: "top top",
     end: "bottom top",

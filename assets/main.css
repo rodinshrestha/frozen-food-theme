@@ -2159,6 +2159,11 @@ ul {
   align-items: center;
   z-index: 2;
 }
+@media (max-width: 1023px) {
+  .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper {
+    opacity: 1 !important;
+  }
+}
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-title {
   font-size: 14px;
   font-family: "Brandon Grotesque", "Helvetica Neue";

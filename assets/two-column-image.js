@@ -5,8 +5,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const animation = section.dataset.animation;
 
-  if (animation === "true" && !isMobile()) {
-    const contentWrapper = section.querySelectorAll(".image-wrapper");
-    getParallaxAnimation(section, contentWrapper);
-  }
+  let parallaxScrollTrigger = null;
+
+  const animationInit = () => {
+    console.log(isMobile(), parallaxScrollTrigger, "@@@");
+
+    if (parallaxScrollTrigger) {
+      parallaxScrollTrigger.kill();
+      parallaxScrollTrigger = null;
+    }
+
+    // Recreate only if enabled and not in mobile
+    if (animation === "true" && !isMobile()) {
+      const contentWrapper = section.querySelectorAll(".image-wrapper");
+      parallaxScrollTrigger = getParallaxAnimation(section, contentWrapper);
+    }
+  };
+
+  animationInit();
+  window.addEventListener("resize", animationInit);
 });
