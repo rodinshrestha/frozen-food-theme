@@ -8,6 +8,8 @@ async function renderProductCard(handle) {
     });
 }
 
+const searchDrawerBgColor = "rgba(242, 242, 242, 0.95)";
+
 // Function to trigger modal initialization for newly added elements
 function initializeModalsForSearchResults() {
   // Trigger a custom event that the add-to-cart-modal.js can listen for
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Clear search results and remove dynamically added modals
     searchResults.innerHTML = "";
+    searchDrawer.style.backgroundColor = searchDrawerBgColor;
     clearDynamicModals();
   };
 
@@ -105,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (query.length < 1) {
         searchInputField.innerHTML = "";
+        searchDrawer.style.backgroundColor = searchDrawerBgColor;
         toggleLoading(false);
         return;
       }
@@ -139,6 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
           window.showToast(err, "error");
           searchResults.innerHTML = "<p>Error loading search results.</p>";
           toggleLoading(false);
+        })
+        .finally(() => {
+          searchDrawer.style.backgroundColor = "#fff";
+          searchDrawer.style.boxShadow = "rgba(48, 51, 54, 1.16) 0px 1px 3px";
         });
     }, 300); // debounce delay in ms
   });
