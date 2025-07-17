@@ -21,13 +21,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
+    height: 100%;
+    width: 100%;
 
     .mobile-menu-wrapper {
       display: none;
+      height: 50px;
+      align-items: center;
       width: 73px;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
 
       @include responsive(tablet) {
-        display: unset;
+        display: flex;
       }
       .ham-burger-menu {
         width: 22px;
@@ -49,8 +56,10 @@
             width: 15px;
           }
         }
+      }
 
-        &.active {
+      &.active {
+        .ham-burger-menu {
           span:nth-child(1) {
             transform: rotate(48deg) translate(7px, 6px);
           }
@@ -64,9 +73,6 @@
       }
     }
 
-    .menu-left-wrapper {
-      padding: 10px 0;
-    }
     .menu-right-wrapper {
       display: flex;
       align-items: center;

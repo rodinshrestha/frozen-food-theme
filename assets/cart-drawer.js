@@ -218,6 +218,7 @@ document.addEventListener("click", (e) => {
 
 // Handle checkbox logic when cart drawer is loaded
 document.addEventListener("cartDrawerLoaded", (e) => {
+  const cartDrawer = document.getElementById("cart-drawer");
   const checkbox = document.getElementById("agreement-checkbox");
   const closeCart = document.getElementById("close-cart");
   const cartItemList = document.querySelectorAll(".cart-item-details");
@@ -242,16 +243,12 @@ document.addEventListener("cartDrawerLoaded", (e) => {
     }
   });
 
-  if (!checkbox) return;
-
-  if (closeCart) {
-    closeCart.addEventListener("click", (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      document.getElementById("cart-drawer").classList.remove("active");
-      window.whenDrawerClose();
-    });
-  }
+  closeCart.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    cartDrawer.classList.remove("active");
+    window.whenDrawerClose();
+  });
 
   // Only bind once
   if (!checkbox.dataset.bound) {
@@ -266,6 +263,7 @@ document.addEventListener("cartDrawerLoaded", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   const cartDrawer = document.querySelector(".cart-drawer");
   const cartIcon = document.getElementById("cart-icon");
+  const closeCart = document.getElementById("close-cart");
 
   if (!cartDrawer || !cartIcon) return;
 
@@ -295,6 +293,14 @@ document.addEventListener("DOMContentLoaded", () => {
       cartDrawer.classList.remove("active");
       window.whenDrawerClose();
     }
+  });
+
+  // Close cart
+  closeCart.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    cartDrawer.classList.remove("active");
+    window.whenDrawerClose();
   });
 
   // 4. Close cart drawer on outside click
