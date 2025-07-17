@@ -8,15 +8,17 @@
           {% endcapture %}
           {% assign slide_id = 'slide-' | append: block.id %}
           <style>
+            #{{ slide_id }} {
+              background-image: url({{ block.settings.image | image_url }})
+            }
               @media (max-width: 1199px) {
               #{{ slide_id }} {
-                background-image: url('{{ mobilebgimage }}') !important;
+                background-image: url({{ mobilebgimage }}) !important;
               }
             }
           </style>
           <div
             class="slider-banner-wrapper swiper-slide"
-            style="background-image: url({{ block.settings.image | image_url }})"
             id="{{ slide_id }}"
           >
             <div class="container">
