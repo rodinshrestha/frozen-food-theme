@@ -33,20 +33,26 @@
           </div>
           <div class="menu-right-wrapper">
             <ul class="navigation-wrappper hide-mobile">
-              <li class="navigation-list active"><a href="{{ routes.root_url }}">HOME</a></li>
-              <li class="navigation-list sub-navigation-wrapper" id="sub-navigation-wrapper">
-                <a href="/pages/all-products">SHOP</a>
-                <i class="fa-solid fa-angle-down down-icon"></i>
+              {% for link in section.settings.main_menu.links %}
+                {% capture submenu %}
+                  {% if link.links.size > 0 %}sub-navigation-wrapper{% endif %}
+                {% endcapture %}
 
-                <ul class="sub-menu-wrapper" id="sub-menu-wrapper">
-                  <li class="sub-menu-list"><a href="/pages/momo-sauce"> Momo Sauce</a></li>
-                  <li class="sub-menu-list"><a href="/pages/frozen-food"> Frozen Food</a></li>
-                  <li class="sub-menu-list"><a href="/pages/bundles"> Bundles</a></li>
-                  <li class="sub-menu-list"><a href="/pages/gift-card"> Gift Cards</a></li>
-                </ul>
-              </li>
-              <li class="navigation-list"><a href="/pages/about-us"> ABOUT US</a></li>
-              <li class="navigation-list"><a href="/pages/contact-us"> CONTACT US</a></li>
+                <li class="navigation-list {{ submenu }}" id="{{ submenu }}">
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+
+                  {% if link.links.size > 0 %}
+                    <i class="fa-solid fa-angle-down down-icon"></i>
+                    <ul class="sub-menu-wrapper" id="sub-menu-wrapper">
+                      {% for child_link in link.links %}
+                        <li class="sub-menu-list">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
             </ul>
             <div class="menu-icon-wrapper">
               <!-- Account -->

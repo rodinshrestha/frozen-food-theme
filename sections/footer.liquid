@@ -45,7 +45,12 @@
         <div class="footer-link-wrapper">
           <div class="footer-social-media-wrapper">
             <div class="footer-logo-wrapper">
-              <img src="{{ 'logo.png' | asset_url}}" width="200" height="146" alt="footer-logo">
+              <img
+                src="{{ section.settings.footer_logo_image | image_url }}"
+                width="200"
+                height="146"
+                alt="footer-logo"
+              >
             </div>
             <div class="social-icons-wrapper">
               <a href="{{ section.settings.facebook_url }}" title="Facebook" target="_blank">
