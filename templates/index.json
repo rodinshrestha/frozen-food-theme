@@ -15,8 +15,9 @@
         "slide_kR8XMi": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
-            "title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States ",
+            "content_position": "top",
+            "image": "shopify://shop_images/banner.webp",
+            "title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
             "subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious products!",
             "button_text": "SHOP NOW",
             "button_link": ""
@@ -25,6 +26,7 @@
         "slide_qQi3xx": {
           "type": "slide",
           "settings": {
+            "content_position": "top",
             "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
             "title": "Bringing the Rich Flavors of the Mountains",
             "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Taste of the Mountains..",
@@ -33,7 +35,10 @@
           }
         }
       },
-      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
+      "block_order": [
+        "slide_kR8XMi",
+        "slide_qQi3xx"
+      ],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -51,6 +56,9 @@
       "type": "two-column-image",
       "name": "Two Column Image",
       "settings": {
+        "full_width": true,
+        "gap_between": false,
+        "section_gap": false,
         "parallax-animation": true,
         "image-one": "shopify://shop_images/1_35efc409-3641-421c-a235-9c54eca0840c.png",
         "title-one": "Non Veg",
@@ -141,6 +149,7 @@
       "type": "banner",
       "name": "Banner",
       "settings": {
+        "full_width": false,
         "banner-height": "large",
         "banner-parallax": true,
         "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
