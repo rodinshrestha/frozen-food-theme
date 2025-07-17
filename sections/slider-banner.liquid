@@ -10,28 +10,30 @@
             <div class="container">
               <div class="row">
                 <div class="col">
-                  <div class="slider-banner-content">
-                    {% if block.settings.title != '' %}
-                      <h1 class="slider-banner-title">{{ block.settings.title }}</h1>
-                    {% endif %}
+                  <div class="slider-banner-content-wrapper content-{{ block.settings.content_position }}">
+                    <div class="slider-banner-content">
+                      {% if block.settings.title != '' %}
+                        <h1 class="slider-banner-title">{{ block.settings.title }}</h1>
+                      {% endif %}
 
-                    {% if block.settings.subtitle != '' %}
-                      <p class="slider-banner-subtitle">{{ block.settings.subtitle }}</p>
-                    {% endif %}
+                      {% if block.settings.subtitle != '' %}
+                        <p class="slider-banner-subtitle">{{ block.settings.subtitle }}</p>
+                      {% endif %}
 
-                    {% if block.settings.url != '' %}
-                      <a class="btn btn-outline btn-md" href="{{ block.settings.url }}">
-                        {{ block.settings.button_text }}
-                      </a>
-                    {% endif %}
+                      {% if block.settings.url != '' %}
+                        <a class="btn btn-outline btn-md" href="{{ block.settings.url }}">
+                          {{ block.settings.button_text }}
+                        </a>
+                      {% endif %}
 
-                    <img
-                      src="{{ 'down-arrow.png' | asset_url }}"
-                      width="24"
-                      height="24"
-                      class="down-arrow-img"
-                      id="banner-down-icon"
-                    >
+                      <img
+                        src="{{ 'down-arrow.png' | asset_url }}"
+                        width="24"
+                        height="24"
+                        class="down-arrow-img"
+                        id="banner-down-icon"
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -66,6 +68,38 @@
       "type": "slide",
       "name": "Slide",
       "settings": [
+        {
+          "type": "header",
+          "content": "Content Position"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content Position",
+          "options": [
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            },
+            {
+              "value": "top",
+              "label": "Top"
+            }
+          ],
+          "default": "top"
+        },
+        {
+          "type": "header",
+          "content": "Content Details"
+        },
         {
           "id": "image",
           "type": "image_picker",

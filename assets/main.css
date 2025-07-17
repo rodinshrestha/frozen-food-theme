@@ -2628,6 +2628,8 @@ ul {
   width: 100%;
   position: relative;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .slider-banner-section .slider-banner-wrapper::after {
   content: "";
@@ -2661,7 +2663,50 @@ ul {
 .slider-banner-section .slider-banner-wrapper .container .row .col {
   height: 100%;
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content {
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper {
+  height: 100%;
+  width: 100%;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-right {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-right .slider-banner-content {
+  width: 40%;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-right .slider-banner-content .slider-banner-title,
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-right .slider-banner-content .slider-banner-subtitle,
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-right .slider-banner-content .btn {
+  display: flex;
+  align-self: flex-start;
+  text-align: left;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-left {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-left .slider-banner-content {
+  width: 40%;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-left .slider-banner-content .slider-banner-title,
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-left .slider-banner-content .slider-banner-subtitle,
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-left .slider-banner-content .btn {
+  display: flex;
+  align-self: flex-start;
+  text-align: left;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-top {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper.content-top .slider-banner-content {
+  margin-top: 80px;
+  justify-content: flex-start;
+}
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -2675,11 +2720,11 @@ ul {
   margin-bottom: 30px;
 }
 @media (max-width: 1023px) {
-  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content {
+  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content {
     gap: 20px;
   }
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-title {
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .slider-banner-title {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -2688,11 +2733,11 @@ ul {
   font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 @media (max-width: 1023px) {
-  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-title {
+  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .slider-banner-title {
     line-height: 28px;
   }
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .slider-banner-subtitle {
   font-size: 40px;
   line-height: 52px;
   margin: 0;
@@ -2702,12 +2747,12 @@ ul {
   font-family: "Scotch Display", "Helvetica Neue";
 }
 @media (max-width: 1023px) {
-  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .slider-banner-subtitle {
+  .slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .slider-banner-subtitle {
     line-height: 46px;
     font-size: 32px;
   }
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .down-arrow-img {
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .down-arrow-img {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -2720,7 +2765,7 @@ ul {
   height: 28px;
   transition: background-color 0.2s linear;
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content .down-arrow-img:hover {
+.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .down-arrow-img:hover {
   background-color: rgba(242, 242, 242, 0.6);
   box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
 }
