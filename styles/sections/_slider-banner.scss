@@ -77,15 +77,32 @@
               justify-content: flex-end;
               align-content: flex-end;
 
+              @include responsive(tablet) {
+                justify-content: center;
+              }
+
               .slider-banner-content {
                 width: 40%;
 
                 .slider-banner-title,
                 .slider-banner-subtitle,
                 .btn {
-                  display: flex;
                   align-self: flex-start;
                   text-align: left;
+                }
+
+                @include responsive(tablet) {
+                  width: 100%;
+                  justify-content: flex-start;
+                  margin-top: 60px;
+
+                  .slider-banner-title,
+                  .slider-banner-subtitle,
+                  .btn {
+                    display: flex;
+                    align-self: center;
+                    text-align: center;
+                  }
                 }
               }
             }
@@ -113,8 +130,12 @@
               align-content: center;
 
               .slider-banner-content {
-                margin-top: 80px;
+                margin-top: 120px;
                 justify-content: flex-start;
+
+                @include responsive(tablet) {
+                  margin-top: 60px;
+                }
               }
             }
 
@@ -160,8 +181,8 @@
                 font-family: $font-family-scotch;
 
                 @include responsive(tablet) {
-                  line-height: 46px;
-                  font-size: 32px;
+                  font-size: 24px;
+                  line-height: 38px;
                 }
               }
               .down-arrow-img {
