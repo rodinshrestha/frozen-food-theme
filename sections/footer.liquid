@@ -43,6 +43,33 @@
     <div class="row">
       <div class="col">
         <div class="footer-link-wrapper">
+          {% for link in section.settings.footer_menu.links %}
+            <div class="footer-navigation-link-wrapper">
+              <div class="footer-title-wrapper">
+                <span>{{ link.title }}</span>
+
+                {% if link.links.size > 0 %}
+                  <img
+                    src="{{ 'right-arrow-white.png' | asset_url }}"
+                    alt="Up arrow"
+                    height="18"
+                    width="18"
+                    class="footer-link-icon"
+                  >
+                {% endif %}
+              </div>
+              {% if link.links.size > 0 %}
+                <div class="footer-link-content">
+                  {% for child_link in link.links %}
+                    <div class="footer-link">
+                      <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+
           <div class="footer-social-media-wrapper">
             <div class="footer-logo-wrapper">
               <img
@@ -81,63 +108,6 @@
                   height="24"
                 >
               </a>
-            </div>
-          </div>
-
-          <div class="footer-navigation-link-wrapper">
-            <div class="footer-title-wrapper">
-              <span>Our Service</span>
-              <img
-                src="{{ 'right-arrow-white.png' | asset_url }}"
-                alt="Up arrow"
-                height="18"
-                width="18"
-                class="footer-link-icon"
-              >
-            </div>
-            <div class="footer-link-content">
-              <div class="footer-link"><a href="#"> Momo Sauce </a></div>
-              <div class="footer-link"><a href="#">Frozen Food</a></div>
-              <div class="footer-link"><a href="#">Bundles</a></div>
-              <div class="footer-link"><a href="#">Gift Cards</a></div>
-            </div>
-          </div>
-
-          <div class="footer-navigation-link-wrapper">
-            <div class="footer-title-wrapper">
-              <span>Useful Links</span>
-              <img
-                src="{{ 'right-arrow-white.png' | asset_url }}"
-                alt="Up arrow"
-                height="18"
-                width="18"
-                class="footer-link-icon"
-              >
-            </div>
-            <div class="footer-link-content">
-              <div class="footer-link"><a href="#">Shop</a></div>
-              <div class="footer-link"><a href="/pages/about-us">About Us</a></div>
-              <div class="footer-link"><a href="/pages/contact-us">Contact Us</a></div>
-              <div class="footer-link"><a href="#">Login</a></div>
-            </div>
-          </div>
-
-          <div class="footer-navigation-link-wrapper">
-            <div class="footer-title-wrapper">
-              <span>Follow Us</span>
-              <img
-                src="{{ 'right-arrow-white.png' | asset_url }}"
-                alt="Up arrow"
-                height="18"
-                width="18"
-                class="footer-link-icon"
-              >
-            </div>
-            <div class="footer-link-content">
-              <div class="footer-link"><a href="#">Facebook</a></div>
-              <div class="footer-link"><a href="#">Instagram</a></div>
-              <div class="footer-link"><a href="#">Gmail</a></div>
-              <div class="footer-link"><a href="#">Become a member</a></div>
             </div>
           </div>
         </div>

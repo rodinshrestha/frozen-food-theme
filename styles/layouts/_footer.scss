@@ -91,9 +91,10 @@
   .footer-link-wrapper {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
 
     @include responsive(tablet) {
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: space-between;
       gap: 20px;
     }

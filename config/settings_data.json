@@ -42,7 +42,7 @@
         "settings": {
           "logo": "shopify://shop_images/logo_2.png",
           "main_menu": "main-menu",
-          "sub_menu": "sub-main-menu"
+          "sub_menu": ""
         }
       },
       "cart-drawer": {
@@ -57,11 +57,11 @@
           "subtitle": "At Sherpa Food, we believe great meals start with great ingredients — handled with care, flash-frozen at peak freshness, and delivered straight to your table. Our process preserves taste, texture, and nutrition, so you enjoy real, honest food anytime.",
           "btn_label": "Subscribe",
           "newletter_subtitle": "At Sherpa food we value your privacy, you can always unsubscribe.",
-          "footer_logo_image": "shopify://shop_images/logo_2.png",
+          "footer_logo_image": "shopify://shop_images/logo.avif",
           "facebook_url": "https://www.facebook.com/Sherpafoods/",
           "instagram_url": "https://www.instagram.com/sherpafoods/",
           "gmail_url": "mailto:sherpafoodsusa@gmail.com",
-          "footer_menu": ""
+          "footer_menu": "footer"
         }
       },
       "slider-banner": {

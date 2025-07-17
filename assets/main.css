@@ -486,10 +486,11 @@ ul {
 .footer-wrapper .footer-link-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
 }
 @media (max-width: 1023px) {
   .footer-wrapper .footer-link-wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
     gap: 20px;
   }
