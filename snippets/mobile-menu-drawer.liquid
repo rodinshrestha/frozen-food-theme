@@ -75,3 +75,17 @@
     <a href="#">Login </a>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const drawer = document.getElementById('mobile-menu-drawer');
+
+    // Listen for any <a> inside the drawer
+    drawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('active'); // Or whatever class you're using to show the drawer
+        window.whenDrawerClose();
+      });
+    });
+  });
+</script>

@@ -270,14 +270,21 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 0;
+  height: 100%;
+  width: 100%;
 }
 .header-wrapper .menu-wrapper .mobile-menu-wrapper {
   display: none;
+  height: 50px;
+  align-items: center;
   width: 73px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 @media (max-width: 1023px) {
   .header-wrapper .menu-wrapper .mobile-menu-wrapper {
-    display: unset;
+    display: flex;
   }
 }
 .header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu {
@@ -300,17 +307,14 @@ ul {
 .header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu span:nth-child(2) {
   width: 15px;
 }
-.header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu.active span:nth-child(1) {
+.header-wrapper .menu-wrapper .mobile-menu-wrapper.active .ham-burger-menu span:nth-child(1) {
   transform: rotate(48deg) translate(7px, 6px);
 }
-.header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu.active span:nth-child(2) {
+.header-wrapper .menu-wrapper .mobile-menu-wrapper.active .ham-burger-menu span:nth-child(2) {
   opacity: 0;
 }
-.header-wrapper .menu-wrapper .mobile-menu-wrapper .ham-burger-menu.active span:nth-child(3) {
+.header-wrapper .menu-wrapper .mobile-menu-wrapper.active .ham-burger-menu span:nth-child(3) {
   transform: rotate(-48deg) translate(6px, -5px);
-}
-.header-wrapper .menu-wrapper .menu-left-wrapper {
-  padding: 10px 0;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper {
   display: flex;
@@ -660,6 +664,7 @@ ul {
   background: none;
   border: none;
   cursor: pointer;
+  color: #303336;
 }
 @media (max-width: 1023px) {
   .add-to-cart-modal-wrapper .modal-content .close-modal-btn {
@@ -1556,6 +1561,7 @@ ul {
   cursor: pointer;
   position: relative;
   z-index: 10;
+  color: #303336;
 }
 .cart-drawer .cart-content-wrapper {
   overflow-y: auto;
@@ -1920,6 +1926,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   color: #fff;
   font-family: "Brandon Grotesque", "Helvetica Neue";
 }
