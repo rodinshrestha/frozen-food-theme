@@ -339,6 +339,9 @@ ul {
   font-weight: 500;
   position: relative;
 }
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list > a:hover {
+  color: #e4022e !important;
+}
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper {
   position: relative;
 }
@@ -398,6 +401,12 @@ ul {
   position: absolute;
   top: -10px;
   right: -10px;
+}
+
+#user-icon:hover,
+#search-drawer-icon:hover,
+#cart-icon:hover {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7492%) hue-rotate(-7deg) brightness(75%) contrast(119%);
 }
 
 .footer-wrapper {

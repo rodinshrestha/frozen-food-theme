@@ -38,7 +38,7 @@
                   {% if link.links.size > 0 %}sub-navigation-wrapper{% endif %}
                 {% endcapture %}
 
-                <li class="navigation-list {{ submenu }}" id="{{ submenu }}">
+                <li class="navigation-list {% if link.active %}active{% endif %} {{ submenu }}" id="{{ submenu }}">
                   <a href="{{ link.url }}">{{ link.title }}</a>
 
                   {% if link.links.size > 0 %}

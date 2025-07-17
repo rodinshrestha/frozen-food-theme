@@ -108,6 +108,9 @@
           //   }
           // }
         }
+        .navigation-list > a:hover {
+          color: $red-color !important;
+        }
 
         .sub-navigation-wrapper {
           position: relative;
@@ -177,4 +180,11 @@
       }
     }
   }
+}
+
+// Icon hover effect for user, search, and cart
+#user-icon:hover,
+#search-drawer-icon:hover,
+#cart-icon:hover {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7492%) hue-rotate(-7deg) brightness(75%) contrast(119%);
 }
