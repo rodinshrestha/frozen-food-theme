@@ -31,7 +31,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   box-sizing: border-box;
   font-family: "Brandon Grotesque", "Helvetica Neue";
   -moz-osx-font-smoothing: grayscale;
