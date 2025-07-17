@@ -43,33 +43,6 @@
     <div class="row">
       <div class="col">
         <div class="footer-link-wrapper">
-          {% for link in section.settings.footer_menu.links %}
-            <div class="footer-navigation-link-wrapper">
-              <div class="footer-title-wrapper">
-                <span>{{ link.title }}</span>
-
-                {% if link.links.size > 0 %}
-                  <img
-                    src="{{ 'right-arrow-white.png' | asset_url }}"
-                    alt="Up arrow"
-                    height="18"
-                    width="18"
-                    class="footer-link-icon"
-                  >
-                {% endif %}
-              </div>
-              {% if link.links.size > 0 %}
-                <div class="footer-link-content">
-                  {% for child_link in link.links %}
-                    <div class="footer-link">
-                      <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                    </div>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
-          {% endfor %}
-
           <div class="footer-social-media-wrapper">
             <div class="footer-logo-wrapper">
               <img
@@ -109,6 +82,35 @@
                 >
               </a>
             </div>
+          </div>
+
+          <div class="footer-navigation-content">
+            {% for link in section.settings.footer_menu.links %}
+              <div class="footer-navigation-link-wrapper">
+                <div class="footer-title-wrapper">
+                  <span>{{ link.title }}</span>
+
+                  {% if link.links.size > 0 %}
+                    <img
+                      src="{{ 'right-arrow-white.png' | asset_url }}"
+                      alt="Up arrow"
+                      height="18"
+                      width="18"
+                      class="footer-link-icon"
+                    >
+                  {% endif %}
+                </div>
+                {% if link.links.size > 0 %}
+                  <div class="footer-link-content">
+                    {% for child_link in link.links %}
+                      <div class="footer-link">
+                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
           </div>
         </div>
       </div>
