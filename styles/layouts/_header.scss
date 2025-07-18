@@ -95,6 +95,7 @@
           font-family: $font-family-brandon;
           font-weight: 500;
           position: relative;
+          text-transform: uppercase;
 
           // &.active {
           //   &::after {
@@ -137,6 +138,7 @@
               cursor: pointer;
               transition: all 0.2s ease-in;
               padding: 10px;
+              text-transform: uppercase;
               &:hover {
                 text-decoration: underline;
               }

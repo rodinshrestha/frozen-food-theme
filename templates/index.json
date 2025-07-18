@@ -66,7 +66,7 @@
           "type": "content_block",
           "settings": {
             "block_image": "shopify://shop_images/feat-promo-eat_800x_fbe1fb62-e3c8-4edd-8cea-5b2c50185cb4.webp",
-            "block_title": "You Cook... or Just Eat!",
+            "block_title": "You Cook or Just Eat!",
             "block_description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
           }
         }
@@ -117,7 +117,7 @@
           "settings": {
             "category_image": "shopify://shop_images/1.png",
             "title": "Momo Sauce",
-            "url": "/pages/product-all"
+            "url": "shopify://pages/momo-sauce"
           }
         },
         "text_slide_WF9Jnw": {
@@ -125,7 +125,7 @@
           "settings": {
             "category_image": "shopify://shop_images/3.png",
             "title": "Chicken Momo",
-            "url": "/pages/product-all"
+            "url": "shopify://pages/frozen-food"
           }
         },
         "text_slide_dngQeV": {
@@ -133,7 +133,7 @@
           "settings": {
             "category_image": "shopify://shop_images/4.png",
             "title": "Vegan Chowmein",
-            "url": "/pages/product-all"
+            "url": "shopify://pages/all-products"
           }
         },
         "text_slide_LtQzcz": {
@@ -141,7 +141,7 @@
           "settings": {
             "category_image": "shopify://shop_images/5.png",
             "title": "Beef Momo",
-            "url": "/pages/product-all"
+            "url": "shopify://pages/momo-sauce"
           }
         },
         "text_slide_jGKMyF": {
@@ -149,7 +149,7 @@
           "settings": {
             "category_image": "shopify://shop_images/2.png",
             "title": "Pork Momo",
-            "url": "/pages/product-all"
+            "url": "shopify://pages/gift-card"
           }
         },
         "text_slide_jGKMyZ": {
@@ -157,7 +157,7 @@
           "settings": {
             "category_image": "shopify://shop_images/3.png",
             "title": "Chicken Momo",
-            "url": "/pages/product-all"
+            "url": "shopify://products/product-5"
           }
         }
       },

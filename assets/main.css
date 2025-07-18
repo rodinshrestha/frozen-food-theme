@@ -338,6 +338,7 @@ ul {
   font-family: "Brandon Grotesque", "Helvetica Neue";
   font-weight: 500;
   position: relative;
+  text-transform: uppercase;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper {
   position: relative;
@@ -367,6 +368,7 @@ ul {
   cursor: pointer;
   transition: all 0.2s ease-in;
   padding: 10px;
+  text-transform: uppercase;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:hover {
   text-decoration: underline;
