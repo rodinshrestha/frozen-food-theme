@@ -20,7 +20,7 @@
             "title": "A gift of traditional Nepalese delicacy from a Himalayan state to the United States",
             "subtitle": "Unwrap the taste of Nepal with our delectable Momo, Momo Sauce, Chowmein, Fried Rice and many more delicious products!",
             "button_text": "SHOP NOW",
-            "button_link": ""
+            "button_link": "shopify://pages/frozen-food"
           }
         },
         "slide_qQi3xx": {
@@ -32,7 +32,7 @@
             "title": "Bringing the Rich Flavors of the Mountains",
             "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Taste of the Mountains..",
             "button_text": "SHOP NOW",
-            "button_link": "/pages"
+            "button_link": "shopify://pages/momo-sauce"
           }
         }
       },
@@ -157,7 +157,7 @@
         "feature-banner-title": "Hot Sauce",
         "feature-banner-subtitle": "Expore Our Hot Sauce",
         "button-text": "Explore",
-        "button-link": "",
+        "button-link": "shopify://pages/bundles",
         "banner-overlay": true,
         "overlay-opacity": 0.5
       }
