@@ -4,9 +4,12 @@
 .btn {
   border: 1px solid $light-white-color;
   color: $dark-primary-textColor;
+  padding-block: 0;
+  padding-inline: 0;
   font-size: 14px;
-  padding: 10px 25px;
-  transition: all 0.2s ease-in;
+  transition:
+    background-color 0.2s ease-in,
+    color 0.2s ease-in;
   border-radius: 6px;
   letter-spacing: 1px;
   text-decoration: none;
@@ -19,12 +22,20 @@
   background-color: transparent;
   outline: none;
   gap: 10px;
+  position: relative;
+
+  // Only activate when there loading class in parent element
+  .btn-loader {
+    display: none;
+  }
 
   &.disabled {
     cursor: not-allowed;
-    background-color: gray !important;
+    background-color: $gray-color !important;
     color: $light-primary-textColor !important;
-    border-color: gray !important;
+    border-color: $gray-color !important;
+    opacity: 0.5;
+
     span {
       pointer-events: none;
     }
@@ -36,6 +47,42 @@
     display: flex;
     align-self: center;
     justify-content: center;
+    padding: 10px 25px;
+  }
+
+  &.loading {
+    background-color: $gray-color;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    padding: 10px 25px;
+    border: 1px solid gray !important;
+
+    &:hover {
+      background-color: $gray-color !important;
+    }
+
+    span {
+      display: none;
+    }
+
+    .btn-loader {
+      display: block;
+      border: 2px solid #f3f3f3; /* Light grey */
+      border-top: 2px solid $dark-primary-textColor; /* Blue */
+      border-radius: 50%;
+      width: 19.5px;
+      height: 19.5px;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
@@ -45,7 +92,7 @@
 
   &.btn-red {
     background-color: $red-color;
-    border-color: $red-color;
+    border-color: $red-color !important;
     color: $light-primary-textColor;
 
     &:hover {

@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", (e) => {
     if (e.target.closest(".add-to-cart-btn")) {
       const button = e.target.closest(".add-to-cart-btn");
+      const btnWrapper = button.closest("#add-to-cart-btn-wrapper");
       const modal = button.closest(".add-to-cart-modal-wrapper");
       const variantId = button.dataset.variantId || modal?.dataset.variantId;
 
@@ -116,10 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Missing product variant.");
         return;
       }
-
+      btnWrapper.classList.add("loading");
       const qty =
         parseInt(modal.querySelector(".quantity-input").textContent) || 1;
-      button.innerHTML = "loading...";
 
       fetch("/cart/add.js", {
         method: "POST",
@@ -132,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(async (res) => await window.handleFetchResponse(res))
         .then(() => window.updateCartCount())
         .then(() => {
-          button.innerHTML = "Add to cart";
           modal.style.display = "none";
           window.whenDrawerClose();
           const productTitle = modal.querySelector("#add-cart-product-title");
@@ -141,6 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((err) => {
           window.showToast(err, "error");
           console.error(err);
+        })
+        .finally(() => {
+          btnWrapper.classList.remove("loading");
         });
     }
   });

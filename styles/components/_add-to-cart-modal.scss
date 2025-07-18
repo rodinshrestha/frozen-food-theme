@@ -179,6 +179,7 @@
 
             .btn {
               flex-grow: 1;
+              max-width: 165px;
             }
 
             @include responsive(tablet) {

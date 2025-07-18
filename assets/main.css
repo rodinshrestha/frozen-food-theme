@@ -811,6 +811,7 @@ ul {
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .btn {
   flex-grow: 1;
+  max-width: 165px;
 }
 @media (max-width: 1023px) {
   .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper .add-to-cart-btn-group .buy-now-btn {
@@ -821,9 +822,10 @@ ul {
 .btn {
   border: 1px solid rgba(242, 242, 242, 0.5);
   color: #303336;
+  padding-block: 0;
+  padding-inline: 0;
   font-size: 14px;
-  padding: 10px 25px;
-  transition: all 0.2s ease-in;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
   border-radius: 6px;
   letter-spacing: 1px;
   text-decoration: none;
@@ -836,12 +838,17 @@ ul {
   background-color: transparent;
   outline: none;
   gap: 10px;
+  position: relative;
+}
+.btn .btn-loader {
+  display: none;
 }
 .btn.disabled {
   cursor: not-allowed;
-  background-color: gray !important;
+  background-color: grey !important;
   color: #fff !important;
-  border-color: gray !important;
+  border-color: grey !important;
+  opacity: 0.5;
 }
 .btn.disabled span {
   pointer-events: none;
@@ -852,6 +859,37 @@ ul {
   display: flex;
   align-self: center;
   justify-content: center;
+  padding: 10px 25px;
+}
+.btn.loading {
+  background-color: grey;
+  border-color: grey !important;
+  cursor: not-allowed;
+  padding: 10px 25px;
+  border: 1px solid gray !important;
+}
+.btn.loading:hover {
+  background-color: grey !important;
+}
+.btn.loading span {
+  display: none;
+}
+.btn.loading .btn-loader {
+  display: block;
+  border: 2px solid #f3f3f3; /* Light grey */
+  border-top: 2px solid #303336; /* Blue */
+  border-radius: 50%;
+  width: 19.5px;
+  height: 19.5px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .btn-contained {
@@ -860,7 +898,7 @@ ul {
 }
 .btn-contained.btn-red {
   background-color: #e4022e;
-  border-color: #e4022e;
+  border-color: #e4022e !important;
   color: #fff;
 }
 .btn-contained.btn-red:hover {
