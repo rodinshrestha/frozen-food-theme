@@ -160,4 +160,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   }
+
+  const readMoreText = productDetails.querySelector("#product-read-more");
+
+  readMoreText.addEventListener("click", () => {
+    const section = document.querySelector("#product-description");
+    const headerOffset = 100; // adjust this based on your header height
+    const elementPosition = section.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  });
 });
