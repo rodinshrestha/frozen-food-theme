@@ -1550,6 +1550,7 @@ ul {
 .product-variation-wrapper .product-variation-content .variation-title {
   font-size: 1rem;
   font-weight: 500;
+  text-transform: capitalize;
 }
 .product-variation-wrapper .product-variation-content .variations-list-wrapper {
   display: flex;
