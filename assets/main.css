@@ -2584,7 +2584,7 @@ ul {
   transform: rotate(180deg);
 }
 .faq-section .faq-wrapper .faq-list-wrapper.active .faq-title-description {
-  max-height: 100px; /* large enough to fit content */
+  max-height: none;
 }
 .faq-section .faq-wrapper .faq-list-wrapper .faq-list-title {
   font-size: 1rem;
