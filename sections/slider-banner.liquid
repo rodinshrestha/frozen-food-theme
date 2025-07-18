@@ -36,7 +36,9 @@
 
                       {% if block.settings.url != '' %}
                         <a class="btn btn-outline btn-md" href="{{ block.settings.url }}">
-                          {{ block.settings.button_text }}
+                          <span>
+                            {{ block.settings.button_text }}
+                          </span>
                         </a>
                       {% endif %}
 

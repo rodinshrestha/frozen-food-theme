@@ -42,7 +42,9 @@
               {% endif %}
               {% if section.settings['button-one'] != '' %}
                 <a class="btn btn-outline btn-md" href="{{  section.settings['button-link-one']}}">
-                  {{ section.settings['button-one'] }}
+                  <span>
+                    {{ section.settings['button-one'] }}
+                  </span>
                 </a>
               {% endif %}
             </div>
@@ -65,7 +67,9 @@
               {% endif %}
               {% if section.settings['button-two'] != '' %}
                 <a class="btn btn-outline btn-md" href="{{  section.settings['button-link-two']}}">
-                  {{ section.settings['button-two'] }}
+                  <span>
+                    {{ section.settings['button-two'] }}
+                  </span>
                 </a>
               {% endif %}
             </div>
