@@ -1,0 +1,232 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const productDetails = document.getElementById("product-details");
+
+  if (!productDetails) return;
+
+  const variantData = JSON.parse(
+    document.getElementById("product-variants-data").textContent,
+  );
+
+  const selections = [];
+
+  // Check if product has real variants (not just a single variant with 'Title' option)
+  const hasRealVariants =
+    variantData.length > 1 ||
+    (variantData.length === 1 &&
+      variantData[0].options &&
+      variantData[0].options.some((option) => option !== "Title"));
+
+  // Only run variant logic if product has real variants
+  if (!hasRealVariants) {
+    console.log("Product has no real variants, skipping variant logic");
+    return;
+  }
+
+  // Auto-select first available variant
+  const autoSelectFirstAvailableVariant = () => {
+    // Find the first available variant
+    const firstAvailableVariant = variantData.find(
+      (variant) => variant.available,
+    );
+
+    if (firstAvailableVariant) {
+      // Auto-select the options for the first available variant
+      firstAvailableVariant.options.forEach((optionValue, optionIndex) => {
+        selections[optionIndex] = optionValue;
+
+        // Find and click the corresponding option element
+        const optionWrapper = productDetails.querySelector(
+          `.product-variation-content[data-option-index="${optionIndex}"]`,
+        );
+
+        if (optionWrapper) {
+          const optionElement = optionWrapper.querySelector(
+            `.variations-list[data-value="${optionValue}"]`,
+          );
+
+          if (optionElement) {
+            // Remove active class from all options in this group
+            optionWrapper
+              .querySelectorAll(".variations-list")
+              .forEach((item) => item.classList.remove("active"));
+
+            // Add active class to the selected option
+            optionElement.classList.add("active");
+          }
+        }
+      });
+
+      // Update the add to cart button
+      const btn = productDetails.querySelector(".product-add-to-cart-btn");
+      if (btn) {
+        btn.classList.remove("disabled");
+        btn.dataset.variantId = firstAvailableVariant.id;
+        btn.disabled = false;
+      }
+
+      console.log("Auto-selected variant:", firstAvailableVariant);
+    } else {
+      // No available variants - keep button disabled
+      const btn = productDetails.querySelector(".product-add-to-cart-btn");
+      if (btn) {
+        btn.classList.add("disabled");
+        btn.disabled = true;
+      }
+      console.log("No available variants found - auto-selection disabled");
+    }
+  };
+
+  // Disable out-of-stock variant options
+  const disableOutOfStockOptions = () => {
+    // Get all option groups
+    const optionGroups = productDetails.querySelectorAll(
+      ".product-variation-content",
+    );
+
+    optionGroups.forEach((group, groupIndex) => {
+      const options = group.querySelectorAll(".variations-list");
+
+      options.forEach((option) => {
+        const optionValue = option.dataset.value;
+
+        // Check if this option value can be combined with other selected options to create an available variant
+        const isOptionAvailable = variantData.some((variant) => {
+          // First, check if this variant has the current option value at the right position
+          if (variant.options[groupIndex] !== optionValue) {
+            return false;
+          }
+
+          // Then check if this variant is available
+          if (!variant.available) {
+            return false;
+          }
+
+          // For multi-level variants, we need to check if this option value
+          // can be combined with other selected options to create a valid variant
+          // We'll check if there are any other selected options that would conflict
+          const hasConflict = selections.some(
+            (selectedValue, selectedIndex) => {
+              // Skip if no selection at this index or if it's the current group
+              if (selectedValue === null || selectedIndex === groupIndex) {
+                return false;
+              }
+              // Check if the selected value conflicts with this variant
+              return variant.options[selectedIndex] !== selectedValue;
+            },
+          );
+
+          // If there's no conflict, this option value is available
+          return !hasConflict;
+        });
+
+        if (!isOptionAvailable) {
+          option.classList.add("disabled");
+          option.style.pointerEvents = "none";
+        } else {
+          option.classList.remove("disabled");
+          option.style.pointerEvents = "auto";
+        }
+      });
+    });
+  };
+
+  // Call auto-selection function
+  autoSelectFirstAvailableVariant();
+
+  // Disable out-of-stock options
+  disableOutOfStockOptions();
+
+  // Add click listeners to each variation option
+  productDetails.querySelectorAll(".variations-list").forEach((el) => {
+    el.addEventListener("click", () => {
+      console.log(selections, "@@@@");
+
+      const wrapper = el.closest(".product-variation-content");
+      const index = parseInt(wrapper.dataset.optionIndex, 10);
+      const value = el.dataset.value;
+
+      // Save selected value
+      selections[index] = value;
+
+      // Clear all selections after this one
+      for (let i = index + 1; i < selections.length; i++) {
+        selections[i] = null;
+
+        const nextWrapper = productDetails.querySelector(
+          `.product-variation-content[data-option-index="${i}"]`,
+        );
+        if (nextWrapper) {
+          nextWrapper
+            .querySelectorAll(".variations-list")
+            .forEach((item) => item.classList.remove("active"));
+        }
+      }
+
+      // Highlight current selection
+      wrapper
+        .querySelectorAll(".variations-list")
+        .forEach((item) => item.classList.remove("active"));
+      el.classList.add("active");
+
+      // Re-run the disable function to update available options based on current selection
+      disableOutOfStockOptions();
+
+      // Check if a full match is found
+      const btn = productDetails.querySelector(".product-add-to-cart-btn");
+      if (selections.every(Boolean)) {
+        const matched = variantData.find((variant) =>
+          variant.options.every((opt, i) => opt === selections[i]),
+        );
+
+        if (matched) {
+          btn.classList.remove("disabled");
+          btn.dataset.variantId = matched.id;
+          btn.disabled = false;
+        } else {
+          btn.classList.add("disabled");
+          btn.disabled = true;
+        }
+      } else {
+        btn.classList.add("disabled");
+        btn.disabled = true;
+      }
+    });
+  });
+
+  const addToCartBtn = productDetails.querySelector(".product-add-to-cart-btn");
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener("click", () => {
+      const variantId = addToCartBtn.dataset.variantId;
+
+      if (!variantId) {
+        alert("Please select a product variant.");
+        return;
+      }
+
+      // Add loading state (optional)
+      addToCartBtn.classList.add("loading");
+
+      // Optional: Get quantity if you have a .quantity-input element
+      const quantity =
+        parseInt(productDetails.querySelector(".quantity-input")?.value) || 1;
+
+      fetch("/cart/add.js", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: variantId, quantity }),
+      })
+        .then(async (res) => await window.handleFetchResponse(res))
+        .then((res) => {
+          window.updateCartCount();
+          window.showToast(`${res.title} has been added in your cart`);
+        })
+        .catch((err) => {
+          console.error(err);
+          window.showToast(err.message, "error");
+        })
+        .finally(() => {
+          addToCartBtn.classList.remove("loading");
+        });
+    });
+  }
+});

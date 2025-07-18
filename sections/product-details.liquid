@@ -1,4 +1,11 @@
-<div class="product-details-section">
+{% assign has_real_options = false %}
+{% for option in product.options_with_values %}
+  {% if option.name != 'Title' and option.values.size > 1 %}
+    {% assign has_real_options = true %}
+  {% endif %}
+{% endfor %}
+
+<div class="product-details-section" id="product-details">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -22,15 +29,15 @@
               {% endif %}
               <div class="product-price discounted-price">{{ product.price | money }}</div>
             </div>
-            {% if product.options_with_values.size != '' %}
+            {% if has_real_options %}
               <div class="divier"></div>
               <div class="product-variation-wrapper">
                 {% for option in product.options_with_values %}
-                  <div class="product-variation-content">
+                  <div class="product-variation-content" data-option-index="{{ forloop.index0 }}">
                     <div class="variation-title">{{ option.name }}</div>
                     <div class="variations-list-wrapper">
                       {% for value in option.values %}
-                        <div class="variations-list">
+                        <div class="variations-list" data-value="{{ value }}">
                           <span>{{ value }}</span>
                         </div>
                       {% endfor %}
@@ -38,36 +45,43 @@
                   </div>
                 {% endfor %}
               </div>
+
               <div class="divier"></div>
             {% endif %}
 
             <div class="product-description-wrapper">
               <span class="product-desc-value">
-                {{ product.description | truncate: 200, '... <span class="turncate-des-text">READ MORE</span>' -}}
+                {{ product.description | truncate: 400, '... <span class="turncate-des-text">READ MORE</span>' -}}
               </span>
             </div>
 
             <div class="product-stock">
               <span>Stock Status</span>
-              <span class="stock-value">In Stock </span>
+              {% if product.variants.first.available %}
+                <p class="stock-status green">In Stock</p>
+              {% else %}
+                <p class="stock-status grey">Out of Stock</p>
+              {% endif %}
             </div>
 
             <div class="product-details-cta-wrapper">
               {% render 'product-quantity', product: product, appliedQty: 1 %}
               <div class="product-details-btn-group">
                 <button
-                  class="add-to-cart btn product-add-to-cart-btn"
+                  class="btn product-add-to-cart-btn btn-contained btn-red"
                   data-variant-id="{{ product.variants.first.id }}"
                 >
-                  Add to cart
-
-                  <img
-                    src="{{ 'button-cart-icon.png' | asset_url }}"
-                    class="btn-icon"
-                    width="20"
-                    height="20"
-                    alt="right-arrow"
-                  >
+                  <span>
+                    Add to Cart
+                    <img
+                      src="{{ 'button-cart-icon.png' | asset_url }}"
+                      class="btn-icon"
+                      width="20"
+                      height="20"
+                      alt="right-arrow"
+                    >
+                  </span>
+                  <div class="btn-loader"></div>
                 </button>
               </div>
             </div>
@@ -98,6 +112,10 @@
   document.addEventListener('DOMContentLoaded', function () {
     imageGallery();
   });
+</script>
+
+<script id="product-variants-data" type="application/json">
+  {{ product.variants | json }}
 </script>
 
 {% schema %}

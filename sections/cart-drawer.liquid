@@ -35,7 +35,7 @@
               {% if item.product.type != '' %}
                 <div class="cart-product-type">{{ item.product.type }}</div>
               {% endif %}
-              <div class="cart-item-title">{{ item.product.title }}</div>
+              <div class="cart-item-title">{{ item.title }}</div>
               <div class="cart-item-price">{{ item.line_price | money }}</div>
               {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}
             </div>

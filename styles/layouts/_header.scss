@@ -8,10 +8,11 @@
   transition: top 0.3s ease-in;
   z-index: 25;
   left: 0;
+  box-shadow: $box-shadow;
+
   &.sticky {
     top: 0;
     position: fixed;
-    box-shadow: $box-shadow;
   }
   &.mobile-navigation-menu {
     position: fixed;

@@ -29,6 +29,68 @@
     display: none;
   }
 
+  span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 10px 25px;
+  }
+
+  &.btn-contained {
+    background-color: $white-color;
+    color: $dark-primary-textColor;
+
+    &.btn-red {
+      background-color: $red-color;
+      border-color: $red-color;
+      color: $light-primary-textColor;
+
+      &:hover {
+        background-color: $dark-red-color;
+        border-color: $dark-red-color;
+      }
+    }
+
+    &.btn-green {
+      background-color: $green-color;
+      border-color: $green-color;
+      color: $light-primary-textColor;
+
+      &:hover {
+        border-color: $dark-green-color;
+        background-color: $dark-green-color;
+      }
+    }
+  }
+
+  &.btn-outline {
+    color: $light-primary-textColor;
+    &:hover {
+      background-color: $light-white-color;
+      border-color: $light-white-color;
+      color: $dark-primary-textColor;
+    }
+
+    &.btn-red {
+      color: $red-color;
+      border-color: $red-color;
+      &:hover {
+        background-color: $red-color;
+        border-color: $red-color;
+        color: $light-primary-textColor;
+      }
+    }
+  }
+
+  &.btn-sm {
+    padding: 8px 20px;
+  }
+
+  &.btn-md {
+    min-width: 150px;
+  }
   &.disabled {
     cursor: not-allowed;
     background-color: $gray-color !important;
@@ -41,17 +103,8 @@
     }
   }
 
-  span {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    padding: 10px 25px;
-  }
-
   &.loading {
-    background-color: $gray-color;
+    background-color: $gray-color !important;
     border-color: $gray-color !important;
     cursor: not-allowed;
     padding: 10px 25px;
@@ -62,7 +115,7 @@
     }
 
     span {
-      display: none;
+      display: none !important;
     }
 
     .btn-loader {
@@ -75,67 +128,13 @@
       animation: spin 1s linear infinite;
     }
   }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 }
 
-.btn-contained {
-  background-color: $white-color;
-  color: $dark-primary-textColor;
-
-  &.btn-red {
-    background-color: $red-color;
-    border-color: $red-color !important;
-    color: $light-primary-textColor;
-
-    &:hover {
-      background-color: $dark-red-color;
-      border-color: $dark-red-color;
-    }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-
-  &.btn-green {
-    background-color: $green-color;
-    border-color: $green-color;
-    color: $light-primary-textColor;
-
-    &:hover {
-      border-color: $dark-green-color;
-      background-color: $dark-green-color;
-    }
+  100% {
+    transform: rotate(360deg);
   }
-}
-
-.btn-outline {
-  color: $light-primary-textColor;
-  &:hover {
-    background-color: $light-white-color;
-    border-color: $light-white-color;
-    color: $dark-primary-textColor;
-  }
-
-  &.btn-red {
-    color: $red-color;
-    border-color: $red-color;
-    &:hover {
-      background-color: $red-color;
-      border-color: $red-color;
-      color: $light-primary-textColor;
-    }
-  }
-}
-
-.btn-sm {
-  padding: 8px 20px;
-}
-
-.btn-md {
-  min-width: 150px;
 }
