@@ -30,6 +30,9 @@
           </p>
           <a href="{{ product.url }}" class="product-read-more">View More</a>
         </div>
+        <div class="add-to-cart-product-variation-wrapper">
+          {% render 'product-variations', product: product %}
+        </div>
 
         <div class="stock-status-wrapper">
           {% if product.variants.first.available %}
@@ -39,12 +42,15 @@
           {% endif %}
         </div>
 
-        <hr>
+        <div class="divider"></div>
         <div class="add-to-cart-cta-wrapper">
           {% render 'product-quantity', product: product, appliedQty: appliedQty %}
           <div class="add-to-cart-btn-group">
-            <button class="btn btn-outline btn-red  {{ productstatus }}" id="add-to-cart-btn-wrapper">
-              <span class="add-to-cart-btn {{ productstatus }}" data-variant-id="{{ product.variants.first.id }}">
+            <button class="btn btn-outline btn-red cart-btn  {{ productstatus }}" id="add-to-cart-btn">
+              <span
+                class="add-to-cart-btn {{ productstatus }}"
+                data-variant-id="{{ product.variants.first.id }}"
+              >
                 Add to Cart
               </span>
               <div class="btn-loader"></div>

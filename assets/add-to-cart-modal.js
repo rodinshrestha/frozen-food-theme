@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "flex";
         window.whenDrawerOpen();
         imageGallery(modal);
+
+        // Initialize product variations in the modal
+        if (typeof productVariationInit === "function") {
+          productVariationInit(modal);
+        }
       }
     }
   });
@@ -109,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", (e) => {
     if (e.target.closest(".add-to-cart-btn")) {
       const button = e.target.closest(".add-to-cart-btn");
-      const btnWrapper = button.closest("#add-to-cart-btn-wrapper");
+      const btnWrapper = button.closest(".cart-btn");
       const modal = button.closest(".add-to-cart-modal-wrapper");
       const variantId = button.dataset.variantId || modal?.dataset.variantId;
 

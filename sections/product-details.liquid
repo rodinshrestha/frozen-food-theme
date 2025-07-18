@@ -1,10 +1,3 @@
-{% assign has_real_options = false %}
-{% for option in product.options_with_values %}
-  {% if option.name != 'Title' and option.values.size > 1 %}
-    {% assign has_real_options = true %}
-  {% endif %}
-{% endfor %}
-
 <div class="product-details-section" id="product-details">
   <div class="container">
     <div class="row">
@@ -29,25 +22,8 @@
               {% endif %}
               <div class="product-price discounted-price">{{ product.price | money }}</div>
             </div>
-            {% if has_real_options %}
-              <div class="divier"></div>
-              <div class="product-variation-wrapper">
-                {% for option in product.options_with_values %}
-                  <div class="product-variation-content" data-option-index="{{ forloop.index0 }}">
-                    <div class="variation-title">{{ option.name }}</div>
-                    <div class="variations-list-wrapper">
-                      {% for value in option.values %}
-                        <div class="variations-list" data-value="{{ value }}">
-                          <span>{{ value }}</span>
-                        </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                {% endfor %}
-              </div>
 
-              <div class="divier"></div>
-            {% endif %}
+            {% render 'product-variations' %}
 
             <div class="product-description-wrapper">
               <span class="product-desc-value">
@@ -70,6 +46,7 @@
                 <button
                   class="btn product-add-to-cart-btn btn-contained btn-red"
                   data-variant-id="{{ product.variants.first.id }}"
+                  id="add-to-cart-btn"
                 >
                   <span>
                     Add to Cart
