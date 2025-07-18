@@ -64,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.disabled = false;
       }
 
+      // Update the price for the auto-selected variant
+      updateProductPrice(firstAvailableVariant);
+
       console.log("Auto-selected variant:", firstAvailableVariant);
     } else {
       // No available variants - keep button disabled
@@ -73,6 +76,46 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.disabled = true;
       }
       console.log("No available variants found - auto-selection disabled");
+    }
+  };
+
+  // Update product price based on selected variant
+  const updateProductPrice = (variant) => {
+    const priceWrapper = productDetails.querySelector(".product-price-wrapper");
+    if (!priceWrapper) return;
+
+    // Update the main price
+    const priceElement = priceWrapper.querySelector(".product-price");
+    if (priceElement) {
+      priceElement.textContent = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(variant.price / 100); // Shopify prices are in cents
+    }
+
+    // Update compare at price (if exists)
+    const comparePriceElement = priceWrapper.querySelector(".original-price");
+    if (variant.compare_at_price && variant.compare_at_price > variant.price) {
+      if (comparePriceElement) {
+        comparePriceElement.textContent = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+        }).format(variant.compare_at_price / 100);
+      } else {
+        // Create compare price element if it doesn't exist
+        const newComparePrice = document.createElement("s");
+        newComparePrice.className = "original-price";
+        newComparePrice.textContent = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+        }).format(variant.compare_at_price / 100);
+        priceWrapper.insertBefore(newComparePrice, priceElement);
+      }
+    } else {
+      // Remove compare price if variant doesn't have one or it's not higher
+      if (comparePriceElement) {
+        comparePriceElement.remove();
+      }
     }
   };
 
@@ -182,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
           btn.classList.remove("disabled");
           btn.dataset.variantId = matched.id;
           btn.disabled = false;
+          updateProductPrice(matched); // Update price when a full match is found
         } else {
           btn.classList.add("disabled");
           btn.disabled = true;
