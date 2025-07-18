@@ -43,6 +43,42 @@
       "name": "Banner Slider",
       "settings": {}
     },
+    "three_content_block_khX47y": {
+      "type": "three-content-block",
+      "blocks": {
+        "content_block_9bFchn": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/feat-promo1-choose_800x_166ec497-a349-4f60-8a2e-3f1904451c6c.webp",
+            "block_title": "You Choose",
+            "block_description": "Whether its pantry essentials or healthy prepared meals, we've got you covered!"
+          }
+        },
+        "content_block_cdwWPM": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/deliver_800x_9a689bd6-94de-4b0d-a0a0-f75e1ffc0ecd.webp",
+            "block_title": "We Deliver",
+            "block_description": "We'll bring fresh ingredients and/or packaged meals, straight to your door."
+          }
+        },
+        "content_block_T4y6hj": {
+          "type": "content_block",
+          "settings": {
+            "block_image": "shopify://shop_images/feat-promo-eat_800x_fbe1fb62-e3c8-4edd-8cea-5b2c50185cb4.webp",
+            "block_title": "You Cook... or Just Eat!",
+            "block_description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
+          }
+        }
+      },
+      "block_order": [
+        "content_block_9bFchn",
+        "content_block_cdwWPM",
+        "content_block_T4y6hj"
+      ],
+      "name": "Three Fixed Blocks",
+      "settings": {}
+    },
     "product_list_yEMzX7": {
       "type": "product-list",
       "name": "Product List",
@@ -65,12 +101,12 @@
         "title-one": "Non Veg",
         "helper_text_one": "Sauce Collection",
         "button-one": "EXPLORE",
-        "button-link-one": "#",
+        "button-link-one": "shopify://pages/momo-sauce",
         "image-two": "shopify://shop_images/2_01a4801d-018e-43ed-b50f-14ac4d872ac5.png",
         "title-two": "Veg",
         "helper_text_two": "Non Veg Collection",
         "button-two": "EXPLORE",
-        "button-link-two": "#"
+        "button-link-two": "shopify://pages/bundles"
       }
     },
     "category_list_zJ3MmB": {
@@ -175,6 +211,7 @@
   },
   "order": [
     "slider_banner_LAqdEm",
+    "three_content_block_khX47y",
     "product_list_yEMzX7",
     "two_column_image_JWPgRP",
     "category_list_zJ3MmB",
