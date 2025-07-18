@@ -76,6 +76,9 @@ const productVariationInit = (wrapperEle) => {
 
       // Update the price for the auto-selected variant
       updateProductPrice(firstAvailableVariant);
+
+      // Update max quantity for the selected variant
+      updateMaxQuantityForVariant(firstAvailableVariant);
     } else {
       // No available variants - keep button disabled
       const btn = wrapperEle.querySelector("#add-to-cart-btn");
@@ -126,6 +129,47 @@ const productVariationInit = (wrapperEle) => {
         comparePriceElement.remove();
       }
     }
+  };
+
+  // Update max quantity based on selected variant
+  const updateMaxQuantityForVariant = (variant) => {
+    const qtyWrapper = wrapperEle.querySelector(".add-to-cart-qty-wrapper");
+    if (!qtyWrapper) return;
+
+    let maxQty = 9999; // Default max
+
+    if (variant) {
+      // Check if inventory is managed
+      if (variant.inventory_management === "shopify") {
+        maxQty = variant.inventory_quantity || 0;
+      }
+
+      // If variant is not available, set max to 0
+      if (!variant.available) {
+        maxQty = 0;
+      }
+    }
+
+    // Update the data-max attribute
+    qtyWrapper.dataset.max = maxQty;
+
+    // Update the quantity display if current quantity exceeds new max
+    const qtyDisplay = qtyWrapper.querySelector(".quantity-input");
+    const currentQty = parseInt(qtyDisplay.textContent) || 1;
+
+    if (currentQty > maxQty && maxQty > 0) {
+      qtyDisplay.textContent = maxQty;
+    }
+
+    // Update button states
+    const minusBtn = qtyWrapper.querySelector(".qty-btn.minus");
+    const plusBtn = qtyWrapper.querySelector(".qty-btn.plus");
+
+    // if (minusBtn && plusBtn) {
+    //   const min = parseInt(qtyWrapper.dataset.min) || 1;
+    //   minusBtn.classList.toggle("disable", currentQty <= min);
+    //   plusBtn.classList.toggle("disable", currentQty >= maxQty);
+    // }
   };
 
   // Disable out-of-stock variant options
@@ -237,6 +281,9 @@ const productVariationInit = (wrapperEle) => {
           btn.dataset.variantId = matched.id;
           btn.disabled = false;
           updateProductPrice(matched); // Update price when a full match is found
+
+          // Update max quantity for the selected variant
+          updateMaxQuantityForVariant(matched);
         } else {
           btn.classList.add("disabled");
           buyNowBtn?.classList.add("disabled");

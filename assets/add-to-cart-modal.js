@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target.closest(".qty-btn")) {
       const button = e.target.closest(".qty-btn");
       const modal = button.closest(".add-to-cart-modal-wrapper");
+      if (!modal) return;
       const qtyWrapper = modal.querySelector(".add-to-cart-qty-wrapper");
       const qtyDisplay = qtyWrapper.querySelector(".quantity-input");
       const minus = qtyWrapper.querySelector(".qty-btn.minus");
@@ -96,8 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           plus.classList.remove("disable");
         }
-
-        modal.querySelector("input[name='quantity']").value = currentQty;
       };
 
       if (button.classList.contains("minus") && currentQty > min) {

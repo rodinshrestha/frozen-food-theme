@@ -93,6 +93,7 @@ document.addEventListener("click", (e) => {
   const itemIndex = btn.getAttribute("data-line");
 
   const wrapper = btn.closest(".cart-item-details");
+  if (!wrapper) return;
   const qtyWrapper = btn.closest(".add-to-cart-qty-wrapper");
   const line = parseInt(wrapper.dataset.line);
   const quantityDisplay = qtyWrapper.querySelector(".quantity-input");
