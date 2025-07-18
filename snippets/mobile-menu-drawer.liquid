@@ -1,68 +1,30 @@
 <div class="mobile-menu-drawer-wrapper" id="mobile-menu-drawer">
   <ul class="mobile-naivgation-wrapper">
-    <li class="mobile-navigation-list">
-      <a href="#"> Momo Sauce </a>
-      <img
-        src="{{ 'right-arrow.png' | asset_url }}"
-        height="22"
-        width="22"
-        aria-label="Account login"
-      >
-    </li>
-    <li class="mobile-navigation-list">
-      <a href="#"> Frozen Food</a
-      ><img
-        src="{{ 'right-arrow.png' | asset_url }}"
-        height="22"
-        width="22"
-        aria-label="Account login"
-      >
-    </li>
-    <li class="mobile-navigation-list">
-      <a href="#"> Bundles</a
-      ><img
-        src="{{ 'right-arrow.png' | asset_url }}"
-        height="22"
-        width="22"
-        aria-label="Account login"
-      >
-    </li>
-    <li class="mobile-navigation-list">
-      <a href="#">SHOP</a
-      ><img
-        src="{{ 'right-arrow.png' | asset_url }}"
-        height="22"
-        width="22"
-        aria-label="Account login"
-      >
-    </li>
-    <li class="mobile-navigation-list">
-      <a href="#"> Gift Cards</a
-      ><img
-        src="{{ 'right-arrow.png' | asset_url }}"
-        height="22"
-        width="22"
-        aria-label="Account login"
-      >
-    </li>
-    <li class="mobile-navigation-list">
-      <a href="#"> ABOUT US</a
-      ><img
-        src="{{ 'right-arrow.png' | asset_url }}"
-        height="22"
-        width="22"
-        aria-label="Account login"
-      >
-    </li>
-    <li class="mobile-navigation-list">
-      <a href="#"> CONTACT US</a
-      ><img
-        src="{{ 'right-arrow.png' | asset_url }}"
-        height="22"
-        width="22"
-        aria-label="Account login"
-      >
-    </li>
+    {% for link in linklists['main-menu'].links %}
+      {% if link.links.size > 0 %}
+        {% for child in link.links %}
+          <li class="mobile-navigation-list">
+            <a href="{{ child.url }}">{{ child.title }}</a>
+            <img
+              src="{{ 'right-arrow.png' | asset_url }}"
+              height="22"
+              width="22"
+              aria-label="Go to {{ child.title }}"
+            >
+          </li>
+        {% endfor %}
+      {% else %}
+        <li class="mobile-navigation-list">
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          <img
+            src="{{ 'right-arrow.png' | asset_url }}"
+            height="22"
+            width="22"
+            aria-label="Go to {{ link.title }}"
+          >
+        </li>
+      {% endif %}
+    {% endfor %}
   </ul>
 
   <div class="mobile-menu-login-wrapper">
@@ -72,20 +34,6 @@
       width="22"
       aria-label="Account login"
     >
-    <a href="#">Login </a>
+    <a href="/pages/login">Login</a>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const drawer = document.getElementById('mobile-menu-drawer');
-
-    // Listen for any <a> inside the drawer
-    drawer.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('active'); // Or whatever class you're using to show the drawer
-        window.whenDrawerClose();
-      });
-    });
-  });
-</script>
