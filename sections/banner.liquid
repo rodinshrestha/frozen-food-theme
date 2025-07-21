@@ -1,19 +1,23 @@
 {% assign banner_height = section.settings['banner-height'] | default: 'large' %}
-{% capture columnwidth %}
+{% capture containerwidth %}
   {% if section.settings.full_width %}fluid{% endif %}
 {% endcapture %}
 
-{% capture rowwidth %}
-  {% if section.settings.full_width %}no-gutters{% endif %}
-{% endcapture %}
+{% assign banner_id = section.id %}
+
+{% comment %}
+  {% capture gutters %}
+    {% if section.settings.full_width %}no-gutters{% endif %}
+  {% endcapture %}
+{% endcomment %}
 
 <section
-  id="banner-{{ section.id }}"
+  id="banner-{{ banner_id }}"
   class="banner-section banner-{{ banner_height }} section-wrapper"
   data-animation="{{ section.settings['banner-parallax'] }}"
 >
-  <div class="container {{ columnwidth }}">
-    <div class="row {{ columnwidth }}">
+  <div class="container {{ containerwidth }}">
+    <div class="row">
       <div class="col">
         <div class="banner-wrapper">
           {% if section.settings['banner-overlay'] %}
@@ -67,15 +71,18 @@
 </section>
 
 <style>
-  .banner-overlay {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, {{section.settings[ 'overlay-opacity'] | default: 0.9}});
-    z-index: 1;
+    #banner-{{ banner_id }}{
+
+    .banner-overlay {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, {{section.settings[ 'overlay-opacity'] | default: 0.4}}) !important;
+      z-index: 1;
+    }
   }
 </style>
 
@@ -93,7 +100,6 @@
       "label": "Full Width",
       "default": false
     },
-
     {
       "type": "header",
       "content": "Banner Height"

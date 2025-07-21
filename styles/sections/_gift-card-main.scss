@@ -6,7 +6,7 @@
   background-color: rgb(248, 244, 239);
 
   .bread-crumb-wrapper {
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 
   .gift-card-wrapper {
@@ -20,7 +20,7 @@
 
       .featured-product-inner-wrapper {
         width: unset !important;
-        flex: 0 1 33.33%;
+        flex: 0 1 25%;
         display: flex !important;
         flex-direction: column;
         min-width: 0;

@@ -180,6 +180,7 @@ ul {
   color: $dark-primary-textColor;
   font-family: $font-family-scotch;
   letter-spacing: 3px;
+  text-align: center;
 
   @include responsive(tablet) {
     margin-bottom: 60px;

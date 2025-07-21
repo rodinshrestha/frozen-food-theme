@@ -20,17 +20,21 @@
         }
 
         .faq-title-description {
-          max-height: none/* allows the content to expand to its full ht */
+          // max-height: 200px;
+          max-height: 500px; /* Large enough to fit your content */
+          padding: 1rem;
+          // max-height: none/* allows the content to expand to its full ht */
         }
       }
 
       .faq-list-title {
-        font-size: 1rem;
+        font-size: 18px;
         line-height: 24px;
         font-weight: 600;
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+        font-family: $font-family-brandon-med;
 
         .faq-icon {
           cursor: pointer;
@@ -42,10 +46,13 @@
         font-size: 1rem;
         line-height: 28px;
         margin: 0 10px;
+        margin-top: 10px;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease-in;
-        margin-top: 10px;
+        transition:
+          max-height 0.4s ease,
+          padding 0.4s ease;
+        padding: 0 1rem;
       }
     }
   }

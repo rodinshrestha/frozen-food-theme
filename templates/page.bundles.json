@@ -17,6 +17,7 @@
       "type": "banner",
       "name": "Banner",
       "settings": {
+        "full_width": true,
         "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
         "banner-height": "medium",
         "banner-parallax": true,
@@ -41,9 +42,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "banner_gRKpwM",
-    "product_list_6L8NHT"
-  ]
+  "order": ["main", "banner_gRKpwM", "product_list_6L8NHT"]
 }
