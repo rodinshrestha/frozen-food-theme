@@ -340,6 +340,9 @@ ul {
   position: relative;
   text-transform: uppercase;
 }
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list > a:hover {
+  color: #e4022e !important;
+}
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper {
   position: relative;
 }
@@ -400,6 +403,12 @@ ul {
   position: absolute;
   top: -10px;
   right: -10px;
+}
+
+#user-icon:hover,
+#search-drawer-icon:hover,
+#cart-icon:hover {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7492%) hue-rotate(-7deg) brightness(75%) contrast(119%);
 }
 
 .footer-wrapper {
@@ -2642,7 +2651,7 @@ ul {
   transform: rotate(180deg);
 }
 .faq-section .faq-wrapper .faq-list-wrapper.active .faq-title-description {
-  max-height: 100px; /* large enough to fit content */
+  max-height: none;
 }
 .faq-section .faq-wrapper .faq-list-wrapper .faq-list-title {
   font-size: 1rem;
