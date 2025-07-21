@@ -20,7 +20,7 @@
         }
 
         .faq-title-description {
-          max-height: 100px; /* large enough to fit content */
+          max-height: none/* allows the content to expand to its full ht */
         }
       }
 
