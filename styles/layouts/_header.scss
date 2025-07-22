@@ -117,6 +117,11 @@
           a {
             color: unset;
             text-decoration: none;
+
+            &:hover {
+              color: $red-color !important; // Apply the red hover effect
+              text-decoration: none; // Remove underline on hover
+            }
           }
 
           .sub-menu-wrapper {
@@ -140,7 +145,7 @@
               transition: all 0.2s ease-in;
               padding: 10px;
               &:hover {
-                text-decoration: underline;
+                text-decoration: none;
               }
               &:first-child {
                 padding-top: 20px;
@@ -186,5 +191,6 @@
 #user-icon:hover,
 #search-drawer-icon:hover,
 #cart-icon:hover {
-  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7492%) hue-rotate(-7deg) brightness(75%) contrast(119%);
+  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7492%)
+    hue-rotate(-7deg) brightness(75%) contrast(119%);
 }
