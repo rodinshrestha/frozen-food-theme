@@ -351,6 +351,10 @@ ul {
   color: unset;
   text-decoration: none;
 }
+.header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper a:hover {
+  color: #e4022e !important;
+  text-decoration: none;
+}
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper {
   overflow: hidden;
   list-style: none;
@@ -375,7 +379,7 @@ ul {
   text-transform: uppercase;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list:first-child {
   padding-top: 20px;
