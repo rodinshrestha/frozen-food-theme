@@ -2675,7 +2675,7 @@ ul {
 }
 .product-details-section .product-sticky-bottom {
   background-color: #fff;
-  box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
+  box-shadow: rgba(48, 51, 54, 0.16) 0px -4px 6px -1px;
   z-index: 20;
   padding: 20px 0;
   display: flex;
@@ -2741,31 +2741,36 @@ ul {
   transform: rotate(180deg);
 }
 .faq-section .faq-wrapper .faq-list-wrapper.active .faq-title-description {
-  max-height: 500px; /* Large enough to fit your content */
-  padding: 1rem;
+  height: 30px;
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 1023px) {
+  .faq-section .faq-wrapper .faq-list-wrapper.active .faq-title-description {
+    height: 120px;
+  }
 }
 .faq-section .faq-wrapper .faq-list-wrapper .faq-list-title {
   font-size: 18px;
   line-height: 24px;
-  font-weight: 600;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 .faq-section .faq-wrapper .faq-list-wrapper .faq-list-title .faq-icon {
   cursor: pointer;
   transition: transform 0.2s ease-in;
 }
 .faq-section .faq-wrapper .faq-list-wrapper .faq-title-description {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 28px;
-  margin: 0 10px;
   margin-top: 10px;
-  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 1rem;
+  transition: height 0.2s linear, visibility 0.2s linear, opacity 0.2s linear;
 }
 
 .gift-card-section {
