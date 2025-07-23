@@ -1,3 +1,7 @@
+{% capture productstatus %}
+  {% if product.variants.first.available == false %}disabled{% endif %}
+{% endcapture %}
+
 <div class="product-details-section" id="product-details">
   <div class="container">
     <div class="row">
@@ -10,44 +14,131 @@
     <div class="row">
       <div class="col">
         <div class="product-details-wrapper">
-          <div class="product-image-wrapper">
-            {% render 'product-image-gallery' %}
+          <div class="product-image-wrapper swiper">
+            <div class="swiper-wrapper product-detail-image-content">
+              {% for media in product.media %}
+                {% if media.media_type == 'image' %}
+                  <div class="swiper-slide product-active-image">
+                    {% if product.tags.size > 0 %}
+                      <div class="product-tag-wrapper">
+                        {% for tag in product.tags %}
+                          <span class="tag-name">{{ tag }}</span>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                    <img
+                      src="{{ media |  image_url }}"
+                      alt="{{ media.alt | escape }}"
+                      width="280"
+                      height="280"
+                    >
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
           <div class="product-content-wrapper">
-            <div class="product-sku">{{ product.type }}</div>
-            <h1 class="product-title">{{ product.title }}</h1>
-            <div class="product-price-wrapper">
-              {% if product.compare_at_price > product.price %}
-                <s class="original-price">{{ product.compare_at_price | money }}</s>
-              {% endif %}
-              <div class="product-price discounted-price">{{ product.price | money }}</div>
+            <div class="product-inner-content-wrapper" id="product-inner-content">
+              <div class="product-sku">{{ product.type }}</div>
+              <h1 class="product-title">{{ product.title }}</h1>
+              <div class="product-price-wrapper">
+                {% if product.compare_at_price > product.price %}
+                  <s class="original-price">{{ product.compare_at_price | money }}</s>
+                {% endif %}
+                <div class="product-price discounted-price">{{ product.price | money }}</div>
+              </div>
+              <div class="divier top-divider"></div>
+
+              {% render 'product-variations' %}
+
+              <div class="product-description-wrapper">
+                <span class="product-desc-value">
+                  {{
+                    product.description
+                    | strip_html
+                    | truncate: 400, '... <span class="turncate-des-text" id="product-read-more">READ MORE</span>'
+                  -}}
+                </span>
+              </div>
+
+              <div class="product-stock">
+                <span>Stock Status</span>
+                {% if product.variants.first.available %}
+                  <p class="stock-status green">In Stock</p>
+                {% else %}
+                  <p class="stock-status grey">Out of Stock</p>
+                {% endif %}
+              </div>
+
+              <div class="product-details-cta-wrapper">
+                {% render 'product-quantity', product: product, appliedQty: 1 %}
+                <div class="product-details-btn-group">
+                  <button
+                    class="btn product-add-to-cart-btn btn-contained btn-red {{ productstatus }}"
+                    data-variant-id="{{ product.variants.first.id }}"
+                    id="add-to-cart-btn"
+                  >
+                    <span>
+                      Add to Cart
+                      <img
+                        src="{{ 'button-cart-icon.png' | asset_url }}"
+                        class="btn-icon"
+                        width="20"
+                        height="20"
+                        alt="right-arrow"
+                      >
+                    </span>
+                    <div class="btn-loader"></div>
+                  </button>
+                </div>
+              </div>
+
+              <div class="shipping-information-wrapper">
+                <span class="shipping-info-title">Shipping Information</span>
+                <span class="shipping-info-value"
+                  >We ship orders Mondays and Tuesdays. This shipping setup ensures your orders remain safe and frozen
+                  while traveling with blocks of dry-ice!
+                </span>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            {% render 'product-variations' %}
+    <div class="row">
+      <div class="col">
+        <div class="product-full-description-wrapper" id="product-description">
+          <div class="product-full-desc-title">Product Information</div>
+          <div class="product-full-desc-value">{{ product.description }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            <div class="product-description-wrapper">
-              <span class="product-desc-value">
-                {{
-                  product.description
-                  | truncate: 400, '... <span class="turncate-des-text" id="product-read-more">READ MORE</span>'
-                -}}
-              </span>
+  <div class="product-sticky-bottom" id="product-sticky-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="product-sticky-bottom-wrapper">
+            <div class="product-bottom-left">
+              <div class="bottom-product-title">
+                {{ product.title }}
+              </div>
+
+              <div class="bottom-product-price">
+                <div class="product-price-wrapper">
+                  {% if product.compare_at_price > product.price %}
+                    <s class="original-price">{{ product.compare_at_price | money }}</s>
+                  {% endif %}
+                  <div class="product-price discounted-price">{{ product.price | money }}</div>
+                </div>
+              </div>
             </div>
-
-            <div class="product-stock">
-              <span>Stock Status</span>
-              {% if product.variants.first.available %}
-                <p class="stock-status green">In Stock</p>
-              {% else %}
-                <p class="stock-status grey">Out of Stock</p>
-              {% endif %}
-            </div>
-
-            <div class="product-details-cta-wrapper">
-              {% render 'product-quantity', product: product, appliedQty: 1 %}
+            <div class="product-bottom-right">
               <div class="product-details-btn-group">
                 <button
-                  class="btn product-add-to-cart-btn btn-contained btn-red"
+                  class="btn product-add-to-cart-btn btn-contained btn-red {{ productstatus }}"
                   data-variant-id="{{ product.variants.first.id }}"
                   id="add-to-cart-btn"
                 >
@@ -65,24 +156,7 @@
                 </button>
               </div>
             </div>
-
-            <div class="shipping-information-wrapper">
-              <span class="shipping-info-title">Shipping Information</span>
-              <span class="shipping-info-value"
-                >We ship orders Mondays and Tuesdays. This shipping setup ensures your orders remain safe and frozen
-                while traveling with blocks of dry-ice!
-              </span>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <div class="product-full-description-wrapper" id="product-description">
-          <div class="product-full-desc-title">Product Information</div>
-          <div class="product-full-desc-value">{{ product.description }}</div>
         </div>
       </div>
     </div>
@@ -93,6 +167,12 @@
     imageGallery();
   });
 </script>
+
+<style>
+  {% comment %} body {
+    background-color: rgb(242, 242, 242);
+  } {% endcomment %}
+</style>
 
 <script id="product-variants-data" type="application/json">
   {{ product.variants | json }}

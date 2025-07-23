@@ -3,6 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!productDetails) return;
 
+  const stickyBottomSection = productDetails.querySelector(
+    "#product-sticky-bottom",
+  );
+  const productDetailSection = productDetails.querySelector(
+    ".product-details-wrapper",
+  );
+
+  const productStickyBottomInit = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const productDetailHeight = productDetailSection.offsetHeight;
+
+    if (scrollTop > productDetailHeight) {
+      stickyBottomSection.classList.add("active");
+    } else {
+      stickyBottomSection.classList.remove("active");
+    }
+  };
+
+  window.addEventListener("scroll", productStickyBottomInit, { passive: true });
+
   productVariationInit(productDetails);
 
   // Quantity functionality
@@ -123,6 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
   updateMaxQuantity(firstAvailableVariant);
 
   const addToCartBtn = productDetails.querySelector(".product-add-to-cart-btn");
+  const isDisabled = addToCartBtn.classList.contains("disabled");
+
+  if (isDisabled) {
+    return;
+  }
   if (addToCartBtn) {
     addToCartBtn.addEventListener("click", () => {
       const variantId = addToCartBtn.dataset.variantId;
