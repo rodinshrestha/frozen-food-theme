@@ -25,6 +25,7 @@
       object-fit: cover;
       height: 100%;
       transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
     }
 
     .hover-image {
@@ -35,6 +36,7 @@
       height: 100%;
       width: 100%;
       transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
     }
 
     .product-tag-wrapper {

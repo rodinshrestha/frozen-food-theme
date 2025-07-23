@@ -25,6 +25,7 @@
     .variations-list-wrapper {
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
       .variations-list {
         box-sizing: border-box;
         border: 1px solid $dark-bgColor;

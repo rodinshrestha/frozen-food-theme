@@ -1051,6 +1051,7 @@ ul {
   object-fit: cover;
   height: 100%;
   transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 .featured-product-inner-wrapper .featured-product-image-wrapper .hover-image {
   position: absolute;
@@ -1060,6 +1061,7 @@ ul {
   height: 100%;
   width: 100%;
   transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 .featured-product-inner-wrapper .featured-product-image-wrapper .product-tag-wrapper {
   position: absolute;
@@ -1565,6 +1567,7 @@ ul {
 .product-variation-wrapper .product-variation-content .variations-list-wrapper {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .product-variation-wrapper .product-variation-content .variations-list-wrapper .variations-list {
   box-sizing: border-box;
@@ -3058,6 +3061,7 @@ ul {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 10px;
 }
 .category-list-section .category-wrapper .category-content-list a {
   text-decoration: none;

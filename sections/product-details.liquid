@@ -43,6 +43,8 @@
               {% endif %}
             </div>
 
+            <div id="jumbo-subscription-widget" data-product-id="{{ product.id }}"></div>
+
             <div class="product-details-cta-wrapper">
               {% render 'product-quantity', product: product, appliedQty: 1 %}
               <div class="product-details-btn-group">
@@ -109,3 +111,8 @@
   ]
 }
 {% endschema %}
+
+<script>
+  window.JumboSubscription = window.JumboSubscription || {};
+  window.JumboSubscription.productId = {{ product.id }};
+</script>
