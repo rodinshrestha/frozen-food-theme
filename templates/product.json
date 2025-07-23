@@ -13,41 +13,25 @@
       "type": "product-details",
       "settings": {}
     },
-    "three_content_block_aTbpNw": {
-      "type": "three-content-block",
-      "blocks": {
-        "content_block_zYp9id": {
-          "type": "content_block",
-          "settings": {
-            "block_image": "shopify://shop_images/feat-promo1-choose_800x_166ec497-a349-4f60-8a2e-3f1904451c6c.webp",
-            "block_title": "Become a member",
-            "block_description": "Enjoy members-only pricing, early access to bundles, and fresh frozen flavors made for real life."
-          }
-        },
-        "content_block_bqTnQY": {
-          "type": "content_block",
-          "settings": {
-            "block_image": "shopify://shop_images/deliver_800x_9a689bd6-94de-4b0d-a0a0-f75e1ffc0ecd.webp",
-            "block_title": "Exclusive Offer",
-            "block_description": "Share the love (and the discount). Gift cards that work like store credit — perfect for every food lover on your list."
-          }
-        },
-        "content_block_H6zWY8": {
-          "type": "content_block",
-          "settings": {
-            "block_image": "shopify://shop_images/feat-promo-eat_800x_fbe1fb62-e3c8-4edd-8cea-5b2c50185cb4.webp",
-            "block_title": "Redeemed",
-            "block_description": "Exclusive discounts and free shipping are now yours — enjoy your next order."
-          }
-        }
-      },
-      "block_order": [
-        "content_block_zYp9id",
-        "content_block_bqTnQY",
-        "content_block_H6zWY8"
-      ],
-      "name": "Three Fixed Blocks",
-      "settings": {}
+    "product_list_c9cXCp": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "dark_mode": false,
+        "product_slider": true,
+        "collection": "frontpage",
+        "section-title": "You May Also Like"
+      }
+    },
+    "product_list_JefDgc": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "dark_mode": true,
+        "product_slider": true,
+        "collection": "bundle-list",
+        "section-title": "Recently viewed products"
+      }
     },
     "faq_Wkzh7x": {
       "type": "faq",
@@ -104,34 +88,23 @@
       "type": "banner",
       "name": "Banner",
       "settings": {
-        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
+        "full_width": true,
         "banner-height": "medium",
         "banner-parallax": true,
+        "banner-image": "shopify://shop_images/Untitled_design_4100x_df8c80cc-2011-4388-b21a-f58c27be1425.webp",
         "feature-banner-title": "Members Exclusive Discount",
         "feature-banner-subtitle": "Enjoy member-only deals and savings on every purchase.",
         "button-text": "Become a Member",
         "button-link": "",
-        "row_content_align": "center",
-        "vertical_content_align": "middle",
-        "content_width": "large",
-        "text_alignment": "center",
+        "banner-overlay": true,
         "overlay-opacity": 0.3
-      }
-    },
-    "product_list_c9cXCp": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "collection": "frontpage",
-        "section-title": "Similar Products",
-        "product_slider": true
       }
     }
   },
   "order": [
     "main",
-    "three_content_block_aTbpNw",
     "product_list_c9cXCp",
+    "product_list_JefDgc",
     "faq_Wkzh7x",
     "banner_yerwDL"
   ]
