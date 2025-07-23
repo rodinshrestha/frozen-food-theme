@@ -61,16 +61,16 @@
         "gap_between": false,
         "section_gap": false,
         "parallax-animation": true,
-        "image-one": "shopify://shop_images/1_35efc409-3641-421c-a235-9c54eca0840c.png",
-        "title-one": "Non Veg",
+        "image-one": "shopify://shop_images/sauces_1296x_c6c23cf0-c1be-4978-ae43-685015cf2299.webp",
+        "title-one": "",
         "helper_text_one": "Sauce Collection",
         "button-one": "EXPLORE",
         "button-link-one": "shopify://pages/momo-sauce",
-        "image-two": "shopify://shop_images/2_01a4801d-018e-43ed-b50f-14ac4d872ac5.png",
-        "title-two": "Veg",
-        "helper_text_two": "Non Veg Collection",
+        "image-two": "shopify://shop_images/personal-szie.webp",
+        "title-two": "",
+        "helper_text_two": "Frozen       \nFoods",
         "button-two": "EXPLORE",
-        "button-link-two": "shopify://pages/bundles"
+        "button-link-two": "shopify://pages/frozen-food"
       }
     },
     "category_list_zJ3MmB": {
@@ -89,7 +89,7 @@
           "settings": {
             "category_image": "shopify://shop_images/3.png",
             "title": "Chicken Momo",
-            "url": "shopify://pages/frozen-food"
+            "url": "shopify://products/chicken-momo"
           }
         },
         "text_slide_dngQeV": {
@@ -97,7 +97,7 @@
           "settings": {
             "category_image": "shopify://shop_images/4.png",
             "title": "Vegan Chowmein",
-            "url": "shopify://pages/all-products"
+            "url": "shopify://products/veg-chowmein"
           }
         },
         "text_slide_LtQzcz": {
@@ -105,7 +105,7 @@
           "settings": {
             "category_image": "shopify://shop_images/5.png",
             "title": "Beef Momo",
-            "url": "shopify://pages/momo-sauce"
+            "url": "shopify://products/pork-momo-28g-protein-per-serving"
           }
         },
         "text_slide_jGKMyF": {
@@ -113,7 +113,7 @@
           "settings": {
             "category_image": "shopify://shop_images/2.png",
             "title": "Pork Momo",
-            "url": "shopify://pages/gift-card"
+            "url": "shopify://products/pork-momo"
           }
         },
         "text_slide_jGKMyZ": {
@@ -121,7 +121,7 @@
           "settings": {
             "category_image": "shopify://shop_images/3.png",
             "title": "Chicken Momo",
-            "url": "shopify://products/pork-momo-28g-protein-per-serving"
+            "url": "shopify://products/chicken-momo"
           }
         }
       },

@@ -29,6 +29,7 @@
               <span class="product-desc-value">
                 {{
                   product.description
+                  | strip_html
                   | truncate: 400, '... <span class="turncate-des-text" id="product-read-more">READ MORE</span>'
                 -}}
               </span>
