@@ -6,6 +6,8 @@
   padding-bottom: 20px;
   transition: all 0.3s ease-in;
   color: $dark-primary-textColor;
+  z-index: 30;
+  position: relative;
 
   &.dark-bg {
     background-color: $dark-bgColor;

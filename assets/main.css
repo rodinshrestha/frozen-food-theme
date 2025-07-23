@@ -421,6 +421,8 @@ ul {
   padding-bottom: 20px;
   transition: all 0.3s ease-in;
   color: #303336;
+  z-index: 30;
+  position: relative;
 }
 .footer-wrapper.dark-bg {
   background-color: #303336;
@@ -2670,6 +2672,57 @@ ul {
 }
 .product-details-section .product-full-description-wrapper .product-full-desc-value ul li {
   margin-bottom: 5px;
+}
+.product-details-section .product-sticky-bottom {
+  background-color: #fff;
+  box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
+  z-index: 20;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.product-details-section .product-sticky-bottom.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title {
+  font-size: 28px;
+  font-family: "Scotch Display", "Helvetica Neue";
+  letter-spacing: 1px;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper {
+  display: flex;
+  gap: 10px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper .original-price {
+  display: flex;
+  align-self: flex-end;
+  font-size: 18px;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper .product-price {
+  font-size: 21px;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper .original-price + .discounted-price {
+  color: #e4022e;
+  font-size: 21px;
 }
 
 .faq-section .faq-wrapper {

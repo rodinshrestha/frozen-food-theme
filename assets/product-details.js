@@ -3,6 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!productDetails) return;
 
+  const stickyBottomSection = productDetails.querySelector(
+    "#product-sticky-bottom",
+  );
+  const productDetailSection = productDetails.querySelector(
+    ".product-details-wrapper",
+  );
+
+  const productStickyBottomInit = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const productDetailHeight = productDetailSection.offsetHeight;
+
+    if (scrollTop > productDetailHeight) {
+      stickyBottomSection.classList.add("active");
+    } else {
+      stickyBottomSection.classList.remove("active");
+    }
+  };
+
+  window.addEventListener("scroll", productStickyBottomInit, { passive: true });
+
   productVariationInit(productDetails);
 
   // Quantity functionality
