@@ -139,7 +139,7 @@
           gap: 10px;
           width: 100%;
 
-          .product-add-to-cart-btn {
+          .btn {
             flex: 0 0 100%;
 
             span {
@@ -184,6 +184,10 @@
     gap: 10px;
     flex-direction: column;
     color: $dark-primary-textColor;
+
+    a {
+      color: inherit !important;
+    }
 
     @include responsive(tablet) {
       margin-top: 30px;

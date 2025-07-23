@@ -123,6 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
   updateMaxQuantity(firstAvailableVariant);
 
   const addToCartBtn = productDetails.querySelector(".product-add-to-cart-btn");
+  const isDisabled = addToCartBtn.classList.contains("disabled");
+
+  if (isDisabled) {
+    return;
+  }
   if (addToCartBtn) {
     addToCartBtn.addEventListener("click", () => {
       const variantId = addToCartBtn.dataset.variantId;

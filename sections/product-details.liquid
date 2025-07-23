@@ -1,3 +1,7 @@
+{% capture productstatus %}
+  {% if product.variants.first.available == false %}disabled{% endif %}
+{% endcapture %}
+
 <div class="product-details-section" id="product-details">
   <div class="container">
     <div class="row">
@@ -48,7 +52,7 @@
               {% render 'product-quantity', product: product, appliedQty: 1 %}
               <div class="product-details-btn-group">
                 <button
-                  class="btn product-add-to-cart-btn btn-contained btn-red"
+                  class="btn product-add-to-cart-btn btn-contained btn-red {{ productstatus }}"
                   data-variant-id="{{ product.variants.first.id }}"
                   id="add-to-cart-btn"
                 >
