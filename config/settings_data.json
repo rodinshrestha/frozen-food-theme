@@ -69,6 +69,13 @@
         "settings": {}
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "3847668232405170085": {
+        "type": "shopify://apps/jumbo-bros-subscriptions/blocks/jumbobros_subscriptions/8b302d93-60b9-4040-9abc-0771638040eb",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   }
 }
