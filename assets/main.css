@@ -410,12 +410,6 @@ ul {
   right: -10px;
 }
 
-#user-icon:hover,
-#search-drawer-icon:hover,
-#cart-icon:hover {
-  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7492%) hue-rotate(-7deg) brightness(75%) contrast(119%);
-}
-
 .footer-wrapper {
   padding: 100px 0;
   padding-bottom: 20px;
@@ -1703,7 +1697,7 @@ ul {
   top: 0;
   bottom: 0;
   right: -100%;
-  width: 450px;
+  width: 550px;
   height: 100%;
   background: white;
   box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
@@ -1725,11 +1719,15 @@ ul {
 .cart-drawer .cart-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(48, 51, 54, 0.6);
-  padding: 15px;
+  padding: 25px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  font-family: "Scotch Display", "Helvetica Neue";
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 .cart-drawer .cart-header .cart-close {
-  font-size: 1.3rem;
+  font-size: 18px;
+  font-family: "Scotch Display medium", "Helvetica Neue" !important;
   background: none;
   border: none;
   cursor: pointer;
@@ -1750,7 +1748,6 @@ ul {
 .cart-drawer .cart-content-wrapper .cart-items-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
   height: 100%;
   overflow: scroll;
 }
@@ -1759,7 +1756,14 @@ ul {
   gap: 20px;
   align-items: center;
   position: relative;
-  padding: 20px 15px;
+  padding: 25px;
+  border-top: 1px solid rgb(199, 199, 199);
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details:last-child {
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details:first-child {
+  border-top: none;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .item-loader {
   position: absolute;
@@ -1792,27 +1796,57 @@ ul {
   flex-grow: 1;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-product-type {
-  font-size: 0.8rem;
+  font-size: 12px;
   font-weight: 400;
-  color: #720519;
-  margin-bottom: 10px;
+  color: rgb(48, 51, 54);
+  line-height: 26px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  text-transform: uppercase;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  letter-spacing: 1px;
+  line-height: 26px;
+  text-transform: uppercase;
 }
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-price {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-title a {
+  color: inherit;
+  text-decoration: none;
 }
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .add-to-cart-qty-wrapper {
-  gap: 5px;
-  width: 110px;
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-title a:hover {
+  text-decoration: underline;
 }
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .add-to-cart-qty-wrapper .quantity-input {
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-variation-list {
+  font-size: 12px;
+  line-height: 26px;
+  color: rgb(48, 51, 54);
+  text-transform: uppercase;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-variation-list .cart-variation-item {
+  margin-right: 10px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .cart-item-price {
+  font-size: 14px;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .add-to-cart-qty-wrapper {
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  background-color: transparent;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .add-to-cart-qty-wrapper .qty-btn img {
+  width: 8px;
+  height: 8px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .add-to-cart-qty-wrapper .quantity-input {
   width: 15px;
+  font-size: 14px;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .remove-cart-item {
   position: absolute;
@@ -1821,7 +1855,7 @@ ul {
   border: none;
   cursor: pointer;
   top: 10px;
-  right: 15px;
+  right: 24px;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .remove-cart-item.disabled {
   cursor: not-allowed;
@@ -1830,27 +1864,28 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border-top: 1px solid rgba(48, 51, 54, 0.6);
-  padding: 15px;
+  border-top: 1px solid rgb(199, 199, 199);
+  padding: 25px;
 }
 .cart-drawer .cart-content-wrapper .cart-footer .cart-total-price {
   display: flex;
   justify-content: space-between;
+  font-family: "Scotch Display medium", "Helvetica Neue";
 }
 .cart-drawer .cart-content-wrapper .cart-footer .cart-total-price .cart-total-text {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 .cart-drawer .cart-content-wrapper .cart-footer .cart-total-price .cart-total-amount {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 .cart-drawer .cart-content-wrapper .cart-footer .terms-condition-wrapper {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 .cart-drawer .cart-content-wrapper .cart-footer .terms-condition-wrapper .checkbox-wrapper {
   display: flex;
@@ -1861,6 +1896,8 @@ ul {
   color: #fff !important;
   padding: 10px;
   width: 100%;
+  text-transform: uppercase;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
 }
 .cart-drawer .cart-content-wrapper .cart-footer .btn.disable {
   opacity: 0.5;

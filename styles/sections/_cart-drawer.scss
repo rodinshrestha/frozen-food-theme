@@ -6,7 +6,7 @@
   top: 0;
   bottom: 0;
   right: -100%;
-  width: 450px;
+  width: 550px;
   height: 100%;
   background: white;
   box-shadow: $box-shadow;
@@ -27,11 +27,15 @@
   .cart-header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid $divider-color;
-    padding: 15px;
+    padding: 25px;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    font-family: $font-family-scotch;
+    font-size: 20px;
+    letter-spacing: 1px;
 
     .cart-close {
-      font-size: 1.3rem;
+      font-size: 18px;
+      font-family: $font-family-scotch-med !important;
       background: none;
       border: none;
       cursor: pointer;
@@ -54,7 +58,6 @@
     .cart-items-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 5px;
       height: 100%;
       overflow: scroll;
 
@@ -63,7 +66,14 @@
         gap: 20px;
         align-items: center;
         position: relative;
-        padding: 20px 15px;
+        padding: 25px;
+        border-top: 1px solid rgb(199, 199, 199);
+        &:last-child {
+          border-bottom: 1px solid rgb(199, 199, 199);
+        }
+        &:first-child {
+          border-top: none;
+        }
 
         .item-loader {
           position: absolute;
@@ -97,33 +107,69 @@
         .cart-product-information {
           display: flex;
           flex-direction: column;
-          // gap: 20px;
+          // gap: 15px;
           flex-grow: 1;
 
           .cart-product-type {
-            font-size: 0.8rem;
+            font-size: 12px;
             font-weight: 400;
-            color: $dark-red-color;
-            margin-bottom: 10px;
+            color: rgb(48, 51, 54);
+            line-height: 26px;
+            font-family: $font-family-brandon;
+            text-transform: uppercase;
           }
 
           .cart-item-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-size: 16px;
+            font-family: $font-family-brandon-med;
+            letter-spacing: 1px;
+            line-height: 26px;
+
+            text-transform: uppercase;
+            a {
+              color: inherit;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
           }
 
-          .cart-item-price {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+          .cart-item-variation-list {
+            font-size: 12px;
+            line-height: 26px;
+            color: rgb(48, 51, 54);
+            text-transform: uppercase;
+            font-family: $font-family-brandon;
+
+            .cart-variation-item {
+              margin-right: 10px;
+            }
           }
 
-          .add-to-cart-qty-wrapper {
-            gap: 5px;
-            width: 110px;
-            .quantity-input {
-              width: 15px;
+          .cart-item-qty-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            .cart-item-price {
+              font-size: 14px;
+              font-family: $font-family-brandon-med;
+            }
+
+            .add-to-cart-qty-wrapper {
+              font-family: $font-family-brandon;
+              background-color: transparent;
+              .qty-btn {
+                img {
+                  width: 8px;
+                  height: 8px;
+                }
+              }
+              .quantity-input {
+                width: 15px;
+                font-size: 14px;
+              }
             }
           }
         }
@@ -135,7 +181,7 @@
           border: none;
           cursor: pointer;
           top: 10px;
-          right: 15px;
+          right: 24px;
           &.disabled {
             cursor: not-allowed;
           }
@@ -146,31 +192,31 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      border-top: 1px solid $divider-color;
-      padding: 15px;
+      border-top: 1px solid rgb(199, 199, 199);
+      padding: 25px;
 
       .cart-total-price {
         display: flex;
         justify-content: space-between;
+        font-family: $font-family-scotch-med;
 
         .cart-total-text {
-          font-size: 16px;
-          font-weight: 500;
+          font-size: 25px;
+          letter-spacing: 1px;
         }
 
         .cart-total-amount {
-          font-size: 16px;
-          font-weight: 500;
+          font-size: 25px;
+          letter-spacing: 1px;
         }
       }
 
       .terms-condition-wrapper {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 16px;
         display: flex;
         flex-direction: column;
         gap: 5px;
-
+        font-family: $font-family-brandon;
         .checkbox-wrapper {
           display: flex;
           align-items: center;
@@ -182,6 +228,8 @@
         color: $light-primary-textColor !important;
         padding: 10px;
         width: 100%;
+        text-transform: uppercase;
+        font-family: $font-family-brandon-med;
         &.disable {
           opacity: 0.5;
           cursor: not-allowed;

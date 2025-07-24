@@ -1,9 +1,17 @@
 <!-- snippets/cart-drawer.liquid -->
+
 <div id="cart-drawer" class="cart-drawer ">
   <div class="cart-header">
-    <h2>Your Cart</h2>
+    <h2>Cart</h2>
     <button id="close-cart" aria-label="Close cart" class="cart-close">
-      <i class="fa-solid fa-xmark"></i>
+      <img
+        src="{{ "cancel.png" | asset_url }}"
+        width="16"
+        height="16"
+        alt="delete icon"
+        class="remove-cart-icon"
+        title="Remove Item"
+      >
     </button>
   </div>
   <div class="loader hidden" id="cart-loader"></div>
@@ -11,17 +19,27 @@
     {% if cart.item_count > 0 %}
       <div class="cart-items-wrapper">
         {% for item in cart.items %}
+          {% assign show_variants = false %}
+
+          {% for option in item.options_with_values %}
+            {% unless option.value == 'Default Title' or option.value == 'Default' or option.name == 'Title' %}
+              {% assign show_variants = true %}
+            {% endunless %}
+          {% endfor %}
+
           <div class="cart-item-details" data-key="{{ item.key }}" data-line="{{ forloop.index }}">
             <div class="item-loader hidden" id="item-individual-loader">
               <div class="loader"></div>
             </div>
             <div class="cart-item-image-wrapper">
-              <img
-                src="{{ item.product.images[0] | image_url }}"
-                width="150"
-                height="150"
-                alt="{{ item.product.title }}"
-              >
+              <a href="{{ item.url }}">
+                <img
+                  src="{{ item.product.images[0] | image_url }}"
+                  width="150"
+                  height="150"
+                  alt="{{ item.product.title }}"
+                >
+              </a>
 
               {% if item.product.tags.size > 0 %}
                 <div class="cart-item-product-tag-wrapper">
@@ -35,9 +53,21 @@
               {% if item.product.type != '' %}
                 <div class="cart-product-type">{{ item.product.type }}</div>
               {% endif %}
-              <div class="cart-item-title">{{ item.title }}</div>
-              <div class="cart-item-price">{{ item.line_price | money }}</div>
-              {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}
+              <div class="cart-item-title">
+                <a href="{{ item.url }}">{{ item.product.title }}</a>
+              </div>
+              {% if show_variants %}
+                <div class="cart-item-variation-list">
+                  {% for option in item.options_with_values %}
+                    <span class="cart-variation-item"> {{ option.value }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <div class="cart-item-qty-group">
+                {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}
+                <div class="cart-item-price">{{ item.line_price | money }}</div>
+              </div>
             </div>
 
             <button
@@ -48,9 +78,9 @@
               data-key="{{ item.key }}"
             >
               <img
-                src="{{ "trash.png" | asset_url }}"
-                width="18"
-                height="18"
+                src="{{ "cancel.png" | asset_url }}"
+                width="14"
+                height="14"
                 alt="delete icon"
                 class="remove-cart-icon"
                 title="Remove Item"
