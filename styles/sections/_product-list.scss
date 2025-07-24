@@ -55,7 +55,8 @@
 
     .featured-product-inner-wrapper {
       box-sizing: border-box;
-      flex: 0 1 20%;
+      flex: 1 1 20%;
+      max-width: 439px;
 
       @include responsive(tablet) {
         flex: 0 1 100%;
