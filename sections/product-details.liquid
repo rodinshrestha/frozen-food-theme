@@ -52,8 +52,6 @@
               </div>
               <div class="divier top-divider"></div>
 
-              {% render 'product-variations' %}
-
               <div class="product-description-wrapper">
                 <span class="product-desc-value">
                   {{
@@ -63,9 +61,10 @@
                   -}}
                 </span>
               </div>
+              {% render 'product-variations' %}
 
               <div class="product-stock">
-                <span>Stock Status</span>
+                {% comment %} <span>Stock Status</span> {% endcomment %}
                 {% if product.variants.first.available %}
                   <p class="stock-status green">In Stock</p>
                 {% else %}

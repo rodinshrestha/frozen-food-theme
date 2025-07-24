@@ -1560,9 +1560,10 @@ ul {
   gap: 10px;
 }
 .product-variation-wrapper .product-variation-content .variation-title {
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: capitalize;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .product-variation-wrapper .product-variation-content .variations-list-wrapper {
   display: flex;
@@ -1578,6 +1579,7 @@ ul {
   transition: all 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 .product-variation-wrapper .product-variation-content .variations-list-wrapper .variations-list:hover {
   background-color: #303336;
@@ -2597,6 +2599,7 @@ ul {
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-sku {
   font-size: 14px;
+  text-transform: uppercase;
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-title {
   font-size: 40px;
@@ -2653,6 +2656,8 @@ ul {
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-stock .stock-status {
   position: relative;
+  margin-left: 20px;
+  text-transform: uppercase;
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-stock .stock-status::after {
   content: "";

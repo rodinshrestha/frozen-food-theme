@@ -6,6 +6,8 @@
 {% endfor %}
 
 {% if has_real_options %}
+  <div class="divier top-divider"></div>
+
   <div class="product-variation-wrapper">
     {% for option in product.options_with_values %}
       <div class="product-variation-content" data-option-index="{{ forloop.index0 }}">

@@ -93,6 +93,7 @@
 
         .product-sku {
           font-size: 14px;
+          text-transform: uppercase;
         }
 
         .product-title {
@@ -154,6 +155,8 @@
 
           .stock-status {
             position: relative;
+            margin-left: 20px;
+            text-transform: uppercase;
             &::after {
               content: "";
               position: absolute;
