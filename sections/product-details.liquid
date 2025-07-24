@@ -15,10 +15,10 @@
       <div class="col">
         <div class="product-details-wrapper">
           <div class="product-image-wrapper swiper" id="product-image-wrapper">
-            <div class="swiper-wrapper product-detail-image-content">
+            <div class="swiper-wrapper product-detail-image-content" id="lightgallery">
               {% for media in product.media %}
                 {% if media.media_type == 'image' %}
-                  <div class="swiper-slide product-active-image">
+                  <a class="swiper-slide product-active-image" href="{{ media | image_url }}">
                     {% if product.tags.size > 0 %}
                       <div class="product-tag-wrapper">
                         {% for tag in product.tags %}
@@ -26,13 +26,14 @@
                         {% endfor %}
                       </div>
                     {% endif %}
+
                     <img
                       src="{{ media |  image_url }}"
                       alt="{{ media.alt | escape }}"
                       width="280"
                       height="280"
                     >
-                  </div>
+                  </a>
                 {% endif %}
               {% endfor %}
             </div>
@@ -168,6 +169,25 @@
 
 <script id="product-variants-data" type="application/json">
   {{ product.variants | json }}
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const galleryEl = document.getElementById('lightgallery');
+    lightGallery(galleryEl, {
+      selector: 'a', // IMPORTANT
+      plugins: [lgZoom, lgFullscreen],
+      speed: 500,
+      zoom: true,
+      zoomPlugin: {
+        zoomFromOrigin: true,
+        infiniteZoom: true,
+        maxZoom: 10, // 🔁 Increase this value (default is 2)
+        scale: 1, // initial scale (default is 1)
+        zoomAnimationDuration: 300, // optional: animation speed
+      },
+    });
+  });
 </script>
 
 {% schema %}
