@@ -23,15 +23,33 @@
       flex: 1 1 40%;
       height: 100%;
       min-width: 0;
+      width: 100%;
+
+      .product-gallery-swiper-pagination {
+        margin: 10px auto;
+        align-items: center;
+        justify-content: center;
+        .swiper-pagination-bullet-active {
+          background-color: $red-color;
+        }
+      }
 
       .product-detail-image-content {
         flex-direction: column;
+
+        @include responsive(tablet) {
+          flex-direction: row;
+        }
 
         .product-active-image {
           img {
             height: 700px;
             width: 100%;
             object-fit: cover;
+
+            @include responsive(tablet) {
+              height: 500px;
+            }
           }
         }
       }
@@ -251,6 +269,10 @@
       transform 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
     opacity: 0;
+
+    @include responsive(tablet) {
+      display: none;
+    }
 
     &.active {
       transform: translateY(0);
