@@ -20,7 +20,7 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Scotch Display";
+  font-family: "Scotch Display medium";
   src: url("./ScotchDisplay-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -2508,6 +2508,22 @@ ul {
 }
 .product-details-section .product-details-wrapper .product-image-wrapper .product-detail-image-content {
   flex-direction: column;
+  position: relative;
+}
+.product-details-section .product-details-wrapper .product-image-wrapper .product-detail-image-content .product-tag-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+.product-details-section .product-details-wrapper .product-image-wrapper .product-detail-image-content .product-tag-wrapper .tag-name {
+  background-color: #e4022e;
+  padding: 6px 8px;
+  color: #fff;
+  font-size: 0.875rem;
+  border-radius: 5px;
 }
 @media (max-width: 1023px) {
   .product-details-section .product-details-wrapper .product-image-wrapper .product-detail-image-content {
@@ -2550,15 +2566,20 @@ ul {
   font-family: "Scotch Display", "Helvetica Neue";
   letter-spacing: 1px;
 }
+@media (max-width: 1023px) {
+  .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-title {
+    font-size: 32px;
+  }
+}
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-price-wrapper {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-price-wrapper .original-price {
   display: flex;
   align-self: flex-end;
-  font-size: 21px;
+  font-size: 18px;
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-price-wrapper .product-price {
   font-size: 21px;
@@ -2729,8 +2750,17 @@ ul {
 }
 .product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title {
   font-size: 28px;
-  font-family: "Scotch Display", "Helvetica Neue";
+  font-family: "Scotch Display medium", "Helvetica Neue";
   letter-spacing: 1px;
+  position: relative;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: #303336;
+  right: -20px;
 }
 .product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper {
   display: flex;
@@ -2748,6 +2778,10 @@ ul {
 .product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
   font-size: 21px;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .bottom-product-details-btn-group .btn span {
+  display: flex;
+  gap: 10px;
 }
 
 .faq-section .faq-wrapper {

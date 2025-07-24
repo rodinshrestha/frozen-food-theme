@@ -16,17 +16,16 @@
         <div class="product-details-wrapper">
           <div class="product-image-wrapper swiper" id="product-image-wrapper">
             <div class="swiper-wrapper product-detail-image-content" id="lightgallery">
+              {% if product.tags.size > 0 %}
+                <div class="product-tag-wrapper">
+                  {% for tag in product.tags %}
+                    <span class="tag-name">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
               {% for media in product.media %}
                 {% if media.media_type == 'image' %}
                   <a class="swiper-slide product-active-image" href="{{ media | image_url }}">
-                    {% if product.tags.size > 0 %}
-                      <div class="product-tag-wrapper">
-                        {% for tag in product.tags %}
-                          <span class="tag-name">{{ tag }}</span>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-
                     <img
                       src="{{ media |  image_url }}"
                       alt="{{ media.alt | escape }}"
@@ -82,17 +81,21 @@
                     data-variant-id="{{ product.variants.first.id }}"
                     id="add-to-cart-btn"
                   >
-                    <span>
-                      Add to Cart
-                      <img
-                        src="{{ 'button-cart-icon.png' | asset_url }}"
-                        class="btn-icon"
-                        width="20"
-                        height="20"
-                        alt="right-arrow"
-                      >
-                    </span>
-                    <div class="btn-loader"></div>
+                    {% if product.variants.first.available %}
+                      <span>
+                        Add to Cart
+                        <img
+                          src="{{ 'button-cart-icon.png' | asset_url }}"
+                          class="btn-icon"
+                          width="20"
+                          height="20"
+                          alt="right-arrow"
+                        >
+                      </span>
+                      <div class="btn-loader"></div>
+                    {% else %}
+                      <span>Out of Stock</span>
+                    {% endif %}
                   </button>
                 </div>
               </div>
@@ -139,13 +142,12 @@
                 </div>
               </div>
             </div>
-            <div class="product-bottom-right">
-              <div class="product-details-btn-group">
-                <button
-                  class="btn product-add-to-cart-btn btn-contained btn-red {{ productstatus }}"
-                  data-variant-id="{{ product.variants.first.id }}"
-                  id="add-to-cart-btn"
-                >
+            <div class="bottom-product-details-btn-group">
+              <button
+                class="btn btn-contained btn-red {{ productstatus }}"
+                id="bottom-product-cart"
+              >
+                {% if product.variants.first.available %}
                   <span>
                     Add to Cart
                     <img
@@ -157,8 +159,10 @@
                     >
                   </span>
                   <div class="btn-loader"></div>
-                </button>
-              </div>
+                {% else %}
+                  <span>Out of Stock</span>
+                {% endif %}
+              </button>
             </div>
           </div>
         </div>

@@ -36,6 +36,24 @@
 
       .product-detail-image-content {
         flex-direction: column;
+        position: relative;
+
+        .product-tag-wrapper {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          display: flex;
+          gap: 5px;
+          z-index: 10;
+
+          .tag-name {
+            background-color: $red-color;
+            padding: 6px 8px;
+            color: $light-primary-textColor;
+            font-size: 0.875rem;
+            border-radius: 5px;
+          }
+        }
 
         @include responsive(tablet) {
           flex-direction: row;
@@ -81,16 +99,20 @@
           font-size: 40px;
           font-family: $font-family-scotch;
           letter-spacing: 1px;
+
+          @include responsive(tablet) {
+            font-size: 32px;
+          }
         }
 
         .product-price-wrapper {
           display: flex;
-          gap: 10px;
+          gap: 12px;
           font-family: $font-family-brandon;
           .original-price {
             display: flex;
             align-self: flex-end;
-            font-size: 21px;
+            font-size: 18px;
           }
           .product-price {
             font-size: 21px;
@@ -289,8 +311,18 @@
 
         .bottom-product-title {
           font-size: 28px;
-          font-family: $font-family-scotch;
+          font-family: $font-family-scotch-med;
           letter-spacing: 1px;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: $dark-color;
+            right: -20px;
+          }
         }
         .bottom-product-price {
           .product-price-wrapper {
@@ -310,6 +342,14 @@
               color: $red-color;
               font-size: 21px;
             }
+          }
+        }
+      }
+      .bottom-product-details-btn-group {
+        .btn {
+          span {
+            display: flex;
+            gap: 10px;
           }
         }
       }

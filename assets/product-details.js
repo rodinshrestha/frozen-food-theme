@@ -186,6 +186,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  productDetails
+    .querySelector("#bottom-product-cart")
+    .addEventListener("click", () => {
+      const section = productDetails.querySelector(".product-sticky-bottom");
+      const elementPosition = section.getBoundingClientRect().top;
+
+      window.scrollTo({
+        // top: offsetPosition,
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    });
+
   const productStickyBottomInit = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const productDetailHeight = productDetailSection.offsetHeight;
@@ -235,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Product image Swiper initialized for mobile");
     } else {
       swiperPagination.style.display = "none";
-      ImageSwiper.swiper.destroy(true, true);
+      ImageSwiper?.swiper?.destroy(true, true);
     }
   };
 
