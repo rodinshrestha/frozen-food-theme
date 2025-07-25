@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "banner_NTGAzF": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "full_width": true,
+        "banner-height": "small",
+        "banner-parallax": true,
+        "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
+        "feature-banner-title": "Our Products",
+        "feature-banner-subtitle": "Explore our all products",
+        "button-text": "",
+        "button-link": "",
+        "banner-overlay": true,
+        "overlay-opacity": 1
+      }
+    },
     "main": {
       "type": "all-products-main",
       "settings": {}
@@ -20,7 +36,7 @@
         "dark_mode": false,
         "product_slider": false,
         "collection": "all-products",
-        "section-title": "Explore Our Bundles"
+        "section-title": ""
       }
     },
     "banner_ixNB6L": {
@@ -29,7 +45,7 @@
       "settings": {
         "full_width": true,
         "banner-height": "small",
-        "banner-parallax": false,
+        "banner-parallax": true,
         "banner-image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
         "feature-banner-title": "Explore Our Digital Products",
         "feature-banner-subtitle": "Browse our range of digital offerings",
@@ -41,6 +57,7 @@
     }
   },
   "order": [
+    "banner_NTGAzF",
     "main",
     "product_list_etWtbn",
     "banner_ixNB6L"

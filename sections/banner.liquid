@@ -5,12 +5,6 @@
 
 {% assign banner_id = section.id %}
 
-{% comment %}
-  {% capture gutters %}
-    {% if section.settings.full_width %}no-gutters{% endif %}
-  {% endcapture %}
-{% endcomment %}
-
 <section
   id="banner-{{ banner_id }}"
   class="banner-section banner-{{ banner_height }} section-wrapper"
@@ -51,16 +45,6 @@
                 <span>
                   {{ section.settings['button-text'] | default: 'Shop Now' }}
                 </span>
-
-                {% comment %}
-                  <img
-                    src="{{ 'right-arrow.png' | asset_url }}"
-                    class="btn-icon"
-                    width="22"
-                    height="22"
-                    alt="right-arrow"
-                  >
-                {% endcomment %}
               </a>
             {% endif %}
           </div>
@@ -190,7 +174,7 @@
       "min": 0,
       "max": 1,
       "step": 0.1,
-      "default": 1,
+      "default": 0.4,
       "label": "Overlay Opacity"
     }
   ],
