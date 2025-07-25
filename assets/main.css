@@ -327,6 +327,7 @@ ul {
   font-family: "Brandon Grotesque", "Helvetica Neue";
   display: flex;
   list-style: none;
+  align-items: center;
   gap: 15px;
   font-weight: 500;
 }
@@ -336,6 +337,8 @@ ul {
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list {
   cursor: pointer;
+  display: flex;
+  align-self: center;
   font-family: "Brandon Grotesque", "Helvetica Neue";
   font-weight: 500;
   position: relative;
@@ -370,6 +373,7 @@ ul {
   transition: height 0.3s ease;
   visibility: hidden;
   z-index: 12;
+  top: 30px;
   box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list {

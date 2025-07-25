@@ -83,6 +83,7 @@
         font-family: $font-family-brandon;
         display: flex;
         list-style: none;
+        align-items: center;
         gap: 15px;
         font-weight: 500;
         a {
@@ -91,6 +92,8 @@
         }
         .navigation-list {
           cursor: pointer;
+          display: flex;
+          align-self: center;
           // transition: all 0.2s ease-in;
           font-family: $font-family-brandon;
           font-weight: 500;
@@ -141,6 +144,7 @@
             transition: height 0.3s ease;
             visibility: hidden;
             z-index: 12;
+            top: 30px;
             box-shadow: $box-shadow;
             .sub-menu-list {
               cursor: pointer;
