@@ -18,13 +18,14 @@
       "name": "Banner",
       "settings": {
         "full_width": true,
-        "banner-height": "medium",
+        "banner-height": "small",
         "banner-parallax": true,
-        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
+        "banner-image": "shopify://shop_images/sauces_1296x_c6c23cf0-c1be-4978-ae43-685015cf2299.webp",
         "feature-banner-title": "Explore Our Bundle Collections",
-        "feature-banner-subtitle": "Discover our thoughtfully curated frozen food bundles — designed to bring you convenience, variety, and deliciousness in every bite. Make mealtime easier with our frozen food bundles, offering a perfect mix of flavor",
+        "feature-banner-subtitle": "Discover our thoughtfully curated frozen food bundles",
         "button-text": "",
         "button-link": "",
+        "banner-overlay": true,
         "overlay-opacity": 0.5
       }
     },
@@ -32,15 +33,44 @@
       "type": "product-list",
       "name": "Product List",
       "settings": {
+        "dark_mode": false,
         "product_slider": false,
         "collection": "bundle-list",
-        "section-title": ""
+        "section-title": "Explore Our Bundles"
+      }
+    },
+    "product_list_Rhge8G": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "dark_mode": true,
+        "product_slider": true,
+        "collection": "sauce-collection",
+        "section-title": "Also Explore Our Sauce"
+      }
+    },
+    "banner_tUPKnU": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "full_width": true,
+        "banner-height": "small",
+        "banner-parallax": true,
+        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
+        "feature-banner-title": "DIGITAL PRODUCTS",
+        "feature-banner-subtitle": "Explore our wide range of digital products, available instantly.",
+        "button-text": "EXPLORE",
+        "button-link": "shopify://pages/gift-card",
+        "banner-overlay": true,
+        "overlay-opacity": 0.8
       }
     }
   },
   "order": [
     "main",
     "banner_gRKpwM",
-    "product_list_6L8NHT"
+    "product_list_6L8NHT",
+    "product_list_Rhge8G",
+    "banner_tUPKnU"
   ]
 }
