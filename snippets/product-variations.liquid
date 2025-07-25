@@ -1,6 +1,6 @@
 {% assign has_real_options = false %}
 {% for option in product.options_with_values %}
-  {% if option.name != 'Title' %}
+  {% if option.name != 'Title' and option.values.size > 1 %}
     {% assign has_real_options = true %}
   {% endif %}
 {% endfor %}
