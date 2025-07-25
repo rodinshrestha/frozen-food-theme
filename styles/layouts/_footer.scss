@@ -308,3 +308,17 @@
     font-size: 12px;
   }
 }
+
+.contact-email.error {
+  border: 1.5px solid #e4022e !important;
+  outline: none;
+}
+
+.newsletter-error-msg {
+  color: #e4022e;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  text-align: left;
+  display: none;
+}

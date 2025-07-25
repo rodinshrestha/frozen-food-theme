@@ -43,15 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create and insert toaster
     let toaster = document.createElement('div');
     toaster.className = 'footer-toaster';
-    // Only control visibility in JS
     toaster.style.display = 'none';
     subscribeBtn.parentNode.style.position = 'relative';
     subscribeBtn.parentNode.appendChild(toaster);
 
-    function showToaster(message, type) {
+    // Create error message element
+    let errorMsg = document.createElement('div');
+    errorMsg.className = 'newsletter-error-msg';
+    errorMsg.style.display = 'none';
+    errorMsg.textContent = 'Please enter a valid email address.';
+    emailInput.parentNode.appendChild(errorMsg);
+
+    function showToaster(message) {
       toaster.textContent = message;
-      toaster.classList.remove('success', 'error');
-      toaster.classList.add(type);
+      toaster.classList.remove('success');
       toaster.style.display = 'block';
       setTimeout(() => {
         toaster.style.display = 'none';
@@ -63,12 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
     subscribeBtn.addEventListener('click', function () {
       const email = emailInput.value.trim();
       if (!validateEmail(email)) {
-        showToaster('Please enter a valid email address.', 'error');
-        emailInput.focus();
+        emailInput.classList.add('error');
+        errorMsg.style.display = 'block';
         return;
       }
-      showToaster('Thank you for subscribing', 'success');
+      showToaster('Thank you for subscribing');
       emailInput.value = '';
+      emailInput.classList.remove('error');
+      errorMsg.style.display = 'none';
+    });
+    emailInput.addEventListener('input', function () {
+      if (emailInput.classList.contains('error') || errorMsg.style.display === 'block') {
+        emailInput.classList.remove('error');
+        errorMsg.style.display = 'none';
+      }
     });
   }
 });
