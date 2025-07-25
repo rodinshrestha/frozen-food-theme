@@ -252,3 +252,59 @@
     }
   }
 }
+
+.footer-toaster {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  left: auto;
+  background: #025a31;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: none;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+  max-width: 320px;
+  min-width: 180px;
+  margin: 0 auto;
+
+  &.success {
+    background: #025a31;
+    color: #fff;
+  }
+  &.error {
+    background: #e4022e;
+    color: #fff;
+  }
+
+  @include responsive(tablet) {
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 320px;
+    font-size: 13px;
+    padding: 8px 6px;
+    border-radius: 0 0 6px 6px;
+    text-align: center;
+  }
+  @include responsive(mobile-lg) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    top: auto;
+    width: 90vw;
+    max-width: 260px;
+    margin: 0 auto;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+}
