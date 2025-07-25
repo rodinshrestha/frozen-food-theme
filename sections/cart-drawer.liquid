@@ -19,6 +19,7 @@
     {% if cart.item_count > 0 %}
       <div class="cart-items-wrapper">
         {% for item in cart.items %}
+          {% assign variant_image = item.image | default: item.variant.image | default: item.product.featured_image %}
           {% assign show_variants = false %}
 
           {% for option in item.options_with_values %}
@@ -34,7 +35,7 @@
             <div class="cart-item-image-wrapper">
               <a href="{{ item.url }}">
                 <img
-                  src="{{ item.product.images[0] | image_url }}"
+                  src="{{ variant_image| image_url }}"
                   width="150"
                   height="150"
                   alt="{{ item.product.title }}"

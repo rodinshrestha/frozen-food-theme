@@ -822,7 +822,7 @@ ul {
   margin-top: 20px;
   height: 1px;
   width: 100%;
-  background-color: rgba(151, 151, 151, 0.25);
+  background-color: rgb(199, 199, 199);
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper {
   display: flex;
@@ -1073,6 +1073,7 @@ ul {
   left: 10px;
   display: flex;
   gap: 5px;
+  z-index: 10;
 }
 .featured-product-inner-wrapper .featured-product-image-wrapper .product-tag-wrapper .tag-name {
   background-color: #e4022e;
@@ -1550,7 +1551,7 @@ ul {
 .divier {
   width: 100%;
   height: 1.5px;
-  background-color: rgba(151, 151, 151, 0.25);
+  background-color: rgb(199, 199, 199);
 }
 
 .product-variation-wrapper {
@@ -1795,6 +1796,9 @@ ul {
   color: #fff;
   font-size: 0.875rem;
   border-radius: 5px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-item-image-wrapper img {
+  object-fit: contain;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information {
   display: flex;

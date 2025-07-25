@@ -67,9 +67,9 @@
         align-items: center;
         position: relative;
         padding: 25px;
-        border-top: 1px solid rgb(199, 199, 199);
+        border-top: 1px solid $light-divider-color;
         &:last-child {
-          border-bottom: 1px solid rgb(199, 199, 199);
+          border-bottom: 1px solid $light-divider-color;
         }
         &:first-child {
           border-top: none;
@@ -102,12 +102,14 @@
               border-radius: 5px;
             }
           }
+          img {
+            object-fit: contain;
+          }
         }
 
         .cart-product-information {
           display: flex;
           flex-direction: column;
-          // gap: 15px;
           flex-grow: 1;
 
           .cart-product-type {
