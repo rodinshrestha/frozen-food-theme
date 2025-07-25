@@ -20,23 +20,13 @@
         "full_width": true,
         "banner-height": "medium",
         "banner-parallax": true,
-        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
+        "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
         "feature-banner-title": "Explore Our Frozen Food Collection",
         "feature-banner-subtitle": "Enjoy restaurant quality meal at home in minutes. Better than take out. From vegan, CHhicken, Beef and Pork falvour momos to Himalayan Style Vegan Chowmein and Himlayan Style Vegan Fried RIce.",
         "button-text": "",
         "button-link": "",
         "banner-overlay": true,
         "overlay-opacity": 0.5
-      }
-    },
-    "product_list_e4aHfX": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "dark_mode": false,
-        "product_slider": true,
-        "collection": "home-page-product",
-        "section-title": "Frozen Food"
       }
     },
     "product_list_XzWYfr": {
@@ -47,6 +37,16 @@
         "product_slider": false,
         "collection": "homepage-bundle-collections",
         "section-title": "Our Bundles"
+      }
+    },
+    "product_list_e4aHfX": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "dark_mode": false,
+        "product_slider": true,
+        "collection": "home-page-product",
+        "section-title": "Frozen Food"
       }
     },
     "faq_VbCmqP": {
