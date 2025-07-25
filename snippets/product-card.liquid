@@ -1,5 +1,9 @@
 <div class="featured-product-inner-wrapper swiper-slide">
-  <div class="featured-product-image-wrapper {% if product.images.size > 1 %}has-hover{% endif %}">
+  <a
+    href="{{ product.url }}"
+    class="featured-product-image-wrapper {% if product.images.size > 1 %}has-hover{% endif %}"
+    style="text-decoration: none;"
+  >
     {% if product.tags.size > 0 %}
       <div class="product-tag-wrapper">
         {% for tag in product.tags %}
@@ -27,7 +31,7 @@
     {% endif %}
 
     {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
-  </div>
+  </a>
 
   <div class="featured-product-information">
     {% if product.type != '' %}
