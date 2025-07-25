@@ -1841,20 +1841,6 @@ ul {
   margin-right: 15px;
   position: relative;
 }
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-variation-list .cart-variation-item::before {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 70%;
-  background-color: #303336;
-  top: 50%;
-  right: -10px;
-  transform: translateY(-50%);
-}
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-variation-list .cart-variation-item:last-child::before {
-  background-color: transparent;
-  height: 0;
-}
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group {
   display: flex;
   justify-content: space-between;

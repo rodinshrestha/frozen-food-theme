@@ -148,24 +148,6 @@
             .cart-variation-item {
               margin-right: 15px;
               position: relative;
-
-              &::before {
-                content: "";
-                position: absolute;
-                width: 1px;
-                height: 70%;
-                background-color: $dark-primary-textColor;
-                top: 50%;
-                right: -10px;
-                transform: translateY(-50%);
-              }
-
-              &:last-child {
-                &::before {
-                  background-color: transparent;
-                  height: 0;
-                }
-              }
             }
           }
 
