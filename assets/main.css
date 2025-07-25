@@ -726,10 +726,13 @@ ul {
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-type {
   margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-title {
   font-size: 20px;
-  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  font-family: "Scotch Display medium", "Helvetica Neue";
+  letter-spacing: 1px;
   margin-bottom: 15px;
 }
 @media (max-width: 1023px) {
@@ -796,12 +799,13 @@ ul {
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status {
   position: relative;
-  margin-left: 15px;
+  margin-left: 20px;
+  text-transform: uppercase;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status::after {
   content: "";
   position: absolute;
-  left: -15px;
+  left: -20px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;

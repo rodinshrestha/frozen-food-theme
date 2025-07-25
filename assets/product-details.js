@@ -1,4 +1,13 @@
-// const forceSlider = () => document.documentElement.clientWidth <= 1035;
+function isFooterInView() {
+  const footer = document.getElementById("footer");
+  if (!footer) return false;
+
+  const rect = footer.getBoundingClientRect();
+  return (
+    rect.top < window.innerHeight && // top edge is above bottom of viewport
+    rect.bottom >= 0 // bottom edge is below top of viewport
+  );
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const productDetails = document.getElementById("product-details");
@@ -203,7 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const productDetailHeight = productDetailSection.offsetHeight;
 
-    if (scrollTop > productDetailHeight) {
+    const showShowStickyBtn =
+      scrollTop > productDetailHeight && !isFooterInView();
+
+    if (showShowStickyBtn) {
       stickyBottomSection.classList.add("active");
     } else {
       stickyBottomSection.classList.remove("active");
@@ -232,10 +244,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       new Swiper(ImageSwiper, {
         loop: true,
-        // autoplay: {
-        //   delay: 10000,
-        //   disableOnInteraction: true,
-        // },
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: true,
+        },
         slidesPerView: 1,
         spaceBetween: 0,
         effect: "slide", // Or "fade"
