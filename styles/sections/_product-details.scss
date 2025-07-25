@@ -97,13 +97,9 @@
         }
 
         .product-title {
-          font-size: 40px;
+          font-size: 32px;
           font-family: $font-family-scotch;
           letter-spacing: 1px;
-
-          @include responsive(tablet) {
-            font-size: 32px;
-          }
         }
 
         .product-price-wrapper {

@@ -26,7 +26,7 @@
         "button-text": "",
         "button-link": "",
         "banner-overlay": true,
-        "overlay-opacity": 0.5
+        "overlay-opacity": 0.6
       }
     },
     "product_list_6L8NHT": {
@@ -56,13 +56,13 @@
         "full_width": true,
         "banner-height": "small",
         "banner-parallax": true,
-        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
-        "feature-banner-title": "DIGITAL PRODUCTS",
+        "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
+        "feature-banner-title": "Digital Products",
         "feature-banner-subtitle": "Explore our wide range of digital products, available instantly.",
         "button-text": "EXPLORE",
         "button-link": "shopify://pages/gift-card",
         "banner-overlay": true,
-        "overlay-opacity": 0.8
+        "overlay-opacity": 0.6
       }
     }
   },
