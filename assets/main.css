@@ -1624,6 +1624,7 @@ ul {
 
 .banner-section {
   position: relative;
+  overflow: hidden;
 }
 .banner-section:has(.fluid) {
   padding: 0 !important;
@@ -3105,7 +3106,7 @@ ul {
     line-height: 38px;
   }
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .down-arrow-img {
+.slider-banner-section .down-arrow-img {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -3117,8 +3118,9 @@ ul {
   width: 28px;
   height: 28px;
   transition: background-color 0.2s linear;
+  z-index: 1;
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .down-arrow-img:hover {
+.slider-banner-section .down-arrow-img:hover {
   background-color: rgba(242, 242, 242, 0.6);
   box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
 }

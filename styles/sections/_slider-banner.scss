@@ -185,28 +185,30 @@
                   line-height: 38px;
                 }
               }
-              .down-arrow-img {
-                position: absolute;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                animation: bounce 1.5s infinite ease-in-out;
-                cursor: pointer;
-                border-radius: 50%;
-                padding: 5px;
-                width: 28px;
-                height: 28px;
-                transition: background-color 0.2s linear;
-
-                &:hover {
-                  background-color: $light-secondary-textColor;
-                  box-shadow: $box-shadow;
-                }
-              }
             }
           }
         }
       }
+    }
+  }
+
+  .down-arrow-img {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 1.5s infinite ease-in-out;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+    width: 28px;
+    height: 28px;
+    transition: background-color 0.2s linear;
+    z-index: 1;
+
+    &:hover {
+      background-color: $light-secondary-textColor;
+      box-shadow: $box-shadow;
     }
   }
 }

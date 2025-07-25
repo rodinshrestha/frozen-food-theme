@@ -3,6 +3,7 @@
 
 .banner-section {
   position: relative;
+  overflow: hidden;
   &:has(.fluid) {
     padding: 0 !important;
 
