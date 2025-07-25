@@ -29,16 +29,6 @@
         "overlay-opacity": 0.5
       }
     },
-    "product_list_XzWYfr": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "dark_mode": false,
-        "product_slider": false,
-        "collection": "homepage-bundle-collections",
-        "section-title": "Our Bundles"
-      }
-    },
     "product_list_e4aHfX": {
       "type": "product-list",
       "name": "Product List",
@@ -47,6 +37,16 @@
         "product_slider": true,
         "collection": "home-page-product",
         "section-title": "Frozen Food"
+      }
+    },
+    "product_list_XzWYfr": {
+      "type": "product-list",
+      "name": "Product List",
+      "settings": {
+        "dark_mode": true,
+        "product_slider": false,
+        "collection": "homepage-bundle-collections",
+        "section-title": "Also Explore Our Bundles"
       }
     },
     "faq_VbCmqP": {
@@ -96,8 +96,8 @@
   "order": [
     "main",
     "banner_xdJArt",
-    "product_list_XzWYfr",
     "product_list_e4aHfX",
+    "product_list_XzWYfr",
     "faq_VbCmqP"
   ]
 }
