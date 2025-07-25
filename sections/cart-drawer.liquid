@@ -42,13 +42,7 @@
                 >
               </a>
 
-              {% if item.product.tags.size > 0 %}
-                <div class="cart-item-product-tag-wrapper">
-                  {% for tag in item.product.tags %}
-                    <span class="tag-name">{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
+              {% render 'product-tag', product: item.product %}
             </div>
             <div class="cart-product-information">
               {% if item.product.type != '' %}

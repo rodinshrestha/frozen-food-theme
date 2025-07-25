@@ -1,18 +1,6 @@
-{% assign discount = product.compare_at_price | minus: product.price %}
-{% assign percentage = discount | times: 100 | divided_by: product.compare_at_price %}
-
 <div class="featured-product-inner-wrapper swiper-slide">
   <div class="featured-product-image-wrapper {% if product.images.size > 1 %}has-hover{% endif %}">
-    {% if product.tags.size > 0 %}
-      <div class="product-tag-wrapper">
-        {% if percentage %}
-          <span class="tag-name">-{{ percentage }}%</span>
-        {% endif %}
-        {% for tag in product.tags %}
-          {% comment %} <span class="tag-name">{{ tag }}</span> {% endcomment %}
-        {% endfor %}
-      </div>
-    {% endif %}
+    {% render 'product-tag', product: product %}
 
     <img
       src="{{ product.featured_image | image_url }}"

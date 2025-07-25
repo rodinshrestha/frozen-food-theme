@@ -15,14 +15,8 @@
       <div class="col">
         <div class="product-details-wrapper">
           <div class="product-image-wrapper swiper" id="product-image-wrapper">
+            {% render 'product-tag', product: product %}
             <div class="swiper-wrapper product-detail-image-content" id="lightgallery">
-              {% if product.tags.size > 0 %}
-                <div class="product-tag-wrapper">
-                  {% for tag in product.tags %}
-                    <span class="tag-name">{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
               {% for media in product.media %}
                 {% if media.media_type == 'image' %}
                   <a class="swiper-slide product-active-image" href="{{ media | image_url }}">

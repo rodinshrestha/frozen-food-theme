@@ -1,0 +1,18 @@
+@use "abstracts/_breakpoints" as *;
+@use "abstracts/_variables" as *;
+
+.product-tag-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+  .tag-name {
+    background-color: $red-color;
+    padding: 6px 8px;
+    color: $light-primary-textColor;
+    font-size: 0.875rem;
+    border-radius: 5px;
+  }
+}
