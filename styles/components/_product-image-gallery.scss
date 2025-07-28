@@ -17,6 +17,9 @@
     box-sizing: border-box;
     padding-bottom: 10px;
     position: relative;
+    @include responsive(tablet) {
+      height: 420px;
+    }
     .product-tag-wrapper {
       position: absolute;
       top: 10px;

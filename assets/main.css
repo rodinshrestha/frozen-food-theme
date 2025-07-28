@@ -698,8 +698,8 @@ ul {
 }
 @media (max-width: 1023px) {
   .add-to-cart-modal-wrapper .modal-content .close-modal-btn {
-    right: 2px;
-    top: 2px;
+    right: -1px;
+    top: 3px;
   }
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper {
@@ -1430,6 +1430,11 @@ ul {
   box-sizing: border-box;
   padding-bottom: 10px;
   position: relative;
+}
+@media (max-width: 1023px) {
+  .product-gallery-wrapper .product-gallery-image-wrapper {
+    height: 420px;
+  }
 }
 .product-gallery-wrapper .product-gallery-image-wrapper .product-tag-wrapper {
   position: absolute;
