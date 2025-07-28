@@ -79,7 +79,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/1.png",
-            "content_position": "middle",
             "subtitle": "",
             "title": "Momo Sauce",
             "btn": "",
@@ -90,7 +89,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/3.png",
-            "content_position": "middle",
             "subtitle": "",
             "title": "Chicken Momo",
             "btn": "",
@@ -101,7 +99,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/4.png",
-            "content_position": "middle",
             "subtitle": "",
             "title": "Vegan Chowmein",
             "btn": "",
@@ -112,7 +109,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/5.png",
-            "content_position": "middle",
             "subtitle": "",
             "title": "Beef Momo",
             "btn": "",
@@ -123,7 +119,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/2.png",
-            "content_position": "middle",
             "subtitle": "",
             "title": "Pork Momo",
             "btn": "",
@@ -134,7 +129,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/Untitled_design.png",
-            "content_position": "middle",
             "subtitle": "",
             "title": "Vegan Fried Rice",
             "btn": "",
@@ -145,7 +139,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/3.png",
-            "content_position": "middle",
             "subtitle": "",
             "title": "Chicken Momo",
             "btn": "",
@@ -167,7 +160,8 @@
         "divider": false,
         "subtitle": "",
         "title": "",
-        "description": ""
+        "description": "",
+        "content_position": "middle"
       }
     },
     "product_list_DdBxrY": {
@@ -212,16 +206,6 @@
         "overlay-opacity": 0.7
       }
     },
-    "product_list_R9dzXy": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "dark_mode": true,
-        "product_slider": true,
-        "collection": "ready-to-eat",
-        "section-title": "Ready To Eat"
-      }
-    },
     "category_list_iypRdW": {
       "type": "category-list",
       "blocks": {
@@ -229,7 +213,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/4.png",
-            "content_position": "bottom",
             "subtitle": "VEGAN",
             "title": "Chowmein",
             "btn": "Explore",
@@ -240,7 +223,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/5.png",
-            "content_position": "middle",
             "subtitle": "BEEF",
             "title": "MOMO",
             "btn": "EXPLORE",
@@ -251,7 +233,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/2.png",
-            "content_position": "middle",
             "subtitle": "PORK",
             "title": "Momo",
             "btn": "EXPLORE",
@@ -262,7 +243,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/1.png",
-            "content_position": "bottom",
             "subtitle": "SAUCE",
             "title": "Momo Sauce",
             "btn": "EXPLORE",
@@ -273,7 +253,6 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/non-veg-momos-with-sauce.png",
-            "content_position": "bottom",
             "subtitle": "NON VEG BUNDLES",
             "title": "Momo Bundles",
             "btn": "EXPLORE",
@@ -293,7 +272,8 @@
         "divider": true,
         "subtitle": "READY TO EAT",
         "title": "FROZEN FOOD",
-        "description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!"
+        "description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!",
+        "content_position": "bottom"
       }
     },
     "three_content_block_khX47y": {
@@ -302,7 +282,7 @@
         "content_block_9bFchn": {
           "type": "content_block",
           "settings": {
-            "block_image": "shopify://shop_images/Sherpa_Food.png",
+            "block_image": "shopify://shop_images/Sherpa_Food_1.png",
             "block_title": "You Choose",
             "block_description": "Whether its pantry essentials or healthy prepared meals, we've got you covered!"
           }
@@ -341,7 +321,6 @@
     "product_list_DdBxrY",
     "banner_gbwkNy",
     "banner_GNpeWc",
-    "product_list_R9dzXy",
     "category_list_iypRdW",
     "three_content_block_khX47y"
   ]
