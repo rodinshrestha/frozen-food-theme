@@ -1691,7 +1691,7 @@ ul {
 }
 @media (max-width: 1023px) {
   .banner-section .banner-wrapper .feature-banner-information-wrapper {
-    top: 25%;
+    top: 45%;
   }
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-title {
@@ -3295,6 +3295,11 @@ ul {
   padding: 20px 0;
   gap: 20px;
 }
+@media (max-width: 1023px) {
+  .category-list-section .category-title-wrapper {
+    margin-bottom: 30px;
+  }
+}
 .category-list-section .category-title-wrapper .category-subtitle {
   font-family: "Brandon Grotesque", "Helvetica Neue";
   font-size: 12px;
@@ -3311,6 +3316,11 @@ ul {
   width: 50%;
   text-align: center;
   line-height: 24px;
+}
+@media (max-width: 1023px) {
+  .category-list-section .category-title-wrapper .category-description {
+    width: 100%;
+  }
 }
 .category-list-section .category-wrapper {
   position: relative;

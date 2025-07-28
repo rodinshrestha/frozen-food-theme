@@ -45,6 +45,10 @@
     margin-bottom: 100px;
     padding: 20px 0;
     gap: 20px;
+
+    @include responsive(tablet) {
+      margin-bottom: 30px;
+    }
     .category-subtitle {
       font-family: $font-family-brandon;
       font-size: 12px;
@@ -61,6 +65,10 @@
       width: 50%;
       text-align: center;
       line-height: 24px;
+
+      @include responsive(tablet) {
+        width: 100%;
+      }
     }
   }
   .category-wrapper {
