@@ -2088,7 +2088,7 @@ ul {
   }
 }
 .product-list-section.bg-section-dark.section-divider::after, .product-list-section.bg-section-dark.section-divider::before {
-  width: 90%;
+  width: 80%;
   position: absolute;
   height: 1px;
   content: "";
@@ -3245,6 +3245,67 @@ ul {
 .category-list-section {
   overflow: hidden;
 }
+.category-list-section.category-divider {
+  padding-top: 180px;
+  position: relative;
+  padding-bottom: 200px;
+}
+.category-list-section.category-divider::before, .category-list-section.category-divider::after {
+  content: "";
+  position: absolute;
+  background-color: #303336;
+  height: 1px;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 1023px) {
+  .category-list-section.category-divider {
+    padding: 80px 0;
+  }
+}
+.category-list-section.category-divider::after {
+  top: 100px;
+}
+@media (max-width: 1023px) {
+  .category-list-section.category-divider::after {
+    top: 50px;
+  }
+}
+.category-list-section.category-divider::before {
+  bottom: 85px;
+}
+@media (max-width: 1023px) {
+  .category-list-section.category-divider::before {
+    bottom: 50px;
+  }
+}
+.category-list-section .category-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 20px 0;
+  gap: 20px;
+}
+.category-list-section .category-title-wrapper .category-subtitle {
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.category-list-section .category-title-wrapper .category-title {
+  font-size: 40px;
+  font-family: "Scotch Display medium", "Helvetica Neue";
+  letter-spacing: 1px;
+}
+.category-list-section .category-title-wrapper .category-description {
+  font-size: 16px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  width: 50%;
+  text-align: center;
+  line-height: 24px;
+}
 .category-list-section .category-wrapper {
   position: relative;
 }
@@ -3258,6 +3319,10 @@ ul {
   cursor: pointer;
   border-radius: 10px;
 }
+.category-list-section .category-wrapper .category-content-list.content-position-bottom {
+  align-items: end;
+  padding-bottom: 40px;
+}
 .category-list-section .category-wrapper .category-content-list a {
   text-decoration: none;
   z-index: 5;
@@ -3265,10 +3330,15 @@ ul {
 .category-list-section .category-wrapper .category-content-list:hover .category-image {
   transform: scale(1.1);
 }
-.category-list-section .category-wrapper .category-content-list .overlay {
+.category-list-section .category-wrapper .category-content-list .category-content-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .overlay {
   z-index: 2;
 }
-.category-list-section .category-wrapper .category-content-list .category-image {
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-image {
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -3278,7 +3348,21 @@ ul {
   object-fit: cover;
   transition: transform 0.4s linear;
 }
-.category-list-section .category-wrapper .category-content-list .category-title {
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-subtitle {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-subtitle + .category-list-title {
+  font-size: 30px !important;
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-title {
   position: relative;
   z-index: 2;
   color: #fff;
@@ -3286,6 +3370,13 @@ ul {
   font-weight: 500;
   font-family: "Scotch Display", "Helvetica Neue";
   text-align: center;
+  font-family: "Scotch Display", "Helvetica Neue";
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-btn {
+  z-index: 2;
+  color: #fff;
+  padding: 10px 0 !important;
+  margin-top: 10px;
 }
 .category-list-section .category-wrapper .category-swiper-navigation {
   background: transparent;
