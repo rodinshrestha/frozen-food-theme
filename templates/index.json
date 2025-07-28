@@ -28,7 +28,6 @@
           "settings": {
             "content_position": "right",
             "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
-            "mobile_image": "shopify://shop_images/4_1296x_7b96e8f6-ad74-43cb-bfdb-fe4438e7fc4c.webp",
             "title": "Bringing the Rich Flavors of the Mountains",
             "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Taste of the Mountains..",
             "button_text": "SHOP NOW",
@@ -61,7 +60,7 @@
         "gap_between": false,
         "section_gap": false,
         "parallax-animation": true,
-        "image-one": "shopify://shop_images/sauces_1296x_c6c23cf0-c1be-4978-ae43-685015cf2299.webp",
+        "image-one": "shopify://shop_images/momo-sauce-group-2.webp",
         "title-one": "",
         "helper_text_one": "Sauce Collection",
         "button-one": "EXPLORE",
@@ -80,7 +79,9 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/1.png",
+            "subtitle": "",
             "title": "Momo Sauce",
+            "btn": "",
             "url": "shopify://pages/momo-sauce"
           }
         },
@@ -88,23 +89,29 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/3.png",
+            "subtitle": "",
             "title": "Chicken Momo",
-            "url": "shopify://products/chicken-momo"
+            "btn": "",
+            "url": "shopify://products/chicken-momo-27g-protein-per-serving"
           }
         },
         "text_slide_dngQeV": {
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/4.png",
+            "subtitle": "",
             "title": "Vegan Chowmein",
-            "url": "shopify://products/veg-chowmein"
+            "btn": "",
+            "url": "shopify://products/himalayan-style-vegan-chowmein-fried-noodle-12g-protein-per-serving"
           }
         },
         "text_slide_LtQzcz": {
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/5.png",
+            "subtitle": "",
             "title": "Beef Momo",
+            "btn": "",
             "url": "shopify://products/pork-momo-28g-protein-per-serving"
           }
         },
@@ -112,16 +119,30 @@
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/2.png",
+            "subtitle": "",
             "title": "Pork Momo",
-            "url": "shopify://products/pork-momo"
+            "btn": "",
+            "url": "shopify://products/pork-momo-28g-protein-per-serving-1"
+          }
+        },
+        "text_slide_yPmzJM": {
+          "type": "text_slide",
+          "settings": {
+            "category_image": "shopify://shop_images/Untitled_design.png",
+            "subtitle": "",
+            "title": "Vegan Fried Rice",
+            "btn": "",
+            "url": "shopify://products/himalayan-style-vegan-fried-rice-12g-protein-per-serving"
           }
         },
         "text_slide_jGKMyZ": {
           "type": "text_slide",
           "settings": {
             "category_image": "shopify://shop_images/3.png",
+            "subtitle": "",
             "title": "Chicken Momo",
-            "url": "shopify://products/chicken-momo"
+            "btn": "",
+            "url": "shopify://products/chicken-momo-27g-protein-per-serving"
           }
         }
       },
@@ -131,17 +152,24 @@
         "text_slide_dngQeV",
         "text_slide_LtQzcz",
         "text_slide_jGKMyF",
+        "text_slide_yPmzJM",
         "text_slide_jGKMyZ"
       ],
       "name": "Category List",
-      "settings": {}
+      "settings": {
+        "divider": false,
+        "subtitle": "",
+        "title": "",
+        "description": "",
+        "content_position": "middle"
+      }
     },
     "product_list_DdBxrY": {
       "type": "product-list",
       "name": "Product List",
       "settings": {
         "dark_mode": true,
-        "product_slider": true,
+        "product_slider": false,
         "collection": "homepage-bundle-collections",
         "section-title": "Our Bundles"
       }
@@ -151,8 +179,8 @@
       "name": "Banner",
       "settings": {
         "full_width": false,
-        "banner-height": "large",
-        "banner-parallax": true,
+        "banner-height": "medium",
+        "banner-parallax": false,
         "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
         "feature-banner-title": "Hot Sauce",
         "feature-banner-subtitle": "Expore Our Hot Sauce",
@@ -162,14 +190,90 @@
         "overlay-opacity": 0.5
       }
     },
-    "product_list_R9dzXy": {
-      "type": "product-list",
-      "name": "Product List",
+    "banner_GNpeWc": {
+      "type": "banner",
+      "name": "Banner",
       "settings": {
-        "dark_mode": true,
-        "product_slider": true,
-        "collection": "ready-to-eat",
-        "section-title": "Ready To Eat"
+        "full_width": true,
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "banner-image": "shopify://shop_images/8_1296x_28e75b06-8f35-4027-8a79-47f1a0a25ec3.webp",
+        "feature-banner-title": "DIGITAL CARD",
+        "feature-banner-subtitle": "Perfect for gifting or personal use",
+        "button-text": "EXPLORE",
+        "button-link": "shopify://pages/gift-card",
+        "banner-overlay": true,
+        "overlay-opacity": 0.7
+      }
+    },
+    "category_list_iypRdW": {
+      "type": "category-list",
+      "blocks": {
+        "text_slide_qhMBWY": {
+          "type": "text_slide",
+          "settings": {
+            "category_image": "shopify://shop_images/4.png",
+            "subtitle": "VEGAN",
+            "title": "Chowmein",
+            "btn": "Explore",
+            "url": "shopify://products/himalayan-style-vegan-chowmein-fried-noodle-12g-protein-per-serving"
+          }
+        },
+        "text_slide_ypC3JJ": {
+          "type": "text_slide",
+          "settings": {
+            "category_image": "shopify://shop_images/5.png",
+            "subtitle": "BEEF",
+            "title": "MOMO",
+            "btn": "EXPLORE",
+            "url": "shopify://products/pork-momo-28g-protein-per-serving"
+          }
+        },
+        "text_slide_BXH86M": {
+          "type": "text_slide",
+          "settings": {
+            "category_image": "shopify://shop_images/2.png",
+            "subtitle": "PORK",
+            "title": "Momo",
+            "btn": "EXPLORE",
+            "url": "shopify://products/pork-momo-28g-protein-per-serving-1"
+          }
+        },
+        "text_slide_Jmp9kR": {
+          "type": "text_slide",
+          "settings": {
+            "category_image": "shopify://shop_images/1.png",
+            "subtitle": "SAUCE",
+            "title": "Momo Sauce",
+            "btn": "EXPLORE",
+            "url": "shopify://products/momo-sauce-hot"
+          }
+        },
+        "text_slide_PDKdww": {
+          "type": "text_slide",
+          "settings": {
+            "category_image": "shopify://shop_images/non-veg-momos-with-sauce.png",
+            "subtitle": "NON VEG BUNDLES",
+            "title": "Momo Bundles",
+            "btn": "EXPLORE",
+            "url": "shopify://products/personal-size-mix-and-match-bundle"
+          }
+        }
+      },
+      "block_order": [
+        "text_slide_qhMBWY",
+        "text_slide_ypC3JJ",
+        "text_slide_BXH86M",
+        "text_slide_Jmp9kR",
+        "text_slide_PDKdww"
+      ],
+      "name": "Category List",
+      "settings": {
+        "divider": true,
+        "subtitle": "READY TO EAT",
+        "title": "FROZEN FOOD",
+        "description": "Whether you're in the mood to cook from scratch or want something quick and convenient, we've got you covered. Our range of meals is designed to bring you both flavor and nutrition without the stress.",
+        "content_position": "bottom"
       }
     },
     "three_content_block_khX47y": {
@@ -178,7 +282,7 @@
         "content_block_9bFchn": {
           "type": "content_block",
           "settings": {
-            "block_image": "shopify://shop_images/feat-promo1-choose_800x_166ec497-a349-4f60-8a2e-3f1904451c6c.webp",
+            "block_image": "shopify://shop_images/Sherpa_Food_1.png",
             "block_title": "You Choose",
             "block_description": "Whether its pantry essentials or healthy prepared meals, we've got you covered!"
           }
@@ -216,7 +320,8 @@
     "category_list_zJ3MmB",
     "product_list_DdBxrY",
     "banner_gbwkNy",
-    "product_list_R9dzXy",
+    "banner_GNpeWc",
+    "category_list_iypRdW",
     "three_content_block_khX47y"
   ]
 }

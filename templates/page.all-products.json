@@ -9,66 +9,46 @@
  */
 {
   "sections": {
+    "banner_NTGAzF": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "full_width": true,
+        "banner-height": "small",
+        "banner-parallax": true,
+        "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
+        "feature-banner-title": "Our Products",
+        "feature-banner-subtitle": "Explore our all products",
+        "button-text": "",
+        "button-link": "",
+        "banner-overlay": true,
+        "overlay-opacity": 0.4
+      }
+    },
     "main": {
       "type": "all-products-main",
       "settings": {}
-    },
-    "product_list_rXRcGx": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "dark_mode": false,
-        "product_slider": true,
-        "collection": "ready-to-eat",
-        "section-title": "Frozen Foods"
-      }
-    },
-    "product_list_dLewcC": {
-      "type": "product-list",
-      "name": "Product List",
-      "settings": {
-        "dark_mode": false,
-        "product_slider": true,
-        "collection": "home-page-product",
-        "section-title": "Explore our Sauce"
-      }
     },
     "product_list_etWtbn": {
       "type": "product-list",
       "name": "Product List",
       "settings": {
         "dark_mode": false,
-        "product_slider": true,
-        "collection": "bundle-list",
-        "section-title": "Explore Our Bundles"
-      }
-    },
-    "banner_qitkML": {
-      "type": "banner",
-      "name": "Banner",
-      "settings": {
-        "full_width": false,
-        "banner-height": "medium",
-        "banner-parallax": true,
-        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
-        "feature-banner-title": "Explore Our All Products",
-        "feature-banner-subtitle": "Dive into our full range of frozen delights — from savory meals to tasty sides, everything you need in one place.",
-        "button-text": "",
-        "button-link": "",
-        "banner-overlay": true,
-        "overlay-opacity": 0.5
+        "product_slider": false,
+        "collection": "all-products",
+        "section-title": ""
       }
     },
     "banner_ixNB6L": {
       "type": "banner",
       "name": "Banner",
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "banner-height": "small",
-        "banner-parallax": false,
+        "banner-parallax": true,
         "banner-image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
         "feature-banner-title": "Explore Our Digital Products",
-        "feature-banner-subtitle": "Browse our range of digital offerings — fast, flexible, and designed to enhance your experience with instant access and easy delivery.",
+        "feature-banner-subtitle": "Browse our range of digital offerings",
         "button-text": "Shop Now",
         "button-link": "/pages/gift-card",
         "banner-overlay": true,
@@ -77,11 +57,9 @@
     }
   },
   "order": [
+    "banner_NTGAzF",
     "main",
     "product_list_etWtbn",
-    "product_list_dLewcC",
-    "product_list_rXRcGx",
-    "banner_qitkML",
     "banner_ixNB6L"
   ]
 }

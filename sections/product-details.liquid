@@ -15,14 +15,8 @@
       <div class="col">
         <div class="product-details-wrapper">
           <div class="product-image-wrapper swiper" id="product-image-wrapper">
+            {% render 'product-tag', product: product %}
             <div class="swiper-wrapper product-detail-image-content" id="lightgallery">
-              {% if product.tags.size > 0 %}
-                <div class="product-tag-wrapper">
-                  {% for tag in product.tags %}
-                    <span class="tag-name">{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
               {% for media in product.media %}
                 {% if media.media_type == 'image' %}
                   <a class="swiper-slide product-active-image" href="{{ media | image_url }}">
@@ -52,8 +46,6 @@
               </div>
               <div class="divier top-divider"></div>
 
-              {% render 'product-variations' %}
-
               <div class="product-description-wrapper">
                 <span class="product-desc-value">
                   {{
@@ -63,9 +55,10 @@
                   -}}
                 </span>
               </div>
+              {% render 'product-variations' %}
 
               <div class="product-stock">
-                <span>Stock Status</span>
+                {% comment %} <span>Stock Status</span> {% endcomment %}
                 {% if product.variants.first.available %}
                   <p class="stock-status green">In Stock</p>
                 {% else %}
