@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: "#category-prev",
       },
       effect: "slide", // Or "fade"
-
+      observeParents: true,
+      observeSlideChildren: true,
       breakpoints: {
         420: { slidesPerView: 1 },
         600: { slidesPerView: 1.5 },
