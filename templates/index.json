@@ -28,7 +28,6 @@
           "settings": {
             "content_position": "right",
             "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
-            "mobile_image": "shopify://shop_images/4_1296x_7b96e8f6-ad74-43cb-bfdb-fe4438e7fc4c.webp",
             "title": "Bringing the Rich Flavors of the Mountains",
             "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Taste of the Mountains..",
             "button_text": "SHOP NOW",
@@ -36,10 +35,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_kR8XMi",
-        "slide_qQi3xx"
-      ],
+      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -61,7 +57,7 @@
         "gap_between": false,
         "section_gap": false,
         "parallax-animation": true,
-        "image-one": "shopify://shop_images/sauces_1296x_c6c23cf0-c1be-4978-ae43-685015cf2299.webp",
+        "image-one": "shopify://shop_images/momo-sauce-group-2.webp",
         "title-one": "",
         "helper_text_one": "Sauce Collection",
         "button-one": "EXPLORE",
@@ -116,6 +112,14 @@
             "url": "shopify://products/pork-momo-28g-protein-per-serving-1"
           }
         },
+        "text_slide_yPmzJM": {
+          "type": "text_slide",
+          "settings": {
+            "category_image": "shopify://shop_images/Untitled_design.png",
+            "title": "Vegan Fried Rice",
+            "url": "shopify://products/himalayan-style-vegan-fried-rice-12g-protein-per-serving"
+          }
+        },
         "text_slide_jGKMyZ": {
           "type": "text_slide",
           "settings": {
@@ -131,6 +135,7 @@
         "text_slide_dngQeV",
         "text_slide_LtQzcz",
         "text_slide_jGKMyF",
+        "text_slide_yPmzJM",
         "text_slide_jGKMyZ"
       ],
       "name": "Category List",
@@ -152,7 +157,7 @@
       "settings": {
         "full_width": false,
         "banner-height": "large",
-        "banner-parallax": true,
+        "banner-parallax": false,
         "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
         "feature-banner-title": "Hot Sauce",
         "feature-banner-subtitle": "Expore Our Hot Sauce",

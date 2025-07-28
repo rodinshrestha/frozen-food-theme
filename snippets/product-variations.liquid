@@ -1,13 +1,12 @@
 {% assign has_real_options = false %}
 {% for option in product.options_with_values %}
-  {% if option.name != 'Title' and option.values.size > 1 %}
+  {% if option.name != 'Title' and option.values.size >= 1 %}
     {% assign has_real_options = true %}
   {% endif %}
 {% endfor %}
 
 {% if has_real_options %}
   <div class="divier top-divider"></div>
-
   <div class="product-variation-wrapper">
     {% for option in product.options_with_values %}
       <div class="product-variation-content" data-option-index="{{ forloop.index0 }}">
