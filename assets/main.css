@@ -2475,7 +2475,6 @@ ul {
   position: relative;
   overflow: hidden;
   flex-wrap: wrap;
-  height: 85vh;
   width: 100%;
 }
 .two-column-image-section .two-column-image-wrapper.gap {
@@ -2489,11 +2488,16 @@ ul {
   flex: 0 1 50%;
   width: 100%;
   position: relative;
+  height: 800px;
 }
 @media (max-width: 1023px) {
   .two-column-image-section .two-column-image-wrapper .image-wrapper {
     flex: 0 1 100% !important;
+    height: 600px;
   }
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .two-column-image {
   position: absolute;
