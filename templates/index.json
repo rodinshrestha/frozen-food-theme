@@ -197,11 +197,11 @@
         "full_width": true,
         "banner-height": "medium",
         "banner-parallax": true,
-        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
-        "feature-banner-title": "",
-        "feature-banner-subtitle": "",
-        "button-text": "Explore",
-        "button-link": "shopify://pages/frozen-food",
+        "banner-image": "shopify://shop_images/8_1296x_28e75b06-8f35-4027-8a79-47f1a0a25ec3.webp",
+        "feature-banner-title": "DIGITAL CARD",
+        "feature-banner-subtitle": "Perfect for gifting or personal use",
+        "button-text": "EXPLORE",
+        "button-link": "shopify://pages/gift-card",
         "banner-overlay": true,
         "overlay-opacity": 0.7
       }
@@ -272,7 +272,7 @@
         "divider": true,
         "subtitle": "READY TO EAT",
         "title": "FROZEN FOOD",
-        "description": "Enjoy healthy, delicious meals at home... that you make, or simply just unwrap!",
+        "description": "Whether you're in the mood to cook from scratch or want something quick and convenient, we've got you covered. Our range of meals is designed to bring you both flavor and nutrition without the stress. Choose to roll up your sleeves and create something wonderful with our fresh, pre-portioned ingredients",
         "content_position": "bottom"
       }
     },
