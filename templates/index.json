@@ -35,7 +35,10 @@
           }
         }
       },
-      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
+      "block_order": [
+        "slide_kR8XMi",
+        "slide_qQi3xx"
+      ],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -167,6 +170,22 @@
         "overlay-opacity": 0.5
       }
     },
+    "banner_GNpeWc": {
+      "type": "banner",
+      "name": "Banner",
+      "settings": {
+        "full_width": true,
+        "banner-height": "medium",
+        "banner-parallax": true,
+        "banner-image": "shopify://shop_images/Sherpa_Foods_Banner_4100x_7c828a08-a3fa-4f23-98c3-5fb6fd3840eb.webp",
+        "feature-banner-title": "",
+        "feature-banner-subtitle": "",
+        "button-text": "Explore",
+        "button-link": "shopify://pages/frozen-food",
+        "banner-overlay": true,
+        "overlay-opacity": 0.7
+      }
+    },
     "product_list_R9dzXy": {
       "type": "product-list",
       "name": "Product List",
@@ -221,6 +240,7 @@
     "category_list_zJ3MmB",
     "product_list_DdBxrY",
     "banner_gbwkNy",
+    "banner_GNpeWc",
     "product_list_R9dzXy",
     "three_content_block_khX47y"
   ]
