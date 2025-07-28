@@ -3371,6 +3371,7 @@ ul {
   font-family: "Scotch Display", "Helvetica Neue";
   text-align: center;
   font-family: "Scotch Display", "Helvetica Neue";
+  letter-spacing: 2px;
 }
 .category-list-section .category-wrapper .category-content-list .category-content-details .category-list-btn {
   z-index: 2;
