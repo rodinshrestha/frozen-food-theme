@@ -20,9 +20,17 @@
                           class="category-image"
                         >
                       {% endif %}
-                      {% if block.settings.title != '' %}
-                        <h3 class="category-title">{{ block.settings.title }}</h3>
-                      {% endif %}
+                      <div class="category-content-details content-position-{{ block.settings.content_position }}">
+                        {% if block.settings.subtitle != '' %}
+                          <div>{{ block.settings.subtitle }}</div>
+                        {% endif %}
+                        {% if block.settings.title != '' %}
+                          <h3 class="category-title">{{ block.settings.title }}</h3>
+                        {% endif %}
+                        {% if block.settings.btn != '' %}
+                          <div class="btn">{{ block.settings.btn }}</div>
+                        {% endif %}
+                      </div>
                     </a>
                   </div>
                 {% endfor %}
@@ -56,9 +64,35 @@
           "label": "Category Image"
         },
         {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content Position",
+          "options": [
+            {
+              "label": "Middle",
+              "value": "middle"
+            },
+            {
+              "label": "Bottom",
+              "value": "bottom"
+            }
+          ],
+          "default": "middle"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
           "type": "text",
           "id": "title",
           "label": "title"
+        },
+        {
+          "type": "text",
+          "id": "btn",
+          "label": "Button Label"
         },
         {
           "type": "url",

@@ -35,10 +35,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_kR8XMi",
-        "slide_qQi3xx"
-      ],
+      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -149,7 +146,7 @@
       "name": "Product List",
       "settings": {
         "dark_mode": true,
-        "product_slider": true,
+        "product_slider": false,
         "collection": "homepage-bundle-collections",
         "section-title": "Our Bundles"
       }
@@ -159,7 +156,7 @@
       "name": "Banner",
       "settings": {
         "full_width": false,
-        "banner-height": "large",
+        "banner-height": "medium",
         "banner-parallax": false,
         "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
         "feature-banner-title": "Hot Sauce",
