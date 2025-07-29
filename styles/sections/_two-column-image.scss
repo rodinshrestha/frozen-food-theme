@@ -28,12 +28,6 @@
       position: relative;
       height: 700px;
 
-      &:hover {
-        .two-column-image {
-          transform: scale(1.5);
-        }
-      }
-
       @include responsive(tablet) {
         flex: 0 1 100% !important;
         height: 600px;
@@ -41,6 +35,10 @@
 
       .overlay {
         background-color: rgba(0, 0, 0, 0.4);
+
+        @include responsive(tablet) {
+          background-color: rgba(0, 0, 0, 0.6);
+        }
       }
 
       .two-column-image {

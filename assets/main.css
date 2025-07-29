@@ -2490,9 +2490,6 @@ ul {
   position: relative;
   height: 700px;
 }
-.two-column-image-section .two-column-image-wrapper .image-wrapper:hover .two-column-image {
-  transform: scale(1.5);
-}
 @media (max-width: 1023px) {
   .two-column-image-section .two-column-image-wrapper .image-wrapper {
     flex: 0 1 100% !important;
@@ -2501,6 +2498,11 @@ ul {
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .overlay {
   background-color: rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 1023px) {
+  .two-column-image-section .two-column-image-wrapper .image-wrapper .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .two-column-image {
   position: absolute;
