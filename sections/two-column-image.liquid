@@ -32,7 +32,10 @@
               class="two-column-image"
               id="parallax-image-animation"
             >
-            <div class="text-content-wrapper" id="parallax-content-animation">
+            <div
+              class="text-content-wrapper content-position-{{ section.settings.content_position }}"
+              id="parallax-content-animation"
+            >
               {% if section.settings['title-one'] != '' %}
                 <div class="content-title">{{ section.settings['title-one'] }}</div>
               {% endif %}
@@ -58,7 +61,10 @@
               class="two-column-image"
               id="parallax-image-animation"
             >
-            <div class="text-content-wrapper" id="parallax-content-animation">
+            <div
+              class="text-content-wrapper content-position-{{ section.settings.content_position }}"
+              id="parallax-content-animation"
+            >
               {% if section.settings['title-two'] != '' %}
                 <div class="content-title">{{ section.settings['title-two'] }}</div>
               {% endif %}
@@ -115,6 +121,22 @@
       "id": "section_gap",
       "label": "Gap Between Section",
       "default": false
+    },
+    {
+      "type": "select",
+      "label": "Content Position",
+      "id": "content_position",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Middle",
+          "value": "middle"
+        }
+      ],
+      "default": "left"
     },
     {
       "type": "header",

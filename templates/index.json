@@ -35,10 +35,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_kR8XMi",
-        "slide_qQi3xx"
-      ],
+      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -61,13 +58,13 @@
         "section_gap": false,
         "parallax-animation": true,
         "image-one": "shopify://shop_images/momo-sauce-group-2.webp",
-        "title-one": "",
-        "helper_text_one": "Sauce Collection",
+        "title-one": "FROZEN FOOD",
+        "helper_text_one": "Momo, Chowmein, Fried Rice...",
         "button-one": "EXPLORE",
         "button-link-one": "shopify://pages/momo-sauce",
         "image-two": "shopify://shop_images/personal-szie.webp",
-        "title-two": "",
-        "helper_text_two": "Frozen       \nFoods",
+        "title-two": "MOMO SAUCE",
+        "helper_text_two": "Hot, Sesame and Many More",
         "button-two": "EXPLORE",
         "button-link-two": "shopify://pages/frozen-food"
       }
