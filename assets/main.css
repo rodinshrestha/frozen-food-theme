@@ -2520,6 +2520,7 @@ ul {
   flex-direction: column;
   align-items: center;
   z-index: 2;
+  gap: 10px;
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper.content-position-middle {
   transform: translate(-50%, 0);
