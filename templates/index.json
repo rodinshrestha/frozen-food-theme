@@ -35,10 +35,7 @@
           }
         }
       },
-      "block_order": [
-        "slide_kR8XMi",
-        "slide_qQi3xx"
-      ],
+      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
       "name": "Banner Slider",
       "settings": {}
     },
@@ -185,7 +182,7 @@
         "banner-image": "shopify://shop_images/momo_sauces01_4100x_8d1e01c0-2544-4cd6-b696-71b2ba754c71.webp",
         "feature-banner-title": "Hot Sauce",
         "feature-banner-subtitle": "Expore Our Hot Sauce",
-        "button-text": "Explore",
+        "button-text": "EXPLORE",
         "button-link": "shopify://pages/bundles",
         "banner-overlay": true,
         "overlay-opacity": 0.5
@@ -216,7 +213,7 @@
             "category_image": "shopify://shop_images/4.png",
             "subtitle": "VEGAN",
             "title": "Chowmein",
-            "btn": "Explore",
+            "btn": "EXPLORE",
             "url": "shopify://products/himalayan-style-vegan-chowmein-fried-noodle-12g-protein-per-serving"
           }
         },
