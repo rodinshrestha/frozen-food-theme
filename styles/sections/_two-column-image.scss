@@ -84,6 +84,7 @@
 
           @include responsive(tablet) {
             transform: translate(-50%, 0);
+            padding: 0px 1rem;
             left: 50%;
             width: 100%;
             align-items: center;
