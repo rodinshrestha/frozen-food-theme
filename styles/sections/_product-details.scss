@@ -151,13 +151,13 @@
 
           .stock-status {
             position: relative;
-            margin-left: 20px;
+            margin-left: 25px;
             text-transform: uppercase;
             &::after {
               content: "";
               position: absolute;
               top: 50%;
-              left: -20px;
+              left: -25px;
               transform: translateY(-50%);
               height: 10px;
               width: 10px;
@@ -204,6 +204,17 @@
           .sls-price {
             font-family: $font-family-brandon;
             font-size: 16px;
+          }
+
+          .sealsubs-container {
+            @include responsive(tablet) {
+              margin-bottom: 0;
+            }
+
+            .sls-more-info-container {
+              padding-bottom: 0;
+              padding-left: 0;
+            }
           }
         }
 
