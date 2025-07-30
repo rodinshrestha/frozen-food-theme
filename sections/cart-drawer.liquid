@@ -28,6 +28,10 @@
             {% endunless %}
           {% endfor %}
 
+          {% if item.selling_plan_allocation.selling_plan.name %}
+            {% assign show_variants = true %}
+          {% endif %}
+
           <div class="cart-item-details" data-key="{{ item.key }}" data-line="{{ forloop.index }}">
             <div class="item-loader hidden" id="item-individual-loader">
               <div class="loader"></div>
@@ -54,11 +58,14 @@
               {% if show_variants %}
                 <div class="cart-item-variation-list">
                   {% for option in item.options_with_values %}
-                    <span class="cart-variation-item"> {{ option.value }}</span>
+                    {% if option.value != 'Default Title' %}
+                      <span class="cart-variation-item">{{ option.value }}</span>
+                    {% endif %}
                   {% endfor %}
+
+                  <span class="cart-variation-item">{{ item.selling_plan_allocation.selling_plan.name }}</span>
                 </div>
               {% endif %}
-              <p>{{ item.selling_plan_allocation.selling_plan.name }}</p>
 
               <div class="cart-item-qty-group">
                 {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}
