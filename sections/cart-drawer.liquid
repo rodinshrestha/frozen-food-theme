@@ -58,6 +58,7 @@
                   {% endfor %}
                 </div>
               {% endif %}
+              <p>{{ item.selling_plan_allocation.selling_plan.name }}</p>
 
               <div class="cart-item-qty-group">
                 {% render 'product-quantity', product: item, appliedQty: item.quantity, index: forloop.index %}

@@ -55,10 +55,11 @@
                   -}}
                 </span>
               </div>
+
               {% render 'product-variations' %}
+              <div class="seal-subscription-wrapper" id="seal-subscription"></div>
 
               <div class="product-stock">
-                {% comment %} <span>Stock Status</span> {% endcomment %}
                 {% if product.variants.first.available %}
                   <p class="stock-status green">In Stock</p>
                 {% else %}

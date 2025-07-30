@@ -177,6 +177,36 @@
           }
         }
 
+        #seal-subscription {
+          #seal-purchase-options-label {
+            text-transform: uppercase;
+            font-family: $font-family-brandon-med;
+            color: $dark-primary-textColor;
+            font-size: 16px;
+            letter-spacing: 1px;
+          }
+
+          .sls-purchase-options-container {
+            margin-top: 10px;
+          }
+          .sealsubs-target-element
+            .sls-option[type="radio"]:checked
+            + .sls-custom-radio::after {
+            width: 14px;
+            height: 14px;
+          }
+
+          .sls-selling-plan-group-name {
+            font-family: $font-family-brandon;
+            font-size: 16px;
+          }
+
+          .sls-price {
+            font-family: $font-family-brandon;
+            font-size: 16px;
+          }
+        }
+
         .product-details-cta-wrapper {
           display: flex;
           gap: 20px;

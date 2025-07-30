@@ -14,6 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!productDetails) return;
 
+  //re arrange the position for seal subscription
+  const sealSubscription = document.querySelector(
+    '[data-block-handle*="subscription-widget"]',
+  );
+
+  if (sealSubscription) {
+    const sealSubscriptionWrapper =
+      document.getElementById("seal-subscription");
+    sealSubscriptionWrapper.appendChild(sealSubscription);
+  }
+
   const stickyBottomSection = productDetails.querySelector(
     "#product-sticky-bottom",
   );
@@ -161,10 +172,26 @@ document.addEventListener("DOMContentLoaded", () => {
           productDetails.querySelector(".quantity-input")?.textContent,
         ) || 1;
 
+      // Get the selling plan (if any)
+      const sellingPlanInput = document.querySelector(
+        'input[name="selling_plan"]',
+      );
+      const sellingPlan = sellingPlanInput?.value;
+
+      const payload = {
+        id: variantId,
+        quantity,
+      };
+
+      // Include selling_plan only if selected
+      if (sellingPlan) {
+        payload.selling_plan = sellingPlan;
+      }
+
       fetch("/cart/add.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id: variantId, quantity }),
+        body: JSON.stringify(payload),
       })
         .then(async (res) => await window.handleFetchResponse(res))
         .then((res) => {

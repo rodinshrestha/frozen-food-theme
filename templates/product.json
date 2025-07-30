@@ -99,10 +99,26 @@
         "banner-overlay": true,
         "overlay-opacity": 0.3
       }
+    },
+    "1753849746b3e7a28c": {
+      "type": "apps",
+      "blocks": {
+        "seal_subscriptions_subscription_widget_rNR878": {
+          "type": "shopify://apps/seal-subscriptions/blocks/subscription-widget/13b25004-a140-4ab7-b5fe-29918f759699",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "seal_subscriptions_subscription_widget_rNR878"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
+    "1753849746b3e7a28c",
     "product_list_c9cXCp",
     "product_list_JefDgc",
     "faq_Wkzh7x",

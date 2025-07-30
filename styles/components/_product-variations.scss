@@ -1,7 +1,7 @@
 @use "abstracts/_breakpoints" as *;
 @use "abstracts/_variables" as *;
 
-.divier {
+.divider {
   width: 100%;
   height: 1.5px;
   background-color: $light-divider-color;
