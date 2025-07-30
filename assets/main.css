@@ -2848,7 +2848,7 @@ ul {
 @media (max-width: 1023px) {
   .product-details-section .product-full-description-wrapper .product-full-desc-value img {
     width: 100%;
-    height: 100%;
+    height: 200px;
   }
 }
 .product-details-section .product-sticky-bottom {
