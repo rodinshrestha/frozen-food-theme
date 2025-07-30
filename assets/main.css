@@ -2757,10 +2757,8 @@ ul {
   font-family: "Brandon Grotesque", "Helvetica Neue";
   font-size: 16px;
 }
-@media (max-width: 1023px) {
-  .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sealsubs-container {
-    margin-bottom: 0;
-  }
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sealsubs-container {
+  margin-bottom: 0;
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sealsubs-container .sls-more-info-container {
   padding-bottom: 0;

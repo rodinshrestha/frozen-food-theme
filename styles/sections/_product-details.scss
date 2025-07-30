@@ -207,9 +207,7 @@
           }
 
           .sealsubs-container {
-            @include responsive(tablet) {
-              margin-bottom: 0;
-            }
+            margin-bottom: 0;
 
             .sls-more-info-container {
               padding-bottom: 0;
