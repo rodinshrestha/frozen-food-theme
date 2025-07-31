@@ -121,17 +121,30 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Missing product variant.");
         return;
       }
+
       btnWrapper.classList.add("loading");
       const qty =
         parseInt(modal.querySelector(".quantity-input").textContent) || 1;
 
+      const sellingPlanInput = modal.querySelector(
+        'input[name="selling_plan"]',
+      );
+      const sellingPlan = sellingPlanInput?.value;
+
+      const payload = {
+        id: variantId,
+        quantity: qty,
+      };
+
+      // Include selling_plan only if selected
+      if (sellingPlan) {
+        payload.selling_plan = sellingPlan;
+      }
+
       fetch("/cart/add.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: variantId,
-          quantity: qty,
-        }),
+        body: JSON.stringify(payload),
       })
         .then(async (res) => await window.handleFetchResponse(res))
         .then(() => window.updateCartCount())
