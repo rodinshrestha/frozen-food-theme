@@ -9,6 +9,54 @@ function isFooterInView() {
   );
 }
 
+const addToCart = (addToCartBtn, productDetails) => {
+  const variantId = addToCartBtn.dataset.variantId;
+
+  if (!variantId) {
+    alert("Please select a product variant.");
+    return;
+  }
+
+  // Add loading state (optional)
+  addToCartBtn.classList.add("loading");
+
+  // Get quantity from the quantity input
+  const quantity =
+    parseInt(productDetails.querySelector(".quantity-input")?.textContent) || 1;
+
+  // Get the selling plan (if any)
+  const sellingPlanInput = document.querySelector('input[name="selling_plan"]');
+  const sellingPlan = sellingPlanInput?.value;
+
+  const payload = {
+    id: variantId,
+    quantity,
+  };
+
+  // Include selling_plan only if selected
+  if (sellingPlan) {
+    payload.selling_plan = sellingPlan;
+  }
+
+  fetch("/cart/add.js", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  })
+    .then(async (res) => await window.handleFetchResponse(res))
+    .then((res) => {
+      window.updateCartCount();
+      window.showToast(`${res.title} has been added in your cart`);
+    })
+    .catch((err) => {
+      console.error(err);
+      window.showToast(err.message, "error");
+    })
+    .finally(() => {
+      addToCartBtn.classList.remove("loading");
+    });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const productDetails = document.getElementById("product-details");
 
@@ -142,60 +190,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const addToCartBtn = productDetails.querySelector(".product-add-to-cart-btn");
   const isDisabled = addToCartBtn.classList.contains("disabled");
+  const btnAddToCartBtn = productDetails.querySelector("#bottom-product-cart");
 
   if (addToCartBtn && !isDisabled) {
     addToCartBtn.addEventListener("click", () => {
-      const variantId = addToCartBtn.dataset.variantId;
-
-      if (!variantId) {
-        alert("Please select a product variant.");
-        return;
-      }
-
-      // Add loading state (optional)
-      addToCartBtn.classList.add("loading");
-
-      // Get quantity from the quantity input
-      const quantity =
-        parseInt(
-          productDetails.querySelector(".quantity-input")?.textContent,
-        ) || 1;
-
-      // Get the selling plan (if any)
-      const sellingPlanInput = document.querySelector(
-        'input[name="selling_plan"]',
-      );
-      const sellingPlan = sellingPlanInput?.value;
-
-      const payload = {
-        id: variantId,
-        quantity,
-      };
-
-      // Include selling_plan only if selected
-      if (sellingPlan) {
-        payload.selling_plan = sellingPlan;
-      }
-
-      fetch("/cart/add.js", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
-        .then(async (res) => await window.handleFetchResponse(res))
-        .then((res) => {
-          window.updateCartCount();
-          window.showToast(`${res.title} has been added in your cart`);
-        })
-        .catch((err) => {
-          console.error(err);
-          window.showToast(err.message, "error");
-        })
-        .finally(() => {
-          addToCartBtn.classList.remove("loading");
-        });
+      addToCart(addToCartBtn, productDetails);
+    });
+    btnAddToCartBtn.addEventListener("click", () => {
+      addToCart(btnAddToCartBtn, productDetails);
     });
   }
+
+  // Event listener for when a selling plan is changed in any widget
+  document.addEventListener("sealsubs:selling_plan_changed", function (e) {
+    const { selling_plan_id, element } = e.detail;
+
+    const select = element.querySelector('select[name="subs_interval"]');
+
+    const selectedOption = Array.from(select.options).find(
+      (option) => option.value === selling_plan_id,
+    );
+
+    const bottomVariantWrapper = productDetails.querySelector(
+      "#btm-product-subscription",
+    );
+
+    console.log(bottomVariantWrapper, "@@@");
+
+    if (selectedOption && bottomVariantWrapper) {
+      const selectedLabel = selectedOption.textContent.trim();
+      bottomVariantWrapper.innerText = `With ${selectedLabel} subscription`;
+    } else {
+      bottomVariantWrapper.innerText = "";
+    }
+  });
 
   const readMoreText = productDetails.querySelector("#product-read-more");
 
@@ -211,18 +239,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  productDetails
-    .querySelector("#bottom-product-cart")
-    .addEventListener("click", () => {
-      const section = productDetails.querySelector(".product-sticky-bottom");
-      const elementPosition = section.getBoundingClientRect().top;
+  // productDetails
+  //   .querySelector("#bottom-product-cart")
+  //   .addEventListener("click", () => {
+  //     const section = productDetails.querySelector(".product-sticky-bottom");
+  //     const elementPosition = section.getBoundingClientRect().top;
 
-      window.scrollTo({
-        // top: offsetPosition,
-        top: elementPosition,
-        behavior: "smooth",
-      });
-    });
+  //     window.scrollTo({
+  //       // top: offsetPosition,
+  //       top: elementPosition,
+  //       behavior: "smooth",
+  //     });
+  //   });
 
   const productStickyBottomInit = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;

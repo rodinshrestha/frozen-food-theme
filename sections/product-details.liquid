@@ -130,8 +130,12 @@
         <div class="col">
           <div class="product-sticky-bottom-wrapper">
             <div class="product-bottom-left">
-              <div class="bottom-product-title">
-                {{ product.title }}
+              <div class="bottom-product-title-group">
+                <span class="bottom-product-title"> {{ product.title }} </span>
+                <div class="btn-product-variation-group">
+                  <span class="bottom-product-variant" id="btm-product-variant"> </span>
+                  <span class="bottom-product-subscription-detail" id="btm-product-subscription"></span>
+                </div>
               </div>
 
               <div class="bottom-product-price">
@@ -145,8 +149,9 @@
             </div>
             <div class="bottom-product-details-btn-group">
               <button
-                class="btn btn-contained btn-red {{ productstatus }}"
+                class="btn btn-contained btn-red {{ productstatus }} btn-md"
                 id="bottom-product-cart"
+                data-variant-id="{{ product.variants.first.id }}"
               >
                 {% if product.variants.first.available %}
                   <span>

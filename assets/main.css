@@ -935,7 +935,7 @@ ul {
   padding: 8px 20px;
 }
 .btn.btn-md {
-  min-width: 150px;
+  min-width: 180px;
 }
 .btn.disabled {
   cursor: not-allowed;
@@ -2764,6 +2764,9 @@ ul {
   padding-bottom: 0;
   padding-left: 0;
 }
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .sls-widget-branding {
+  display: none;
+}
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-details-cta-wrapper {
   display: flex;
   gap: 20px;
@@ -2885,13 +2888,22 @@ ul {
   gap: 50px;
   align-items: center;
 }
-.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title {
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group .bottom-product-title {
   font-size: 28px;
   font-family: "Scotch Display medium", "Helvetica Neue";
   letter-spacing: 1px;
-  position: relative;
 }
-.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title::before {
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group .btn-product-variation-group {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -2915,6 +2927,9 @@ ul {
 .product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
   font-size: 21px;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .bottom-product-details-btn-group {
+  display: flex;
 }
 .product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .bottom-product-details-btn-group .btn span {
   display: flex;

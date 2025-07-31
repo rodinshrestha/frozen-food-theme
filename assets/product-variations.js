@@ -5,6 +5,12 @@ const productVariationInit = (wrapperEle) => {
 
   const buyNowBtn = wrapperEle.querySelector("#cart-buy-now-btn");
 
+  const bottomBuyNowBtn = wrapperEle.querySelector("#bottom-product-cart");
+
+  const bottomVarintListWrapper = wrapperEle.querySelector(
+    "#btm-product-variant",
+  );
+
   if (!variantDataElement) {
     console.error("product-variants-data element not found");
     return;
@@ -69,10 +75,12 @@ const productVariationInit = (wrapperEle) => {
       );
       if (btn) {
         btn.classList.remove("disabled");
+        bottomBuyNowBtn?.classList.remove("disabled");
         buyNowBtn?.classList.remove("disabled");
         btn.dataset.variantId = firstAvailableVariant.id;
         btn.disabled = false;
       }
+      bottomVarintListWrapper.innerHTML = `${selections.join(", ")}`;
 
       // Update the price for the auto-selected variant
       updateProductPrice(firstAvailableVariant);
@@ -84,6 +92,7 @@ const productVariationInit = (wrapperEle) => {
       const btn = wrapperEle.querySelector("#add-to-cart-btn");
       if (btn) {
         btn.classList.add("disabled");
+        bottomBuyNowBtn?.classList.add("disabled");
         buyNowBtn?.classList.add("disabled");
         btn.disabled = true;
       }
@@ -277,8 +286,11 @@ const productVariationInit = (wrapperEle) => {
         if (matched) {
           btn.classList.remove("disabled");
           buyNowBtn?.classList.remove("disabled");
-
+          bottomBuyNowBtn?.classList.remove("disabled");
           btn.dataset.variantId = matched.id;
+          if (bottomBuyNowBtn?.dataset) {
+            bottomBuyNowBtn.dataset.variantId = matched.id;
+          }
           btn.disabled = false;
           updateProductPrice(matched); // Update price when a full match is found
           // Update max quantity for the selected variant
@@ -286,14 +298,19 @@ const productVariationInit = (wrapperEle) => {
         } else {
           btn.classList.add("disabled");
           buyNowBtn?.classList.add("disabled");
+          bottomBuyNowBtn?.classList.add("disabled");
           btn.disabled = true;
         }
       } else {
         btn.classList.add("disabled");
         buyNowBtn?.classList.add("disabled");
-
+        bottomBuyNowBtn?.classList.add("disabled");
         btn.disabled = true;
       }
+
+      const sanitizeSelectionValue = selections.filter((x) => x !== null);
+
+      bottomVarintListWrapper.innerHTML = `${sanitizeSelectionValue.join(", ")}`;
     });
   });
 };
