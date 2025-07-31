@@ -14,17 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!productDetails) return;
 
-  //re arrange the position for seal subscription
-  const sealSubscription = document.querySelector(
-    '[data-block-handle*="subscription-widget"]',
-  );
-
-  if (sealSubscription) {
-    const sealSubscriptionWrapper =
-      document.getElementById("seal-subscription");
-    sealSubscriptionWrapper.appendChild(sealSubscription);
-  }
-
   const stickyBottomSection = productDetails.querySelector(
     "#product-sticky-bottom",
   );

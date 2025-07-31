@@ -56,8 +56,15 @@
                 </span>
               </div>
 
+              <div
+                class="sealsubs-target-element seal-sub-widget"
+                data-product="{{ product | json | escape }}"
+                data-handle="{{ product.handle }}"
+                data-product-id="{{ product.id }}"
+                data-variant-id="{{ product.variants.first.id }}"
+              ></div>
+
               {% render 'product-variations' %}
-              <div class="seal-subscription-wrapper" id="seal-subscription"></div>
 
               <div class="product-stock">
                 {% if product.variants.first.available %}
@@ -186,6 +193,9 @@
       },
     });
   });
+</script>
+<script>
+  window.SealProduct = {{ product | json }};
 </script>
 
 {% schema %}
