@@ -131,32 +131,6 @@ const productVariationInit = (wrapperEle) => {
     }
   };
 
-  const updateSealSubscriptionWidget = (product, variant) => {
-    const sealWidget = document.querySelector(".seal-sub-widget");
-    if (!sealWidget) return;
-
-    // Update variant ID
-    sealWidget.setAttribute("data-variant-id", variant.id);
-
-    // Keep full product JSON but update `selected_variant_id` (not standard but some themes/custom Seal integrations use it)
-    const updatedProduct = {
-      ...product,
-      variants: product.variants, // Keep full list
-    };
-
-    sealWidget.setAttribute(
-      "data-product",
-      JSON.stringify(updatedProduct).replace(/</g, "\\u003c"),
-    );
-
-    // Force refresh
-    if (window.SealSubs?.refresh) {
-      window.SealSubs.refresh();
-    } else {
-      console.warn("SealSubs not ready");
-    }
-  };
-
   // Update max quantity based on selected variant
   const updateMaxQuantityForVariant = (variant) => {
     const qtyWrapper = wrapperEle.querySelector(".add-to-cart-qty-wrapper");
@@ -307,7 +281,6 @@ const productVariationInit = (wrapperEle) => {
           btn.dataset.variantId = matched.id;
           btn.disabled = false;
           updateProductPrice(matched); // Update price when a full match is found
-          updateSealSubscriptionWidget(window.SealProduct, matched);
           // Update max quantity for the selected variant
           updateMaxQuantityForVariant(matched);
         } else {
