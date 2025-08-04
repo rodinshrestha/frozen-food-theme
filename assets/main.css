@@ -461,36 +461,54 @@ ul {
   }
 }
 .footer-wrapper .newsletter-wrapper {
-  margin: 80px 0;
+  margin: 80px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 20px;
   color: inherit;
+  width: 70%;
 }
 .footer-wrapper .newsletter-wrapper .newsletter-form-wrapper {
-  gap: 20px;
-  display: flex;
-  align-items: center;
-  width: 70%;
+  width: 100%;
 }
 @media (max-width: 1023px) {
   .footer-wrapper .newsletter-wrapper .newsletter-form-wrapper {
     width: 100%;
     flex-wrap: wrap;
+    gap: 20px;
   }
 }
-.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .contact-email {
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .newsletter-form-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .newsletter-form-group .contact-email {
   padding: 10px 20px;
   outline: none;
   border-radius: 5px;
   border: none;
+  border-color: transparent;
   flex-grow: 1;
 }
-.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .btn {
-  padding: 10px 20px;
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .newsletter-form-group .contact-email.error {
+  border-color: #e4022e;
+}
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .newsletter-form-group .btn {
   border-radius: 10px;
+}
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .newsletter-form-group .btn span {
+  letter-spacing: 1px;
+  gap: 10px;
+}
+.footer-wrapper .newsletter-wrapper .newsletter-form-wrapper .newsletter-form-err-msg {
+  color: #e4022e;
+  font-size: 16px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  align-self: flex-start;
+  opacity: 0;
 }
 .footer-wrapper .newsletter-wrapper .newletter-helper-text {
   color: rgba(242, 242, 242, 0.6);

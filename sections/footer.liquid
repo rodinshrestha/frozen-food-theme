@@ -22,18 +22,25 @@
       <div class="col">
         <div class="newsletter-wrapper">
           <div class="newsletter-form-wrapper">
-            <input type="email" class="contact-email" name="contact" placeholder="Your@example.com">
-            <div class="btn btn-contained btn-green">
-              {{ section.settings.btn_label }}
-              <img
-                src="{{ 'bell.png' | asset_url }}"
-                class="subscribe-btn-icon"
-                width="18"
-                height="18"
-                alt="right-arrow"
-              >
+            <div class="newsletter-form-group">
+              <input type="email" class="contact-email" name="contact" placeholder="Your@example.com">
+              <div class="btn btn-contained btn-green btn-md" id="newletter-btn">
+                <span>
+                  {{ section.settings.btn_label }}
+                  <img
+                    src="{{ 'bell.png' | asset_url }}"
+                    class="subscribe-btn-icon"
+                    width="16"
+                    height="16"
+                    alt="right-arrow"
+                  >
+                </span>
+                <div class="btn-loader"></div>
+              </div>
             </div>
+            <div class="newsletter-form-err-msg">Please enter valid mail</div>
           </div>
+
           {% if section.settings.newletter_subtitle != '' %}
             <p class="newletter-helper-text">{{ section.settings.newletter_subtitle }}</p>
           {% endif %}
@@ -154,7 +161,7 @@
       "type": "text",
       "id": "btn_label",
       "label": "Button Label",
-      "default": "Subscribe",
+      "default": "SUBSCRIBE",
       "placeholder": "Dont leave it blank"
     },
     {

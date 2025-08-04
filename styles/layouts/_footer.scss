@@ -51,36 +51,56 @@
   }
 
   .newsletter-wrapper {
-    margin: 80px 0;
+    margin: 80px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
     color: inherit;
+    width: 70%;
+
     .newsletter-form-wrapper {
-      gap: 20px;
-      display: flex;
-      align-items: center;
-      width: 70%;
+      width: 100%;
 
       @include responsive(tablet) {
         width: 100%;
         flex-wrap: wrap;
+        gap: 20px;
       }
 
-      .contact-email {
-        padding: 10px 20px;
-        outline: none;
-        border-radius: 5px;
-        border: none;
-        flex-grow: 1;
+      .newsletter-form-group {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .contact-email {
+          padding: 10px 20px;
+          outline: none;
+          border-radius: 5px;
+          border: none;
+          border-color: transparent;
+          flex-grow: 1;
+          &.error {
+            border-color: $red-color;
+          }
+        }
+        .btn {
+          span {
+            letter-spacing: 1px;
+            gap: 10px;
+          }
+          border-radius: 10px;
+        }
       }
-      .btn {
-        padding: 10px 20px;
-        border-radius: 10px;
+      .newsletter-form-err-msg {
+        color: $red-color;
+        font-size: 16px;
+        font-family: $font-family-brandon;
+        align-self: flex-start;
+        opacity: 0;
       }
     }
+
     .newletter-helper-text {
       color: $light-secondary-textColor;
       font-size: 0.7rem;
@@ -264,9 +284,11 @@
   border-radius: 6px;
   font-size: 14px;
   z-index: 999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   display: none;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   text-align: center;
   max-width: 320px;
   min-width: 180px;
@@ -303,7 +325,7 @@
     border-radius: 8px;
     text-align: center;
     z-index: 9999;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     padding: 8px 4px;
     font-size: 12px;
   }
