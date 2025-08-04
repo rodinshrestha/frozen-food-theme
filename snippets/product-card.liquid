@@ -11,6 +11,7 @@
         {% endfor %}
       </div>
     {% endif %}
+    {% render 'product-tag', product: product %}
 
     <img
       src="{{ product.featured_image | image_url }}"
@@ -29,9 +30,8 @@
         class="hover-image"
       >
     {% endif %}
-
-    {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
   </a>
+  {% render 'add-to-cart-modal', product: product, appliedQty: 1 %}
 
   <div class="featured-product-information">
     {% if product.type != '' %}

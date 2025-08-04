@@ -15,14 +15,8 @@
       <div class="col">
         <div class="product-details-wrapper">
           <div class="product-image-wrapper swiper" id="product-image-wrapper">
+            {% render 'product-tag', product: product %}
             <div class="swiper-wrapper product-detail-image-content" id="lightgallery">
-              {% if product.tags.size > 0 %}
-                <div class="product-tag-wrapper">
-                  {% for tag in product.tags %}
-                    <span class="tag-name">{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
               {% for media in product.media %}
                 {% if media.media_type == 'image' %}
                   <a class="swiper-slide product-active-image" href="{{ media | image_url }}">
@@ -52,8 +46,6 @@
               </div>
               <div class="divier top-divider"></div>
 
-              {% render 'product-variations' %}
-
               <div class="product-description-wrapper">
                 <span class="product-desc-value">
                   {{
@@ -64,8 +56,17 @@
                 </span>
               </div>
 
+              <div
+                class="sealsubs-target-element seal-sub-widget"
+                data-product="{{ product | json | escape }}"
+                data-handle="{{ product.handle }}"
+                data-product-id="{{ product.id }}"
+                data-variant-id="{{ product.variants.first.id }}"
+              ></div>
+
+              {% render 'product-variations' %}
+
               <div class="product-stock">
-                <span>Stock Status</span>
                 {% if product.variants.first.available %}
                   <p class="stock-status green">In Stock</p>
                 {% else %}
@@ -129,8 +130,12 @@
         <div class="col">
           <div class="product-sticky-bottom-wrapper">
             <div class="product-bottom-left">
-              <div class="bottom-product-title">
-                {{ product.title }}
+              <div class="bottom-product-title-group">
+                <span class="bottom-product-title"> {{ product.title }} </span>
+                <div class="btn-product-variation-group">
+                  <span class="bottom-product-variant" id="btm-product-variant"> </span>
+                  <span class="bottom-product-subscription-detail" id="btm-product-subscription"></span>
+                </div>
               </div>
 
               <div class="bottom-product-price">
@@ -144,8 +149,9 @@
             </div>
             <div class="bottom-product-details-btn-group">
               <button
-                class="btn btn-contained btn-red {{ productstatus }}"
+                class="btn btn-contained btn-red {{ productstatus }} btn-md"
                 id="bottom-product-cart"
+                data-variant-id="{{ product.variants.first.id }}"
               >
                 {% if product.variants.first.available %}
                   <span>

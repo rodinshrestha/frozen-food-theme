@@ -7,7 +7,6 @@
     position: relative;
     overflow: hidden;
     flex-wrap: wrap;
-    height: 85vh;
     width: 100%;
 
     &.gap {
@@ -19,13 +18,27 @@
       }
     }
 
+    @include responsive(tablet) {
+      // gap: 30px;
+    }
+
     .image-wrapper {
       flex: 0 1 50%;
       width: 100%;
       position: relative;
+      height: 700px;
 
       @include responsive(tablet) {
         flex: 0 1 100% !important;
+        height: 600px;
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.4);
+
+        @include responsive(tablet) {
+          background-color: rgba(0, 0, 0, 0.6);
+        }
       }
 
       .two-column-image {
@@ -34,30 +47,58 @@
         height: 100%;
         z-index: -1;
         object-fit: cover;
+        overflow: hidden;
       }
 
       .text-content-wrapper {
         position: absolute;
         top: 45%;
         left: 50%;
-        transform: translate(-50%, 0);
         color: #fff;
         font-size: 36px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
         align-items: center;
         z-index: 2;
+        gap: 10px;
 
-        @include responsive(tablet) {
-          opacity: 1 !important;
-          transform: translate(-50%, -50%) !important;
+        &.content-position-middle {
+          transform: translate(-50%, 0);
+          @include responsive(tablet) {
+            opacity: 1 !important;
+            transform: translate(-50%, -50%) !important;
+          }
+        }
+
+        &.content-position-left {
+          left: 0;
+          transform: translate(0, 0);
+          padding: 0px 3.25rem;
+          align-items: flex-start;
+
+          .btn {
+            align-self: flex-start;
+          }
+
+          @include responsive(tablet) {
+            transform: translate(-50%, 0);
+            padding: 0px 1rem;
+            left: 50%;
+            width: 100%;
+            align-items: center;
+
+            .btn {
+              align-self: center;
+            }
+          }
         }
 
         .content-title {
-          font-size: 18px;
+          font-size: 12px;
           font-family: $font-family-brandon;
           text-align: center;
+          letter-spacing: 2px;
+          margin-bottom: 5px;
         }
 
         .content-helper-text {
@@ -69,6 +110,10 @@
             line-height: 46px;
             font-size: 32px;
           }
+        }
+
+        .btn {
+          margin-top: 15px;
         }
       }
     }

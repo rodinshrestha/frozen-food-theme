@@ -327,6 +327,7 @@ ul {
   font-family: "Brandon Grotesque", "Helvetica Neue";
   display: flex;
   list-style: none;
+  align-items: center;
   gap: 15px;
   font-weight: 500;
 }
@@ -336,6 +337,8 @@ ul {
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .navigation-list {
   cursor: pointer;
+  display: flex;
+  align-self: center;
   font-family: "Brandon Grotesque", "Helvetica Neue";
   font-weight: 500;
   position: relative;
@@ -370,6 +373,7 @@ ul {
   transition: height 0.3s ease;
   visibility: hidden;
   z-index: 12;
+  top: 30px;
   box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
 }
 .header-wrapper .menu-wrapper .menu-right-wrapper .navigation-wrappper .sub-navigation-wrapper .sub-menu-wrapper .sub-menu-list {
@@ -408,12 +412,6 @@ ul {
   position: absolute;
   top: -10px;
   right: -10px;
-}
-
-#user-icon:hover,
-#search-drawer-icon:hover,
-#cart-icon:hover {
-  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7492%) hue-rotate(-7deg) brightness(75%) contrast(119%);
 }
 
 .footer-wrapper {
@@ -772,8 +770,8 @@ ul {
 }
 @media (max-width: 1023px) {
   .add-to-cart-modal-wrapper .modal-content .close-modal-btn {
-    right: 2px;
-    top: 2px;
+    right: -1px;
+    top: 3px;
   }
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper {
@@ -804,10 +802,13 @@ ul {
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-type {
   margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-product-title {
   font-size: 20px;
-  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  font-family: "Scotch Display medium", "Helvetica Neue";
+  letter-spacing: 1px;
   margin-bottom: 15px;
 }
 @media (max-width: 1023px) {
@@ -874,12 +875,13 @@ ul {
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status {
   position: relative;
-  margin-left: 15px;
+  margin-left: 20px;
+  text-transform: uppercase;
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .stock-status-wrapper .stock-status::after {
   content: "";
   position: absolute;
-  left: -15px;
+  left: -20px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
@@ -896,7 +898,7 @@ ul {
   margin-top: 20px;
   height: 1px;
   width: 100%;
-  background-color: rgba(151, 151, 151, 0.25);
+  background-color: rgb(199, 199, 199);
 }
 .add-to-cart-modal-wrapper .modal-content .add-to-cart-product-wrapper .add-to-cart-product-information .add-to-cart-cta-wrapper {
   display: flex;
@@ -1005,7 +1007,7 @@ ul {
   padding: 8px 20px;
 }
 .btn.btn-md {
-  min-width: 150px;
+  min-width: 180px;
 }
 .btn.disabled {
   cursor: not-allowed;
@@ -1140,20 +1142,6 @@ ul {
   width: 100%;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
-}
-.featured-product-inner-wrapper .featured-product-image-wrapper .product-tag-wrapper {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  display: flex;
-  gap: 5px;
-}
-.featured-product-inner-wrapper .featured-product-image-wrapper .product-tag-wrapper .tag-name {
-  background-color: #e4022e;
-  padding: 6px 8px;
-  color: #fff;
-  font-size: 0.875rem;
-  border-radius: 5px;
 }
 .featured-product-inner-wrapper .featured-product-image-wrapper:hover.has-hover .product-image {
   opacity: 0;
@@ -1506,6 +1494,7 @@ ul {
   justify-content: space-between;
   height: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 .product-gallery-wrapper .product-gallery-image-wrapper {
   width: 100%;
@@ -1513,6 +1502,11 @@ ul {
   box-sizing: border-box;
   padding-bottom: 10px;
   position: relative;
+}
+@media (max-width: 1023px) {
+  .product-gallery-wrapper .product-gallery-image-wrapper {
+    height: 420px;
+  }
 }
 .product-gallery-wrapper .product-gallery-image-wrapper .product-tag-wrapper {
   position: absolute;
@@ -1621,10 +1615,10 @@ ul {
   text-decoration: none;
 }
 
-.divier {
+.divider {
   width: 100%;
   height: 1.5px;
-  background-color: rgba(151, 151, 151, 0.25);
+  background-color: rgb(199, 199, 199);
 }
 
 .product-variation-wrapper {
@@ -1638,9 +1632,10 @@ ul {
   gap: 10px;
 }
 .product-variation-wrapper .product-variation-content .variation-title {
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: capitalize;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .product-variation-wrapper .product-variation-content .variations-list-wrapper {
   display: flex;
@@ -1656,6 +1651,7 @@ ul {
   transition: all 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 .product-variation-wrapper .product-variation-content .variations-list-wrapper .variations-list:hover {
   background-color: #303336;
@@ -1681,7 +1677,7 @@ ul {
   width: 100%;
   height: 2px; /* thickness */
   background-color: #303336;
-  transform: rotate(-21deg); /* slight angle, adjust as needed */
+  transform: rotate(-11deg); /* slight angle, adjust as needed */
   transform-origin: center;
   pointer-events: none;
 }
@@ -1691,11 +1687,31 @@ ul {
   margin-top: 10px;
 }
 
+.product-tag-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+.product-tag-wrapper .tag-name {
+  background-color: #e4022e;
+  padding: 6px 8px;
+  color: #fff;
+  font-size: 0.875rem;
+  border-radius: 5px;
+}
+
 .banner-section {
   position: relative;
+  overflow: hidden;
 }
 .banner-section:has(.fluid) {
   padding: 0 !important;
+}
+.banner-section:has(.fluid) .banner-wrapper {
+  border-radius: 0 !important;
 }
 .banner-section:has(.fluid) .feature-banner-information-wrapper {
   padding: 0px 3.25rem;
@@ -1704,7 +1720,7 @@ ul {
   height: 1110px;
 }
 .banner-section.banner-medium {
-  height: 980px;
+  height: 895px;
 }
 .banner-section.banner-small {
   height: 500px;
@@ -1731,6 +1747,7 @@ ul {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  border-radius: 10px;
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper {
   color: #fff;
@@ -1746,22 +1763,24 @@ ul {
 }
 @media (max-width: 1023px) {
   .banner-section .banner-wrapper .feature-banner-information-wrapper {
-    top: 25%;
+    top: 45%;
   }
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-title {
-  font-size: 18px;
+  font-size: 14px;
   font-family: "Brandon Grotesque", "Helvetica Neue";
   color: #fff;
   margin-bottom: 10px;
   text-align: center;
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-subtitle {
   font-size: 40px;
   font-family: "Scotch Display", "Helvetica Neue";
   margin-bottom: 20px;
   text-align: center;
+  letter-spacing: 2px;
 }
 @media (max-width: 1023px) {
   .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-subtitle {
@@ -1775,7 +1794,7 @@ ul {
   top: 0;
   bottom: 0;
   right: -100%;
-  width: 450px;
+  width: 550px;
   height: 100%;
   background: white;
   box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
@@ -1797,11 +1816,15 @@ ul {
 .cart-drawer .cart-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(48, 51, 54, 0.6);
-  padding: 15px;
+  padding: 25px;
+  border-bottom: 1px solid rgb(199, 199, 199);
+  font-family: "Scotch Display", "Helvetica Neue";
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 .cart-drawer .cart-header .cart-close {
-  font-size: 1.3rem;
+  font-size: 18px;
+  font-family: "Scotch Display medium", "Helvetica Neue" !important;
   background: none;
   border: none;
   cursor: pointer;
@@ -1822,7 +1845,6 @@ ul {
 .cart-drawer .cart-content-wrapper .cart-items-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
   height: 100%;
   overflow: scroll;
 }
@@ -1831,7 +1853,14 @@ ul {
   gap: 20px;
   align-items: center;
   position: relative;
-  padding: 20px 15px;
+  padding: 25px;
+  border-top: 1px solid rgb(199, 199, 199);
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details:last-child {
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details:first-child {
+  border-top: none;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .item-loader {
   position: absolute;
@@ -1858,33 +1887,67 @@ ul {
   font-size: 0.875rem;
   border-radius: 5px;
 }
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-item-image-wrapper img {
+  object-fit: contain;
+}
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-product-type {
-  font-size: 0.8rem;
+  font-size: 12px;
   font-weight: 400;
-  color: #720519;
-  margin-bottom: 10px;
+  color: rgb(48, 51, 54);
+  line-height: 26px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  text-transform: uppercase;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  letter-spacing: 1px;
+  line-height: 26px;
+  text-transform: uppercase;
 }
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-price {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 15px;
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-title a {
+  color: inherit;
+  text-decoration: none;
 }
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .add-to-cart-qty-wrapper {
-  gap: 5px;
-  width: 110px;
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-title a:hover {
+  text-decoration: underline;
 }
-.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .add-to-cart-qty-wrapper .quantity-input {
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-variation-list {
+  font-size: 12px;
+  line-height: 26px;
+  color: rgb(48, 51, 54);
+  text-transform: uppercase;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-variation-list .cart-variation-item {
+  margin-right: 15px;
+  position: relative;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .cart-item-price {
+  font-size: 14px;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .add-to-cart-qty-wrapper {
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  background-color: transparent;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .add-to-cart-qty-wrapper .qty-btn img {
+  width: 8px;
+  height: 8px;
+}
+.cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .cart-product-information .cart-item-qty-group .add-to-cart-qty-wrapper .quantity-input {
   width: 15px;
+  font-size: 14px;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .remove-cart-item {
   position: absolute;
@@ -1893,7 +1956,7 @@ ul {
   border: none;
   cursor: pointer;
   top: 10px;
-  right: 15px;
+  right: 24px;
 }
 .cart-drawer .cart-content-wrapper .cart-items-wrapper .cart-item-details .remove-cart-item.disabled {
   cursor: not-allowed;
@@ -1902,27 +1965,28 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border-top: 1px solid rgba(48, 51, 54, 0.6);
-  padding: 15px;
+  border-top: 1px solid rgb(199, 199, 199);
+  padding: 25px;
 }
 .cart-drawer .cart-content-wrapper .cart-footer .cart-total-price {
   display: flex;
   justify-content: space-between;
+  font-family: "Scotch Display medium", "Helvetica Neue";
 }
 .cart-drawer .cart-content-wrapper .cart-footer .cart-total-price .cart-total-text {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 .cart-drawer .cart-content-wrapper .cart-footer .cart-total-price .cart-total-amount {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 .cart-drawer .cart-content-wrapper .cart-footer .terms-condition-wrapper {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 .cart-drawer .cart-content-wrapper .cart-footer .terms-condition-wrapper .checkbox-wrapper {
   display: flex;
@@ -1933,6 +1997,8 @@ ul {
   color: #fff !important;
   padding: 10px;
   width: 100%;
+  text-transform: uppercase;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
 }
 .cart-drawer .cart-content-wrapper .cart-footer .btn.disable {
   opacity: 0.5;
@@ -2100,7 +2166,7 @@ ul {
   }
 }
 .product-list-section.bg-section-dark.section-divider::after, .product-list-section.bg-section-dark.section-divider::before {
-  width: 90%;
+  width: 80%;
   position: absolute;
   height: 1px;
   content: "";
@@ -2481,7 +2547,6 @@ ul {
   position: relative;
   overflow: hidden;
   flex-wrap: wrap;
-  height: 85vh;
   width: 100%;
 }
 .two-column-image-section .two-column-image-wrapper.gap {
@@ -2495,10 +2560,20 @@ ul {
   flex: 0 1 50%;
   width: 100%;
   position: relative;
+  height: 700px;
 }
 @media (max-width: 1023px) {
   .two-column-image-section .two-column-image-wrapper .image-wrapper {
     flex: 0 1 100% !important;
+    height: 600px;
+  }
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 1023px) {
+  .two-column-image-section .two-column-image-wrapper .image-wrapper .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
   }
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .two-column-image {
@@ -2507,30 +2582,56 @@ ul {
   height: 100%;
   z-index: -1;
   object-fit: cover;
+  overflow: hidden;
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper {
   position: absolute;
   top: 45%;
   left: 50%;
-  transform: translate(-50%, 0);
   color: #fff;
   font-size: 36px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
   z-index: 2;
+  gap: 10px;
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper.content-position-middle {
+  transform: translate(-50%, 0);
 }
 @media (max-width: 1023px) {
-  .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper {
+  .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper.content-position-middle {
     opacity: 1 !important;
     transform: translate(-50%, -50%) !important;
   }
 }
+.two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper.content-position-left {
+  left: 0;
+  transform: translate(0, 0);
+  padding: 0px 3.25rem;
+  align-items: flex-start;
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper.content-position-left .btn {
+  align-self: flex-start;
+}
+@media (max-width: 1023px) {
+  .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper.content-position-left {
+    transform: translate(-50%, 0);
+    padding: 0px 1rem;
+    left: 50%;
+    width: 100%;
+    align-items: center;
+  }
+  .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper.content-position-left .btn {
+    align-self: center;
+  }
+}
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-title {
-  font-size: 18px;
+  font-size: 12px;
   font-family: "Brandon Grotesque", "Helvetica Neue";
   text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
 }
 .two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .content-helper-text {
   font-size: 40px;
@@ -2542,6 +2643,9 @@ ul {
     line-height: 46px;
     font-size: 32px;
   }
+}
+.two-column-image-section .two-column-image-wrapper .image-wrapper .text-content-wrapper .btn {
+  margin-top: 15px;
 }
 
 .product-details-section {
@@ -2632,16 +2736,12 @@ ul {
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-sku {
   font-size: 14px;
+  text-transform: uppercase;
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-title {
-  font-size: 40px;
+  font-size: 32px;
   font-family: "Scotch Display", "Helvetica Neue";
   letter-spacing: 1px;
-}
-@media (max-width: 1023px) {
-  .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-title {
-    font-size: 32px;
-  }
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-price-wrapper {
   display: flex;
@@ -2688,6 +2788,8 @@ ul {
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-stock .stock-status {
   position: relative;
+  margin-left: 25px;
+  text-transform: uppercase;
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-stock .stock-status::after {
   content: "";
@@ -2704,6 +2806,38 @@ ul {
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-stock .stock-status.grey::after {
   background-color: grey;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription #seal-purchase-options-label {
+  text-transform: uppercase;
+  font-family: "Brandon Grotesque Medium", "Helvetica Neue";
+  color: #303336;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sls-purchase-options-container {
+  margin-top: 10px;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sealsubs-target-element .sls-option[type=radio]:checked + .sls-custom-radio::after {
+  width: 14px;
+  height: 14px;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sls-selling-plan-group-name {
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  font-size: 16px;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sls-price {
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  font-size: 16px;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sealsubs-container {
+  margin-bottom: 0;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper #seal-subscription .sealsubs-container .sls-more-info-container {
+  padding-bottom: 0;
+  padding-left: 0;
+}
+.product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .sls-widget-branding {
+  display: none;
 }
 .product-details-section .product-details-wrapper .product-content-wrapper .product-inner-content-wrapper .product-details-cta-wrapper {
   display: flex;
@@ -2786,6 +2920,12 @@ ul {
 .product-details-section .product-full-description-wrapper .product-full-desc-value ul li {
   margin-bottom: 5px;
 }
+@media (max-width: 1023px) {
+  .product-details-section .product-full-description-wrapper .product-full-desc-value img {
+    width: 100%;
+    height: 200px;
+  }
+}
 .product-details-section .product-sticky-bottom {
   background-color: #fff;
   box-shadow: rgba(48, 51, 54, 0.16) 0px -4px 6px -1px;
@@ -2820,13 +2960,22 @@ ul {
   gap: 50px;
   align-items: center;
 }
-.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title {
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group .bottom-product-title {
   font-size: 28px;
   font-family: "Scotch Display medium", "Helvetica Neue";
   letter-spacing: 1px;
-  position: relative;
 }
-.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title::before {
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group .btn-product-variation-group {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-title-group::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -2850,6 +2999,9 @@ ul {
 .product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .product-bottom-left .bottom-product-price .product-price-wrapper .original-price + .discounted-price {
   color: #e4022e;
   font-size: 21px;
+}
+.product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .bottom-product-details-btn-group {
+  display: flex;
 }
 .product-details-section .product-sticky-bottom .product-sticky-bottom-wrapper .bottom-product-details-btn-group .btn span {
   display: flex;
@@ -3130,7 +3282,7 @@ ul {
     line-height: 38px;
   }
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .down-arrow-img {
+.slider-banner-section .down-arrow-img {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -3142,8 +3294,9 @@ ul {
   width: 28px;
   height: 28px;
   transition: background-color 0.2s linear;
+  z-index: 1;
 }
-.slider-banner-section .slider-banner-wrapper .container .row .col .slider-banner-content-wrapper .slider-banner-content .down-arrow-img:hover {
+.slider-banner-section .down-arrow-img:hover {
   background-color: rgba(242, 242, 242, 0.6);
   box-shadow: rgba(48, 51, 54, 0.16) 0px 1px 3px;
 }
@@ -3258,6 +3411,77 @@ ul {
 .category-list-section {
   overflow: hidden;
 }
+.category-list-section.category-divider {
+  padding-top: 180px;
+  position: relative;
+  padding-bottom: 200px;
+}
+.category-list-section.category-divider::before, .category-list-section.category-divider::after {
+  content: "";
+  position: absolute;
+  background-color: #303336;
+  height: 1px;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 1023px) {
+  .category-list-section.category-divider {
+    padding: 80px 0;
+  }
+}
+.category-list-section.category-divider::after {
+  top: 100px;
+}
+@media (max-width: 1023px) {
+  .category-list-section.category-divider::after {
+    top: 50px;
+  }
+}
+.category-list-section.category-divider::before {
+  bottom: 85px;
+}
+@media (max-width: 1023px) {
+  .category-list-section.category-divider::before {
+    bottom: 50px;
+  }
+}
+.category-list-section .category-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 20px 0;
+  gap: 20px;
+}
+@media (max-width: 1023px) {
+  .category-list-section .category-title-wrapper {
+    margin-bottom: 30px;
+  }
+}
+.category-list-section .category-title-wrapper .category-subtitle {
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.category-list-section .category-title-wrapper .category-title {
+  font-size: 40px;
+  font-family: "Scotch Display medium", "Helvetica Neue";
+  letter-spacing: 2px;
+}
+.category-list-section .category-title-wrapper .category-description {
+  font-size: 16px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  width: 50%;
+  text-align: center;
+  line-height: 24px;
+}
+@media (max-width: 1023px) {
+  .category-list-section .category-title-wrapper .category-description {
+    width: 100%;
+  }
+}
 .category-list-section .category-wrapper {
   position: relative;
 }
@@ -3271,6 +3495,10 @@ ul {
   cursor: pointer;
   border-radius: 10px;
 }
+.category-list-section .category-wrapper .category-content-list.content-position-bottom {
+  align-items: end;
+  padding-bottom: 40px;
+}
 .category-list-section .category-wrapper .category-content-list a {
   text-decoration: none;
   z-index: 5;
@@ -3278,10 +3506,15 @@ ul {
 .category-list-section .category-wrapper .category-content-list:hover .category-image {
   transform: scale(1.1);
 }
-.category-list-section .category-wrapper .category-content-list .overlay {
+.category-list-section .category-wrapper .category-content-list .category-content-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .overlay {
   z-index: 2;
 }
-.category-list-section .category-wrapper .category-content-list .category-image {
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-image {
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -3291,7 +3524,21 @@ ul {
   object-fit: cover;
   transition: transform 0.4s linear;
 }
-.category-list-section .category-wrapper .category-content-list .category-title {
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-subtitle {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-subtitle + .category-list-title {
+  font-size: 30px !important;
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-title {
   position: relative;
   z-index: 2;
   color: #fff;
@@ -3299,6 +3546,14 @@ ul {
   font-weight: 500;
   font-family: "Scotch Display", "Helvetica Neue";
   text-align: center;
+  font-family: "Scotch Display", "Helvetica Neue";
+  letter-spacing: 2px;
+}
+.category-list-section .category-wrapper .category-content-list .category-content-details .category-list-btn {
+  z-index: 2;
+  color: #fff;
+  padding: 10px 0 !important;
+  margin-top: 10px;
 }
 .category-list-section .category-wrapper .category-swiper-navigation {
   background: transparent;

@@ -3,8 +3,14 @@
 
 .banner-section {
   position: relative;
+  overflow: hidden;
+
   &:has(.fluid) {
     padding: 0 !important;
+
+    .banner-wrapper {
+      border-radius: 0 !important;
+    }
 
     .feature-banner-information-wrapper {
       padding: 0px 3.25rem;
@@ -15,7 +21,7 @@
   }
 
   &.banner-medium {
-    height: 980px;
+    height: 895px;
   }
 
   &.banner-small {
@@ -47,13 +53,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    // .banner-image {
-    //   width: 100%;
-    //   height: 100%;
-    //   z-index: -1;
-    //   object-fit: cover;
-    //   position: absolute;
-    // }
+    border-radius: 10px;
 
     .feature-banner-information-wrapper {
       color: $light-primary-textColor;
@@ -68,16 +68,17 @@
       width: 100%;
 
       @include responsive(tablet) {
-        top: 25%;
+        top: 45%;
       }
 
       .banner-title {
-        font-size: 18px;
+        font-size: 14px;
         font-family: $font-family-brandon;
         color: $light-primary-textColor;
         margin-bottom: 10px;
         text-align: center;
-        letter-spacing: 1px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
 
       .banner-subtitle {
@@ -85,6 +86,7 @@
         font-family: $font-family-scotch;
         margin-bottom: 20px;
         text-align: center;
+        letter-spacing: 2px;
 
         @include responsive(tablet) {
           line-height: 46px;

@@ -1,5 +1,34 @@
-<div class="category-list-section section-wrapper" id="category-list">
+{% capture divider %}
+  {% if section.settings.divider %}category-divider{% endif %}
+{% endcapture %}
+
+{% assign show_category_title = false %}
+
+{% if section.settings.subtitle != blank or section.settings.title != blank or section.settings.description != blank %}
+  {% assign show_category_title = true %}
+{% endif %}
+
+<div class="category-list-section section-wrapper {{ divider }}" id="category-list">
   <div class="container">
+    {% if show_category_title %}
+      <div class="row">
+        <div class="col">
+          <div class="category-title-wrapper">
+            {% if section.settings.subtitle != '' %}
+              <div class="category-subtitle">{{ section.settings.subtitle }}</div>
+            {% endif %}
+            {% if section.settings.title != '' %}
+              <div class="category-title">{{ section.settings.title }}</div>
+            {% endif %}
+            {% if section.settings.description != '' %}
+              <p class="category-description">
+                {{ section.settings.description }}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
     <div class="row">
       <div class="col">
         {% if section.blocks.size > 0 %}
@@ -7,8 +36,8 @@
             <div class="swiper" id="category-swiper">
               <div class="swiper-wrapper">
                 {% for block in section.blocks %}
-                  <div class="category-content-list swiper-slide">
-                    <a href="{{ block.settings.url }}">
+                  <div class="category-content-list swiper-slide content-position-{{ section.settings.content_position }}">
+                    <a href="{{ block.settings.url }}" class="category-content-details">
                       <div class="overlay"></div>
 
                       {% if block.settings.category_image != '' %}
@@ -20,8 +49,14 @@
                           class="category-image"
                         >
                       {% endif %}
+                      {% if block.settings.subtitle != '' %}
+                        <div class="category-list-subtitle">{{ block.settings.subtitle }}</div>
+                      {% endif %}
                       {% if block.settings.title != '' %}
-                        <h3 class="category-title">{{ block.settings.title }}</h3>
+                        <h3 class="category-list-title">{{ block.settings.title }}</h3>
+                      {% endif %}
+                      {% if block.settings.btn != '' %}
+                        <div class="btn btn-outline btn-md category-list-btn">{{ block.settings.btn }}</div>
                       {% endif %}
                     </a>
                   </div>
@@ -45,6 +80,53 @@
 {% schema %}
 {
   "name": "Category List",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Category Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "Show Divider Line",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Category Block Content"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        {
+          "label": "Middle",
+          "value": "middle"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ],
+      "default": "middle"
+    }
+  ],
   "blocks": [
     {
       "type": "text_slide",
@@ -55,10 +137,21 @@
           "id": "category_image",
           "label": "Category Image"
         },
+
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
         {
           "type": "text",
           "id": "title",
           "label": "title"
+        },
+        {
+          "type": "text",
+          "id": "btn",
+          "label": "Button Label"
         },
         {
           "type": "url",

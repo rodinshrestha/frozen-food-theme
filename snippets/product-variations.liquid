@@ -1,11 +1,12 @@
 {% assign has_real_options = false %}
 {% for option in product.options_with_values %}
-  {% if option.name != 'Title' and option.values.size > 1 %}
+  {% if option.name != 'Title' and option.values.size >= 1 %}
     {% assign has_real_options = true %}
   {% endif %}
 {% endfor %}
 
 {% if has_real_options %}
+  <div class="divider top-divider"></div>
   <div class="product-variation-wrapper">
     {% for option in product.options_with_values %}
       <div class="product-variation-content" data-option-index="{{ forloop.index0 }}">
@@ -21,7 +22,7 @@
     {% endfor %}
   </div>
 
-  <div class="divier bottom-divider"></div>
+  <div class="divider bottom-divider"></div>
 {% endif %}
 
 <script id="product-variants-data" type="application/json">

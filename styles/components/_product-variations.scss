@@ -1,7 +1,7 @@
 @use "abstracts/_breakpoints" as *;
 @use "abstracts/_variables" as *;
 
-.divier {
+.divider {
   width: 100%;
   height: 1.5px;
   background-color: $light-divider-color;
@@ -17,9 +17,10 @@
     flex-direction: column;
     gap: 10px;
     .variation-title {
-      font-size: 1rem;
-      font-weight: 500;
-      text-transform: capitalize;
+      font-family: $font-family-brandon-med;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .variations-list-wrapper {
@@ -33,9 +34,9 @@
         border-radius: 5px;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
-
         display: flex;
         flex-direction: column;
+        font-size: 16px;
 
         &:hover {
           background-color: $dark-bgColor;
@@ -64,7 +65,7 @@
             width: 100%;
             height: 2px; /* thickness */
             background-color: #303336;
-            transform: rotate(-21deg); /* slight angle, adjust as needed */
+            transform: rotate(-11deg); /* slight angle, adjust as needed */
             transform-origin: center;
             pointer-events: none;
           }
