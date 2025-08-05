@@ -24,8 +24,9 @@
     height: 895px;
 
     @include responsive(tablet) {
+      height: 595px;
       .feature-banner-information-wrapper {
-        top: 38% !important;
+        top: 35% !important;
       }
     }
   }

@@ -1743,8 +1743,11 @@ ul {
   height: 895px;
 }
 @media (max-width: 1023px) {
+  .banner-section.banner-medium {
+    height: 595px;
+  }
   .banner-section.banner-medium .feature-banner-information-wrapper {
-    top: 38% !important;
+    top: 35% !important;
   }
 }
 .banner-section.banner-small {
