@@ -2,6 +2,7 @@
 @use "../abstracts/breakpoints" as *;
 
 .header-wrapper {
+  position: relative;
   height: 65px;
   width: 100vw;
   background-color: $light-bgColor;

@@ -251,6 +251,7 @@ ul {
 }
 
 .header-wrapper {
+  position: relative;
   height: 65px;
   width: 100vw;
   background-color: #fff;
@@ -1741,8 +1742,18 @@ ul {
 .banner-section.banner-medium {
   height: 895px;
 }
+@media (max-width: 1023px) {
+  .banner-section.banner-medium .feature-banner-information-wrapper {
+    top: 38% !important;
+  }
+}
 .banner-section.banner-small {
   height: 500px;
+}
+@media (max-width: 1023px) {
+  .banner-section.banner-small .feature-banner-information-wrapper {
+    top: 28% !important;
+  }
 }
 .banner-section .container {
   height: 100%;
@@ -2941,8 +2952,7 @@ ul {
 }
 @media (max-width: 1023px) {
   .product-details-section .product-full-description-wrapper .product-full-desc-value img {
-    width: 100%;
-    height: 200px;
+    object-fit: contain;
   }
 }
 .product-details-section .product-sticky-bottom {
@@ -3331,6 +3341,11 @@ ul {
 .contact-us-section {
   padding: 80px 0;
 }
+@media (max-width: 1023px) {
+  .contact-us-section {
+    padding: 20px 0;
+  }
+}
 .contact-us-section .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -3347,7 +3362,6 @@ ul {
   }
 }
 .contact-us-section .contact-map-block {
-  flex: 0 0 480px;
   max-width: 480px;
   min-width: 320px;
   display: flex;
@@ -3373,7 +3387,10 @@ ul {
   flex-direction: column;
   gap: 24px;
   min-width: 0;
-  font-family: "Instrument Sans", Arial, sans-serif;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
+}
+.contact-us-section .contact-info-block a {
+  color: #303336;
 }
 .contact-us-section .contact-greeting,
 .contact-us-section .contact-followup-message {
@@ -3394,37 +3411,7 @@ ul {
   color: #d32f2f;
   margin-bottom: 2px;
   letter-spacing: 0.1px;
-}
-.contact-us-section .contact-info-vertical .contact-info-value {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 4px;
-  color: #303336;
-}
-.contact-us-section .contact-info-vertical .contact-info-value a {
-  color: #303336;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.contact-us-section .contact-info-vertical .contact-info-value a[href^="mailto:"] {
-  color: #303336;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.contact-us-section .contact-info-vertical .contact-info-value a[href^="mailto:"]:hover {
-  color: #303336;
-  text-decoration: none;
-}
-.contact-us-section .contact-info-vertical .contact-info-value i.social-icon {
-  font-size: 1.1rem;
-  margin-right: 8px;
-  vertical-align: middle;
-  color: #222;
-}
-.contact-us-section .contact-info-vertical .contact-info-value i.social-icon:last-child {
-  margin-right: 0;
+  font-family: "Brandon Grotesque", "Helvetica Neue";
 }
 
 .category-list-section {

@@ -22,10 +22,22 @@
 
   &.banner-medium {
     height: 895px;
+
+    @include responsive(tablet) {
+      .feature-banner-information-wrapper {
+        top: 38% !important;
+      }
+    }
   }
 
   &.banner-small {
     height: 500px;
+
+    @include responsive(tablet) {
+      .feature-banner-information-wrapper {
+        top: 28% !important;
+      }
+    }
   }
 
   .container {
