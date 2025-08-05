@@ -28,6 +28,7 @@
           "settings": {
             "content_position": "right",
             "image": "shopify://shop_images/sauces_4100x_3eb40656-d4f2-481b-9f45-27bd7e6d0818.webp",
+            "mobile_image": "shopify://shop_images/momo-sauce-group-2.webp",
             "title": "Bringing the Rich Flavors of the Mountains",
             "subtitle": "Handcrafted with Timeless Recipes and our Authentic Sauces deliver a Taste of the Mountains..",
             "button_text": "SHOP NOW",
@@ -35,7 +36,10 @@
           }
         }
       },
-      "block_order": ["slide_kR8XMi", "slide_qQi3xx"],
+      "block_order": [
+        "slide_kR8XMi",
+        "slide_qQi3xx"
+      ],
       "name": "Banner Slider",
       "settings": {}
     },
