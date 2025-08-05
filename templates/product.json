@@ -97,7 +97,7 @@
         "button-text": "Become a Member",
         "button-link": "",
         "banner-overlay": true,
-        "overlay-opacity": 0.3
+        "overlay-opacity": 0.5
       }
     }
   },
