@@ -316,6 +316,7 @@
       img {
         @include responsive(tablet) {
           object-fit: contain;
+          width: 100%;
         }
       }
     }
