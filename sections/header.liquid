@@ -37,21 +37,21 @@
                 {% capture submenu %}
                   {% if link.links.size > 0 %}sub-navigation-wrapper{% endif %}
                 {% endcapture %}
+                {% assign is_child_active = false %}
+                {% for child_link in link.links %}
+                  {% if child_link.active %}
+                    {% assign is_child_active = true %}
+                  {% endif %}
+                {% endfor %}
 
-                <li class="navigation-list {% if link.active %}active{% endif %} {{ submenu }}">
+                <li class="navigation-list {% if link.active or is_child_active %}active{% endif %} {{ submenu }}">
                   <a href="{{ link.url }}">{{ link.title }}</a>
 
                   {% if link.links.size > 0 %}
-                    <img
-                      src="{{ 'dropdown.png' | asset_url }}"
-                      class="down-icon"
-                      width="18"
-                      height="18"
-                      alt="Dropdown arrow"
-                    >
+                    {% render 'down-arrow' %}
                     <ul class="sub-menu-wrapper" id="sub-menu-wrapper">
                       {% for child_link in link.links %}
-                        <li class="sub-menu-list">
+                        <li class="sub-menu-list {% if child_link.active %}active{% endif %}">
                           <a href="{{ child_link.url }}">{{ child_link.title }}</a>
                         </li>
                       {% endfor %}

@@ -46,6 +46,12 @@
       img {
         display: none;
       }
+
+      &.active {
+        a {
+          color: $red-color;
+        }
+      }
     }
   }
 

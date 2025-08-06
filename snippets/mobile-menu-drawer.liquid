@@ -3,18 +3,20 @@
     {% for link in linklists['main-menu'].links %}
       {% if link.links.size > 0 %}
         {% for child in link.links %}
-          <li class="mobile-navigation-list">
+          <li class="mobile-navigation-list {% if child.active %}active{% endif %}">
             <a href="{{ child.url }}">{{ child.title }}</a>
-            <img
-              src="{{ 'right-arrow.png' | asset_url }}"
-              height="22"
-              width="22"
-              aria-label="Go to {{ child.title }}"
-            >
+            {% comment %}
+              <img
+                src="{{ 'right-arrow.png' | asset_url }}"
+                height="22"
+                width="22"
+                aria-label="Go to {{ child.title }}"
+              >
+            {% endcomment %}
           </li>
         {% endfor %}
       {% else %}
-        <li class="mobile-navigation-list">
+        <li class="mobile-navigation-list {% if link.active %}active{% endif %}">
           <a href="{{ link.url }}">{{ link.title }}</a>
           <img
             src="{{ 'right-arrow.png' | asset_url }}"
