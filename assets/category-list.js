@@ -20,17 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         nextEl: "#category-next",
         prevEl: "#category-prev",
       },
-      effect: "slide", // Or "fade"
-      observeParents: true,
-      observeSlideChildren: true,
       breakpoints: {
-        420: { slidesPerView: 1 },
-        600: { slidesPerView: 1.5 },
-        871: { slidesPerView: 2 },
-        884: { slidesPerView: 2.5 },
-        1020: { slidesPerView: 3 },
-        1200: { slidesPerView: 3.5 },
-        1300: { slidesPerView: 4 },
+        0: { slidesPerView: 1 },
+        616: { slidesPerView: 2 },
+        884: { slidesPerView: 3 },
+        1020: { slidesPerView: 3.5 },
+        1200: { slidesPerView: 4 },
       },
     });
   });
