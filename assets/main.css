@@ -1746,17 +1746,9 @@ ul {
   .banner-section.banner-medium {
     height: 595px;
   }
-  .banner-section.banner-medium .feature-banner-information-wrapper {
-    top: 35% !important;
-  }
 }
 .banner-section.banner-small {
   height: 500px;
-}
-@media (max-width: 1023px) {
-  .banner-section.banner-small .feature-banner-information-wrapper {
-    top: 26% !important;
-  }
 }
 .banner-section .container {
   height: 100%;
@@ -1789,15 +1781,10 @@ ul {
   align-items: center;
   z-index: 10;
   position: absolute;
-  top: 43%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
   width: 100%;
-}
-@media (max-width: 1023px) {
-  .banner-section .banner-wrapper .feature-banner-information-wrapper {
-    top: 45%;
-  }
 }
 .banner-section .banner-wrapper .feature-banner-information-wrapper .banner-title {
   font-size: 14px;

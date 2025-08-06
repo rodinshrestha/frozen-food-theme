@@ -25,20 +25,11 @@
 
     @include responsive(tablet) {
       height: 595px;
-      .feature-banner-information-wrapper {
-        top: 35% !important;
-      }
     }
   }
 
   &.banner-small {
     height: 500px;
-
-    @include responsive(tablet) {
-      .feature-banner-information-wrapper {
-        top: 26% !important;
-      }
-    }
   }
 
   .container {
@@ -75,14 +66,10 @@
       align-items: center;
       z-index: 10;
       position: absolute;
-      top: 43%;
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, -50%);
       width: 100%;
-
-      @include responsive(tablet) {
-        top: 45%;
-      }
 
       .banner-title {
         font-size: 14px;
