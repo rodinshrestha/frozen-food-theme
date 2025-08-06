@@ -2,6 +2,34 @@
   <head>
     {{ content_for_header }}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+      rel="preload_tag"
+      href="{{ 'BrandonGrotesque-Light.woff2' | asset_url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    >
+    <link
+      rel="preload_tag"
+      href="{{ 'BrandonGrotesque-Medium.woff2' | asset_url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    >
+    <link
+      rel="preload_tag"
+      href="{{ 'ScotchDisplay-Light.woff2' | asset_url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    >
+    <link
+      rel="preload_tag"
+      href="{{ 'ScotchDisplay-Medium.woff2' | asset_url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    >
 
     {{ 'main.css' | asset_url | stylesheet_tag }}
 
@@ -28,34 +56,6 @@
     >
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link
-      href="{{ 'BrandonGrotesque-Light.woff2' | asset_url }}"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-      preload_tag
-    >
-    <link
-      href="{{ 'BrandonGrotesque-Medium.woff2' | asset_url }}"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-      preload_tag
-    >
-    <link
-      href="{{ 'ScotchDisplay-Light.woff2' | asset_url }}"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-      preload_tag
-    >
-    <link
-      href="{{ 'ScotchDisplay-Medium.woff2' | asset_url }}"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-      preload_tag
-    >
     <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
