@@ -1,0 +1,143 @@
+<div class="cart-main-wrapper">
+  <div class="cart-loading-bar"></div>
+  {% if cart.item_count == 0 %}
+    <div class="cart-empty-wrapper">
+      <div class="cart-empty-icon">
+        <svg width="64" height="64" viewBox="0 0 32 32" fill="none" stroke="#d32f2f" stroke-width="2">
+          <rect x="6" y="12" width="20" height="14" rx="3" />
+          <path d="M10 12V9a6 6 0 1 1 12 0v3" />
+          <circle cx="16" cy="20" r="2" />
+          <path d="M16 22v2" />
+        </svg>
+      </div>
+      <h2 class="cart-empty-title">YOUR CART IS EMPTY.</h2>
+      <p class="cart-empty-desc">
+        Before proceed to checkout you must add some products to your shopping cart.<br>
+        You will find a lot of interesting products on our “Shop” page.
+      </p>
+      <a href="/collections/all" class="cart-empty-btn">RETURN TO SHOP</a>
+    </div>
+  {% else %}
+    <!-- Desktop/Tablet Table Layout -->
+    <table class="cart-table cart-table-desktop">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+        <!-- Add a loading line placeholder -->
+        <tr class="loading-line-row">
+          <td colspan="5">
+            <div class="loading-bar"></div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart.items %}
+          <tr class="cart-item" data-key="{{ item.key }}">
+            <td class="cart-product-info">
+              <img src="{{ item.image | image_url }}" alt="{{ item.title }}" width="70" height="70">
+              <div>
+                <div class="cart-title-row">
+                  <a href="{{ item.url }}" class="cart-item-title">{{ item.title }}</a>
+                  <button type="button" class="cart-remove-btn" title="Remove">🗑️</button>
+                </div>
+                {% if item.variant.title != 'Default Title' %}
+                  <div class="cart-item-variant">{{ item.variant.title }}</div>
+                {% endif %}
+              </div>
+            </td>
+            <td class="cart-item-price">{{ item.price | money }}</td>
+            <td>
+              <div class="cart-item-qty-group">
+                <button type="button" class="cart-qty-btn cart-qty-minus">-</button>
+                <input type="number" class="cart-qty-input" min="1" value="{{ item.quantity }}">
+                <button type="button" class="cart-qty-btn cart-qty-plus">+</button>
+              </div>
+            </td>
+            <td class="cart-item-line-total">{{ item.line_price | money }}</td>
+            <td></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <!-- Mobile Card Layout -->
+    <div class="cart-items-mobile">
+      {% for item in cart.items %}
+        <div class="cart-item-card" data-key="{{ item.key }}">
+          <div class="cart-item-card-row">
+            <img src="{{ item.image | image_url }}" alt="{{ item.title }}" width="70" height="70">
+            <div class="cart-title-row">
+              <a href="{{ item.url }}" class="cart-item-title">{{ item.title }}</a>
+              <button type="button" class="cart-remove-btn" title="Remove">🗑️</button>
+            </div>
+          </div>
+          {% if item.variant.title != 'Default Title' %}
+            <div class="cart-item-variant">{{ item.variant.title }}</div>
+          {% endif %}
+          <div class="cart-item-card-row cart-item-card-row-prices">
+            <div class="cart-item-price">{{ item.price | money }}</div>
+            <div class="cart-item-qty-group">
+              <button type="button" class="cart-qty-btn cart-qty-minus">-</button>
+              <input type="number" class="cart-qty-input" min="1" value="{{ item.quantity }}">
+              <button type="button" class="cart-qty-btn cart-qty-plus">+</button>
+            </div>
+            <div class="cart-item-line-total">{{ item.line_price | money }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="cart-summary-wrapper">
+      <div class="cart-summary">
+        <p class="cart-subtotal">
+          <strong>SUBTOTAL:</strong> <span id="cart-subtotal">{{ cart.total_price | money }}</span>
+        </p>
+        <p class="cart-taxes">Taxes, shipping and discounts codes calculated at checkout</p>
+      </div>
+      <a href="/checkout" class="cart-checkout-btn">Check Out</a>
+      <a href="/collections/all" class="return-to-shop">Continue Shopping</a>
+    </div>
+    <script>
+      window.Shopify = window.Shopify || {};
+      Shopify.money_format = '{{ shop.money_format | escape }}';
+    </script>
+    <script src="{{ 'cart-page.js' | asset_url }}" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const cartDrawerButton = document.querySelector('.add-to-cart-icon-group');
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartUrl = '{{ routes.cart_url }}';
+        const currentPage = window.location.pathname;
+
+        if (cartDrawerButton) {
+          cartDrawerButton.addEventListener(
+            'click',
+            function (event) {
+              if (currentPage === cartUrl) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                return (window.location.href = cartUrl);
+              }
+              // Only open drawer if not on cart page
+              if (cartDrawer) {
+                event.preventDefault();
+                cartDrawer.classList.add('active');
+              }
+            },
+            true,
+          ); // <--- capture phase
+        }
+
+        // Ensure the cart drawer is closed on the cart page
+        if (currentPage === cartUrl && cartDrawer) {
+          cartDrawer.classList.remove('active');
+        }
+      });
+    </script>
+  {% endif %}
+</div>
